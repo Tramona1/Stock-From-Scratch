@@ -1,0 +1,2384 @@
+2025-03-07 23:21:17,963 - debug_insertion - ERROR - Supabase credentials not found in environment variables
+2025-03-07 23:31:53,594 - debug_insertion - INFO - Successfully initialized Supabase client
+2025-03-07 23:31:53,595 - debug_insertion - INFO - Starting Supabase Data Insertion Debug Tests
+2025-03-07 23:31:53,854 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/test?select=%2A&limit=1 "HTTP/2 404 Not Found"
+2025-03-07 23:31:53,855 - debug_insertion - ERROR - Supabase connection test failed: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.test" does not exist'}
+2025-03-07 23:31:53,855 - debug_insertion - INFO - Testing Insider Trades API...
+2025-03-07 23:31:53,855 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/insider/trades with params {'days': 3, 'limit': 5}
+2025-03-07 23:31:54,227 - debug_insertion - WARNING - ⚠️ Insider Trades API returned no data
+2025-03-07 23:31:54,227 - debug_insertion - INFO - 
+Testing Analyst Ratings API...
+2025-03-07 23:31:54,227 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/screener/analysts with params {'limit': 5}
+2025-03-07 23:31:54,316 - debug_insertion - INFO - ✅ Analyst Ratings API returned 5 records
+2025-03-07 23:31:54,316 - debug_insertion - INFO - Sample data: {
+  "action": "maintained",
+  "analyst_name": "Paul Golding",
+  "firm": "Macquarie",
+  "recommendation": "buy",
+  "sector": "Consumer Cyclical",
+  "target": "55.0000",
+  "ticker": "FUN",
+  "timestamp": "2025-03-07T23:06:04.000000Z"
+}
+2025-03-07 23:31:54,316 - debug_insertion - INFO - Formatted data: {
+  "symbol": "FUN",
+  "company_name": "",
+  "analyst_firm": "Macquarie",
+  "analyst_name": "Paul Golding",
+  "rating": "buy",
+  "previous_rating": "",
+  "rating_change": "maintained",
+  "price_target": 55.0,
+  "previous_price_target": 0.0,
+  "date": "2025-03-07",
+  "notes": "",
+  "sector": "Consumer Cyclical",
+  "source": "Unusual Whales"
+}
+2025-03-07 23:31:54,316 - debug_insertion - INFO - 
+Testing Political Trades API...
+2025-03-07 23:31:54,316 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/political/trades with params {'days': 30, 'limit': 5}
+2025-03-07 23:31:54,416 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api/political/trades: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/political/trades?days=30&limit=5
+2025-03-07 23:31:54,420 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 23:31:56,426 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/political/trades with params {'days': 30, 'limit': 5}
+2025-03-07 23:31:56,501 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api/political/trades: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/political/trades?days=30&limit=5
+2025-03-07 23:31:56,502 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 23:31:58,508 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/political/trades with params {'days': 30, 'limit': 5}
+2025-03-07 23:31:58,591 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api/political/trades: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/political/trades?days=30&limit=5
+2025-03-07 23:31:58,592 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 23:31:58,592 - unusual_whales_api - ERROR - Failed to fetch political trades: API request failed: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/political/trades?days=30&limit=5
+2025-03-07 23:31:58,593 - debug_insertion - ERROR - ❌ Political Trades API test failed: API request failed: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/political/trades?days=30&limit=5
+2025-03-07 23:31:58,593 - debug_insertion - INFO - 
+Testing Dark Pool API...
+2025-03-07 23:31:58,593 - unusual_whales_api - INFO - Using cached data for darkpool/recent
+2025-03-07 23:31:58,593 - debug_insertion - INFO - ✅ Dark Pool API returned 5 records
+2025-03-07 23:31:58,594 - debug_insertion - INFO - Sample data: {
+  "canceled": false,
+  "executed_at": "2025-03-07T23:59:48Z",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "market_center": "L",
+  "nbbo_ask": "67.04",
+  "nbbo_ask_quantity": 50,
+  "nbbo_bid": "67.02",
+  "nbbo_bid_quantity": 151,
+  "premium": "200657.88",
+  "price": "67.02",
+  "sale_cond_codes": null,
+  "size": 2994,
+  "ticker": "TQQQ",
+  "tracking_id": 68388806529210,
+  "trade_code": null,
+  "trade_settlement": null,
+  "volume": 135040226
+}
+2025-03-07 23:31:58,594 - debug_insertion - INFO - Formatted data: {
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": 68388806529210,
+  "created_at": "2025-03-07T23:31:58.594630",
+  "updated_at": "2025-03-07T23:31:58.594637"
+}
+2025-03-07 23:31:58,594 - debug_insertion - INFO - 
+Testing FDA Calendar API...
+2025-03-07 23:31:58,595 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/market/fda-calendar with params {'limit': 5}
+2025-03-07 23:31:58,698 - debug_insertion - INFO - ✅ FDA Calendar API returned 5 records
+2025-03-07 23:31:58,698 - debug_insertion - INFO - Sample data: {
+  "benzinga_id": "60759aff6d58b100011ff425",
+  "catalyst": "Top-line Data Due",
+  "commentary": "",
+  "created_at": "2021-04-13T13:22:07Z",
+  "date_string": "2021-04-13",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "event_type": "Top-line Data Due",
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": "1553567611",
+  "nic_number": "",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "source_type": "Press Release",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "target_date": "2025-MID",
+  "ticker": "GERN",
+  "time": "07:44:07",
+  "unique_identifier": "60759aff6d58b100011ff425",
+  "updated_at": "2021-04-13T13:23:09Z"
+}
+2025-03-07 23:31:58,698 - debug_insertion - INFO - Formatted data: {
+  "catalyst": "Top-line Data Due",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": 1553567611,
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "ticker": "GERN",
+  "fetched_at": "2025-03-07T23:31:58.698621"
+}
+2025-03-07 23:31:58,698 - debug_insertion - INFO - 
+Testing Economic Calendar API...
+2025-03-07 23:31:58,698 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/market/economic-calendar with params None
+2025-03-07 23:31:58,780 - debug_insertion - INFO - ✅ Economic Calendar API returned 13 records
+2025-03-07 23:31:58,781 - debug_insertion - INFO - Sample data: {
+  "event": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "prev": null,
+  "reported_period": "March",
+  "time": "2025-03-14T15:00:00Z",
+  "type": "report"
+}
+2025-03-07 23:31:58,781 - debug_insertion - INFO - Formatted data: {
+  "event_name": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "previous_value": null,
+  "reported_period": "March",
+  "event_time": "2025-03-14T15:00:00Z",
+  "event_type": "report",
+  "change_value": null,
+  "change_percent": null,
+  "date": null,
+  "source": "UnusualWhales",
+  "timestamp": "2025-03-07T23:31:58.781210"
+}
+2025-03-07 23:31:58,781 - debug_insertion - INFO - 
+Testing Options Flow API...
+2025-03-07 23:31:58,985 - unusual_whales_api - ERROR - Error fetching option contracts for AAPL: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/options/contracts/AAPL
+2025-03-07 23:31:58,985 - debug_insertion - WARNING - ⚠️ Options Contracts API returned no contracts for AAPL
+2025-03-07 23:31:58,985 - debug_insertion - INFO - 
+Testing Institutions API...
+2025-03-07 23:31:58,986 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/institutions with params {'order_direction': 'desc', 'limit': 5}
+2025-03-07 23:31:59,294 - debug_insertion - INFO - ✅ Institutions API returned 5 records
+2025-03-07 23:31:59,294 - debug_insertion - INFO - Sample data: {
+  "buy_value": "320038761.56",
+  "call_holdings": "0",
+  "call_value": "0",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "debt_holdings": "0",
+  "debt_value": "0",
+  "description": null,
+  "filing_date": "2025-02-11",
+  "founder_img_url": null,
+  "fund_holdings": "2542033",
+  "fund_value": "80638728",
+  "is_hedge_fund": false,
+  "logo_url": null,
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "name_changes": [],
+  "people": [],
+  "pfd_holdings": "0",
+  "pfd_value": "0",
+  "put_holdings": "0",
+  "put_value": "0",
+  "sell_value": "-411968855.00",
+  "share_holdings": "15091366",
+  "share_value": "2562353027",
+  "short_name": "Adams Diversified Equity Fund",
+  "tags": [],
+  "total_value": "2642991755",
+  "warrant_holdings": "0",
+  "warrant_value": "0",
+  "website": null
+}
+2025-03-07 23:31:59,294 - debug_insertion - INFO - Formatted data: {
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "short_name": "Adams Diversified Equity Fund",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "filing_date": "2025-02-11",
+  "is_hedge_fund": false,
+  "description": null,
+  "website": null,
+  "logo_url": null,
+  "founder_img_url": null,
+  "people": [],
+  "tags": [],
+  "buy_value": 320038761.56,
+  "sell_value": -411968855.0,
+  "share_value": 2562353027.0,
+  "put_value": 0.0,
+  "call_value": 0.0,
+  "warrant_value": 0.0,
+  "fund_value": 80638728.0,
+  "pfd_value": 0.0,
+  "debt_value": 0.0,
+  "total_value": 2642991755.0,
+  "share_holdings": 15091366.0,
+  "put_holdings": 0.0,
+  "call_holdings": 0.0,
+  "warrant_holdings": 0.0,
+  "fund_holdings": 2542033.0,
+  "pfd_holdings": 0.0,
+  "debt_holdings": 0.0,
+  "total_holdings": null,
+  "timestamp": "2025-03-07T23:31:59.294779"
+}
+2025-03-07 23:31:59,294 - debug_insertion - INFO - Testing Institution Holdings for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:31:59,294 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/institution/ADAMS DIVERSIFIED EQUITY FUND, INC./holdings with params {'order_direction': 'desc', 'limit': 5}
+2025-03-07 23:31:59,446 - debug_insertion - INFO - ✅ Institution Holdings API returned 5 records
+2025-03-07 23:31:59,446 - debug_insertion - INFO - Formatted holding: {
+  "ticker": "AAPL",
+  "date": "2024-12-31",
+  "full_name": "APPLE",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "value": 213508092,
+  "avg_price": 26.8,
+  "close": 239.07,
+  "first_buy": "2013-12-31",
+  "price_first_buy": 17.4991008421,
+  "sector": "Technology",
+  "shares_outstanding": 15022073000.0,
+  "historical_units": [
+    852600,
+    904200,
+    1010100,
+    874100,
+    874100,
+    900400,
+    954500,
+    954500
+  ],
+  "timestamp": "2025-03-07T23:31:59.446382"
+}
+2025-03-07 23:31:59,446 - debug_insertion - INFO - Testing Institution Activity for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:31:59,446 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/institution/ADAMS DIVERSIFIED EQUITY FUND, INC./activity with params {'limit': 5}
+2025-03-07 23:31:59,548 - debug_insertion - INFO - ✅ Institution Activity API returned 5 records
+2025-03-07 23:31:59,548 - debug_insertion - INFO - Formatted activity: {
+  "ticker": "AAPL",
+  "filing_date": "2025-02-11",
+  "report_date": "2024-12-31",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "avg_price": 26.8,
+  "buy_price": null,
+  "sell_price": 235.63,
+  "close": 239.07,
+  "price_on_filing": 232.62,
+  "price_on_report": 250.42,
+  "shares_outstanding": 15022073000.0,
+  "timestamp": "2025-03-07T23:31:59.548608"
+}
+2025-03-07 23:31:59,548 - debug_insertion - INFO - 
+Testing Stock Info API...
+2025-03-07 23:31:59,548 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/stock/AAPL/info
+2025-03-07 23:31:59,548 - unusual_whales_api - INFO - Using cached data for stock/AAPL/info
+2025-03-07 23:31:59,548 - debug_insertion - INFO - ✅ Stock Info API returned data for AAPL
+2025-03-07 23:31:59,548 - debug_insertion - INFO - Sample data: {
+  "announce_time": "unknown",
+  "avg30_volume": "38187329.52380952381",
+  "full_name": "APPLE",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "marketcap": "3688670025150",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-05-01",
+  "sector": "Technology",
+  "short_description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "short_name": "APPLE",
+  "symbol": "AAPL",
+  "uw_tags": []
+}
+2025-03-07 23:31:59,549 - debug_insertion - INFO - Formatted data: {
+  "ticker": "AAPL",
+  "company_name": "APPLE",
+  "sector": "Technology",
+  "market_cap": 3688670025150.0,
+  "avg_volume": 38187329.52380952,
+  "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "current_price": 0,
+  "price_updated_at": "2025-03-08T07:31:59.549025",
+  "fetched_at": "2025-03-08T07:31:59.549014"
+}
+2025-03-07 23:31:59,549 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:31:59,549 - debug_insertion - INFO - VERIFYING TABLE SCHEMAS
+2025-03-07 23:31:59,549 - debug_insertion - INFO - ==========================================
+2025-03-07 23:31:59,663 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,664 - debug_insertion - ERROR - Error getting schema for insider_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:31:59,718 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,718 - debug_insertion - ERROR - Error getting schema for analyst_ratings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:31:59,770 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,771 - debug_insertion - ERROR - Error getting schema for dark_pool_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:31:59,820 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,821 - debug_insertion - ERROR - Error getting schema for economic_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:31:59,869 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,870 - debug_insertion - ERROR - Error getting schema for economic_events: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:31:59,923 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,923 - debug_insertion - ERROR - Error getting schema for economic_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:31:59,987 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:31:59,989 - debug_insertion - ERROR - Error getting schema for economic_news: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,045 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,045 - debug_insertion - ERROR - Error getting schema for economic_reports: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,107 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,107 - debug_insertion - ERROR - Error getting schema for fda_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,165 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,166 - debug_insertion - ERROR - Error getting schema for fred_metadata: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,219 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,219 - debug_insertion - ERROR - Error getting schema for fred_observations: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,288 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,289 - debug_insertion - ERROR - Error getting schema for fred_user_series: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,339 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,339 - debug_insertion - ERROR - Error getting schema for hedge_fund_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,394 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,395 - debug_insertion - ERROR - Error getting schema for institution_activity: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,444 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,444 - debug_insertion - ERROR - Error getting schema for institution_holdings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,499 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,500 - debug_insertion - ERROR - Error getting schema for institutions: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,558 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,559 - debug_insertion - ERROR - Error getting schema for market_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,616 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,617 - debug_insertion - ERROR - Error getting schema for options_flow_data: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,667 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,669 - debug_insertion - ERROR - Error getting schema for options_flow: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,727 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,729 - debug_insertion - ERROR - Error getting schema for political_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,777 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:32:00,778 - debug_insertion - ERROR - Error getting schema for stock_info: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:32:00,778 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:32:00,778 - debug_insertion - INFO - TESTING DIRECT DATA INSERTION INTO TABLES
+2025-03-07 23:32:00,778 - debug_insertion - INFO - ==========================================
+2025-03-07 23:32:00,778 - debug_insertion - INFO - 
+Testing direct insertion into insider_trades...
+2025-03-07 23:32:00,825 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:32:00,826 - debug_insertion - ERROR - ❌ Insertion into insider_trades failed: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "test-filing-id-123"'}
+2025-03-07 23:32:00,827 - debug_insertion - INFO - 
+Testing direct insertion into analyst_ratings...
+2025-03-07 23:32:00,884 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings "HTTP/2 400 Bad Request"
+2025-03-07 23:32:00,885 - debug_insertion - ERROR - ❌ Insertion into analyst_ratings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'price_target' column of 'analyst_ratings' in the schema cache"}
+2025-03-07 23:32:00,885 - debug_insertion - INFO - 
+Testing direct insertion into dark_pool_trades...
+2025-03-07 23:32:00,941 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:32:00,941 - debug_insertion - ERROR - ❌ Insertion into dark_pool_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'source' column of 'dark_pool_trades' in the schema cache"}
+2025-03-07 23:32:00,942 - debug_insertion - INFO - 
+Testing direct insertion into political_trades...
+2025-03-07 23:32:01,005 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades "HTTP/2 201 Created"
+2025-03-07 23:32:01,010 - debug_insertion - ERROR - ❌ Insertion into political_trades failed: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,010 - debug_insertion - INFO - 
+Testing direct insertion into fda_calendar...
+2025-03-07 23:32:01,067 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar "HTTP/2 400 Bad Request"
+2025-03-07 23:32:01,068 - debug_insertion - ERROR - ❌ Insertion into fda_calendar failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'source' column of 'fda_calendar' in the schema cache"}
+2025-03-07 23:32:01,068 - debug_insertion - INFO - 
+Testing direct insertion into economic_events...
+2025-03-07 23:32:01,125 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events "HTTP/2 400 Bad Request"
+2025-03-07 23:32:01,125 - debug_insertion - ERROR - ❌ Insertion into economic_events failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'source' column of 'economic_events' in the schema cache"}
+2025-03-07 23:32:01,126 - debug_insertion - INFO - 
+Testing direct insertion into options_flow_data...
+2025-03-07 23:32:01,176 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data "HTTP/2 404 Not Found"
+2025-03-07 23:32:01,177 - debug_insertion - ERROR - ❌ Insertion into options_flow_data failed: {}
+2025-03-07 23:32:01,177 - debug_insertion - INFO - 
+Testing direct insertion into institutions...
+2025-03-07 23:32:01,235 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions "HTTP/2 400 Bad Request"
+2025-03-07 23:32:01,236 - debug_insertion - ERROR - ❌ Insertion into institutions failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'source' column of 'institutions' in the schema cache"}
+2025-03-07 23:32:01,237 - debug_insertion - INFO - 
+Testing direct insertion into institution_holdings...
+2025-03-07 23:32:01,302 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings "HTTP/2 400 Bad Request"
+2025-03-07 23:32:01,302 - debug_insertion - ERROR - ❌ Insertion into institution_holdings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'date' column of 'institution_holdings' in the schema cache"}
+2025-03-07 23:32:01,302 - debug_insertion - INFO - 
+Testing direct insertion into stock_info...
+2025-03-07 23:32:01,359 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info "HTTP/2 400 Bad Request"
+2025-03-07 23:32:01,360 - debug_insertion - ERROR - ❌ Insertion into stock_info failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'source' column of 'stock_info' in the schema cache"}
+2025-03-07 23:32:01,360 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:32:01,360 - debug_insertion - INFO - CHECKING TABLE CONTENTS
+2025-03-07 23:32:01,360 - debug_insertion - INFO - ==========================================
+2025-03-07 23:32:01,417 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,417 - debug_insertion - ERROR - ❌ Error checking contents of insider_trades: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,496 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,506 - debug_insertion - ERROR - ❌ Error checking contents of analyst_ratings: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,573 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,575 - debug_insertion - ERROR - ❌ Error checking contents of dark_pool_trades: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,628 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_calendar?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:32:01,629 - debug_insertion - ERROR - ❌ Error checking contents of economic_calendar: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.economic_calendar" does not exist'}
+2025-03-07 23:32:01,686 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,687 - debug_insertion - ERROR - ❌ Error checking contents of economic_events: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,743 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,745 - debug_insertion - ERROR - ❌ Error checking contents of economic_indicators: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,800 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_news?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,801 - debug_insertion - ERROR - ❌ Error checking contents of economic_news: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,857 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_reports?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,859 - debug_insertion - ERROR - ❌ Error checking contents of economic_reports: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,928 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,931 - debug_insertion - ERROR - ❌ Error checking contents of fda_calendar: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:01,987 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_metadata?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:01,988 - debug_insertion - ERROR - ❌ Error checking contents of fred_metadata: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,042 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_observations?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,043 - debug_insertion - ERROR - ❌ Error checking contents of fred_observations: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,114 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_user_series?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,115 - debug_insertion - ERROR - ❌ Error checking contents of fred_user_series: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,171 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/hedge_fund_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,172 - debug_insertion - ERROR - ❌ Error checking contents of hedge_fund_trades: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,229 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_activity?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,230 - debug_insertion - ERROR - ❌ Error checking contents of institution_activity: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,292 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,293 - debug_insertion - ERROR - ❌ Error checking contents of institution_holdings: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,350 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,350 - debug_insertion - ERROR - ❌ Error checking contents of institutions: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,404 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/market_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,405 - debug_insertion - ERROR - ❌ Error checking contents of market_indicators: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,457 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:32:02,457 - debug_insertion - ERROR - ❌ Error checking contents of options_flow_data: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.options_flow_data" does not exist'}
+2025-03-07 23:32:02,513 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,514 - debug_insertion - ERROR - ❌ Error checking contents of options_flow: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,567 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,567 - debug_insertion - ERROR - ❌ Error checking contents of political_trades: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,624 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:32:02,626 - debug_insertion - ERROR - ❌ Error checking contents of stock_info: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:32:02,626 - debug_insertion - INFO - Completed Supabase Data Insertion Debug Tests
+2025-03-07 23:50:18,694 - debug_insertion - INFO - Successfully initialized Supabase client
+2025-03-07 23:50:18,694 - debug_insertion - INFO - Starting Supabase Data Insertion Debug Tests
+2025-03-07 23:50:18,856 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/test?select=%2A&limit=1 "HTTP/2 404 Not Found"
+2025-03-07 23:50:18,856 - debug_insertion - ERROR - Supabase connection test failed: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.test" does not exist'}
+2025-03-07 23:50:18,856 - debug_insertion - INFO - Testing Insider Trades API...
+2025-03-07 23:50:18,856 - unusual_whales_api - INFO - Using cached data for insider/trades
+2025-03-07 23:50:18,857 - debug_insertion - WARNING - ⚠️ Insider Trades API returned no data
+2025-03-07 23:50:18,857 - debug_insertion - INFO - 
+Testing Analyst Ratings API...
+2025-03-07 23:50:18,857 - unusual_whales_api - INFO - Using cached data for screener/analysts
+2025-03-07 23:50:18,857 - debug_insertion - INFO - ✅ Analyst Ratings API returned 5 records
+2025-03-07 23:50:18,857 - debug_insertion - INFO - Sample data: {
+  "action": "maintained",
+  "analyst_name": "Paul Golding",
+  "firm": "Macquarie",
+  "recommendation": "buy",
+  "sector": "Consumer Cyclical",
+  "target": "55.0000",
+  "ticker": "FUN",
+  "timestamp": "2025-03-07T23:06:04.000000Z"
+}
+2025-03-07 23:50:18,857 - debug_insertion - INFO - Formatted data: {
+  "symbol": "FUN",
+  "company_name": "",
+  "analyst_firm": "Macquarie",
+  "analyst_name": "Paul Golding",
+  "rating": "buy",
+  "previous_rating": "",
+  "rating_change": "maintained",
+  "price_target": 55.0,
+  "previous_price_target": 0.0,
+  "date": "2025-03-07",
+  "notes": "",
+  "sector": "Consumer Cyclical",
+  "source": "Unusual Whales"
+}
+2025-03-07 23:50:18,857 - debug_insertion - INFO - 
+Testing Political Trades API...
+2025-03-07 23:50:18,857 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/congress/recent-trades with params {'limit': 5, 'date': '2025-02-05'}
+2025-03-07 23:50:19,037 - debug_insertion - INFO - ✅ Political Trades API returned 5 records
+2025-03-07 23:50:19,037 - debug_insertion - INFO - Sample data: {
+  "amounts": "$1,000 - $15,000",
+  "filed_at_date": "2025-03-06",
+  "issuer": "Joint",
+  "member_type": "senate",
+  "notes": "",
+  "reporter": "John Boozman",
+  "ticker": "AXP",
+  "transaction_date": "2025-02-05",
+  "txn_type": "Buy"
+}
+2025-03-07 23:50:19,037 - debug_insertion - INFO - Formatted data: {
+  "id": "f0ce22dc-f611-5d6f-a2b8-c8b47c8ce70e",
+  "politician_name": "John Boozman",
+  "politician_type": "Senator",
+  "party": "",
+  "state": "",
+  "district": "",
+  "symbol": "AXP",
+  "company_name": "",
+  "transaction_date": "2025-02-05",
+  "transaction_type": "Buy",
+  "asset_type": "",
+  "asset_description": "",
+  "amount_range": "$1,000 - $15,000",
+  "estimated_value": 0,
+  "filing_date": "2025-03-06",
+  "source": "Unusual Whales",
+  "notes": "Issuer: Joint"
+}
+2025-03-07 23:50:19,037 - debug_insertion - INFO - 
+Testing Dark Pool API...
+2025-03-07 23:50:19,037 - unusual_whales_api - INFO - Using cached data for darkpool/recent
+2025-03-07 23:50:19,037 - debug_insertion - INFO - ✅ Dark Pool API returned 5 records
+2025-03-07 23:50:19,037 - debug_insertion - INFO - Sample data: {
+  "canceled": false,
+  "executed_at": "2025-03-07T23:59:48Z",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "market_center": "L",
+  "nbbo_ask": "67.04",
+  "nbbo_ask_quantity": 50,
+  "nbbo_bid": "67.02",
+  "nbbo_bid_quantity": 151,
+  "premium": "200657.88",
+  "price": "67.02",
+  "sale_cond_codes": null,
+  "size": 2994,
+  "ticker": "TQQQ",
+  "tracking_id": 68388806529210,
+  "trade_code": null,
+  "trade_settlement": null,
+  "volume": 135040226
+}
+2025-03-07 23:50:19,037 - debug_insertion - INFO - Formatted data: {
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": 68388806529210,
+  "created_at": "2025-03-07T23:50:19.037772",
+  "updated_at": "2025-03-07T23:50:19.037774"
+}
+2025-03-07 23:50:19,037 - debug_insertion - INFO - 
+Testing FDA Calendar API...
+2025-03-07 23:50:19,037 - unusual_whales_api - INFO - Using cached data for market/fda-calendar
+2025-03-07 23:50:19,037 - debug_insertion - INFO - ✅ FDA Calendar API returned 5 records
+2025-03-07 23:50:19,037 - debug_insertion - INFO - Sample data: {
+  "benzinga_id": "60759aff6d58b100011ff425",
+  "catalyst": "Top-line Data Due",
+  "commentary": "",
+  "created_at": "2021-04-13T13:22:07Z",
+  "date_string": "2021-04-13",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "event_type": "Top-line Data Due",
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": "1553567611",
+  "nic_number": "",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "source_type": "Press Release",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "target_date": "2025-MID",
+  "ticker": "GERN",
+  "time": "07:44:07",
+  "unique_identifier": "60759aff6d58b100011ff425",
+  "updated_at": "2021-04-13T13:23:09Z"
+}
+2025-03-07 23:50:19,038 - debug_insertion - INFO - Formatted data: {
+  "catalyst": "Top-line Data Due",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": 1553567611,
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "ticker": "GERN",
+  "fetched_at": "2025-03-07T23:50:19.037988"
+}
+2025-03-07 23:50:19,038 - debug_insertion - INFO - 
+Testing Economic Calendar API...
+2025-03-07 23:50:19,038 - unusual_whales_api - INFO - Using cached data for market/economic-calendar
+2025-03-07 23:50:19,038 - debug_insertion - INFO - ✅ Economic Calendar API returned 13 records
+2025-03-07 23:50:19,038 - debug_insertion - INFO - Sample data: {
+  "event": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "prev": null,
+  "reported_period": "March",
+  "time": "2025-03-14T15:00:00Z",
+  "type": "report"
+}
+2025-03-07 23:50:19,038 - debug_insertion - INFO - Formatted data: {
+  "event_name": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "previous_value": null,
+  "reported_period": "March",
+  "event_time": "2025-03-14T15:00:00Z",
+  "event_type": "report",
+  "change_value": null,
+  "change_percent": null,
+  "date": null,
+  "source": "UnusualWhales",
+  "timestamp": "2025-03-07T23:50:19.038169"
+}
+2025-03-07 23:50:19,038 - debug_insertion - INFO - 
+Testing Options Flow API...
+2025-03-07 23:50:19,249 - unusual_whales_api - ERROR - Error fetching option contracts for AAPL: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/options/contracts/AAPL
+2025-03-07 23:50:19,249 - debug_insertion - WARNING - ⚠️ Options Contracts API returned no contracts for AAPL
+2025-03-07 23:50:19,250 - debug_insertion - INFO - 
+Testing Institutions API...
+2025-03-07 23:50:19,250 - unusual_whales_api - INFO - Using cached data for institutions
+2025-03-07 23:50:19,250 - debug_insertion - INFO - ✅ Institutions API returned 5 records
+2025-03-07 23:50:19,250 - debug_insertion - INFO - Sample data: {
+  "buy_value": "320038761.56",
+  "call_holdings": "0",
+  "call_value": "0",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "debt_holdings": "0",
+  "debt_value": "0",
+  "description": null,
+  "filing_date": "2025-02-11",
+  "founder_img_url": null,
+  "fund_holdings": "2542033",
+  "fund_value": "80638728",
+  "is_hedge_fund": false,
+  "logo_url": null,
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "name_changes": [],
+  "people": [],
+  "pfd_holdings": "0",
+  "pfd_value": "0",
+  "put_holdings": "0",
+  "put_value": "0",
+  "sell_value": "-411968855.00",
+  "share_holdings": "15091366",
+  "share_value": "2562353027",
+  "short_name": "Adams Diversified Equity Fund",
+  "tags": [],
+  "total_value": "2642991755",
+  "warrant_holdings": "0",
+  "warrant_value": "0",
+  "website": null
+}
+2025-03-07 23:50:19,250 - debug_insertion - INFO - Formatted data: {
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "short_name": "Adams Diversified Equity Fund",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "filing_date": "2025-02-11",
+  "is_hedge_fund": false,
+  "description": null,
+  "website": null,
+  "logo_url": null,
+  "founder_img_url": null,
+  "people": [],
+  "tags": [],
+  "buy_value": 320038761.56,
+  "sell_value": -411968855.0,
+  "share_value": 2562353027.0,
+  "put_value": 0.0,
+  "call_value": 0.0,
+  "warrant_value": 0.0,
+  "fund_value": 80638728.0,
+  "pfd_value": 0.0,
+  "debt_value": 0.0,
+  "total_value": 2642991755.0,
+  "share_holdings": 15091366.0,
+  "put_holdings": 0.0,
+  "call_holdings": 0.0,
+  "warrant_holdings": 0.0,
+  "fund_holdings": 2542033.0,
+  "pfd_holdings": 0.0,
+  "debt_holdings": 0.0,
+  "total_holdings": null,
+  "timestamp": "2025-03-07T23:50:19.250751"
+}
+2025-03-07 23:50:19,250 - debug_insertion - INFO - Testing Institution Holdings for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:50:19,250 - unusual_whales_api - INFO - Using cached data for institution/ADAMS DIVERSIFIED EQUITY FUND, INC./holdings
+2025-03-07 23:50:19,251 - debug_insertion - INFO - ✅ Institution Holdings API returned 5 records
+2025-03-07 23:50:19,251 - debug_insertion - INFO - Formatted holding: {
+  "ticker": "AAPL",
+  "date": "2024-12-31",
+  "full_name": "APPLE",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "value": 213508092,
+  "avg_price": 26.8,
+  "close": 239.07,
+  "first_buy": "2013-12-31",
+  "price_first_buy": 17.4991008421,
+  "sector": "Technology",
+  "shares_outstanding": 15022073000.0,
+  "historical_units": [
+    852600,
+    904200,
+    1010100,
+    874100,
+    874100,
+    900400,
+    954500,
+    954500
+  ],
+  "timestamp": "2025-03-07T23:50:19.251045"
+}
+2025-03-07 23:50:19,251 - debug_insertion - INFO - Testing Institution Activity for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:50:19,251 - unusual_whales_api - INFO - Using cached data for institution/ADAMS DIVERSIFIED EQUITY FUND, INC./activity
+2025-03-07 23:50:19,251 - debug_insertion - INFO - ✅ Institution Activity API returned 5 records
+2025-03-07 23:50:19,251 - debug_insertion - INFO - Formatted activity: {
+  "ticker": "AAPL",
+  "filing_date": "2025-02-11",
+  "report_date": "2024-12-31",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "avg_price": 26.8,
+  "buy_price": null,
+  "sell_price": 235.63,
+  "close": 239.07,
+  "price_on_filing": 232.62,
+  "price_on_report": 250.42,
+  "shares_outstanding": 15022073000.0,
+  "timestamp": "2025-03-07T23:50:19.251304"
+}
+2025-03-07 23:50:19,251 - debug_insertion - INFO - 
+Testing Stock Info API...
+2025-03-07 23:50:19,251 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/stock/AAPL/info
+2025-03-07 23:50:19,251 - unusual_whales_api - INFO - Using cached data for stock/AAPL/info
+2025-03-07 23:50:19,251 - debug_insertion - INFO - ✅ Stock Info API returned data for AAPL
+2025-03-07 23:50:19,251 - debug_insertion - INFO - Sample data: {
+  "announce_time": "unknown",
+  "avg30_volume": "38187329.52380952381",
+  "full_name": "APPLE",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "marketcap": "3688670025150",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-05-01",
+  "sector": "Technology",
+  "short_description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "short_name": "APPLE",
+  "symbol": "AAPL",
+  "uw_tags": []
+}
+2025-03-07 23:50:19,251 - debug_insertion - INFO - Formatted data: {
+  "ticker": "AAPL",
+  "company_name": "APPLE",
+  "sector": "Technology",
+  "market_cap": 3688670025150.0,
+  "avg_volume": 38187329.52380952,
+  "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "current_price": 0,
+  "price_updated_at": "2025-03-08T07:50:19.251561",
+  "fetched_at": "2025-03-08T07:50:19.251550"
+}
+2025-03-07 23:50:19,251 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:50:19,251 - debug_insertion - INFO - TESTING DIRECT DATA INSERTION INTO TABLES
+2025-03-07 23:50:19,251 - debug_insertion - INFO - ==========================================
+2025-03-07 23:50:19,251 - debug_insertion - INFO - 
+Testing direct insertion into insider_trades...
+2025-03-07 23:50:19,320 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:50:19,321 - debug_insertion - ERROR - ❌ Insertion into insider_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'relation' column of 'insider_trades' in the schema cache"}
+2025-03-07 23:50:19,321 - debug_insertion - INFO - 
+Testing direct insertion into analyst_ratings...
+2025-03-07 23:50:19,404 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings "HTTP/2 400 Bad Request"
+2025-03-07 23:50:19,405 - debug_insertion - ERROR - ❌ Insertion into analyst_ratings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'analyst_firm' column of 'analyst_ratings' in the schema cache"}
+2025-03-07 23:50:19,405 - debug_insertion - INFO - 
+Testing direct insertion into dark_pool_trades...
+2025-03-07 23:50:19,496 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:50:19,502 - debug_insertion - INFO - ✅ Successfully inserted test data into dark_pool_trades
+2025-03-07 23:50:19,502 - debug_insertion - INFO - 
+Testing direct insertion into political_trades...
+2025-03-07 23:50:19,591 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:50:19,591 - debug_insertion - ERROR - ❌ Insertion into political_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'amount' column of 'political_trades' in the schema cache"}
+2025-03-07 23:50:19,591 - debug_insertion - INFO - 
+Testing direct insertion into fda_calendar...
+2025-03-07 23:50:19,701 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar "HTTP/2 201 Created"
+2025-03-07 23:50:19,702 - debug_insertion - INFO - ✅ Successfully inserted test data into fda_calendar
+2025-03-07 23:50:19,702 - debug_insertion - INFO - 
+Testing direct insertion into economic_events...
+2025-03-07 23:50:19,783 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events "HTTP/2 400 Bad Request"
+2025-03-07 23:50:19,785 - debug_insertion - ERROR - ❌ Insertion into economic_events failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'event_name' column of 'economic_events' in the schema cache"}
+2025-03-07 23:50:19,785 - debug_insertion - INFO - 
+Testing direct insertion into options_flow_data...
+2025-03-07 23:50:19,952 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data "HTTP/2 404 Not Found"
+2025-03-07 23:50:19,952 - debug_insertion - ERROR - ❌ Insertion into options_flow_data failed: {}
+2025-03-07 23:50:19,952 - debug_insertion - INFO - 
+Testing direct insertion into institutions...
+2025-03-07 23:50:20,031 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions "HTTP/2 400 Bad Request"
+2025-03-07 23:50:20,031 - debug_insertion - ERROR - ❌ Insertion into institutions failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'description' column of 'institutions' in the schema cache"}
+2025-03-07 23:50:20,031 - debug_insertion - INFO - 
+Testing direct insertion into institution_holdings...
+2025-03-07 23:50:20,087 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings "HTTP/2 400 Bad Request"
+2025-03-07 23:50:20,087 - debug_insertion - ERROR - ❌ Insertion into institution_holdings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'full_name' column of 'institution_holdings' in the schema cache"}
+2025-03-07 23:50:20,087 - debug_insertion - INFO - 
+Testing direct insertion into stock_info...
+2025-03-07 23:50:20,154 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info "HTTP/2 201 Created"
+2025-03-07 23:50:20,154 - debug_insertion - INFO - ✅ Successfully inserted test data into stock_info
+2025-03-07 23:50:20,154 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:50:20,154 - debug_insertion - INFO - CHECKING TABLE CONTENTS
+2025-03-07 23:50:20,154 - debug_insertion - INFO - ==========================================
+2025-03-07 23:50:20,265 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,267 - debug_insertion - INFO - ✅ insider_trades has 50 records
+2025-03-07 23:50:20,267 - debug_insertion - INFO - Sample record: {
+  "id": "73bb5753-1f39-4c14-9ca5-262780dbc008",
+  "filing_id": "64a035a8-230c-42e8-925e-1b414f0e17e5",
+  "symbol": "MGPI",
+  "company_name": null,
+  "insider_name": "MINGUS LORI L.S.",
+  "insider_title": null,
+  "transaction_type": "S",
+  "transaction_date": "2025-03-10",
+  "shares": -11668,
+  "price": 34.0,
+  "total_value": null,
+  "shares_owned_after": 0,
+  "filing_date": "2025-03-07",
+  "source": "Unusual Whales",
+  "created_at": "2025-03-07T22:04:24.64478+00:00",
+  "updated_at": "2025-03-07T22:04:24.644782+00:00"
+}
+2025-03-07 23:50:20,382 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,384 - debug_insertion - INFO - ✅ analyst_ratings has 500 records
+2025-03-07 23:50:20,384 - debug_insertion - INFO - Sample record: {
+  "id": "29d31b4b-b599-4918-84ef-931af75acd70",
+  "symbol": "FUN",
+  "company_name": "",
+  "firm": "Macquarie",
+  "analyst": "Paul Golding",
+  "new_rating": "buy",
+  "old_rating": "",
+  "rating_change": "maintained",
+  "new_price_target": 55.0,
+  "old_price_target": 0.0,
+  "price_target_change_percent": 0,
+  "current_price": 0,
+  "sector": "Consumer Cyclical",
+  "rating_date": "2025-03-07",
+  "action": null,
+  "source": null,
+  "created_at": "2025-03-07T22:16:12.653066+00:00",
+  "updated_at": "2025-03-07T22:16:12.65307+00:00"
+}
+2025-03-07 23:50:20,449 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,450 - debug_insertion - INFO - ✅ dark_pool_trades has 6 records
+2025-03-07 23:50:20,450 - debug_insertion - INFO - Sample record: {
+  "id": "da57e961-fd6f-42ed-b532-af424314cfed",
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48+00:00",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": "68388806529210",
+  "created_at": "2025-03-07T23:26:38.07288+00:00",
+  "updated_at": "2025-03-07T23:26:38.072882+00:00"
+}
+2025-03-07 23:50:20,506 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_calendar?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:50:20,506 - debug_insertion - ERROR - ❌ Error checking contents of economic_calendar: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.economic_calendar" does not exist'}
+2025-03-07 23:50:20,570 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,571 - debug_insertion - WARNING - ⚠️ economic_events exists but is empty
+2025-03-07 23:50:20,667 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,668 - debug_insertion - WARNING - ⚠️ economic_indicators exists but is empty
+2025-03-07 23:50:20,734 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_news?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,735 - debug_insertion - WARNING - ⚠️ economic_news exists but is empty
+2025-03-07 23:50:20,792 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_reports?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,793 - debug_insertion - WARNING - ⚠️ economic_reports exists but is empty
+2025-03-07 23:50:20,924 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,926 - debug_insertion - INFO - ✅ fda_calendar has 161 records
+2025-03-07 23:50:20,927 - debug_insertion - INFO - Sample record: {
+  "id": "41107dd3-bcea-5d66-a595-d6b3d503dff4",
+  "ticker": "GERN",
+  "drug": "Imetelstat (IMpactMF)",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "catalyst": "Top-line Data Due",
+  "indication": "Refractory Myelofibrosis (MF)",
+  "start_date": "2021-04-13",
+  "end_date": null,
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "status": "Phase 3",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "marketcap": 1553567611,
+  "has_options": true,
+  "created_at": "2025-03-08T07:15:26.458847+00:00",
+  "updated_at": "2025-03-08T07:15:26.458847+00:00",
+  "fetched_at": "2025-03-07T23:15:26.294549+00:00"
+}
+2025-03-07 23:50:20,997 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_metadata?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:20,998 - debug_insertion - WARNING - ⚠️ fred_metadata exists but is empty
+2025-03-07 23:50:21,116 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_observations?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,116 - debug_insertion - WARNING - ⚠️ fred_observations exists but is empty
+2025-03-07 23:50:21,220 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_user_series?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,223 - debug_insertion - WARNING - ⚠️ fred_user_series exists but is empty
+2025-03-07 23:50:21,289 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/hedge_fund_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,290 - debug_insertion - WARNING - ⚠️ hedge_fund_trades exists but is empty
+2025-03-07 23:50:21,380 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_activity?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,382 - debug_insertion - WARNING - ⚠️ institution_activity exists but is empty
+2025-03-07 23:50:21,435 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,436 - debug_insertion - WARNING - ⚠️ institution_holdings exists but is empty
+2025-03-07 23:50:21,584 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,585 - debug_insertion - WARNING - ⚠️ institutions exists but is empty
+2025-03-07 23:50:21,650 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/market_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,651 - debug_insertion - WARNING - ⚠️ market_indicators exists but is empty
+2025-03-07 23:50:21,719 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:50:21,720 - debug_insertion - ERROR - ❌ Error checking contents of options_flow_data: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.options_flow_data" does not exist'}
+2025-03-07 23:50:21,780 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,780 - debug_insertion - WARNING - ⚠️ options_flow exists but is empty
+2025-03-07 23:50:21,876 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:21,880 - debug_insertion - INFO - ✅ political_trades has 183 records
+2025-03-07 23:50:21,880 - debug_insertion - INFO - Sample record: {
+  "id": "c1efa24e-b519-4e58-b5d8-169789d181bb",
+  "politician_name": "Test Politician",
+  "politician_type": null,
+  "party": "Test Party",
+  "state": null,
+  "district": null,
+  "symbol": "TEST",
+  "company_name": null,
+  "transaction_date": "2025-03-07",
+  "transaction_type": "Purchase",
+  "asset_type": null,
+  "asset_description": null,
+  "amount_range": "$1,001 - $15,000",
+  "estimated_value": null,
+  "filing_date": null,
+  "source": "DEBUG TEST",
+  "notes": null,
+  "created_at": "2025-03-07T23:32:00.942049+00:00",
+  "updated_at": "2025-03-07T23:32:00.942057+00:00"
+}
+2025-03-07 23:50:22,095 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:50:22,097 - debug_insertion - INFO - ✅ stock_info has 11 records
+2025-03-07 23:50:22,098 - debug_insertion - INFO - Sample record: {
+  "id": "bc79fef1-8218-4b92-8151-31cc46c2c759",
+  "ticker": "GOOG",
+  "company_name": "ALPHABET",
+  "sector": "Communication Services",
+  "industry": null,
+  "exchange": null,
+  "market_cap": 1879382770000.0,
+  "shares_outstanding": null,
+  "float": null,
+  "current_price": 0,
+  "open_price": null,
+  "daily_high": null,
+  "daily_low": null,
+  "daily_volume": null,
+  "fifty_two_week_high": null,
+  "fifty_two_week_low": null,
+  "pe_ratio": null,
+  "eps": null,
+  "dividend_yield": null,
+  "beta": null,
+  "avg_volume": 14530209.904761905,
+  "description": "Alphabet Inc. is an American multinational technology conglomerate holding company headquartered in Mountain View, California. It was created through ...",
+  "company_website": null,
+  "headquarters": null,
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/GOOG.png",
+  "ceo": null,
+  "employees": null,
+  "founded_year": null,
+  "market_time": null,
+  "price_updated_at": "2025-03-08T07:50:05.072699+00:00",
+  "fetched_at": "2025-03-07T23:50:05.072703+00:00",
+  "created_at": "2025-03-08T07:50:05.153688+00:00",
+  "updated_at": "2025-03-08T07:50:05.153688+00:00"
+}
+2025-03-07 23:50:22,098 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:50:22,098 - debug_insertion - INFO - VERIFYING TABLE SCHEMAS
+2025-03-07 23:50:22,098 - debug_insertion - INFO - ==========================================
+2025-03-07 23:50:22,170 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,170 - debug_insertion - ERROR - Error getting schema for insider_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,170 - debug_insertion - WARNING - ⚠️ Could not verify schema for insider_trades
+2025-03-07 23:50:22,230 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,230 - debug_insertion - ERROR - Error getting schema for analyst_ratings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,230 - debug_insertion - WARNING - ⚠️ Could not verify schema for analyst_ratings
+2025-03-07 23:50:22,285 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,286 - debug_insertion - ERROR - Error getting schema for dark_pool_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,287 - debug_insertion - WARNING - ⚠️ Could not verify schema for dark_pool_trades
+2025-03-07 23:50:22,362 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,363 - debug_insertion - ERROR - Error getting schema for economic_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,363 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_calendar
+2025-03-07 23:50:22,418 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,419 - debug_insertion - ERROR - Error getting schema for economic_events: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,420 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_events
+2025-03-07 23:50:22,492 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,492 - debug_insertion - ERROR - Error getting schema for economic_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,492 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_indicators
+2025-03-07 23:50:22,568 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,569 - debug_insertion - ERROR - Error getting schema for economic_news: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,569 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_news
+2025-03-07 23:50:22,661 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,662 - debug_insertion - ERROR - Error getting schema for economic_reports: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,662 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_reports
+2025-03-07 23:50:22,748 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,748 - debug_insertion - ERROR - Error getting schema for fda_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,748 - debug_insertion - WARNING - ⚠️ Could not verify schema for fda_calendar
+2025-03-07 23:50:22,819 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,820 - debug_insertion - ERROR - Error getting schema for fred_metadata: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,820 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_metadata
+2025-03-07 23:50:22,881 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,882 - debug_insertion - ERROR - Error getting schema for fred_observations: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,882 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_observations
+2025-03-07 23:50:22,945 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:22,945 - debug_insertion - ERROR - Error getting schema for fred_user_series: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:22,946 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_user_series
+2025-03-07 23:50:22,999 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,000 - debug_insertion - ERROR - Error getting schema for hedge_fund_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,000 - debug_insertion - WARNING - ⚠️ Could not verify schema for hedge_fund_trades
+2025-03-07 23:50:23,070 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,071 - debug_insertion - ERROR - Error getting schema for institution_activity: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,071 - debug_insertion - WARNING - ⚠️ Could not verify schema for institution_activity
+2025-03-07 23:50:23,138 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,138 - debug_insertion - ERROR - Error getting schema for institution_holdings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,138 - debug_insertion - WARNING - ⚠️ Could not verify schema for institution_holdings
+2025-03-07 23:50:23,193 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,193 - debug_insertion - ERROR - Error getting schema for institutions: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,193 - debug_insertion - WARNING - ⚠️ Could not verify schema for institutions
+2025-03-07 23:50:23,255 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,256 - debug_insertion - ERROR - Error getting schema for market_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,256 - debug_insertion - WARNING - ⚠️ Could not verify schema for market_indicators
+2025-03-07 23:50:23,312 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,312 - debug_insertion - ERROR - Error getting schema for options_flow_data: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,312 - debug_insertion - WARNING - ⚠️ Could not verify schema for options_flow_data
+2025-03-07 23:50:23,367 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,367 - debug_insertion - ERROR - Error getting schema for options_flow: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,367 - debug_insertion - WARNING - ⚠️ Could not verify schema for options_flow
+2025-03-07 23:50:23,420 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,421 - debug_insertion - ERROR - Error getting schema for political_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,421 - debug_insertion - WARNING - ⚠️ Could not verify schema for political_trades
+2025-03-07 23:50:23,485 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:50:23,486 - debug_insertion - ERROR - Error getting schema for stock_info: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:50:23,486 - debug_insertion - WARNING - ⚠️ Could not verify schema for stock_info
+2025-03-07 23:50:23,486 - debug_insertion - INFO - Completed Supabase Data Insertion Debug Tests
+2025-03-07 23:53:18,067 - debug_insertion - INFO - Successfully initialized Supabase client
+2025-03-07 23:53:18,067 - debug_insertion - INFO - Starting Supabase Data Insertion Debug Tests
+2025-03-07 23:53:18,282 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/test?select=%2A&limit=1 "HTTP/2 404 Not Found"
+2025-03-07 23:53:18,283 - debug_insertion - ERROR - Supabase connection test failed: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.test" does not exist'}
+2025-03-07 23:53:18,283 - debug_insertion - INFO - Testing Insider Trades API...
+2025-03-07 23:53:18,283 - unusual_whales_api - INFO - Using cached data for insider/trades
+2025-03-07 23:53:18,283 - debug_insertion - WARNING - ⚠️ Insider Trades API returned no data
+2025-03-07 23:53:18,283 - debug_insertion - INFO - 
+Testing Analyst Ratings API...
+2025-03-07 23:53:18,283 - unusual_whales_api - INFO - Using cached data for screener/analysts
+2025-03-07 23:53:18,284 - debug_insertion - INFO - ✅ Analyst Ratings API returned 5 records
+2025-03-07 23:53:18,284 - debug_insertion - INFO - Sample data: {
+  "action": "maintained",
+  "analyst_name": "Paul Golding",
+  "firm": "Macquarie",
+  "recommendation": "buy",
+  "sector": "Consumer Cyclical",
+  "target": "55.0000",
+  "ticker": "FUN",
+  "timestamp": "2025-03-07T23:06:04.000000Z"
+}
+2025-03-07 23:53:18,284 - debug_insertion - INFO - Formatted data: {
+  "symbol": "FUN",
+  "company_name": "",
+  "analyst_firm": "Macquarie",
+  "analyst_name": "Paul Golding",
+  "rating": "buy",
+  "previous_rating": "",
+  "rating_change": "maintained",
+  "price_target": 55.0,
+  "previous_price_target": 0.0,
+  "date": "2025-03-07",
+  "notes": "",
+  "sector": "Consumer Cyclical",
+  "source": "Unusual Whales"
+}
+2025-03-07 23:53:18,284 - debug_insertion - INFO - 
+Testing Political Trades API...
+2025-03-07 23:53:18,284 - unusual_whales_api - INFO - Using cached data for congress/recent-trades
+2025-03-07 23:53:18,284 - debug_insertion - INFO - ✅ Political Trades API returned 5 records
+2025-03-07 23:53:18,284 - debug_insertion - INFO - Sample data: {
+  "amounts": "$1,000 - $15,000",
+  "filed_at_date": "2025-03-06",
+  "issuer": "Joint",
+  "member_type": "senate",
+  "notes": "",
+  "reporter": "John Boozman",
+  "ticker": "AXP",
+  "transaction_date": "2025-02-05",
+  "txn_type": "Buy"
+}
+2025-03-07 23:53:18,284 - debug_insertion - INFO - Formatted data: {
+  "id": "f0ce22dc-f611-5d6f-a2b8-c8b47c8ce70e",
+  "politician_name": "John Boozman",
+  "politician_type": "Senator",
+  "party": "",
+  "state": "",
+  "district": "",
+  "symbol": "AXP",
+  "company_name": "",
+  "transaction_date": "2025-02-05",
+  "transaction_type": "Buy",
+  "asset_type": "",
+  "asset_description": "",
+  "amount_range": "$1,000 - $15,000",
+  "estimated_value": 0,
+  "filing_date": "2025-03-06",
+  "source": "Unusual Whales",
+  "notes": "Issuer: Joint"
+}
+2025-03-07 23:53:18,284 - debug_insertion - INFO - 
+Testing Dark Pool API...
+2025-03-07 23:53:18,284 - unusual_whales_api - INFO - Using cached data for darkpool/recent
+2025-03-07 23:53:18,284 - debug_insertion - INFO - ✅ Dark Pool API returned 5 records
+2025-03-07 23:53:18,284 - debug_insertion - INFO - Sample data: {
+  "canceled": false,
+  "executed_at": "2025-03-07T23:59:48Z",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "market_center": "L",
+  "nbbo_ask": "67.04",
+  "nbbo_ask_quantity": 50,
+  "nbbo_bid": "67.02",
+  "nbbo_bid_quantity": 151,
+  "premium": "200657.88",
+  "price": "67.02",
+  "sale_cond_codes": null,
+  "size": 2994,
+  "ticker": "TQQQ",
+  "tracking_id": 68388806529210,
+  "trade_code": null,
+  "trade_settlement": null,
+  "volume": 135040226
+}
+2025-03-07 23:53:18,284 - debug_insertion - INFO - Formatted data: {
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": 68388806529210,
+  "created_at": "2025-03-07T23:53:18.284802",
+  "updated_at": "2025-03-07T23:53:18.284804"
+}
+2025-03-07 23:53:18,284 - debug_insertion - INFO - 
+Testing FDA Calendar API...
+2025-03-07 23:53:18,284 - unusual_whales_api - INFO - Using cached data for market/fda-calendar
+2025-03-07 23:53:18,284 - debug_insertion - INFO - ✅ FDA Calendar API returned 5 records
+2025-03-07 23:53:18,285 - debug_insertion - INFO - Sample data: {
+  "benzinga_id": "60759aff6d58b100011ff425",
+  "catalyst": "Top-line Data Due",
+  "commentary": "",
+  "created_at": "2021-04-13T13:22:07Z",
+  "date_string": "2021-04-13",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "event_type": "Top-line Data Due",
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": "1553567611",
+  "nic_number": "",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "source_type": "Press Release",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "target_date": "2025-MID",
+  "ticker": "GERN",
+  "time": "07:44:07",
+  "unique_identifier": "60759aff6d58b100011ff425",
+  "updated_at": "2021-04-13T13:23:09Z"
+}
+2025-03-07 23:53:18,285 - debug_insertion - INFO - Formatted data: {
+  "catalyst": "Top-line Data Due",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": 1553567611,
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "ticker": "GERN",
+  "fetched_at": "2025-03-07T23:53:18.285054"
+}
+2025-03-07 23:53:18,285 - debug_insertion - INFO - 
+Testing Economic Calendar API...
+2025-03-07 23:53:18,285 - unusual_whales_api - INFO - Using cached data for market/economic-calendar
+2025-03-07 23:53:18,285 - debug_insertion - INFO - ✅ Economic Calendar API returned 13 records
+2025-03-07 23:53:18,285 - debug_insertion - INFO - Sample data: {
+  "event": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "prev": null,
+  "reported_period": "March",
+  "time": "2025-03-14T15:00:00Z",
+  "type": "report"
+}
+2025-03-07 23:53:18,285 - debug_insertion - INFO - Formatted data: {
+  "event_name": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "previous_value": null,
+  "reported_period": "March",
+  "event_time": "2025-03-14T15:00:00Z",
+  "event_type": "report",
+  "change_value": null,
+  "change_percent": null,
+  "date": null,
+  "source": "UnusualWhales",
+  "timestamp": "2025-03-07T23:53:18.285253"
+}
+2025-03-07 23:53:18,285 - debug_insertion - INFO - 
+Testing Options Flow API...
+2025-03-07 23:53:18,604 - unusual_whales_api - ERROR - Error fetching option contracts for AAPL: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/options/contracts/AAPL
+2025-03-07 23:53:18,605 - debug_insertion - WARNING - ⚠️ Options Contracts API returned no contracts for AAPL
+2025-03-07 23:53:18,605 - debug_insertion - INFO - 
+Testing Institutions API...
+2025-03-07 23:53:18,605 - unusual_whales_api - INFO - Using cached data for institutions
+2025-03-07 23:53:18,605 - debug_insertion - INFO - ✅ Institutions API returned 5 records
+2025-03-07 23:53:18,605 - debug_insertion - INFO - Sample data: {
+  "buy_value": "320038761.56",
+  "call_holdings": "0",
+  "call_value": "0",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "debt_holdings": "0",
+  "debt_value": "0",
+  "description": null,
+  "filing_date": "2025-02-11",
+  "founder_img_url": null,
+  "fund_holdings": "2542033",
+  "fund_value": "80638728",
+  "is_hedge_fund": false,
+  "logo_url": null,
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "name_changes": [],
+  "people": [],
+  "pfd_holdings": "0",
+  "pfd_value": "0",
+  "put_holdings": "0",
+  "put_value": "0",
+  "sell_value": "-411968855.00",
+  "share_holdings": "15091366",
+  "share_value": "2562353027",
+  "short_name": "Adams Diversified Equity Fund",
+  "tags": [],
+  "total_value": "2642991755",
+  "warrant_holdings": "0",
+  "warrant_value": "0",
+  "website": null
+}
+2025-03-07 23:53:18,605 - debug_insertion - INFO - Formatted data: {
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "short_name": "Adams Diversified Equity Fund",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "filing_date": "2025-02-11",
+  "is_hedge_fund": false,
+  "description": null,
+  "website": null,
+  "logo_url": null,
+  "founder_img_url": null,
+  "people": [],
+  "tags": [],
+  "buy_value": 320038761.56,
+  "sell_value": -411968855.0,
+  "share_value": 2562353027.0,
+  "put_value": 0.0,
+  "call_value": 0.0,
+  "warrant_value": 0.0,
+  "fund_value": 80638728.0,
+  "pfd_value": 0.0,
+  "debt_value": 0.0,
+  "total_value": 2642991755.0,
+  "share_holdings": 15091366.0,
+  "put_holdings": 0.0,
+  "call_holdings": 0.0,
+  "warrant_holdings": 0.0,
+  "fund_holdings": 2542033.0,
+  "pfd_holdings": 0.0,
+  "debt_holdings": 0.0,
+  "total_holdings": null,
+  "timestamp": "2025-03-07T23:53:18.605703"
+}
+2025-03-07 23:53:18,605 - debug_insertion - INFO - Testing Institution Holdings for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:53:18,605 - unusual_whales_api - INFO - Using cached data for institution/ADAMS DIVERSIFIED EQUITY FUND, INC./holdings
+2025-03-07 23:53:18,606 - debug_insertion - INFO - ✅ Institution Holdings API returned 5 records
+2025-03-07 23:53:18,606 - debug_insertion - INFO - Formatted holding: {
+  "ticker": "AAPL",
+  "date": "2024-12-31",
+  "full_name": "APPLE",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "value": 213508092,
+  "avg_price": 26.8,
+  "close": 239.07,
+  "first_buy": "2013-12-31",
+  "price_first_buy": 17.4991008421,
+  "sector": "Technology",
+  "shares_outstanding": 15022073000.0,
+  "historical_units": [
+    852600,
+    904200,
+    1010100,
+    874100,
+    874100,
+    900400,
+    954500,
+    954500
+  ],
+  "timestamp": "2025-03-07T23:53:18.606077"
+}
+2025-03-07 23:53:18,606 - debug_insertion - INFO - Testing Institution Activity for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:53:18,606 - unusual_whales_api - INFO - Using cached data for institution/ADAMS DIVERSIFIED EQUITY FUND, INC./activity
+2025-03-07 23:53:18,606 - debug_insertion - INFO - ✅ Institution Activity API returned 5 records
+2025-03-07 23:53:18,606 - debug_insertion - INFO - Formatted activity: {
+  "ticker": "AAPL",
+  "filing_date": "2025-02-11",
+  "report_date": "2024-12-31",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "avg_price": 26.8,
+  "buy_price": null,
+  "sell_price": 235.63,
+  "close": 239.07,
+  "price_on_filing": 232.62,
+  "price_on_report": 250.42,
+  "shares_outstanding": 15022073000.0,
+  "timestamp": "2025-03-07T23:53:18.606371"
+}
+2025-03-07 23:53:18,606 - debug_insertion - INFO - 
+Testing Stock Info API...
+2025-03-07 23:53:18,606 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/stock/AAPL/info
+2025-03-07 23:53:18,606 - unusual_whales_api - INFO - Using cached data for stock/AAPL/info
+2025-03-07 23:53:18,606 - debug_insertion - INFO - ✅ Stock Info API returned data for AAPL
+2025-03-07 23:53:18,606 - debug_insertion - INFO - Sample data: {
+  "announce_time": "unknown",
+  "avg30_volume": "38187329.52380952381",
+  "full_name": "APPLE",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "marketcap": "3688670025150",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-05-01",
+  "sector": "Technology",
+  "short_description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "short_name": "APPLE",
+  "symbol": "AAPL",
+  "uw_tags": []
+}
+2025-03-07 23:53:18,606 - debug_insertion - INFO - Formatted data: {
+  "ticker": "AAPL",
+  "company_name": "APPLE",
+  "sector": "Technology",
+  "market_cap": 3688670025150.0,
+  "avg_volume": 38187329.52380952,
+  "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "current_price": 0,
+  "price_updated_at": "2025-03-08T07:53:18.606750",
+  "fetched_at": "2025-03-08T07:53:18.606738"
+}
+2025-03-07 23:53:18,606 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:53:18,606 - debug_insertion - INFO - TESTING DIRECT DATA INSERTION INTO TABLES
+2025-03-07 23:53:18,606 - debug_insertion - INFO - ==========================================
+2025-03-07 23:53:18,606 - debug_insertion - INFO - 
+Testing direct insertion into insider_trades...
+2025-03-07 23:53:18,676 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:53:18,677 - debug_insertion - ERROR - ❌ Insertion into insider_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'relation' column of 'insider_trades' in the schema cache"}
+2025-03-07 23:53:18,677 - debug_insertion - INFO - 
+Testing direct insertion into analyst_ratings...
+2025-03-07 23:53:18,816 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings "HTTP/2 400 Bad Request"
+2025-03-07 23:53:18,817 - debug_insertion - ERROR - ❌ Insertion into analyst_ratings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'analyst_firm' column of 'analyst_ratings' in the schema cache"}
+2025-03-07 23:53:18,817 - debug_insertion - INFO - 
+Testing direct insertion into dark_pool_trades...
+2025-03-07 23:53:18,917 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:53:18,919 - debug_insertion - INFO - ✅ Successfully inserted test data into dark_pool_trades
+2025-03-07 23:53:18,919 - debug_insertion - INFO - 
+Testing direct insertion into political_trades...
+2025-03-07 23:53:19,013 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:53:19,013 - debug_insertion - ERROR - ❌ Insertion into political_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'amount' column of 'political_trades' in the schema cache"}
+2025-03-07 23:53:19,013 - debug_insertion - INFO - 
+Testing direct insertion into fda_calendar...
+2025-03-07 23:53:19,110 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar "HTTP/2 201 Created"
+2025-03-07 23:53:19,111 - debug_insertion - INFO - ✅ Successfully inserted test data into fda_calendar
+2025-03-07 23:53:19,111 - debug_insertion - INFO - 
+Testing direct insertion into economic_events...
+2025-03-07 23:53:19,254 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events "HTTP/2 400 Bad Request"
+2025-03-07 23:53:19,254 - debug_insertion - ERROR - ❌ Insertion into economic_events failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'event_name' column of 'economic_events' in the schema cache"}
+2025-03-07 23:53:19,254 - debug_insertion - INFO - 
+Testing direct insertion into options_flow_data...
+2025-03-07 23:53:19,337 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data "HTTP/2 404 Not Found"
+2025-03-07 23:53:19,338 - debug_insertion - ERROR - ❌ Insertion into options_flow_data failed: {}
+2025-03-07 23:53:19,338 - debug_insertion - INFO - 
+Testing direct insertion into institutions...
+2025-03-07 23:53:19,423 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions "HTTP/2 400 Bad Request"
+2025-03-07 23:53:19,424 - debug_insertion - ERROR - ❌ Insertion into institutions failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'description' column of 'institutions' in the schema cache"}
+2025-03-07 23:53:19,424 - debug_insertion - INFO - 
+Testing direct insertion into institution_holdings...
+2025-03-07 23:53:19,506 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings "HTTP/2 400 Bad Request"
+2025-03-07 23:53:19,506 - debug_insertion - ERROR - ❌ Insertion into institution_holdings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'full_name' column of 'institution_holdings' in the schema cache"}
+2025-03-07 23:53:19,506 - debug_insertion - INFO - 
+Testing direct insertion into stock_info...
+2025-03-07 23:53:19,606 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info "HTTP/2 409 Conflict"
+2025-03-07 23:53:19,607 - debug_insertion - ERROR - ❌ Insertion into stock_info failed: {'code': '23505', 'details': 'Key (ticker)=(TEST) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "stock_info_ticker_key"'}
+2025-03-07 23:53:19,607 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:53:19,607 - debug_insertion - INFO - CHECKING TABLE CONTENTS
+2025-03-07 23:53:19,607 - debug_insertion - INFO - ==========================================
+2025-03-07 23:53:19,672 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:19,676 - debug_insertion - INFO - ✅ insider_trades has 50 records
+2025-03-07 23:53:19,676 - debug_insertion - INFO - Sample record: {
+  "id": "73bb5753-1f39-4c14-9ca5-262780dbc008",
+  "filing_id": "64a035a8-230c-42e8-925e-1b414f0e17e5",
+  "symbol": "MGPI",
+  "company_name": null,
+  "insider_name": "MINGUS LORI L.S.",
+  "insider_title": null,
+  "transaction_type": "S",
+  "transaction_date": "2025-03-10",
+  "shares": -11668,
+  "price": 34.0,
+  "total_value": null,
+  "shares_owned_after": 0,
+  "filing_date": "2025-03-07",
+  "source": "Unusual Whales",
+  "created_at": "2025-03-07T22:04:24.64478+00:00",
+  "updated_at": "2025-03-07T22:04:24.644782+00:00"
+}
+2025-03-07 23:53:19,795 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:19,800 - debug_insertion - INFO - ✅ analyst_ratings has 500 records
+2025-03-07 23:53:19,800 - debug_insertion - INFO - Sample record: {
+  "id": "29d31b4b-b599-4918-84ef-931af75acd70",
+  "symbol": "FUN",
+  "company_name": "",
+  "firm": "Macquarie",
+  "analyst": "Paul Golding",
+  "new_rating": "buy",
+  "old_rating": "",
+  "rating_change": "maintained",
+  "new_price_target": 55.0,
+  "old_price_target": 0.0,
+  "price_target_change_percent": 0,
+  "current_price": 0,
+  "sector": "Consumer Cyclical",
+  "rating_date": "2025-03-07",
+  "action": null,
+  "source": null,
+  "created_at": "2025-03-07T22:16:12.653066+00:00",
+  "updated_at": "2025-03-07T22:16:12.65307+00:00"
+}
+2025-03-07 23:53:19,860 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:19,862 - debug_insertion - INFO - ✅ dark_pool_trades has 7 records
+2025-03-07 23:53:19,862 - debug_insertion - INFO - Sample record: {
+  "id": "da57e961-fd6f-42ed-b532-af424314cfed",
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48+00:00",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": "68388806529210",
+  "created_at": "2025-03-07T23:26:38.07288+00:00",
+  "updated_at": "2025-03-07T23:26:38.072882+00:00"
+}
+2025-03-07 23:53:19,935 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_calendar?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:53:19,936 - debug_insertion - ERROR - ❌ Error checking contents of economic_calendar: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.economic_calendar" does not exist'}
+2025-03-07 23:53:20,023 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,023 - debug_insertion - WARNING - ⚠️ economic_events exists but is empty
+2025-03-07 23:53:20,095 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,095 - debug_insertion - WARNING - ⚠️ economic_indicators exists but is empty
+2025-03-07 23:53:20,166 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_news?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,167 - debug_insertion - WARNING - ⚠️ economic_news exists but is empty
+2025-03-07 23:53:20,236 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_reports?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,238 - debug_insertion - WARNING - ⚠️ economic_reports exists but is empty
+2025-03-07 23:53:20,327 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,337 - debug_insertion - INFO - ✅ fda_calendar has 162 records
+2025-03-07 23:53:20,337 - debug_insertion - INFO - Sample record: {
+  "id": "41107dd3-bcea-5d66-a595-d6b3d503dff4",
+  "ticker": "GERN",
+  "drug": "Imetelstat (IMpactMF)",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "catalyst": "Top-line Data Due",
+  "indication": "Refractory Myelofibrosis (MF)",
+  "start_date": "2021-04-13",
+  "end_date": null,
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "status": "Phase 3",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "marketcap": 1553567611,
+  "has_options": true,
+  "created_at": "2025-03-08T07:15:26.458847+00:00",
+  "updated_at": "2025-03-08T07:15:26.458847+00:00",
+  "fetched_at": "2025-03-07T23:15:26.294549+00:00"
+}
+2025-03-07 23:53:20,402 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_metadata?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,404 - debug_insertion - WARNING - ⚠️ fred_metadata exists but is empty
+2025-03-07 23:53:20,483 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_observations?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,484 - debug_insertion - WARNING - ⚠️ fred_observations exists but is empty
+2025-03-07 23:53:20,552 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_user_series?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,552 - debug_insertion - WARNING - ⚠️ fred_user_series exists but is empty
+2025-03-07 23:53:20,623 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/hedge_fund_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,623 - debug_insertion - WARNING - ⚠️ hedge_fund_trades exists but is empty
+2025-03-07 23:53:20,703 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_activity?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,705 - debug_insertion - WARNING - ⚠️ institution_activity exists but is empty
+2025-03-07 23:53:20,786 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,787 - debug_insertion - WARNING - ⚠️ institution_holdings exists but is empty
+2025-03-07 23:53:20,862 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,863 - debug_insertion - WARNING - ⚠️ institutions exists but is empty
+2025-03-07 23:53:20,949 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/market_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:20,950 - debug_insertion - WARNING - ⚠️ market_indicators exists but is empty
+2025-03-07 23:53:21,022 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,023 - debug_insertion - ERROR - ❌ Error checking contents of options_flow_data: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.options_flow_data" does not exist'}
+2025-03-07 23:53:21,102 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:21,103 - debug_insertion - WARNING - ⚠️ options_flow exists but is empty
+2025-03-07 23:53:21,177 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:21,181 - debug_insertion - INFO - ✅ political_trades has 183 records
+2025-03-07 23:53:21,181 - debug_insertion - INFO - Sample record: {
+  "id": "c1efa24e-b519-4e58-b5d8-169789d181bb",
+  "politician_name": "Test Politician",
+  "politician_type": null,
+  "party": "Test Party",
+  "state": null,
+  "district": null,
+  "symbol": "TEST",
+  "company_name": null,
+  "transaction_date": "2025-03-07",
+  "transaction_type": "Purchase",
+  "asset_type": null,
+  "asset_description": null,
+  "amount_range": "$1,001 - $15,000",
+  "estimated_value": null,
+  "filing_date": null,
+  "source": "DEBUG TEST",
+  "notes": null,
+  "created_at": "2025-03-07T23:32:00.942049+00:00",
+  "updated_at": "2025-03-07T23:32:00.942057+00:00"
+}
+2025-03-07 23:53:21,255 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:53:21,257 - debug_insertion - INFO - ✅ stock_info has 11 records
+2025-03-07 23:53:21,257 - debug_insertion - INFO - Sample record: {
+  "id": "bc79fef1-8218-4b92-8151-31cc46c2c759",
+  "ticker": "GOOG",
+  "company_name": "ALPHABET",
+  "sector": "Communication Services",
+  "industry": null,
+  "exchange": null,
+  "market_cap": 1879382770000.0,
+  "shares_outstanding": null,
+  "float": null,
+  "current_price": 0,
+  "open_price": null,
+  "daily_high": null,
+  "daily_low": null,
+  "daily_volume": null,
+  "fifty_two_week_high": null,
+  "fifty_two_week_low": null,
+  "pe_ratio": null,
+  "eps": null,
+  "dividend_yield": null,
+  "beta": null,
+  "avg_volume": 14530209.904761905,
+  "description": "Alphabet Inc. is an American multinational technology conglomerate holding company headquartered in Mountain View, California. It was created through ...",
+  "company_website": null,
+  "headquarters": null,
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/GOOG.png",
+  "ceo": null,
+  "employees": null,
+  "founded_year": null,
+  "market_time": null,
+  "price_updated_at": "2025-03-08T07:50:05.072699+00:00",
+  "fetched_at": "2025-03-07T23:50:05.072703+00:00",
+  "created_at": "2025-03-08T07:50:05.153688+00:00",
+  "updated_at": "2025-03-08T07:50:05.153688+00:00"
+}
+2025-03-07 23:53:21,257 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:53:21,257 - debug_insertion - INFO - VERIFYING TABLE SCHEMAS
+2025-03-07 23:53:21,257 - debug_insertion - INFO - ==========================================
+2025-03-07 23:53:21,344 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,345 - debug_insertion - ERROR - Error getting schema for insider_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,345 - debug_insertion - WARNING - ⚠️ Could not verify schema for insider_trades
+2025-03-07 23:53:21,420 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,421 - debug_insertion - ERROR - Error getting schema for analyst_ratings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,421 - debug_insertion - WARNING - ⚠️ Could not verify schema for analyst_ratings
+2025-03-07 23:53:21,500 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,500 - debug_insertion - ERROR - Error getting schema for dark_pool_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,500 - debug_insertion - WARNING - ⚠️ Could not verify schema for dark_pool_trades
+2025-03-07 23:53:21,579 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,579 - debug_insertion - ERROR - Error getting schema for economic_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,579 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_calendar
+2025-03-07 23:53:21,638 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,639 - debug_insertion - ERROR - Error getting schema for economic_events: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,639 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_events
+2025-03-07 23:53:21,721 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,722 - debug_insertion - ERROR - Error getting schema for economic_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,722 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_indicators
+2025-03-07 23:53:21,807 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,807 - debug_insertion - ERROR - Error getting schema for economic_news: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,808 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_news
+2025-03-07 23:53:21,874 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,874 - debug_insertion - ERROR - Error getting schema for economic_reports: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,874 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_reports
+2025-03-07 23:53:21,940 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:21,940 - debug_insertion - ERROR - Error getting schema for fda_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:21,940 - debug_insertion - WARNING - ⚠️ Could not verify schema for fda_calendar
+2025-03-07 23:53:22,010 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,010 - debug_insertion - ERROR - Error getting schema for fred_metadata: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,010 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_metadata
+2025-03-07 23:53:22,078 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,078 - debug_insertion - ERROR - Error getting schema for fred_observations: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,078 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_observations
+2025-03-07 23:53:22,151 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,152 - debug_insertion - ERROR - Error getting schema for fred_user_series: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,152 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_user_series
+2025-03-07 23:53:22,215 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,215 - debug_insertion - ERROR - Error getting schema for hedge_fund_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,215 - debug_insertion - WARNING - ⚠️ Could not verify schema for hedge_fund_trades
+2025-03-07 23:53:22,285 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,286 - debug_insertion - ERROR - Error getting schema for institution_activity: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,286 - debug_insertion - WARNING - ⚠️ Could not verify schema for institution_activity
+2025-03-07 23:53:22,355 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,356 - debug_insertion - ERROR - Error getting schema for institution_holdings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,357 - debug_insertion - WARNING - ⚠️ Could not verify schema for institution_holdings
+2025-03-07 23:53:22,416 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,416 - debug_insertion - ERROR - Error getting schema for institutions: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,417 - debug_insertion - WARNING - ⚠️ Could not verify schema for institutions
+2025-03-07 23:53:22,490 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,491 - debug_insertion - ERROR - Error getting schema for market_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,492 - debug_insertion - WARNING - ⚠️ Could not verify schema for market_indicators
+2025-03-07 23:53:22,554 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,554 - debug_insertion - ERROR - Error getting schema for options_flow_data: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,555 - debug_insertion - WARNING - ⚠️ Could not verify schema for options_flow_data
+2025-03-07 23:53:22,617 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,618 - debug_insertion - ERROR - Error getting schema for options_flow: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,618 - debug_insertion - WARNING - ⚠️ Could not verify schema for options_flow
+2025-03-07 23:53:22,683 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,684 - debug_insertion - ERROR - Error getting schema for political_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,684 - debug_insertion - WARNING - ⚠️ Could not verify schema for political_trades
+2025-03-07 23:53:22,741 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:53:22,742 - debug_insertion - ERROR - Error getting schema for stock_info: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:53:22,742 - debug_insertion - WARNING - ⚠️ Could not verify schema for stock_info
+2025-03-07 23:53:22,742 - debug_insertion - INFO - Completed Supabase Data Insertion Debug Tests
+2025-03-07 23:58:46,673 - debug_insertion - INFO - Successfully initialized Supabase client
+2025-03-07 23:58:46,674 - debug_insertion - INFO - Starting Supabase Data Insertion Debug Tests
+2025-03-07 23:58:46,810 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/test?select=%2A&limit=1 "HTTP/2 404 Not Found"
+2025-03-07 23:58:46,810 - debug_insertion - ERROR - Supabase connection test failed: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.test" does not exist'}
+2025-03-07 23:58:46,810 - debug_insertion - INFO - Testing Insider Trades API...
+2025-03-07 23:58:46,810 - unusual_whales_api - INFO - Using cached data for insider/trades
+2025-03-07 23:58:46,810 - debug_insertion - WARNING - ⚠️ Insider Trades API returned no data
+2025-03-07 23:58:46,810 - debug_insertion - INFO - 
+Testing Analyst Ratings API...
+2025-03-07 23:58:46,810 - unusual_whales_api - INFO - Using cached data for screener/analysts
+2025-03-07 23:58:46,811 - debug_insertion - INFO - ✅ Analyst Ratings API returned 5 records
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Sample data: {
+  "action": "maintained",
+  "analyst_name": "Paul Golding",
+  "firm": "Macquarie",
+  "recommendation": "buy",
+  "sector": "Consumer Cyclical",
+  "target": "55.0000",
+  "ticker": "FUN",
+  "timestamp": "2025-03-07T23:06:04.000000Z"
+}
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Formatted data: {
+  "symbol": "FUN",
+  "company_name": "",
+  "analyst_firm": "Macquarie",
+  "analyst_name": "Paul Golding",
+  "rating": "buy",
+  "previous_rating": "",
+  "rating_change": "maintained",
+  "price_target": 55.0,
+  "previous_price_target": 0.0,
+  "date": "2025-03-07",
+  "notes": "",
+  "sector": "Consumer Cyclical",
+  "source": "Unusual Whales"
+}
+2025-03-07 23:58:46,811 - debug_insertion - INFO - 
+Testing Political Trades API...
+2025-03-07 23:58:46,811 - unusual_whales_api - INFO - Using cached data for congress/recent-trades
+2025-03-07 23:58:46,811 - debug_insertion - INFO - ✅ Political Trades API returned 5 records
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Sample data: {
+  "amounts": "$1,000 - $15,000",
+  "filed_at_date": "2025-03-06",
+  "issuer": "Joint",
+  "member_type": "senate",
+  "notes": "",
+  "reporter": "John Boozman",
+  "ticker": "AXP",
+  "transaction_date": "2025-02-05",
+  "txn_type": "Buy"
+}
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Formatted data: {
+  "id": "f0ce22dc-f611-5d6f-a2b8-c8b47c8ce70e",
+  "politician_name": "John Boozman",
+  "politician_type": "Senator",
+  "party": "",
+  "state": "",
+  "district": "",
+  "symbol": "AXP",
+  "company_name": "",
+  "transaction_date": "2025-02-05",
+  "transaction_type": "Buy",
+  "asset_type": "",
+  "asset_description": "",
+  "amount_range": "$1,000 - $15,000",
+  "estimated_value": 0,
+  "filing_date": "2025-03-06",
+  "source": "Unusual Whales",
+  "notes": "Issuer: Joint"
+}
+2025-03-07 23:58:46,811 - debug_insertion - INFO - 
+Testing Dark Pool API...
+2025-03-07 23:58:46,811 - unusual_whales_api - INFO - Using cached data for darkpool/recent
+2025-03-07 23:58:46,811 - debug_insertion - INFO - ✅ Dark Pool API returned 5 records
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Sample data: {
+  "canceled": false,
+  "executed_at": "2025-03-07T23:59:48Z",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "market_center": "L",
+  "nbbo_ask": "67.04",
+  "nbbo_ask_quantity": 50,
+  "nbbo_bid": "67.02",
+  "nbbo_bid_quantity": 151,
+  "premium": "200657.88",
+  "price": "67.02",
+  "sale_cond_codes": null,
+  "size": 2994,
+  "ticker": "TQQQ",
+  "tracking_id": 68388806529210,
+  "trade_code": null,
+  "trade_settlement": null,
+  "volume": 135040226
+}
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Formatted data: {
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": 68388806529210,
+  "created_at": "2025-03-07T23:58:46.811713",
+  "updated_at": "2025-03-07T23:58:46.811715"
+}
+2025-03-07 23:58:46,811 - debug_insertion - INFO - 
+Testing FDA Calendar API...
+2025-03-07 23:58:46,811 - unusual_whales_api - INFO - Using cached data for market/fda-calendar
+2025-03-07 23:58:46,811 - debug_insertion - INFO - ✅ FDA Calendar API returned 5 records
+2025-03-07 23:58:46,811 - debug_insertion - INFO - Sample data: {
+  "benzinga_id": "60759aff6d58b100011ff425",
+  "catalyst": "Top-line Data Due",
+  "commentary": "",
+  "created_at": "2021-04-13T13:22:07Z",
+  "date_string": "2021-04-13",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "event_type": "Top-line Data Due",
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": "1553567611",
+  "nic_number": "",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "source_type": "Press Release",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "target_date": "2025-MID",
+  "ticker": "GERN",
+  "time": "07:44:07",
+  "unique_identifier": "60759aff6d58b100011ff425",
+  "updated_at": "2021-04-13T13:23:09Z"
+}
+2025-03-07 23:58:46,812 - debug_insertion - INFO - Formatted data: {
+  "catalyst": "Top-line Data Due",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "drug": "Imetelstat (IMpactMF)",
+  "end_date": null,
+  "has_options": true,
+  "indication": "Refractory Myelofibrosis (MF)",
+  "marketcap": 1553567611,
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "start_date": "2021-04-13",
+  "status": "Phase 3",
+  "ticker": "GERN",
+  "fetched_at": "2025-03-07T23:58:46.812054"
+}
+2025-03-07 23:58:46,812 - debug_insertion - INFO - 
+Testing Economic Calendar API...
+2025-03-07 23:58:46,812 - unusual_whales_api - INFO - Using cached data for market/economic-calendar
+2025-03-07 23:58:46,812 - debug_insertion - INFO - ✅ Economic Calendar API returned 13 records
+2025-03-07 23:58:46,812 - debug_insertion - INFO - Sample data: {
+  "event": "Consumer sentiment (prelim)",
+  "forecast": null,
+  "prev": null,
+  "reported_period": "March",
+  "time": "2025-03-14T15:00:00Z",
+  "type": "report"
+}
+2025-03-07 23:58:46,812 - debug_insertion - INFO - Formatted data: {
+  "event": "Consumer sentiment (prelim)",
+  "event_time": "2025-03-14T15:00:00Z",
+  "forecast": null,
+  "previous": null,
+  "reported_period": "March",
+  "type": "report",
+  "importance": "medium",
+  "notes": "Event Type: report",
+  "fetched_at": "2025-03-07T23:58:46.812348"
+}
+2025-03-07 23:58:46,812 - debug_insertion - INFO - 
+Testing Options Flow API...
+2025-03-07 23:58:47,143 - unusual_whales_api - ERROR - Error fetching option contracts for AAPL: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api/options/contracts/AAPL
+2025-03-07 23:58:47,144 - debug_insertion - WARNING - ⚠️ Options Contracts API returned no contracts for AAPL
+2025-03-07 23:58:47,144 - debug_insertion - INFO - 
+Testing Institutions API...
+2025-03-07 23:58:47,144 - unusual_whales_api - INFO - Using cached data for institutions
+2025-03-07 23:58:47,144 - debug_insertion - INFO - ✅ Institutions API returned 5 records
+2025-03-07 23:58:47,144 - debug_insertion - INFO - Sample data: {
+  "buy_value": "320038761.56",
+  "call_holdings": "0",
+  "call_value": "0",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "debt_holdings": "0",
+  "debt_value": "0",
+  "description": null,
+  "filing_date": "2025-02-11",
+  "founder_img_url": null,
+  "fund_holdings": "2542033",
+  "fund_value": "80638728",
+  "is_hedge_fund": false,
+  "logo_url": null,
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "name_changes": [],
+  "people": [],
+  "pfd_holdings": "0",
+  "pfd_value": "0",
+  "put_holdings": "0",
+  "put_value": "0",
+  "sell_value": "-411968855.00",
+  "share_holdings": "15091366",
+  "share_value": "2562353027",
+  "short_name": "Adams Diversified Equity Fund",
+  "tags": [],
+  "total_value": "2642991755",
+  "warrant_holdings": "0",
+  "warrant_value": "0",
+  "website": null
+}
+2025-03-07 23:58:47,144 - debug_insertion - INFO - Formatted data: {
+  "name": "ADAMS DIVERSIFIED EQUITY FUND, INC.",
+  "short_name": "Adams Diversified Equity Fund",
+  "cik": "0000002230",
+  "date": "2024-12-31",
+  "filing_date": "2025-02-11",
+  "is_hedge_fund": false,
+  "description": null,
+  "website": null,
+  "logo_url": null,
+  "founder_img_url": null,
+  "people": [],
+  "tags": [],
+  "buy_value": 320038761.56,
+  "sell_value": -411968855.0,
+  "share_value": 2562353027.0,
+  "put_value": 0.0,
+  "call_value": 0.0,
+  "warrant_value": 0.0,
+  "fund_value": 80638728.0,
+  "pfd_value": 0.0,
+  "debt_value": 0.0,
+  "total_value": 2642991755.0,
+  "share_holdings": 15091366.0,
+  "put_holdings": 0.0,
+  "call_holdings": 0.0,
+  "warrant_holdings": 0.0,
+  "fund_holdings": 2542033.0,
+  "pfd_holdings": 0.0,
+  "debt_holdings": 0.0,
+  "total_holdings": null,
+  "timestamp": "2025-03-07T23:58:47.144575"
+}
+2025-03-07 23:58:47,144 - debug_insertion - INFO - Testing Institution Holdings for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:58:47,144 - unusual_whales_api - INFO - Using cached data for institution/ADAMS DIVERSIFIED EQUITY FUND, INC./holdings
+2025-03-07 23:58:47,144 - debug_insertion - INFO - ✅ Institution Holdings API returned 5 records
+2025-03-07 23:58:47,144 - debug_insertion - INFO - Formatted holding: {
+  "ticker": "AAPL",
+  "date": "2024-12-31",
+  "full_name": "APPLE",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "value": 213508092,
+  "avg_price": 26.8,
+  "close": 239.07,
+  "first_buy": "2013-12-31",
+  "price_first_buy": 17.4991008421,
+  "sector": "Technology",
+  "shares_outstanding": 15022073000.0,
+  "historical_units": [
+    852600,
+    904200,
+    1010100,
+    874100,
+    874100,
+    900400,
+    954500,
+    954500
+  ],
+  "timestamp": "2025-03-07T23:58:47.144884"
+}
+2025-03-07 23:58:47,144 - debug_insertion - INFO - Testing Institution Activity for: ADAMS DIVERSIFIED EQUITY FUND, INC.
+2025-03-07 23:58:47,145 - unusual_whales_api - INFO - Using cached data for institution/ADAMS DIVERSIFIED EQUITY FUND, INC./activity
+2025-03-07 23:58:47,145 - debug_insertion - INFO - ✅ Institution Activity API returned 5 records
+2025-03-07 23:58:47,145 - debug_insertion - INFO - Formatted activity: {
+  "ticker": "AAPL",
+  "filing_date": "2025-02-11",
+  "report_date": "2024-12-31",
+  "security_type": "Share",
+  "put_call": null,
+  "units": 852600,
+  "units_change": -51600,
+  "avg_price": 26.8,
+  "buy_price": null,
+  "sell_price": 235.63,
+  "close": 239.07,
+  "price_on_filing": 232.62,
+  "price_on_report": 250.42,
+  "shares_outstanding": 15022073000.0,
+  "timestamp": "2025-03-07T23:58:47.145169"
+}
+2025-03-07 23:58:47,145 - debug_insertion - INFO - 
+Testing Stock Info API...
+2025-03-07 23:58:47,145 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/stock/AAPL/info
+2025-03-07 23:58:47,145 - unusual_whales_api - INFO - Using cached data for stock/AAPL/info
+2025-03-07 23:58:47,145 - debug_insertion - INFO - ✅ Stock Info API returned data for AAPL
+2025-03-07 23:58:47,145 - debug_insertion - INFO - Sample data: {
+  "announce_time": "unknown",
+  "avg30_volume": "38187329.52380952381",
+  "full_name": "APPLE",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "marketcap": "3688670025150",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-05-01",
+  "sector": "Technology",
+  "short_description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "short_name": "APPLE",
+  "symbol": "AAPL",
+  "uw_tags": []
+}
+2025-03-07 23:58:47,145 - debug_insertion - INFO - Formatted data: {
+  "ticker": "AAPL",
+  "company_name": "APPLE",
+  "sector": "Technology",
+  "market_cap": 3688670025150.0,
+  "avg_volume": 38187329.52380952,
+  "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "current_price": 0,
+  "price_updated_at": "2025-03-08T07:58:47.145491",
+  "fetched_at": "2025-03-08T07:58:47.145480"
+}
+2025-03-07 23:58:47,145 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:58:47,145 - debug_insertion - INFO - TESTING DIRECT DATA INSERTION INTO TABLES
+2025-03-07 23:58:47,145 - debug_insertion - INFO - ==========================================
+2025-03-07 23:58:47,145 - debug_insertion - INFO - 
+Testing direct insertion into insider_trades...
+2025-03-07 23:58:47,213 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:58:47,213 - debug_insertion - ERROR - ❌ Insertion into insider_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'relation' column of 'insider_trades' in the schema cache"}
+2025-03-07 23:58:47,213 - debug_insertion - INFO - 
+Testing direct insertion into analyst_ratings...
+2025-03-07 23:58:47,291 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings "HTTP/2 400 Bad Request"
+2025-03-07 23:58:47,291 - debug_insertion - ERROR - ❌ Insertion into analyst_ratings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'analyst_firm' column of 'analyst_ratings' in the schema cache"}
+2025-03-07 23:58:47,291 - debug_insertion - INFO - 
+Testing direct insertion into dark_pool_trades...
+2025-03-07 23:58:47,387 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:58:47,393 - debug_insertion - INFO - ✅ Successfully inserted test data into dark_pool_trades
+2025-03-07 23:58:47,393 - debug_insertion - INFO - 
+Testing direct insertion into political_trades...
+2025-03-07 23:58:47,471 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:58:47,472 - debug_insertion - ERROR - ❌ Insertion into political_trades failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'amount' column of 'political_trades' in the schema cache"}
+2025-03-07 23:58:47,472 - debug_insertion - INFO - 
+Testing direct insertion into fda_calendar...
+2025-03-07 23:58:47,566 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar "HTTP/2 201 Created"
+2025-03-07 23:58:47,566 - debug_insertion - INFO - ✅ Successfully inserted test data into fda_calendar
+2025-03-07 23:58:47,566 - debug_insertion - INFO - 
+Testing direct insertion into economic_events...
+2025-03-07 23:58:47,640 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events "HTTP/2 400 Bad Request"
+2025-03-07 23:58:47,641 - debug_insertion - ERROR - ❌ Insertion into economic_events failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'event_name' column of 'economic_events' in the schema cache"}
+2025-03-07 23:58:47,641 - debug_insertion - INFO - 
+Testing direct insertion into options_flow_data...
+2025-03-07 23:58:47,722 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data "HTTP/2 404 Not Found"
+2025-03-07 23:58:47,722 - debug_insertion - ERROR - ❌ Insertion into options_flow_data failed: {}
+2025-03-07 23:58:47,722 - debug_insertion - INFO - 
+Testing direct insertion into institutions...
+2025-03-07 23:58:47,803 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions "HTTP/2 400 Bad Request"
+2025-03-07 23:58:47,805 - debug_insertion - ERROR - ❌ Insertion into institutions failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'description' column of 'institutions' in the schema cache"}
+2025-03-07 23:58:47,805 - debug_insertion - INFO - 
+Testing direct insertion into institution_holdings...
+2025-03-07 23:58:47,881 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings "HTTP/2 400 Bad Request"
+2025-03-07 23:58:47,881 - debug_insertion - ERROR - ❌ Insertion into institution_holdings failed: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'full_name' column of 'institution_holdings' in the schema cache"}
+2025-03-07 23:58:47,881 - debug_insertion - INFO - 
+Testing direct insertion into stock_info...
+2025-03-07 23:58:47,947 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info "HTTP/2 409 Conflict"
+2025-03-07 23:58:47,948 - debug_insertion - ERROR - ❌ Insertion into stock_info failed: {'code': '23505', 'details': 'Key (ticker)=(TEST) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "stock_info_ticker_key"'}
+2025-03-07 23:58:47,949 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:58:47,949 - debug_insertion - INFO - CHECKING TABLE CONTENTS
+2025-03-07 23:58:47,949 - debug_insertion - INFO - ==========================================
+2025-03-07 23:58:48,044 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,047 - debug_insertion - INFO - ✅ insider_trades has 50 records
+2025-03-07 23:58:48,047 - debug_insertion - INFO - Sample record: {
+  "id": "73bb5753-1f39-4c14-9ca5-262780dbc008",
+  "filing_id": "64a035a8-230c-42e8-925e-1b414f0e17e5",
+  "symbol": "MGPI",
+  "company_name": null,
+  "insider_name": "MINGUS LORI L.S.",
+  "insider_title": null,
+  "transaction_type": "S",
+  "transaction_date": "2025-03-10",
+  "shares": -11668,
+  "price": 34.0,
+  "total_value": null,
+  "shares_owned_after": 0,
+  "filing_date": "2025-03-07",
+  "source": "Unusual Whales",
+  "created_at": "2025-03-07T22:04:24.64478+00:00",
+  "updated_at": "2025-03-07T22:04:24.644782+00:00"
+}
+2025-03-07 23:58:48,184 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,190 - debug_insertion - INFO - ✅ analyst_ratings has 500 records
+2025-03-07 23:58:48,190 - debug_insertion - INFO - Sample record: {
+  "id": "29d31b4b-b599-4918-84ef-931af75acd70",
+  "symbol": "FUN",
+  "company_name": "",
+  "firm": "Macquarie",
+  "analyst": "Paul Golding",
+  "new_rating": "buy",
+  "old_rating": "",
+  "rating_change": "maintained",
+  "new_price_target": 55.0,
+  "old_price_target": 0.0,
+  "price_target_change_percent": 0,
+  "current_price": 0,
+  "sector": "Consumer Cyclical",
+  "rating_date": "2025-03-07",
+  "action": null,
+  "source": null,
+  "created_at": "2025-03-07T22:16:12.653066+00:00",
+  "updated_at": "2025-03-07T22:16:12.65307+00:00"
+}
+2025-03-07 23:58:48,262 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,263 - debug_insertion - INFO - ✅ dark_pool_trades has 8 records
+2025-03-07 23:58:48,264 - debug_insertion - INFO - Sample record: {
+  "id": "da57e961-fd6f-42ed-b532-af424314cfed",
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48+00:00",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": "68388806529210",
+  "created_at": "2025-03-07T23:26:38.07288+00:00",
+  "updated_at": "2025-03-07T23:26:38.072882+00:00"
+}
+2025-03-07 23:58:48,346 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_calendar?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:58:48,348 - debug_insertion - ERROR - ❌ Error checking contents of economic_calendar: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.economic_calendar" does not exist'}
+2025-03-07 23:58:48,426 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_events?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,427 - debug_insertion - INFO - ✅ economic_events has 13 records
+2025-03-07 23:58:48,427 - debug_insertion - INFO - Sample record: {
+  "id": "f131190a-8b9e-4e4d-80d5-464d2a6703c0",
+  "event": "Consumer sentiment (prelim)",
+  "event_time": "2025-03-14T15:00:00+00:00",
+  "forecast": null,
+  "previous": null,
+  "reported_period": "March",
+  "type": "report",
+  "importance": "medium",
+  "notes": "Event Type: report",
+  "created_at": "2025-03-08T07:58:38.074949+00:00",
+  "updated_at": "2025-03-08T07:58:38.074949+00:00",
+  "fetched_at": "2025-03-07T23:58:37.806181+00:00"
+}
+2025-03-07 23:58:48,485 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,486 - debug_insertion - WARNING - ⚠️ economic_indicators exists but is empty
+2025-03-07 23:58:48,553 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_news?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,553 - debug_insertion - WARNING - ⚠️ economic_news exists but is empty
+2025-03-07 23:58:48,643 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_reports?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,644 - debug_insertion - INFO - ✅ economic_reports has 10 records
+2025-03-07 23:58:48,644 - debug_insertion - INFO - Sample record: {
+  "id": "577110a1-97f6-4dbd-99a6-a9fac44d6b74",
+  "report_name": "Economic Outlook Report 1",
+  "event_date": "2025-03-07T23:58:39.38901+00:00",
+  "forecast": null,
+  "previous": null,
+  "actual": null,
+  "importance": "medium",
+  "category": "Economic Outlook",
+  "source": "Federal Reserve",
+  "report_period": "Monthly",
+  "impact": "medium",
+  "notes": "This report analyzes current economic trends and provides future projections.",
+  "created_at": "2025-03-08T07:58:39.447007+00:00",
+  "updated_at": "2025-03-08T07:58:39.447007+00:00",
+  "fetched_at": "2025-03-07T23:58:39.389017+00:00"
+}
+2025-03-07 23:58:48,733 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,740 - debug_insertion - INFO - ✅ fda_calendar has 163 records
+2025-03-07 23:58:48,740 - debug_insertion - INFO - Sample record: {
+  "id": "41107dd3-bcea-5d66-a595-d6b3d503dff4",
+  "ticker": "GERN",
+  "drug": "Imetelstat (IMpactMF)",
+  "description": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "catalyst": "Top-line Data Due",
+  "indication": "Refractory Myelofibrosis (MF)",
+  "start_date": "2021-04-13",
+  "end_date": null,
+  "outcome": "Final analysis from the trial are expected in 2025",
+  "outcome_brief": "Enrollment Started",
+  "status": "Phase 3",
+  "notes": "Geron Announces First Patient Dosed in IMpactMF Phase 3 Clinical Trial in Refractory Myelofibrosis",
+  "source_link": "https://www.benzinga.com/pressreleases/21/04/b20595612/geron-announces-first-patient-dosed-in-impactmf-phase-3-clinical-trial-in-refractory-myelofibrosis",
+  "marketcap": 1553567611,
+  "has_options": true,
+  "created_at": "2025-03-08T07:15:26.458847+00:00",
+  "updated_at": "2025-03-08T07:15:26.458847+00:00",
+  "fetched_at": "2025-03-07T23:15:26.294549+00:00"
+}
+2025-03-07 23:58:48,804 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_metadata?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,805 - debug_insertion - WARNING - ⚠️ fred_metadata exists but is empty
+2025-03-07 23:58:48,892 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_observations?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,893 - debug_insertion - WARNING - ⚠️ fred_observations exists but is empty
+2025-03-07 23:58:48,942 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fred_user_series?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:48,943 - debug_insertion - WARNING - ⚠️ fred_user_series exists but is empty
+2025-03-07 23:58:49,045 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/hedge_fund_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,046 - debug_insertion - WARNING - ⚠️ hedge_fund_trades exists but is empty
+2025-03-07 23:58:49,108 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_activity?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,109 - debug_insertion - WARNING - ⚠️ institution_activity exists but is empty
+2025-03-07 23:58:49,170 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institution_holdings?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,170 - debug_insertion - WARNING - ⚠️ institution_holdings exists but is empty
+2025-03-07 23:58:49,246 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/institutions?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,246 - debug_insertion - WARNING - ⚠️ institutions exists but is empty
+2025-03-07 23:58:49,310 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/market_indicators?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,311 - debug_insertion - WARNING - ⚠️ market_indicators exists but is empty
+2025-03-07 23:58:49,376 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow_data?select=%2A "HTTP/2 404 Not Found"
+2025-03-07 23:58:49,377 - debug_insertion - ERROR - ❌ Error checking contents of options_flow_data: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.options_flow_data" does not exist'}
+2025-03-07 23:58:49,468 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,469 - debug_insertion - WARNING - ⚠️ options_flow exists but is empty
+2025-03-07 23:58:49,547 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/political_trades?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,551 - debug_insertion - INFO - ✅ political_trades has 183 records
+2025-03-07 23:58:49,551 - debug_insertion - INFO - Sample record: {
+  "id": "c1efa24e-b519-4e58-b5d8-169789d181bb",
+  "politician_name": "Test Politician",
+  "politician_type": null,
+  "party": "Test Party",
+  "state": null,
+  "district": null,
+  "symbol": "TEST",
+  "company_name": null,
+  "transaction_date": "2025-03-07",
+  "transaction_type": "Purchase",
+  "asset_type": null,
+  "asset_description": null,
+  "amount_range": "$1,001 - $15,000",
+  "estimated_value": null,
+  "filing_date": null,
+  "source": "DEBUG TEST",
+  "notes": null,
+  "created_at": "2025-03-07T23:32:00.942049+00:00",
+  "updated_at": "2025-03-07T23:32:00.942057+00:00"
+}
+2025-03-07 23:58:49,645 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A "HTTP/2 200 OK"
+2025-03-07 23:58:49,646 - debug_insertion - INFO - ✅ stock_info has 11 records
+2025-03-07 23:58:49,647 - debug_insertion - INFO - Sample record: {
+  "id": "bc79fef1-8218-4b92-8151-31cc46c2c759",
+  "ticker": "GOOG",
+  "company_name": "ALPHABET",
+  "sector": "Communication Services",
+  "industry": null,
+  "exchange": null,
+  "market_cap": 1879382770000.0,
+  "shares_outstanding": null,
+  "float": null,
+  "current_price": 0,
+  "open_price": null,
+  "daily_high": null,
+  "daily_low": null,
+  "daily_volume": null,
+  "fifty_two_week_high": null,
+  "fifty_two_week_low": null,
+  "pe_ratio": null,
+  "eps": null,
+  "dividend_yield": null,
+  "beta": null,
+  "avg_volume": 14530209.904761905,
+  "description": "Alphabet Inc. is an American multinational technology conglomerate holding company headquartered in Mountain View, California. It was created through ...",
+  "company_website": null,
+  "headquarters": null,
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/GOOG.png",
+  "ceo": null,
+  "employees": null,
+  "founded_year": null,
+  "market_time": null,
+  "price_updated_at": "2025-03-08T07:50:05.072699+00:00",
+  "fetched_at": "2025-03-07T23:50:05.072703+00:00",
+  "created_at": "2025-03-08T07:50:05.153688+00:00",
+  "updated_at": "2025-03-08T07:50:05.153688+00:00"
+}
+2025-03-07 23:58:49,647 - debug_insertion - INFO - 
+==========================================
+2025-03-07 23:58:49,647 - debug_insertion - INFO - VERIFYING TABLE SCHEMAS
+2025-03-07 23:58:49,647 - debug_insertion - INFO - ==========================================
+2025-03-07 23:58:49,705 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:49,705 - debug_insertion - ERROR - Error getting schema for insider_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:49,706 - debug_insertion - WARNING - ⚠️ Could not verify schema for insider_trades
+2025-03-07 23:58:49,770 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:49,771 - debug_insertion - ERROR - Error getting schema for analyst_ratings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:49,771 - debug_insertion - WARNING - ⚠️ Could not verify schema for analyst_ratings
+2025-03-07 23:58:49,825 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:49,825 - debug_insertion - ERROR - Error getting schema for dark_pool_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:49,825 - debug_insertion - WARNING - ⚠️ Could not verify schema for dark_pool_trades
+2025-03-07 23:58:49,887 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:49,889 - debug_insertion - ERROR - Error getting schema for economic_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:49,889 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_calendar
+2025-03-07 23:58:49,945 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:49,946 - debug_insertion - ERROR - Error getting schema for economic_events: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:49,946 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_events
+2025-03-07 23:58:50,034 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,035 - debug_insertion - ERROR - Error getting schema for economic_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,035 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_indicators
+2025-03-07 23:58:50,094 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,095 - debug_insertion - ERROR - Error getting schema for economic_news: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,095 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_news
+2025-03-07 23:58:50,154 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,155 - debug_insertion - ERROR - Error getting schema for economic_reports: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,155 - debug_insertion - WARNING - ⚠️ Could not verify schema for economic_reports
+2025-03-07 23:58:50,215 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,215 - debug_insertion - ERROR - Error getting schema for fda_calendar: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,215 - debug_insertion - WARNING - ⚠️ Could not verify schema for fda_calendar
+2025-03-07 23:58:50,277 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,277 - debug_insertion - ERROR - Error getting schema for fred_metadata: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,277 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_metadata
+2025-03-07 23:58:50,353 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,354 - debug_insertion - ERROR - Error getting schema for fred_observations: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,354 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_observations
+2025-03-07 23:58:50,428 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,430 - debug_insertion - ERROR - Error getting schema for fred_user_series: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,430 - debug_insertion - WARNING - ⚠️ Could not verify schema for fred_user_series
+2025-03-07 23:58:50,498 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,499 - debug_insertion - ERROR - Error getting schema for hedge_fund_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,499 - debug_insertion - WARNING - ⚠️ Could not verify schema for hedge_fund_trades
+2025-03-07 23:58:50,569 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,570 - debug_insertion - ERROR - Error getting schema for institution_activity: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,570 - debug_insertion - WARNING - ⚠️ Could not verify schema for institution_activity
+2025-03-07 23:58:50,641 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,642 - debug_insertion - ERROR - Error getting schema for institution_holdings: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,642 - debug_insertion - WARNING - ⚠️ Could not verify schema for institution_holdings
+2025-03-07 23:58:50,708 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,709 - debug_insertion - ERROR - Error getting schema for institutions: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,710 - debug_insertion - WARNING - ⚠️ Could not verify schema for institutions
+2025-03-07 23:58:50,782 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,784 - debug_insertion - ERROR - Error getting schema for market_indicators: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,784 - debug_insertion - WARNING - ⚠️ Could not verify schema for market_indicators
+2025-03-07 23:58:50,836 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,837 - debug_insertion - ERROR - Error getting schema for options_flow_data: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,837 - debug_insertion - WARNING - ⚠️ Could not verify schema for options_flow_data
+2025-03-07 23:58:50,899 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,900 - debug_insertion - ERROR - Error getting schema for options_flow: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,900 - debug_insertion - WARNING - ⚠️ Could not verify schema for options_flow
+2025-03-07 23:58:50,955 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:50,957 - debug_insertion - ERROR - Error getting schema for political_trades: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:50,957 - debug_insertion - WARNING - ⚠️ Could not verify schema for political_trades
+2025-03-07 23:58:51,038 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/get_table_info "HTTP/2 404 Not Found"
+2025-03-07 23:58:51,039 - debug_insertion - ERROR - Error getting schema for stock_info: {'code': 'PGRST202', 'details': 'Searched for the function public.get_table_info with parameter table_name or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.get_table_info(table_name) in the schema cache'}
+2025-03-07 23:58:51,039 - debug_insertion - WARNING - ⚠️ Could not verify schema for stock_info
+2025-03-07 23:58:51,039 - debug_insertion - INFO - Completed Supabase Data Insertion Debug Tests

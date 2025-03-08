@@ -1,0 +1,22 @@
+# Core dependencies
+requests==2.31.0
+python-dotenv==1.0.0
+schedule==1.2.0
+psycopg2-binary==2.9.6
+supabase==1.0.3
+
+# API Integrations
+sendgrid==6.10.0
+
+# Monitoring & Health Checks
+flask==2.3.2
+psutil==5.9.5
+
+# Testing
+pytest==7.3.1
+requests-mock==1.10.0
+
+# Development
+black==23.3.0
+flake8==6.0.0
+pylint==2.17.4

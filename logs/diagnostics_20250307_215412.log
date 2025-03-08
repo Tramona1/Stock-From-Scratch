@@ -1,0 +1,154 @@
+
+================================================================================
+                      FINANCIAL DATA PIPELINE DIAGNOSTICS                       
+================================================================================
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                      FINANCIAL DATA PIPELINE DIAGNOSTICS                       
+================================================================================
+Start time: 2025-03-07 21:54:12
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:524] - Start time: 2025-03-07 21:54:12
+Python version: 3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:525] - Python version: 3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]
+Working directory: /Users/blakesingleton/Desktop/Stock From Scratch
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:526] - Working directory: /Users/blakesingleton/Desktop/Stock From Scratch
+Component: insider
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:527] - Component: insider
+Log file: logs/diagnostics_20250307_215412.log
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:528] - Log file: logs/diagnostics_20250307_215412.log
+
+------------------------------------------------------------
+Checking Environment Variables
+------------------------------------------------------------
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking Environment Variables
+------------------------------------------------------------
+✅ NEXT_PUBLIC_SUPABASE_URL: Set (http...e.co)
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ NEXT_PUBLIC_SUPABASE_URL: Set (http...e.co)
+✅ SUPABASE_SERVICE_ROLE_KEY: Set (eyJh...AW0c)
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ SUPABASE_SERVICE_ROLE_KEY: Set (eyJh...AW0c)
+✅ API_KEY_UNUSUAL_WHALES: Set (cf0a...73ff)
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ API_KEY_UNUSUAL_WHALES: Set (cf0a...73ff)
+✅ API_KEY_ALPHA_VANTAGE: Set (QIKV...8GW9)
+2025-03-07 21:54:12,782 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ API_KEY_ALPHA_VANTAGE: Set (QIKV...8GW9)
+✅ FRED_API_KEY: Set (b4cb...02b3)
+2025-03-07 21:54:12,783 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ FRED_API_KEY: Set (b4cb...02b3)
+
+================================================================================
+                         UNUSUAL WHALES API MODULE TEST                         
+================================================================================
+2025-03-07 21:54:12,783 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                         UNUSUAL WHALES API MODULE TEST                         
+================================================================================
+
+------------------------------------------------------------
+Importing Module
+------------------------------------------------------------
+2025-03-07 21:54:12,783 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Importing Module
+------------------------------------------------------------
+✅ Module imported successfully
+2025-03-07 21:54:12,818 - diagnostics - INFO - [run_diagnostics.py:261] - ✅ Module imported successfully
+
+------------------------------------------------------------
+Testing Module Functions (Mocked)
+------------------------------------------------------------
+2025-03-07 21:54:12,818 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Testing Module Functions (Mocked)
+------------------------------------------------------------
+❌ get_headers: Function returned incorrect headers
+2025-03-07 21:54:12,818 - diagnostics - ERROR - [run_diagnostics.py:277] - ❌ get_headers: Function returned incorrect headers
+
+================================================================================
+                     TESTING INSIDER_TRADES_FETCHER FETCHER                     
+================================================================================
+2025-03-07 21:54:12,818 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                     TESTING INSIDER_TRADES_FETCHER FETCHER                     
+================================================================================
+Importing insider_trades_fetcher...
+2025-03-07 21:54:12,818 - diagnostics - INFO - [run_diagnostics.py:328] - Importing insider_trades_fetcher...
+2025-03-07 21:54:12,991 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:52] - Successfully initialized Supabase client
+✅ insider_trades_fetcher: Module imported successfully
+2025-03-07 21:54:12,991 - diagnostics - INFO - [run_diagnostics.py:338] - ✅ insider_trades_fetcher: Module imported successfully
+✅ insider_trades_fetcher: Class InsiderTradesFetcher found
+2025-03-07 21:54:12,991 - diagnostics - INFO - [run_diagnostics.py:348] - ✅ insider_trades_fetcher: Class InsiderTradesFetcher found
+
+------------------------------------------------------------
+Creating Fetcher Instance
+------------------------------------------------------------
+2025-03-07 21:54:12,991 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Creating Fetcher Instance
+------------------------------------------------------------
+✅ insider_trades_fetcher: Instance created successfully
+2025-03-07 21:54:12,991 - diagnostics - INFO - [run_diagnostics.py:353] - ✅ insider_trades_fetcher: Instance created successfully
+
+------------------------------------------------------------
+Running Fetcher
+------------------------------------------------------------
+2025-03-07 21:54:12,991 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Running Fetcher
+------------------------------------------------------------
+Running insider_trades_fetcher...
+2025-03-07 21:54:12,991 - diagnostics - INFO - [run_diagnostics.py:357] - Running insider_trades_fetcher...
+2025-03-07 21:54:12,991 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:73] - Starting insider trades fetching process
+2025-03-07 21:54:12,991 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:89] - Fetching insider trades from UnusualWhales API
+2025-03-07 21:54:12,991 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/transactions with params {}
+2025-03-07 21:54:13,216 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:100] - Retrieved 50 insider transactions from UnusualWhales API
+2025-03-07 21:54:13,406 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?columns=%22transaction_id%22%2C%22security_title%22%2C%22ticker%22%2C%22shares_owned_before%22%2C%22filing_date%22%2C%22value%22%2C%22is_ten_percent_owner%22%2C%22price%22%2C%22transaction_date%22%2C%22is_director%22%2C%22updated_at%22%2C%22officer_title%22%2C%22is_officer%22%2C%22source%22%2C%22transaction_type%22%2C%22owner_name%22%2C%22is_purchase%22%2C%22is_sale%22%2C%22created_at%22%2C%22amount%22%2C%22form_type%22%2C%22shares_owned_after%22 "HTTP/2 400 Bad Request"
+2025-03-07 21:54:13,408 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:142] - Error fetching insider trades from UnusualWhales API: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'amount' column of 'insider_trades' in the schema cache"}
+2025-03-07 21:54:13,408 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:79] - Completed insider trades fetching process
+✅ insider_trades_fetcher: Completed successfully in 0.42s
+2025-03-07 21:54:13,408 - diagnostics - INFO - [run_diagnostics.py:364] - ✅ insider_trades_fetcher: Completed successfully in 0.42s
+
+================================================================================
+                           DATA STORAGE VERIFICATION                            
+================================================================================
+2025-03-07 21:54:13,408 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                           DATA STORAGE VERIFICATION                            
+================================================================================
+
+------------------------------------------------------------
+Checking insider_trades
+------------------------------------------------------------
+2025-03-07 21:54:13,415 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking insider_trades
+------------------------------------------------------------
+2025-03-07 21:54:13,568 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A "HTTP/2 200 OK"
+ERROR [Insufficient Data] in Data Storage: Table insider_trades has only 0 rows, expected at least 10
+2025-03-07 21:54:13,570 - diagnostics - ERROR - [run_diagnostics.py:108] - ERROR [Insufficient Data] in Data Storage: Table insider_trades has only 0 rows, expected at least 10
+⚠️ insider_trades: Only 0 rows found (expected 10+)
+2025-03-07 21:54:13,571 - diagnostics - WARNING - [run_diagnostics.py:476] - ⚠️ insider_trades: Only 0 rows found (expected 10+)
+2025-03-07 21:54:13,664 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A&order=created_at.desc&limit=1 "HTTP/2 200 OK"
+⚠️ insider_trades: No records found in query
+2025-03-07 21:54:13,666 - diagnostics - WARNING - [run_diagnostics.py:493] - ⚠️ insider_trades: No records found in query
+
+================================================================================
+                           DIAGNOSTIC RESULTS SUMMARY                           
+================================================================================
+2025-03-07 21:54:13,667 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                           DIAGNOSTIC RESULTS SUMMARY                           
+================================================================================
+❌ unusual_whales_api: FAILED
+2025-03-07 21:54:13,667 - diagnostics - ERROR - [run_diagnostics.py:586] - ❌ unusual_whales_api: FAILED
+✅ insider_fetcher: PASSED
+2025-03-07 21:54:13,667 - diagnostics - INFO - [run_diagnostics.py:584] - ✅ insider_fetcher: PASSED
+✅ data_storage: PASSED
+2025-03-07 21:54:13,667 - diagnostics - INFO - [run_diagnostics.py:584] - ✅ data_storage: PASSED
+
+❌❌❌ SOME DIAGNOSTICS FAILED ❌❌❌
+2025-03-07 21:54:13,668 - diagnostics - ERROR - [run_diagnostics.py:592] - 
+❌❌❌ SOME DIAGNOSTICS FAILED ❌❌❌
+End time: 2025-03-07 21:54:13
+2025-03-07 21:54:13,668 - diagnostics - INFO - [run_diagnostics.py:594] - End time: 2025-03-07 21:54:13
+Complete log available at: logs/diagnostics_20250307_215412.log
+2025-03-07 21:54:13,668 - diagnostics - INFO - [run_diagnostics.py:595] - Complete log available at: logs/diagnostics_20250307_215412.log

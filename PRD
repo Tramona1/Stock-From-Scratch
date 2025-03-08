@@ -1,0 +1,1656 @@
+**1. Introduction**
+
+
+The AI Hedge Fund Platform is a cutting-edge financial intelligence tool designed to democratize access to institutional-grade market insights for retail investors. In today's complex financial landscape, individual investors are often overwhelmed by the sheer volume of data and sophisticated analytical techniques employed by large institutions. This platform bridges that gap by harnessing the power of artificial intelligence, real-time data processing, and comprehensive analytics.  It acts as a sophisticated filter and analyzer, aggregating vast datasets from diverse sources and delivering easily understandable and actionable outputs.  By providing timely insights into market trends, institutional trading activities, economic developments, and more, the platform empowers retail investors to make more informed and strategic investment decisions, leveling the playing field in the financial markets.
+
+
+Built as a modern web application with a robust and scalable data pipeline and API server, the platform leverages modern UI frameworks and a scalable backend infrastructure. This ensures a seamless, personalized user experience that is both intuitive and efficient.  The platform is designed to be continuously adaptive to the dynamic financial landscape, incorporating new data sources, refining AI models, and responding to user feedback to remain at the forefront of financial intelligence tools.  Furthermore, robust authentication and user management are securely handled by Clerk, providing a streamlined and secure user experience from initial sign-up to daily platform usage.
+
+
+This Product Requirements Document (PRD) outlines the functional requirements, system architecture, and component interactions for the AI Hedge Fund Platform. It builds upon the initial version by incorporating new features specified by the user—including a compelling landing page, a pre-login dashboard with limited but engaging functionality, a proactive weekly email summary, an intuitive AI-powered search bar, and a comprehensive notification system.  Crucially, this enhanced PRD details how the platform fundamentally works, clarifies the integration of its components, and provides an in-depth explanation of the entire data flow, ensuring clarity on how data is collected, rigorously processed, securely stored, and effectively presented to users.  This document serves as a comprehensive guide for development, ensuring a shared understanding of the platform's goals, features, and technical specifications.
+
+
+**2. Objectives**
+The platform aims to:
+Deliver Timely Insights:** Provide up-to-the-minute financial data and analysis, ensuring users have access to the most current information for informed decision-making in fast-moving markets.  This includes minimizing data latency and providing real-time updates wherever possible.
+*   **Ensure Efficient Processing:** Maintain low latency throughout the entire data lifecycle—from initial data collection and complex processing to final delivery to the user.  Efficiency is critical for a responsive and valuable user experience.
+*   **Enable Customization:** Offer users a high degree of flexibility to tailor their platform experience to their individual investment strategies and preferences. This includes customizable watchlists, personalized notifications, and adaptable dashboard layouts.
+*   **Guarantee Reliability:** Ensure robust system stability and graceful handling of disruptions or data pipeline failures.  The platform must be dependable and consistently available to users.
+*   **Support Scalability:** Accommodate a rapidly growing user base and increasing data volume without any degradation in performance.  The architecture must be designed to scale effectively to meet future demands.
+*   **Democratize Financial Intelligence:**  Make sophisticated financial analysis and institutional-grade insights accessible and understandable to retail investors, empowering them to participate more effectively in the market.
+*   **Promote Data-Driven Decisions:** Encourage users to base their investment decisions on solid data and AI-driven analysis rather than intuition or speculation.
+*   **Provide Actionable Outputs:**  Deliver insights that are not just informative but also directly actionable, guiding users toward potential investment opportunities and risk management strategies.
+
+
+**3. System Architecture**
+
+
+The AI Hedge Fund Platform is built on a modular and service-oriented architecture, designed for flexibility, scalability, and maintainability. It comprises the following core components that interact seamlessly:
+
+
+*   **Web Frontend:** The user-facing interface, built as a modern web application using frameworks like React or Next.js. It encompasses the public-facing landing page, the pre- and post-login dashboards, interactive charts, data visualizations, and the notification display system.  The frontend is designed to be responsive and intuitive, providing a smooth user experience across different devices.
+*   **API Server:**  The central nervous system of the platform, acting as a robust intermediary between the frontend and backend services.  Built using technologies like Node.js with Express or Python with Flask/FastAPI, it handles user authentication, authorization, and all business logic.  The API server processes requests from the frontend, orchestrates data retrieval from the database and external APIs, executes AI-powered queries, and manages communication with the data pipeline.
+*   **Data Pipeline:** The engine that powers the platform's intelligence. This backend system is responsible for the automated collection, rigorous processing, advanced analysis, and efficient storage of vast amounts of financial data from diverse external sources.  Implemented using technologies like Python, Apache Kafka, and Apache Spark, the data pipeline is designed for high throughput and real-time data processing.
+*   **Database:**  The persistent storage layer for the platform.  A combination of database technologies is employed for optimal performance and scalability.  Supabase PostgreSQL is used for structured data like user profiles, watchlists, and processed insights, while potentially incorporating a NoSQL database like MongoDB for unstructured data or time-series data requiring high write speeds.  Redis is utilized for caching frequently accessed data to minimize latency and API calls.
+
+
+These components work together within a unified and well-defined structure to optimize overall functionality and development efficiency.  The modular architecture allows for independent scaling and updates of individual components, ensuring the platform remains agile and adaptable to evolving needs.
+
+
+**4. Core Features**
+**4.1 Landing Page**
+*   **Purpose:** Acts as the primary public entry point for the AI Hedge Fund Platform.  Its main goal is to attract new users, clearly communicate the platform's value proposition, and encourage sign-ups.  It serves as the first impression and marketing tool for the platform.
+*   **Components:**
+    *   **Hero Section:** Positioned prominently at the top of the page, this section immediately captures visitor attention. It features a compelling headline highlighting the platform's core value proposition (e.g., "Unlock Institutional-Grade Market Insights with AI"), a concise and persuasive description of the platform's benefits, and a clear and prominent call-to-action button (e.g., "Sign Up Free," "Get Started Now").  Visually appealing graphics or short video demonstrations can further enhance engagement.
+    *   **Feature Highlights:**  This section showcases the key functionalities and benefits of the platform in a concise and visually appealing manner.  Using bullet points, icons, and short descriptions, it highlights features like real-time data, AI-powered analysis, personalized notifications, watchlist management, and the AI Query feature.  Focus on the value proposition of each feature and how it benefits the user.
+    *   **Testimonials/Social Proof:**  Displays authentic user testimonials or positive reviews to build trust and credibility.  Including quotes from beta users or highlighting positive feedback can significantly increase conversion rates.  Consider also showcasing platform statistics, such as "Users are making X% better investment decisions."
+    *   **Sign-Up Form:**  A simple and easily accessible sign-up form, ideally integrated directly into the landing page (potentially within the Hero Section or Feature Highlights).  Minimize the number of fields required for initial sign-up to reduce friction.  Offer options for email sign-up or social login for convenience.
+    *   **"How It Works" Section:**  A brief and clear explanation of the platform's core functionality – perhaps visually represented with a diagram or infographic – to quickly educate visitors on how the AI Hedge Fund Platform delivers its value.
+    *   **Pricing/Subscription Information (Optional):**  If applicable, a section outlining the platform's pricing plans and subscription options.  Clearly present the value of each plan and any free trial options.
+    *   **Footer:** Contains essential links like "About Us," "Terms of Service," "Privacy Policy," "Contact Us," and social media links, providing necessary information and navigation for visitors.
+    *   **Accessibility:** The entire landing page must be fully accessible to all visitors without requiring authentication.  It should be optimized for search engines (SEO) to improve organic discoverability.
+
+
+**4.2 User Dashboard**
+
+
+The dashboard serves as the central interface for users, providing access to all platform features and functionalities. It is designed to be accessible both pre- and post-login, but with varying levels of functionality based on the user's authentication status.
+
+
+*   **Pre-Login Access (Limited Functionality):**
+    *   **Non-Authenticated User View:**  Visitors who have not yet signed in or signed up are presented with a limited version of the dashboard. This pre-login dashboard is designed to provide a compelling preview of the platform's capabilities and entice users to create an account.
+    *   **Sample Market Data/General Insights:**  Display sample real-time market data (perhaps for major indices or a few popular stocks) or general, non-personalized market insights. This allows users to experience a taste of the platform's data and analytical capabilities.
+    *   **Feature Teasers:**  Showcase teasers of premium features, such as watchlist management, advanced intelligence tabs, and the AI Query feature, but in a locked or disabled state.  Tooltips or overlays can explain that these features are unlocked with a full account.
+    *   **Prominent Sign-in/Sign-up Prompts:**  Strategically placed prompts and call-to-action buttons throughout the pre-login dashboard strongly encourage users to sign in if they have an account or sign up to unlock the full range of features.  These prompts should be visually distinct and persuasive.
+*   **Authenticated User Features (Full Functionality):**
+    *   **Watchlist Management:**  A core feature allowing users to create, manage, and personalize their own watchlists of stocks and other assets they want to track. *(Detailed in Section 3.1 of "updated PRD")*
+    *   **Real-Time Market Data Display:**  Continuously displays current prices, percentage changes, and real-time trading volumes for all items in the user's watchlist.  Provides up-to-the-second market monitoring and performance tracking. *(Detailed in Section 3.1 of "updated PRD")*
+    *   **Market Intelligence Section:** A tabbed interface, intuitively organized, providing a comprehensive view of market intelligence across various dimensions.  Each tab focuses on a specific area of financial insight. *(Detailed in Section 3.2 of "updated PRD")*
+        *   **Hedge Fund Activity Tab:** Visualizations and data tables displaying recent hedge fund transactions, changes in holdings, and overall institutional sentiment.
+        *   **Insider Trading Tab:** Displays executive and insider trades, sourced from SEC Form 4 filings and UnusualWhales API, highlighting potentially significant insider transactions.
+        *   **Options Flow Data Tab:** Presents unusual options activity insights, derived from Unusual Whales API, including heatmaps of options activity, charts of put/call ratios, and lists of large premium trades.
+        *   **Technical Signals Tab:** Offers analysis-based technical alerts and signals for watchlist tickers, generated from real-time technical indicator calculations based on Alpha Vantage API data.
+        *   **Economic Reports Tab:** Delivers summaries of recent economic analyses and reports, sourced from government agencies, financial institutions, and processed by AI for key insights.
+        *   **Expert Interviews Tab:** Provides key insights distilled from financial expert discussions and interviews, transcribed and summarized using AI from YouTube and other sources.
+    *   **AI Query Feature:** A prominent search bar integrated into the dashboard, enabling users to ask natural language financial questions and receive intelligent, data-driven answers. *(Detailed in Section 4.4 and Section 3.5 of "updated PRD")*
+
+
+**4.3 Weekly Email Summary**
+*   **Purpose:** To proactively deliver a concise and valuable weekly overview of watchlist performance and key market events directly to the user's inbox. This keeps users engaged with the platform and provides a convenient summary of important information. Customized and build by the llm
+*   **Content:**
+    *   **Watchlist Performance Summary:**  Provides a clear and concise overview of price movements and significant percentage changes for all tickers in the user's watchlist over the past week.  Highlights top performers and underperformers within the watchlist.
+    *   **Key Watchlist-Related Intelligence:**  Summarizes significant hedge fund activities, insider trades, and unusual options flow events that are directly related to the stocks in the user's watchlist. This personalized intelligence is highly relevant to the user's tracked assets.
+    *   **Brief Economic Updates:**  Includes a concise summary of major economic news and releases from the past week, focusing on events that may impact the market or the user's watchlist stocks.
+    *   **Expert Insights Snippets:**  Integrates short, impactful insights distilled from expert interviews and commentary that are relevant to current market conditions or investment strategies.
+    *   **Platform Feature Highlights/Tips (Optional):**  Occasionally include a brief highlight of a platform feature or a useful tip to encourage users to explore different functionalities and maximize their platform usage.
+    *   **Call to Action:**  Include a clear call to action to encourage users to log in to the platform for deeper analysis and to take action based on the summarized insights.  Links should directly lead users to relevant sections of the dashboard.
+*   **Delivery:**
+    *   **Automated Weekly Delivery:**  Emails are automatically generated and sent out on a consistent day and time each week (e.g., Sunday evening or Monday morning) to opted-in authenticated users.
+    *   **Opt-in/Opt-out Functionality:**  Users must explicitly opt-in to receive the weekly email summary, with a clear and easy way to opt-out at any time through their profile settings or within the email itself.  Compliance with email marketing best practices and regulations (e.g., GDPR, CAN-SPAM) is essential.
+    *   **Personalized Content:**  The content of each weekly email is personalized to the user, focusing on their specific watchlist and preferences.
+    *   **HTML Email Format:**  Emails are formatted in visually appealing HTML to enhance readability and engagement.  Mobile responsiveness is crucial for optimal viewing on all devices.
+    *   **Email Service Integration:**  Utilize a reliable email service provider (e.g., SendGrid, Mailgun, AWS SES) for email delivery to ensure high deliverability rates and manage email sending infrastructure efficiently.
+
+
+**4.4 AI-Powered Search Bar**
+
+
+*   **Purpose:** To provide users with an intuitive and powerful way to query the platform's vast financial data and intelligence using natural language.  It aims to make accessing complex financial information as simple as asking a question.
+*   **Functionality:**
+    *   **Natural Language Processing (NLP):**  Employs advanced NLP techniques, powered by an AI model like Google Gemini API, to accurately interpret and understand user queries phrased in natural English.  This includes understanding intent, identifying key entities (tickers, companies, economic indicators), and parsing complex sentence structures. *(Detailed in Section 3.5 of "updated PRD")*
+    *   **Data Retrieval from Knowledge Base:**  Connects to the platform's comprehensive knowledge base – which includes the database populated by the data pipeline and potentially external knowledge sources – to retrieve relevant data based on the parsed user query.  This involves efficiently querying and aggregating data from various sources. *(Detailed in Section 3.5 of "updated PRD")*
+    *   **Intelligent Response Generation:**  Leverages the AI model to generate structured, easy-to-understand answers in natural language, directly addressing the user's query.  Responses are designed to be concise, informative, and actionable. *(Detailed in Section 3.5 of "updated PRD")*
+    *   **Data Visualizations in Responses:**  Goes beyond simple text responses by intelligently embedding relevant charts, tables, and other data visualizations directly within the AI-generated answer.  This provides visual context and enhances user understanding of complex data relationships. *(Detailed in Section 3.5 of "updated PRD")*
+    *   **Contextual Conversation (Future Enhancement):**  In future iterations, the AI search bar will be enhanced to maintain context from previous queries within a user session. This will enable more complex, multi-turn conversations, allowing users to ask follow-up questions and refine their information seeking process without repeating context.
+    *   **Query History (Future Enhancement):**  Implementation of a "query history" feature to allow users to easily revisit and reuse their past AI search queries. This provides a convenient way to track research, review previous analyses, and quickly access frequently used queries.
+*   **Integration:**  The AI-powered search bar is prominently embedded within the user dashboard, typically at the top of the interface for easy access.  Search results are displayed dynamically and directly below the search bar in a clear and organized manner.
+
+
+**4.5 Notification System**
+
+
+*   **Purpose:** To proactively keep users informed of significant market events, watchlist-related activities, and other critical updates in real-time.  The notification system ensures users don't miss important information that could impact their investment decisions.
+*   **Types of Notifications:**
+    *   **Price Alerts:**  Triggered when the price of a stock in the user's watchlist reaches a predefined threshold (either a percentage change or a specific price level).  Customizable alerts for both upward and downward price movements.
+    *   **Volume Alerts:**  Alerts users to unusual spikes in trading volume for stocks in their watchlist, potentially indicating significant market interest or activity.  Thresholds for volume spikes are user-configurable.
+    *   **Insider Trading Alerts:**  Notifies users of new insider transactions (purchases or sales) for companies in their watchlist, sourced from SEC Form 4 filings.  Highlights potentially significant insider activity.
+    *   **Hedge Fund Activity Alerts:**  Informs users of major changes in hedge fund positions for companies in their watchlist, such as significant increases or decreases in holdings.
+    *   **Options Flow Alerts:**  Delivers alerts based on unusual or significant options flow activity related to watchlist stocks, potentially signaling institutional sentiment or upcoming market movements.
+    *   **Technical Signals Alerts:**  Provides notifications when technical indicators (e.g., RSI, MACD crossovers) generate buy or sell signals for stocks in the user's watchlist.
+    *   **Economic Event Alerts (Future Enhancement):**  In future versions, notifications can be triggered by upcoming high-impact economic events from the economic calendar that may affect the market or specific sectors relevant to the user's watchlist.
+*   **Customization:**
+    *   **Notifications Tab in User Settings:**  A dedicated "Notifications" tab within the user's profile settings allows for granular customization of notification preferences.
+    *   **Alert Type Selection:**  Users can individually select which types of notifications they want to receive (price alerts, volume alerts, insider trading alerts, etc.).
+    *   **Threshold Configuration:**  For price and volume alerts, users can set custom thresholds (e.g., "Notify me when stock price increases by 5%" or "Notify me when volume is 3x the average").
+    *   **Delivery Channels (Future Enhancement):**  Initially, notifications will be delivered within the web dashboard.  Future enhancements may include options for delivery via mobile app push notifications, email, or SMS.
+    *   **Frequency Control:**  Options to control the frequency of certain types of notifications (e.g., daily digest for insider trading alerts instead of real-time alerts).
+*   **Delivery Mechanisms:**
+    *   **Real-time Dashboard Notifications:**  Notifications are displayed in real-time within the user dashboard, typically in a designated notification area or as dynamic alerts that appear on screen.
+    *   **Persistent Notification History:**  A notification history log within the dashboard allows users to review past notifications and ensure they haven't missed any alerts.
+    *   **Potential Future Mobile App Integration:**  For future mobile app versions, push notifications will be a primary delivery channel for real-time alerts, ensuring users are notified even when they are not actively using the web platform.
+
+
+**4.6 Data Collection and Analysis**
+
+
+The platform's core intelligence relies on the comprehensive aggregation and sophisticated analysis of financial data from a diverse range of sources.  This multi-faceted approach ensures a holistic and in-depth view of the market.
+
+
+*   **Data Sources:**
+    *   **Market Data:** Real-time and historical stock prices, volume, technical indicators, and intraday data. (Sources: Alpha Vantage API, potentially others for redundancy and broader coverage).
+    *   **Options Flow & Dark Pool Data:** Unusual options activity, dark pool trades, institutional options and equity flow, providing insights into institutional trading strategies. (Source: Unusual Whales API).
+    *   **SEC Filings:**  Comprehensive data from SEC filings, including 13F filings (institutional holdings), Form 4 (insider trades), 8-K (corporate events), and more. (Source: SEC EDGAR Database, Unusual Whales API for processed data).
+    *   **Analyst Ratings & Price Targets:** Analyst upgrades, downgrades, price target revisions, and consensus estimates, reflecting professional analyst sentiment. (Sources: Analyst Ratings APIs - e.g., TipRanks, Refinitiv).
+    *   **Economic Indicators:** Key macroeconomic data such as GDP, inflation, unemployment rates, interest rates, consumer confidence, and other vital economic metrics. (Source: FRED API - Federal Reserve Economic Data).
+    *   **Financial News & Sentiment:** Breaking financial news headlines, articles, and sentiment analysis derived from news sources, providing a gauge of market mood. (Sources: Financial News APIs - e.g., NewsAPI, potentially integration with financial news aggregators, YouTube API/AssemblyAI for video news sentiment analysis).
+    *   **Expert Interviews & Commentary:**  Insights and opinions from financial experts, analysts, and fund managers, extracted from video interviews, podcasts, and transcripts. (Sources: YouTube API, potentially podcast APIs, AssemblyAI for transcription and summarization).
+    *   **Political Trading Data:**  Data on trading activity by members of Congress and Senate, providing insights into potential policy-related market movements. (Sources: Political Trading APIs - e.g., Quiver Quantitative, web scraping of public disclosure data).
+    *   **Hedge Fund & Institutional Holdings Data:**  Detailed data on hedge fund portfolio compositions, holdings, and trading activity, offering a view into institutional investment strategies. (Sources: UnusualWhales API, SEC Filings).
+    *   **Corporate Earnings Data:**  Earnings announcements, Earnings Per Share (EPS), revenue figures, earnings call transcripts, and earnings calendar data. (Sources: Earnings Data APIs - e.g., Financial Modeling Prep, Alpha Vantage).
+    *   **Bank Research Reports:**  Financial research reports and analysis from major investment banks and financial institutions, providing in-depth market perspectives. (Sources: Email Integration for receiving reports, web scraping of publicly available research reports).
+    *   **FDA Calendar Events:**  Regulatory events and announcements from the FDA relevant to pharmaceutical and biotech companies, impacting stock prices in these sectors. (Sources: FRED API, UnusualWhales API, FDA website scraping).
+    *   **Economic Calendar Events:** Scheduled economic releases, central bank meetings, and other key economic calendar events, allowing users to anticipate market-moving announcements. (Sources: UnusualWhales API, FRED API, economic calendar APIs).
+
+
+**5. User Experience Flow**
+
+
+**5.1 Landing Page**
+
+
+*   **Visitor Arrival:**  Potential users arrive at the platform's landing page, typically through web search, social media links, or marketing campaigns.
+*   **Exploration of Features:**  Visitors browse the landing page, exploring the hero section, feature highlights, testimonials, and "How It Works" section to understand the platform's value proposition and capabilities.
+*   **Pre-Login Dashboard Preview (Optional):** Some landing pages might offer a direct link or button to view a limited pre-login dashboard directly from the landing page to provide an interactive preview.
+*   **Sign-Up Decision:**  Based on the landing page content and perceived value, visitors decide whether to sign up for the platform.
+*   **Sign-Up Process:**  If interested, visitors click on a call-to-action button (e.g., "Sign Up Free") and are directed to the sign-up form or authentication flow (powered by Clerk).
+
+
+**5.2 Dashboard (Pre-Login)**
+
+
+*   **Accessing Pre-Login Dashboard:**  Visitors may access the pre-login dashboard either directly from the landing page or by navigating to the dashboard URL without being logged in.
+*   **Viewing Sample Data & Insights:**  Non-authenticated users are presented with a limited dashboard view, showcasing sample market data, general insights, and teasers of premium features.
+*   **Feature Exploration (Limited):**  Users can interact with the pre-login dashboard to a limited extent, exploring sample data visualizations and getting a feel for the platform's interface.  However, core functionalities like watchlist management and advanced intelligence tabs are locked.
+*   **Sign-in/Sign-up Prompts:**  Prominent prompts and call-to-action buttons are displayed throughout the pre-login dashboard, encouraging users to sign in if they have an account or sign up to unlock full access.
+*   **Conversion to Authenticated User:**  If a user clicks on a sign-in or sign-up prompt and completes the authentication process, they transition to the full authenticated dashboard experience.
+
+
+**5.3 Dashboard (Authenticated)**
+
+
+*   **Login & Access:** Authenticated users log in to the platform using their credentials via the Clerk authentication system and are directed to their personalized dashboard.
+*   **Watchlist Management & Customization:**  Users immediately have access to their watchlist management center. They can add new stocks, remove stocks, organize their watchlist, and customize display settings.
+*   **Market Intelligence Exploration:**  Users navigate through the tabbed Market Intelligence section, exploring Hedge Fund Activity, Insider Trading, Options Flow, Technical Signals, Economic Reports, and Expert Interviews to gain in-depth market insights.
+*   **AI Query Interaction:**  Users utilize the AI-powered search bar to ask financial questions in natural language and receive intelligent, data-driven answers directly within the dashboard.
+*   **Notification Reception:**  Real-time notifications are displayed in the dashboard based on user-defined preferences and market events. Users can view new notifications and review past notifications in the notification history.
+*   **Personalization & Settings:** Users can access their profile settings to manage notification preferences, email summary opt-in/opt-out, and other platform personalization options.
+*   **Continuous Use & Monitoring:**  Authenticated users continuously use the dashboard to monitor their watchlist, track market intelligence, conduct research using the AI Query feature, and stay informed through notifications, making data-driven investment decisions.
+
+
+**5.4 Weekly Email Summary**
+
+
+*   **Opt-in & Subscription:**  Authenticated users who have opted-in to receive the weekly email summary are included in the weekly email distribution list.
+*   **Automated Email Generation:**  The platform automatically generates personalized weekly email summaries for each opted-in user, incorporating watchlist performance, key intelligence highlights, economic updates, and expert insights.
+*   **Email Delivery:**  Emails are sent out automatically on a scheduled day and time each week via the integrated email service provider.
+*   **Email Reception & Review:**  Users receive the weekly email summary in their inbox. They review the concise overview of watchlist activities and market events.
+*   **Dashboard Deep Dive:**  Links within the email summary direct users to relevant sections of the dashboard for deeper analysis and to take action based on the summarized information.
+*   **Engagement & Platform Re-Entry:**  The weekly email summary serves as a touchpoint to keep users engaged with the platform and encourages them to re-enter the dashboard for more detailed analysis and interaction.
+
+
+**5.5 Notification System**
+
+
+*   **Preference Configuration:**  Users configure their notification preferences in the "Notifications" tab within their profile settings, selecting alert types and setting thresholds.
+*   **Event Triggering:**  The data pipeline and API server continuously monitor market data and relevant events (price movements, volume spikes, insider trades, etc.).
+*   **Alert Generation:**  When a monitored event meets a user's defined notification criteria, the system generates a notification alert.
+*   **Real-time Delivery:**  Notifications are delivered in real-time to the user's dashboard, appearing in the notification area.  (Future: Push notifications to mobile app).
+*   **Notification Display & Review:**  Users see new notifications appear in their dashboard. They can click on notifications to view details and are directed to relevant sections of the platform for further context. Users can also review past notifications in the notification history log.
+*   **Action & Information Awareness:**  Users are promptly informed of significant market events and watchlist-related activities, allowing them to react quickly and make timely investment decisions based on the notifications received.
+
+
+**6. Component Interactions**
+
+
+*   **Web Frontend <-> API Server:**
+    *   **Frontend Requests Data:** The Web Frontend initiates requests to the API Server for data to populate the landing page, dashboards, charts, and data tables. These requests are typically REST API calls or WebSocket connections for real-time updates.
+    *   **API Server Responds with Data:** The API Server processes frontend requests, retrieves the necessary data from the database, external APIs, or AI services, and formats the data into JSON responses. It then sends these responses back to the Web Frontend for rendering.
+    *   **User Actions & Requests:** User interactions in the frontend (e.g., adding stocks to watchlist, submitting AI queries, updating settings) are sent as requests to the API Server for processing and database updates.
+    *   **Authentication & Authorization:** The API Server handles user authentication and authorization, verifying user credentials and ensuring users only access data and features they are permitted to use. Clerk handles the core authentication logic, and the API server integrates with Clerk for user session management.
+
+
+*   **API Server <-> Data Pipeline:**
+    *   **API Server Triggers Data Updates (Less Frequent):** In some scenarios, the API Server might trigger specific data pipeline tasks, such as requesting a refresh of certain datasets or initiating a new data collection cycle (although the data pipeline is primarily autonomously scheduled).
+    *   **Data Pipeline Updates Database:** The Data Pipeline is the primary driver of data updates. It continuously collects, processes, and analyzes data and then updates the platform's database with new data, processed insights, and analysis results.
+    *   **API Server Queries Database:** The API Server heavily relies on the database to retrieve data for frontend requests and AI query responses. It queries the database to fetch real-time market data, historical data, processed insights, user preferences, and other information required for platform functionality.
+
+
+*   **Data Pipeline <-> External Data Sources:**
+    *   **Data Pipeline Collects Raw Data:** The Data Pipeline directly interacts with external APIs (Alpha Vantage, Unusual Whales, FRED, Analyst Ratings APIs, News APIs, etc.), web scraping targets (SEC EDGAR, political trading data sources, bank research reports), and potentially subscription-based data feeds to collect raw financial data.
+    *   **Data Pipeline Processes Data:** After collection, the Data Pipeline performs data cleaning, normalization, analysis (including AI/ML models, NLP), and transformation on the raw data.
+    *   **Data Pipeline Stores Processed Data:** The Data Pipeline stores the processed and analyzed data into the platform's database, making it available for the API Server and frontend to access.
+
+
+*   **API Server <-> AI Services (e.g., Google Gemini API):**
+    *   **API Server Sends AI Queries:** When a user submits an AI query through the search bar, the Web Frontend sends the query to the API Server. The API Server, in turn, sends the natural language query to the integrated AI service (e.g., Google Gemini API) for processing.
+    *   **AI Service Processes Queries & Generates Responses:** The AI service uses its NLP capabilities to understand the query, retrieve relevant information from its knowledge base (or potentially external knowledge sources), and generate a natural language response.
+    *   **API Server Receives & Delivers AI Responses:** The API Server receives the AI-generated response from the AI service. It then formats this response (potentially adding data visualizations or structuring the information) and sends it back to the Web Frontend to display to the user.
+
+
+*   **API Server <-> Email Service (e.g., SendGrid):**
+    *   **API Server Triggers Email Sending:** For weekly email summaries and potentially other email notifications (future), the API Server triggers the email sending process.
+    *   **Email Service Sends Emails:** The API Server utilizes an integrated email service provider (e.g., SendGrid) to handle the actual sending of emails to users. It provides the email content, recipient lists, and sending instructions to the email service.
+    *   **Email Service Handles Delivery & Tracking:** The email service provider manages email delivery, tracks email opens and clicks (for analytics), and handles email bounces and unsubscribes.
+
+
+**7. Data Flow (In-Depth)**
+
+
+The data flow is the circulatory system of the AI Hedge Fund Platform, meticulously orchestrating how financial data is acquired, refined, stored, and ultimately delivered to empower users with actionable insights.  Understanding this flow is crucial for comprehending the platform's inner workings.
+
+
+**7.1 Data Collection**
+
+
+*   **Sources: (Expanded and more specific examples)** The data pipeline is engineered to connect to a diverse and comprehensive array of external APIs and data sources, ensuring a rich and multifaceted financial intelligence picture.
+    *   **Real-time Market Data Providers:** APIs like **Alpha Vantage** (for stock prices, volume, technical indicators), **Polygon.io**, **IEX Cloud**, and potentially direct exchange feeds. These provide streaming or near real-time data for current market conditions.
+    *   **Options Flow and Dark Pool Data Feeds:** Specialized APIs like **Unusual Whales API**, **ORATS**, and **LiveVol**, focusing on options market activity, unusual options trades, dark pool transactions, and institutional order flow.
+    *   **SEC Filings (EDGAR Database):** The **SEC's EDGAR database** is the authoritative source for regulatory filings. Data is extracted from filings like **13F (quarterly institutional holdings reports)**, **Form 4 (insider trading disclosures)**, **8-K (current reports on major corporate events)**, **10-K (annual reports)**, and **10-Q (quarterly reports)**.  API access and web scraping techniques are used to retrieve and parse this data.  **Unusual Whales API** also provides pre-processed and structured SEC filing data for easier integration.
+    *   **Analyst Ratings and Economic Reports:** APIs from providers like **TipRanks API**, **Refinitiv**, **Bloomberg Terminal API (if accessible)**, and dedicated analyst rating APIs are used to gather analyst ratings, price targets, and revisions. Economic reports and data are primarily sourced from the **FRED API (Federal Reserve Economic Data)**, and potentially other government data APIs (**Bureau of Labor Statistics (BLS) API**, **Census Bureau API**).
+    *   **News Aggregators for Financial and Political Trade Updates:** News APIs like **NewsAPI.org**, **Financial News APIs (e.g., from Thomson Reuters, Bloomberg - if accessible)**, and potentially web scraping of reputable financial news sites are used to collect market-moving financial news.  Political trading data is sourced from APIs like **Quiver Quantitative API**, **Capitol Trades API**, and web scraping of **congressional financial disclosure websites**.
+    *   **Expert Interview Transcripts or Summaries:**  **YouTube API** is used to access video content from financial experts and analysts. **AssemblyAI API** is then employed for transcription and summarization of video and audio content to extract key insights.  Potentially, podcast APIs and dedicated financial video/podcast platforms could also be integrated.
+
+
+*   **Frequency: (API Refresh Rate Table - As detailed in "updated PRD", but now integrated directly here)** API call frequency is strategically tiered based on data type to optimize resource utilization and ensure data freshness without exceeding API limits.
+
+
+    **API Refresh Rate Table:**
+
+
+    | Data Type             | Source             | Refresh Frequency      | Rationale                                                                                                                                                                                             |
+    | :-------------------- | :----------------- | :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Stock Prices          | Alpha Vantage      | Every 5 minutes        | Highly volatile, requires frequent updates for real-time accuracy for day traders and active watchlist monitoring. Balances real-time needs with API usage limits.                                   |
+    | Options Flow          | Unusual Whales     | Every 15 minutes       | Options market is dynamic, but less rapidly changing than stock prices. 15-minute intervals capture significant shifts in options activity without excessive API calls.                               |
+    | Dark Pool Data        | Unusual Whales     | Hourly                 | Dark pool trades are reported less frequently. Hourly updates are sufficient to track institutional dark pool activity and identify trends.                                                               |
+    | Analyst Ratings       | Analyst Rating APIs| Daily                  | Analyst ratings and price targets are typically updated daily or less frequently. Daily refresh ensures users have the latest analyst opinions and recommendations.                                    |
+    | Insider Trading       | Unusual Whales/SEC | Daily                  | Insider trading filings are typically processed and released daily. Daily updates capture new insider transactions as they become publicly available.                                                  |
+    | Hedge Fund Holdings   | Unusual Whales/SEC | Quarterly/Event-Driven   | 13F filings (hedge fund holdings) are released quarterly. Updates occur quarterly after filing deadlines. Event-driven updates may occur for significant fund announcements or real-time feeds. |
+    | Economic Indicators   | FRED               | Every 2 weeks          | Major economic indicators (GDP, inflation) are released periodically (monthly, quarterly). Bi-weekly refresh ensures timely updates after key economic data releases from FRED.                            |
+    | Economic Calendar     | FRED/Unusual Whales| Daily                  | Economic calendar events are scheduled and updated daily. Daily refresh ensures users are aware of upcoming economic releases and central bank announcements.                                            |
+    | Earnings Calendar     | Various APIs       | Weekly or as published | Earnings announcements are scheduled and published on a rolling basis. Weekly or "as published" refresh ensures the earnings calendar is up-to-date with latest announcement dates and details.       |
+    | Financial News        | News APIs          | Hourly                 | Financial news is constantly evolving. Hourly updates capture breaking news and developing market narratives.                                                                                             |
+    | News Sentiment        | YouTube/AssemblyAI | Daily or Event-Driven    | News sentiment analysis is typically performed daily or triggered by major news events. Daily updates or event-driven processing captures shifts in market sentiment.                                     |
+    | Bank Research Reports | Email/Web Scraping | Daily/As Published     | Bank research reports are published periodically. Daily checks for new reports via email integration and web scraping ensure users have access to the latest institutional research as it becomes available. |
+    | Expert Interviews     | YouTube/AssemblyAI | Daily/As Published     | Expert interviews and commentary are released periodically. Daily checks on YouTube and other platforms ensure timely discovery and processing of new expert insights.                                   |
+    | Political Trades      | Web Scraping/APIs  | Daily                  | Political trading disclosures are typically released daily or with some delay. Daily refresh ensures users are aware of recent trading activity by political figures.                                       |
+    | FDA Calendar Events   | FRED/Unusual Whales| Daily                  | FDA calendar events and announcements are updated daily. Daily refresh ensures users in the biotech/pharma sector are informed of relevant regulatory events.                                               |
+
+
+*   **Method: (Detailed methods for different data types)** The data pipeline employs a combination of methods to efficiently and reliably gather raw data from the diverse sources:
+    *   **API Calls:** The primary method for structured data retrieval.  Data pipeline components (Python scripts, data connectors) make authenticated API requests (using API keys, OAuth) to external APIs (e.g., Alpha Vantage, Unusual Whales, FRED).  Requests are made according to the defined refresh frequencies and API rate limits.  Libraries like `requests` in Python are used for making HTTP requests and handling API responses (typically in JSON format).
+    *   **Web Scraping (Ethical and Permitted):** Used selectively for data sources where APIs are not available or insufficient, and where web scraping is ethically permissible and complies with website terms of service.  Examples include scraping SEC EDGAR for certain types of filings (as a backup or for specific data points not readily available via API), political trading disclosure websites, and potentially publicly available bank research reports.  Libraries like `Beautiful Soup` and `Scrapy` in Python are used for parsing HTML content and extracting data.  Robust error handling and rate limiting are crucial for responsible web scraping.
+    *   **Subscription-Based Feeds (Future Expansion):** For ultra-low latency real-time data or access to premium datasets, the platform could incorporate subscription-based data feeds (e.g., direct exchange feeds, premium data provider subscriptions). These feeds often provide data in streaming formats (e.g., WebSockets, message queues) and require specialized data ingestion mechanisms.
+    *   **Email Integration:** Used to receive bank research reports and potentially other reports delivered via email.  Email parsing libraries and services (e.g., Python's `email` library, cloud-based email parsing services) are used to automatically process incoming emails, extract attachments (PDF reports), and parse report content.
+    *   **YouTube API and AssemblyAI for Video/Audio Data:**  **YouTube API** is used to search for and access financial expert interviews, commentary videos, and financial news videos.  **AssemblyAI API** is then used for automated transcription of video and audio content.  The transcribed text is then further processed using NLP for sentiment analysis and key insight extraction.
+
+
+**7.2 Data Processing**
+
+
+*   **Aggregation:** Raw data ingested from diverse sources is initially aggregated and consolidated.  This involves bringing together data points related to the same entity (e.g., a specific stock ticker) from different APIs and sources.  Data is often transformed into a common intermediate format (e.g., JSON, Pandas DataFrames) for easier processing.
+*   **Cleaning: (Detailed cleaning and validation steps)** Raw data often contains inconsistencies, errors, noise, and missing values.  A rigorous data cleaning and validation pipeline is essential to ensure data quality and reliability.
+    *   **Data Validation Layer:**  A dedicated data validation layer is implemented to cross-check critical data points across different APIs and sources. For example, stock prices for the same ticker are compared across Alpha Vantage and Unusual Whales APIs to detect discrepancies and ensure accuracy.  Data validation rules are defined based on expected data ranges, formats, and consistency checks.
+    *   **Error Handling and Graceful Degradation:**  Robust error handling mechanisms are implemented throughout the data pipeline to gracefully handle data errors, API failures, and unexpected data formats.  Instead of crashing the pipeline, error handling ensures that errors are logged, problematic data points are flagged or discarded, and the pipeline continues to process valid data.  Graceful degradation strategies are in place to maintain partial functionality even if some data sources become temporarily unavailable.
+    *   **Data Deduplication:**  Duplicate data entries can arise from various sources or API responses.  Data deduplication techniques are applied to identify and remove redundant records, ensuring data uniqueness and preventing skewed analysis.  Deduplication may involve checking for identical records based on unique identifiers or using fuzzy matching for near-duplicate entries.
+    *   **Data Type Conversion and Formatting:**  Raw data may be in various formats (strings, numbers, dates) and require conversion to consistent data types for analysis.  Dates and timestamps are parsed and standardized to a uniform time zone. Numerical values are converted to appropriate numeric types.  Data is formatted consistently for database storage and frontend display.
+    *   **Handling Missing Values (Imputation or Removal):** Missing data points are addressed using appropriate strategies.  For time-series data, techniques like forward fill, backward fill, or interpolation may be used to impute missing values.  For other data types, missing values may be flagged, imputed using statistical methods, or records with excessive missing values may be removed depending on the data type and analysis requirements.
+    *   **Outlier Detection and Handling:**  Outliers or anomalous data points are identified and handled to prevent them from distorting analysis results.  Statistical methods (e.g., Z-score, IQR) and machine learning-based anomaly detection algorithms are used to detect outliers.  Outliers may be removed, capped, or transformed depending on the context and potential impact on analysis.
+    *   **Data Normalization (Beyond Formatting):** Data normalization goes beyond just formatting. It involves scaling numerical data to a specific range (e.g., 0 to 1) or standardizing data to have zero mean and unit variance.  Normalization is particularly important for machine learning models and ensures that features with different scales do not disproportionately influence model training.
+
+
+*   **Analysis: (Detailed AI/ML analysis and NLP techniques)** The cleaned and normalized data then undergoes advanced analysis using AI/ML models and NLP techniques to extract actionable insights.
+    *   **AI/ML Models:**
+        *   **Anomaly Detection Algorithms:** Employed to identify unusual patterns and deviations in financial data.  Algorithms like **Isolation Forest**, **One-Class SVM**, and **Autoencoders** are used to detect anomalies in options flow (unusual options activity), dark pool activity (large or unusual trades), market data (price spikes, volume surges), and other datasets.  Detected anomalies are flagged and presented to users as potential trading signals or areas of interest.
+        *   **Sentiment Analysis Models (NLP-Based):**  NLP models are used to analyze text data from news articles, financial reports, expert interviews, and social media to gauge market sentiment (bullish, bearish, neutral).  Pre-trained sentiment analysis models (e.g., from **Hugging Face Transformers**, **VADER**) and custom-trained models are used to classify sentiment and quantify the overall market mood.  Sentiment scores are aggregated and visualized to provide users with a sentiment gauge.
+        *   **Topic Modeling (NLP-Based):**  NLP techniques like **Latent Dirichlet Allocation (LDA)** and **Non-negative Matrix Factorization (NMF)** are used to identify key topics and themes emerging from financial news, reports, and expert commentary.  Topic modeling helps to summarize large volumes of text data and uncover dominant narratives driving market movements.  Identified topics are presented to users as key market themes and trends.
+        *   **Predictive Models (Future Phases - Mentioned in PRD):**  The platform roadmap includes future phases that will incorporate more advanced predictive models.  These may include:
+            *   **Time Series Forecasting Models:**  **ARIMA**, **LSTM networks**, and other time series models will be used to forecast stock prices, market indices, and economic indicators.
+            *   **Regression Models:**  Used to predict stock price movements based on a combination of fundamental, technical, and sentiment factors.
+            *   **Classification Models:**  Used to classify stocks into categories (e.g., "buy," "sell," "hold") or to predict the probability of certain market events.
+            *   **Reinforcement Learning Agents:**  Potentially explored for automated trading strategy development and optimization in advanced future phases.
+
+
+    *   **Natural Language Processing (NLP): (Detailed NLP tasks and techniques)** NLP is a core component of the data processing pipeline, enabling the platform to understand and extract insights from unstructured text data.
+        *   **Sentiment Analysis (Detailed):**  Goes beyond simple positive/negative/neutral classification.  NLP sentiment analysis models are used to:
+            *   **Fine-grained Sentiment Classification:**  Classify sentiment on a more granular scale (e.g., very positive, positive, neutral, negative, very negative).
+            *   **Aspect-Based Sentiment Analysis:**  Identify sentiment expressed towards specific aspects or entities within the text (e.g., sentiment towards a company's earnings, product, management).
+            *   **Emotion Detection:**  Detect specific emotions expressed in text (e.g., joy, fear, anger, sadness) to provide a richer understanding of market mood and investor psychology.
+        *   **Named Entity Recognition (NER):**  NER models are used to identify and classify named entities in text, such as:
+            *   **Organizations (Companies):**  Identify company names mentioned in news articles, reports, and filings.
+            *   **People (Financial Experts, Insiders):**  Recognize names of financial analysts, experts interviewed, and company insiders mentioned in insider trading filings.
+            *   **Locations (Geopolitical Events):**  Identify locations relevant to economic news and geopolitical events that may impact markets.
+            *   **Financial Instruments (Tickers, Indices):**  Recognize stock tickers, index names, and other financial instruments mentioned in text.
+        *   **Text Summarization:**  NLP summarization techniques are used to condense lengthy text documents (e.g., SEC filings, research reports, expert interview transcripts) into concise summaries, highlighting key information and insights.  Abstractive and extractive summarization methods are employed to generate informative summaries.
+        *   **Topic Extraction and Keyword Extraction:**  NLP techniques are used to extract key topics, themes, and keywords from text data.  Topic modeling (LDA, NMF) identifies dominant topics across a corpus of documents.  Keyword extraction algorithms (e.g., TF-IDF, RAKE) identify the most relevant keywords within individual documents.
+        *   **Relationship Extraction:**  NLP techniques are used to identify relationships between entities mentioned in text.  For example, extracting relationships between companies and analysts who issue ratings, or relationships between companies and insiders involved in trading activity.
+        *   **Language Translation (Future Enhancement):**  In future iterations, NLP translation models may be incorporated to process financial news and expert commentary from multiple languages, expanding the platform's data coverage and global perspective.
+
+
+*   **Calculations: (Metrics and indicators computed)**  Beyond AI/ML and NLP, the data pipeline performs various calculations to derive key metrics and indicators from the cleaned and processed data.
+    *   **Technical Indicators:**  Calculations of a wide range of technical indicators for stock tickers, based on real-time and historical price data.  Examples include:
+        *   **Moving Averages (SMA, EMA):**  Simple and Exponential Moving Averages for trend identification.
+        *   **Relative Strength Index (RSI):**  Overbought/oversold indicator.
+        *   **Moving Average Convergence Divergence (MACD):**  Momentum indicator.
+        *   **Bollinger Bands:**  Volatility indicator.
+        *   **Fibonacci Retracements:**  Support and resistance levels.
+        *   **Volume-Based Indicators (OBV, VWAP):**  Volume analysis indicators.
+    *   **Percentage Changes and Performance Metrics:**  Calculations of percentage price changes (daily, weekly, monthly), watchlist performance metrics, portfolio performance calculations, and benchmark comparisons.
+    *   **Volume Spikes and Anomalies:**  Calculations to detect unusual volume spikes by comparing current trading volume to historical averages or moving averages.
+    *   **Put/Call Ratios and Options Metrics:**  Calculations of put/call ratios from options flow data, open interest changes, implied volatility metrics, and option premium analysis.
+    *   **Correlation Analysis:**  Calculations of correlation coefficients between different stocks, market indices, and economic indicators to identify relationships and dependencies.
+    *   **Valuation Ratios:**  Calculations of fundamental valuation ratios like Price-to-Earnings (P/E), Price-to-Book (P/B), Price-to-Sales (P/S), and dividend yield based on corporate financial data and stock prices.
+
+
+*   **Enrichment: (Data cross-referencing and actionable insight generation)**  The final stage of data processing involves enriching the processed data and generating actionable insights that are valuable to users.
+    *   **Cross-Referencing Data:**  Data from different sources is cross-referenced to create more comprehensive and insightful views.  Examples:
+        *   **Linking Insider Trades to Stock Price Movements:**  Analyzing how stock prices react to insider buying and selling activity.
+        *   **Correlating Hedge Fund Activity with Stock Performance:**  Examining whether changes in hedge fund holdings precede or coincide with stock price movements.
+        *   **Connecting Analyst Ratings Changes to Options Flow:**  Investigating if analyst upgrades or downgrades are reflected in options market activity.
+        *   **Relating Economic Indicator Releases to Market Volatility:**  Analyzing how market volatility changes around the release of key economic indicators.
+    *   **Actionable Insight Generation:**  The processed and enriched data is transformed into actionable insights that are presented to users in an easily understandable format.  Examples:
+        *   **Technical Signals Generation:**  Technical indicator calculations are used to generate buy/sell signals based on predefined rules and strategies.
+        *   **Unusual Options Activity Alerts:**  Detected anomalies in options flow are presented as alerts, highlighting potentially significant options trades.
+        *   **Insider Trading Summaries:**  Insider trading data is summarized and presented in a user-friendly format, highlighting key insider transactions.
+        *   **Hedge Fund Activity Highlights:**  Notable changes in hedge fund holdings are summarized and presented, focusing on significant institutional movements.
+        *   **Market Sentiment Summaries:**  Aggregated sentiment scores and key topics from news and social media are summarized to provide a concise overview of market mood.
+        *   **AI-Generated Investment Ideas (Future Enhancement):**  In future phases, AI models will be used to generate investment ideas and recommendations based on the comprehensive analysis of data and identified patterns.
+
+
+**7.3 Data Storage**
+
+
+*   **Database Structure: (Detailed database schema and data organization)** The platform utilizes a hybrid database architecture combining relational and potentially NoSQL databases for optimal performance and scalability.
+
+
+    *   **Supabase PostgreSQL (Relational Database):**  Primary database for structured data, user data, and processed insights.
+        *   **`users_table`:** Stores user profiles, authentication information, preferences, watchlist data, notification settings, and API usage metrics.  Relational schema to link users to watchlists, notifications, and other user-specific data.
+        *   **`watchlists_table`:** Stores user-created watchlists, watchlist items (stock tickers), and watchlist metadata.  Relational schema to link watchlists to users and stock tickers.
+        *   **`stock_data_table`:** Stores historical and real-time stock price data, volume data, technical indicators, intraday data, and company fundamental data.  Time-series optimized tables for efficient querying of historical price data.
+        *   **`options_flow_table`:** Stores processed options flow data, unusual options activity alerts, put/call ratios, and options market metrics.  Indexed for efficient querying based on ticker, expiration date, strike price, and option type.
+        *   **`dark_pool_data_table`:** Stores dark pool trade data, dark pool volume metrics, and institutional dark pool activity insights.
+        *   **`insider_trades_table`:** Stores processed insider trading data from SEC Form 4 filings, insider transaction details, and insider profiles.  Indexed for querying by ticker, insider name, transaction date, and transaction type.
+        *   **`hedge_fund_holdings_table`:** Stores hedge fund holdings data from 13F filings, hedge fund portfolio compositions, and institutional ownership information.  Quarterly partitioned tables for efficient querying of historical holdings data.
+        *   **`analyst_ratings_table`:** Stores analyst ratings, price targets, rating revisions, and analyst profiles.  Indexed for querying by ticker, analyst name, rating agency, and rating date.
+        *   **`economic_indicators_table`:** Stores historical economic indicator data from FRED and other sources, economic indicator values, and time-series data.  Time-series optimized tables for efficient querying of historical economic data.
+        *   **`news_sentiment_table`:** Stores news sentiment scores, sentiment time-series data, and sentiment analysis results for news articles and financial text data.
+        *   **`expert_insights_table`:** Stores summarized expert insights extracted from expert interviews and commentary, expert profiles, and insight metadata.
+        *   **`ai_query_history_table`:** Stores user AI query history, query text, AI-generated responses, timestamps, and user identifiers.  For query history tracking and analysis.
+        *   **`notifications_table`:** Stores notification events, notification content, user notification preferences, and notification delivery status.  For tracking and managing user notifications.
+        *   **`economic_calendar_table`:** Stores economic calendar events, event details, release dates, expected impact ratings, and historical economic releases.
+
+
+    *   **Redis (In-Memory Data Store - Cache):** Used as a high-performance cache to store frequently accessed data in memory for ultra-fast retrieval and reduced database load.
+        *   **Real-time Market Data Cache:** Caches real-time stock prices, options flow data, and other frequently updated market data with a short Time-To-Live (TTL - e.g., 5 minutes for stock prices, 15 minutes for options flow).  Reduces API calls to external data providers and provides near real-time data to users with minimal latency.
+        *   **Processed Insights Cache:** Caches frequently accessed processed insights, technical indicator values, and AI-generated summaries to speed up dashboard loading and AI query responses.
+        *   **User Session Cache:** Caches user session data for faster authentication and authorization checks, improving user experience and reducing API server load.
+
+
+    *   **Potential NoSQL Database (MongoDB or similar - Future Expansion):**  Consideration for future expansion and handling of unstructured data or very high-volume time-series data.
+        *   **Unstructured Data Storage:**  If the platform expands to incorporate more unstructured data sources (e.g., social media feeds, alternative data), a NoSQL database like MongoDB could be used to store this data flexibly.
+        *   **High-Volume Time-Series Data (Alternative):**  For extremely high-volume time-series data (e.g., tick-level market data, high-frequency trading data – if future phases require it), a time-series optimized NoSQL database like TimescaleDB or InfluxDB could be considered as an alternative or supplement to PostgreSQL for specific data types.
+
+
+*   **Technology: (Database technologies used)**  The platform leverages a combination of database technologies for optimal performance, scalability, and data management.  **Supabase PostgreSQL** is the primary relational database.  **Redis** is used as an in-memory cache.  Future expansion may consider incorporating a **NoSQL database like MongoDB or a time-series database like TimescaleDB/InfluxDB** depending on evolving data needs.
+*   **Retention: (Data retention policies)** Data retention policies are defined to manage data storage and comply with potential regulatory requirements (depending on data types and jurisdictions).
+    *   **Raw Data Store (Temporary):**  Raw data ingested from external sources is typically retained for a limited period (e.g., 30 days) primarily for auditing purposes, data reprocessing if needed, and debugging data pipeline issues.  After the retention period, raw data may be archived or deleted to optimize storage.
+    *   **Processed Data Store (Longer Retention):** Processed insights, analyzed data, technical indicators, AI-generated summaries, historical stock data, economic indicator data, analyst ratings history, and other processed data are retained for a longer period (e.g., several years or indefinitely for core historical datasets).  This allows for long-term trend analysis, historical backtesting, and providing users with access to historical financial intelligence.
+    *   **User Data Store (Data Minimization & Privacy):** User data (profiles, watchlists, preferences) is retained as long as the user account is active.  Inactive user accounts and associated data may be subject to data minimization policies and purged after a defined period of inactivity in compliance with data privacy regulations (e.g., GDPR).  Data anonymization or pseudonymization techniques may be applied to retain aggregated user data for analytics purposes while protecting user privacy.
+    *   **Data Archiving:**  For older historical data that is less frequently accessed but still valuable for long-term analysis, data archiving strategies may be implemented.  Archiving data to cost-effective storage solutions (e.g., cloud storage) can reduce storage costs while preserving historical data.
+
+
+**7.4 Data Delivery**
+
+
+*   **API Server: (Data retrieval and formatting for frontend)** The API Server acts as the central data delivery hub, responsible for retrieving data from the database and formatting it for efficient consumption by the Web Frontend.
+    *   **Queries Database:** The API Server receives data requests from the Web Frontend (e.g., for dashboard updates, chart data, AI query responses).  It then formulates and executes efficient database queries to retrieve the requested data from Supabase PostgreSQL or the Redis cache.  Database query optimization techniques (indexing, query planning) are employed to minimize query latency.
+    *   **Formats Data into JSON Responses:**  Retrieved data from the database is formatted into standardized JSON (JavaScript Object Notation) responses.  JSON is a lightweight and widely used data format that is easily parsed by the Web Frontend and other client applications.  Data formatting ensures consistency and optimizes data transfer efficiency.
+    *   **REST API Endpoints:**  The API Server exposes a set of RESTful API endpoints that the Web Frontend uses to request data.  API endpoints are designed to be resource-oriented and follow REST conventions (e.g., `/api/watchlist/{watchlistId}/stocks`, `/api/market_intelligence/hedge_fund_activity`).  API documentation (e.g., using Swagger/OpenAPI) is provided for frontend developers to understand available endpoints and data structures.
+    *   **WebSocket Connections for Real-time Updates:**  For real-time data updates (e.g., stock prices, notifications), the API Server utilizes WebSocket connections to push data updates to the Web Frontend in real-time.  WebSocket connections establish persistent, bi-directional communication channels between the server and the frontend, enabling efficient push-based data delivery without constant polling.  Libraries like `Socket.IO` or `ws` (Node.js) or `websockets` (Python) are used for WebSocket implementation.
+    *   **Data Caching (Redis Integration):** The API Server leverages the Redis cache to serve frequently accessed data from memory, reducing database load and minimizing response latency.  Before querying the main database, the API Server first checks the Redis cache for the requested data. If the data is found in the cache and is still valid (within its TTL), it is served directly from the cache.  Cache invalidation strategies are implemented to ensure data freshness and consistency between the cache and the main database.
+
+
+*   **Frontend: (Data rendering and real-time updates)** The Web Frontend is responsible for receiving data from the API Server and rendering it in a user-friendly and interactive manner within the user interface.
+    *   **Real-time Updates via WebSocket Connections:**  The Web Frontend establishes WebSocket connections to the API Server to receive real-time data updates for market data, notifications, and other dynamic elements.  JavaScript WebSocket API or libraries like `Socket.IO-client` are used to handle WebSocket communication.  Real-time data updates are seamlessly integrated into the dashboard and charts without requiring full page reloads.
+    *   **Static or Periodic Data via REST API Calls:**  For static data (e.g., initial dashboard load data, user settings) or data that is updated periodically (e.g., weekly email summaries), the frontend makes REST API calls to the API Server to retrieve data.  JavaScript `fetch API` or libraries like `axios` are used for making REST API requests.
+    *   **Data Visualization Libraries:**  The frontend utilizes data visualization libraries (e.g., **Chart.js**, **ApexCharts**, **D3.js**) to render interactive charts, graphs, and data tables from the data received from the API Server.  These libraries provide pre-built chart types, customization options, and interactive features (e.g., zooming, tooltips).
+    *   **Responsive UI Frameworks (React, Next.js):**  Modern responsive UI frameworks like React or Next.js are used to build the frontend application.  These frameworks enable component-based architecture, efficient UI updates, and responsive design that adapts to different screen sizes and devices.
+    *   **Data Binding and State Management:**  Frontend frameworks provide mechanisms for data binding and state management (e.g., React's state and props, Redux, Zustand) to efficiently manage data flow within the frontend application and ensure UI updates are synchronized with data changes.
+
+
+*   **Email Service: (Weekly summaries and notifications via email provider)** The platform integrates with an email service provider (e.g., SendGrid, Mailgun, AWS SES) to deliver weekly email summaries and potentially other email notifications to users.
+    *   **Processed Watchlist Insights Packaged into HTML Emails:** The API Server generates weekly email summaries by retrieving processed watchlist insights, economic updates, and expert insights from the database.  This data is then formatted into visually appealing HTML email templates.  HTML email templates are designed to be mobile-responsive and include branding elements.
+    *   **Email Sending via Integrated Email Provider:** The API Server utilizes the API of the integrated email service provider (e.g., SendGrid API, Mailgun API) to send out the generated HTML emails to user email addresses.  API calls are made to the email provider to initiate email sending, specify recipients, email content, and sending parameters.
+    *   **Email Delivery Tracking and Analytics:**  The email service provider handles email delivery, email bounce management, spam filtering, and provides email delivery tracking and analytics (e.g., email open rates, click-through rates).  These analytics can be used to monitor email campaign performance and improve email deliverability.
+    *   **Email Opt-in/Opt-out Management:**  User email opt-in and opt-out preferences are managed within the platform's user settings and stored in the database.  The API Server respects user opt-out preferences and ensures that users who have opted-out do not receive email summaries or marketing emails.  Email service providers often provide tools for managing unsubscribe requests and ensuring compliance with email marketing regulations.
+
+
+*   **Notification System: (Event-driven alerts to frontend and potential mobile app)** The notification system delivers event-driven alerts to users via the Web Frontend dashboard and potentially future mobile app versions.
+    *   **Event-Driven Alerts Triggered by API Server:** The API Server monitors for predefined notification trigger events (e.g., price alerts, volume alerts, insider trading alerts) based on real-time data updates and user notification preferences.  When a trigger event occurs, the API Server generates a notification event.
+    *   **Real-time Delivery to Frontend Dashboard:**  Notification events are delivered in real-time to the Web Frontend dashboard via WebSocket connections.  The frontend receives notification events and displays them to the user in the notification area of the dashboard.
+    *   **Potential Future Mobile App Push Notifications:** For future mobile app versions, the notification system will be extended to deliver push notifications to user mobile devices.  This will require integration with mobile push notification services (e.g., Firebase Cloud Messaging (FCM), Apple Push Notification service (APNs)).  The API Server will send push notification messages to these services, which will then deliver notifications to user mobile apps.
+    *   **Notification History Log in Dashboard:**  A notification history log is maintained within the dashboard to allow users to review past notifications and ensure they haven't missed any alerts.  Notification events are stored in the database and retrieved by the frontend to display the notification history.
+    *   **Customizable Notification Preferences:**  Users can customize their notification preferences within their profile settings, selecting alert types and setting thresholds.  These preferences are stored in the database and used by the API Server to determine which notifications to trigger for each user.
+
+
+**7.5 Data Flow Example (Expanded Example - Building on previous example)**
+
+
+*   **Collection: (More detailed example of data collection process)**
+    1.  **Real-time Stock Price Fetch:** The `market_data_fetcher.py` script (part of the data pipeline) is scheduled to run every 5 minutes to fetch real-time stock prices for all tickers in user watchlists.
+    2.  **API Call to Alpha Vantage:** The script makes an authenticated API call to the Alpha Vantage API endpoint `/query?function=GLOBAL_QUOTE&symbol=AAPL&apikey=YOUR_ALPHA_VANTAGE_API_KEY`.  This requests the current quote for Apple (AAPL).
+    3.  **API Response (JSON):** The Alpha Vantage API returns a JSON response containing the latest stock price, volume, percentage change, and other quote details for AAPL.
+    4.  **SEC Filing Event:** Simultaneously, the `sec_filings_fetcher.py` script (also part of the data pipeline) is running daily to check for new SEC filings.  It detects a new Form 4 filing on SEC EDGAR for Microsoft (MSFT) reporting an insider purchase by a company executive.
+    5.  **SEC EDGAR Access (Web Scraping or API):** The script retrieves the Form 4 filing from SEC EDGAR, either by web scraping the EDGAR website or using an SEC EDGAR API (if available and more efficient).  The raw filing is typically in XML or HTML format.
+
+
+*   **Processing: (More detailed example of data processing steps)**
+    1.  **Stock Price Data Cleaning & Validation:** The `market_data_processor.py` script receives the raw stock price data for AAPL from Alpha Vantage. It performs data cleaning steps:
+        *   **Error Checking:** Checks for API errors, invalid data formats, or missing data in the response.
+        *   **Data Type Conversion:** Converts price and volume values from strings to numerical types (floats, integers).
+        *   **Timestamp Parsing:** Parses the timestamp from the API response and standardizes it to UTC timezone.
+        *   **Validation:** Validates the stock price against expected ranges and potentially compares it to previous price data to detect anomalies.
+    2.  **SEC Filing Parsing & NLP Processing:** The `sec_filings_processor.py` script processes the raw Form 4 filing for MSFT.
+        *   **XML/HTML Parsing:** Parses the XML or HTML content of the Form 4 filing using libraries like `Beautiful Soup` or XML parsing libraries to extract structured data fields (insider name, ticker, transaction date, transaction type, shares traded, price).
+        *   **Data Extraction:** Extracts relevant data fields from the parsed filing, including insider name, company ticker (MSFT), transaction date, transaction type (purchase), number of shares purchased (e.g., 10,000 shares), and price per share.
+        *   **NLP for Insider Title Extraction (Optional):**  If the insider's title is not readily available in a structured field, NLP techniques (NER or rule-based extraction) could be used to extract the insider's title from the narrative text of the filing.
+        *   **Sentiment Analysis (Optional - for future enhancement):**  In future phases, sentiment analysis could be applied to the narrative sections of SEC filings to gauge sentiment expressed by insiders or in corporate event disclosures.
+    3.  **Insight Generation:** The `insights_generator.py` script processes both the cleaned stock price data and the parsed insider trading data.
+        *   **Volume Spike Detection:**  Analyzes the AAPL stock price and volume data to detect if there is a significant volume spike compared to its historical average volume.  If a spike is detected, it generates a "Volume Spike Alert" insight.
+        *   **Insider Trading Insight Generation:**  Processes the parsed insider trading data for MSFT and generates an "Insider Purchase Alert" insight: "Microsoft Executive [Insider Name] purchased 10,000 shares of MSFT at $[Price] on [Date]."
+
+
+*   **Storage: (Data storage in database and cache)**
+    1.  **Stock Price Data Storage:** The `data_storage_writer.py` script stores the cleaned and processed stock price data for AAPL into the `stock_data_table` in the Supabase PostgreSQL database.  It inserts a new row with the ticker (AAPL), timestamp, latest price, volume, percentage change, and other relevant fields.
+    2.  **Insider Trading Data Storage:** The `data_storage_writer.py` script stores the processed insider trading data for MSFT into the `insider_trades_table` in Supabase PostgreSQL.  It inserts a new row with the ticker (MSFT), insider name, transaction date, transaction type (purchase), shares traded, price, and a link to the original SEC filing.
+    3.  **Real-time Data Cache Update (Redis):** The `realtime_data_cache_updater.py` script updates the Redis cache with the latest stock price data for AAPL.  It sets or updates a key in Redis (e.g., `stock_price:AAPL`) with the latest price, volume, and timestamp, setting a TTL of 5 minutes for this cached data.
+    4.  **Processed Insights Storage (Database):** The generated insights ("Volume Spike Alert" for AAPL, "Insider Purchase Alert" for MSFT) are stored in the `notifications_table` in Supabase PostgreSQL, ready to be delivered to users who have subscribed to these types of alerts.
+
+
+*   **Delivery: (Data delivery to frontend and user notifications)**
+    1.  **Real-time Stock Price Update to Dashboard:** When a user views their dashboard and their watchlist includes AAPL, the Web Frontend makes a request to the API Server to fetch real-time stock prices for the watchlist.
+    2.  **API Server Retrieves from Redis Cache:** The API Server, upon receiving the request for AAPL's stock price, first checks the Redis cache.  It finds the cached data for `stock_price:AAPL` and retrieves the latest price from the cache (as it's within the 5-minute TTL).  This serves the data from the cache, minimizing database load and latency.
+    3.  **API Server Sends Real-time Data via WebSocket:** The API Server pushes the real-time stock price update for AAPL (retrieved from the Redis cache) to the Web Frontend via an active WebSocket connection.
+    4.  **Frontend Updates Dashboard in Real-time:** The Web Frontend receives the real-time stock price update via WebSocket and dynamically updates the AAPL stock price display in the user's watchlist on the dashboard, providing a seamless real-time update experience.
+    5.  **Notification Trigger & Delivery for Insider Trade:** The API Server detects the "Insider Purchase Alert" for MSFT stored in the `notifications_table`.  It checks user notification preferences.  If a user has subscribed to "Insider Trading Alerts" and their watchlist includes MSFT, the API Server triggers a notification delivery.
+    6.  **Notification Delivery to Dashboard:** The API Server sends a notification message to the Web Frontend via WebSocket, including the "Insider Purchase Alert" message: "Microsoft Executive [Insider Name] purchased 10,000 shares of MSFT at $[Price] on [Date]."
+    7.  **Frontend Displays Notification:** The Web Frontend receives the notification message via WebSocket and displays it in the notification area of the user's dashboard in real-time.  The user sees a new notification alert indicating the insider purchase for MSFT.
+    8.  **Weekly Email Summary (Separate Process):**  On Sunday evening, the `weekly_email_generator.py` script runs.  It retrieves watchlist performance data, recent insider trading insights related to user watchlists, economic updates, and expert insights from the database.  It formats this information into personalized HTML email summaries for each user who has opted-in.  The API Server then uses the SendGrid API to send out these weekly email summaries to users.
+
+
+This detailed data flow example illustrates the complete cycle from data collection to user delivery, highlighting the interactions between different components and the flow of information through the platform.
+
+
+**8. Technical Implementation**
+
+
+**8.1 Frontend Application**
+
+
+*   **Technology Stack:**
+    *   **Framework:** **React** (or **Next.js** for server-side rendering and improved SEO) - A popular JavaScript library for building user interfaces, known for its component-based architecture, virtual DOM, and efficient UI updates.
+    *   **Styling:** **CSS Modules**, **Styled Components**, or **Tailwind CSS** - For managing CSS styles and creating a visually appealing and consistent user interface.
+    *   **State Management:** **React Context API** (for simpler state management) or **Redux/Zustand** (for more complex state management and application-wide state).
+    *   **Data Visualization Libraries:** **Chart.js**, **ApexCharts**, **D3.js** - For creating interactive charts, graphs, and data visualizations.
+    *   **WebSocket Library:** **Socket.IO-client** (if using Socket.IO on the backend) or native JavaScript WebSocket API - For real-time communication with the API Server.
+    *   **HTTP Client:** **fetch API** (native browser API) or **axios** - For making REST API calls to the API Server.
+    *   **UI Component Library (Optional):** **Material UI**, **Ant Design**, **Chakra UI** - For pre-built UI components and a consistent design system.
+    *   **Testing Framework:** **Jest**, **React Testing Library** - For unit testing and integration testing of frontend components.
+    *   **Build Tool:** **Webpack**, **Parcel**, or **Vite** - For bundling and optimizing frontend assets.
+    *   **Deployment Platform:** **Vercel**, **Netlify**, **AWS Amplify**, or **AWS S3 + CloudFront** - For hosting and deploying the frontend application.
+
+
+*   **Key Features:**
+    *   **Landing Page:**  Built using React components, styled with CSS, and optimized for SEO (if using Next.js).
+    *   **Dashboard:**  Component-based dashboard layout with sections for watchlist management, market intelligence tabs, AI Query search bar, and notification display.
+    *   **Real-time Data Display:**  Utilizes WebSocket connections to receive real-time market data updates and dynamically update UI elements.
+    *   **Interactive Charts and Data Tables:**  Renders interactive charts and data tables using data visualization libraries, allowing users to explore financial data visually.
+    *   **User Authentication UI:**  Integrates with Clerk frontend SDK for user sign-up, sign-in, and session management.
+    *   **Responsive Design:**  Built with responsive UI frameworks and CSS techniques to ensure optimal viewing across different screen sizes (desktop, tablet, mobile).
+    *   **Accessibility:**  Designed with accessibility in mind, following WCAG guidelines to ensure usability for users with disabilities.
+    *   **Notification Display:**  Displays real-time notifications in a designated notification area, providing clear and timely alerts to users.
+    *   **User Settings Panel:**  Provides a user settings panel for managing notification preferences, email summary opt-in/opt-out, and other user personalization options.
+
+
+**8.2 API Server**
+
+
+*   **Technology Stack:**
+    *   **Framework:** **Node.js with Express** (popular choice for JavaScript backend and real-time applications) or **Python with Flask/FastAPI** (for Python-centric development and potential ML/Data Science integration).
+    *   **Runtime Environment:** **Node.js runtime** (if using Node.js/Express) or **Python runtime** (if using Flask/FastAPI).
+    *   **Database ORM/Client:** **Prisma** (for Node.js with TypeScript/JavaScript and PostgreSQL), **TypeORM** (for Node.js with TypeScript/JavaScript and various databases), **Sequelize** (for Node.js with JavaScript and various databases), or **SQLAlchemy** (for Python with PostgreSQL).  For Redis, **ioredis** (Node.js) or **redis-py** (Python) clients.
+    *   **WebSocket Library:** **Socket.IO** (Node.js) or `websockets` (Python) - For implementing WebSocket server functionality and real-time communication.
+    *   **REST API Framework:** **Express.js** (Node.js) or **Flask/FastAPI** (Python) - For building RESTful API endpoints.
+    *   **Authentication & Authorization:** **Clerk Backend SDK** for user authentication and session management.  **JWT (JSON Web Tokens)** for API authorization.
+    *   **AI Integration Library:**  **Google Gemini API client library** (Python or Node.js depending on API Server language) for interacting with the Google Gemini AI API.
+    *   **Email Sending Library/SDK:** **SendGrid Node.js/Python library**, **Mailgun Node.js/Python library**, or **AWS SDK (for SES)** - For sending emails via the integrated email service provider.
+    *   **Task Scheduling Library (Optional):** **node-cron** (Node.js), **APScheduler** (Python), or **Celery** (Python - for more complex distributed task queues) - For scheduling periodic tasks within the API Server (e.g., weekly email summary generation).
+    *   **Logging Library:** **Winston** (Node.js) or **logging module** (Python) - For logging API requests, errors, and server events.
+    *   **API Documentation Tool:** **Swagger/OpenAPI** (using libraries like `swagger-ui-express` for Node.js or `Flask-RESTX`/`FastAPI-Swagger` for Python) - For automatically generating API documentation.
+    *   **Deployment Platform:** **AWS EC2**, **AWS Elastic Beanstalk**, **Google Cloud Compute Engine**, **Google Cloud App Engine**, **Heroku**, **DigitalOcean** - For hosting and deploying the API Server.
+
+
+*   **Key Features:**
+    *   **REST API Endpoints:**  Provides RESTful API endpoints for frontend data requests, user actions, and platform functionalities.
+    *   **WebSocket Server:**  Implements a WebSocket server for real-time data push to the frontend.
+    *   **User Authentication and Authorization:**  Integrates with Clerk Backend SDK for secure user authentication, session management, and API authorization.
+    *   **AI Query Processing:**  Handles AI query requests from the frontend, interacts with the Google Gemini API for NLP processing and response generation, and formats AI responses for the frontend.
+    *   **Database Interaction:**  Queries the Supabase PostgreSQL database and Redis cache to retrieve data for API responses and AI queries.
+    *   **Data Formatting and Transformation:**  Formats data retrieved from the database into JSON responses for the frontend and performs data transformations as needed.
+    *   **Email Summary Generation and Sending:**  Generates weekly email summaries, integrates with the email service provider API to send emails to users.
+    *   **Notification Triggering and Delivery:**  Monitors for notification trigger events, generates notification events, and delivers notifications to the frontend via WebSockets.
+    *   **Rate Limiting and API Security:**  Implements rate limiting to protect API endpoints from abuse and ensures API security best practices are followed.
+    *   **Logging and Monitoring:**  Implements logging for API requests, errors, and server events for debugging and monitoring.
+
+
+**8.3 Data Pipeline**
+
+
+*   **Technology Stack:**
+    *   **Programming Language:** **Python** - Widely used in data science and data engineering, rich ecosystem of libraries for data processing, web scraping, API interaction, and AI/ML.
+    *   **Data Processing Libraries:** **Pandas**, **NumPy**, **SciPy** - For efficient data manipulation, numerical computation, and scientific computing in Python.
+    *   **Web Scraping Libraries:** **Beautiful Soup**, **Scrapy** - For parsing HTML and XML content from web pages.
+    *   **API Client Libraries:** **requests** (Python HTTP library), API-specific client libraries for various data providers (e.g., Alpha Vantage Python client, Unusual Whales Python SDK).
+    *   **NLP Libraries:** **spaCy**, **NLTK**, **Hugging Face Transformers** - For natural language processing tasks (sentiment analysis, NER, text summarization, topic modeling).
+    *   **Machine Learning Libraries:** **scikit-learn**, **TensorFlow**, **PyTorch** - For building and deploying machine learning models (anomaly detection, predictive models - in future phases).
+    *   **Task Scheduling and Workflow Management:** **Apache Airflow** (for complex data pipelines and workflow orchestration), **Celery** (for distributed task queues), **cron** (for simpler scheduled tasks), or **schedule** (Python library for task scheduling).
+    *   **Data Streaming Platform (Optional - Future Scalability):** **Apache Kafka** - For handling high-volume real-time data streams in future scalable versions of the data pipeline.
+    *   **Data Storage Client Libraries:** **Supabase Python client**, **Redis Python client (redis-py)**, database-specific Python clients (e.g., `psycopg2` for PostgreSQL).
+    *   **Logging Library:** **logging module** (Python) - For logging data pipeline events, errors, and processing steps.
+    *   **Deployment Platform:** **AWS EC2**, **AWS ECS/Fargate**, **Google Cloud Compute Engine**, **Google Cloud Run**, **Kubernetes** - For deploying and running data pipeline scripts and workflows.
+
+
+*   **Key Features:**
+    *   **Automated Data Collection:**  Scheduled scripts and workflows for automated data collection from diverse external APIs, web scraping targets, and data feeds.
+    *   **Data Cleaning and Validation Pipeline:**  Implements a robust data cleaning and validation pipeline to ensure data quality and reliability.
+    *   **Data Processing and Analysis:**  Performs data processing, transformation, calculations, and advanced analysis using Python libraries, AI/ML models, and NLP techniques.
+    *   **AI/ML Model Integration:**  Integrates AI/ML models for anomaly detection, sentiment analysis, and future predictive modeling.
+    *   **NLP Processing for Text Data:**  Utilizes NLP libraries for processing text data from news, reports, expert interviews, and SEC filings.
+    *   **Data Storage to Database and Cache:**  Writes processed and analyzed data to the Supabase PostgreSQL database and updates the Redis cache with real-time data.
+    *   **Error Handling and Monitoring:**  Implements robust error handling mechanisms and logging for monitoring data pipeline health and debugging issues.
+    *   **Scalability and Performance:**  Designed for scalability and performance, potentially incorporating data streaming platforms (Kafka) and distributed processing frameworks (Spark - in future phases) for handling large volumes of data.
+    *   **Modular and Maintainable Design:**  Built with a modular and maintainable architecture, separating data collection, processing, analysis, and storage into distinct components for easier development and maintenance.
+
+
+**8.4 Database**
+
+
+*   **Technology Stack:**
+    *   **Relational Database:** **Supabase PostgreSQL** - A managed PostgreSQL database service, chosen for its reliability, scalability, JSON support, full-text search capabilities, and ease of integration with Supabase ecosystem (authentication, edge functions).
+    *   **In-Memory Cache:** **Redis** - A popular in-memory data store, used as a cache for high-performance data retrieval and reduced database load.  Managed Redis services like **AWS ElastiCache for Redis**, **Google Cloud Memorystore for Redis**, or **Redis Cloud** can be used.
+    *   **Potential NoSQL Database (Future Expansion):** **MongoDB**, **Cassandra**, **Amazon DynamoDB** (if NoSQL database becomes necessary for unstructured data or very high-scale time-series data in future phases).
+    *   **Time-Series Database (Potential Future Expansion):** **TimescaleDB** (PostgreSQL extension for time-series data), **InfluxDB** (dedicated time-series database) (if high-volume time-series data becomes a core requirement in future phases).
+    *   **Database Management Tools:** **Supabase Dashboard**, **pgAdmin**, **Dbeaver**, **RedisInsight** - For database administration, monitoring, and query management.
+    *   **Database Migration Tools (Optional):** **Flyway**, **Liquibase** - For managing database schema migrations and version control.
+    *   **Database Backup and Recovery:** **Supabase managed backups**, automated database backup scripts, and disaster recovery strategies.
+
+
+*   **Key Features:**
+    *   **Relational Database for Structured Data:**  Supabase PostgreSQL as the primary database for storing structured data, user data, processed insights, and historical financial data.
+    *   **In-Memory Cache for Real-time Data:** Redis cache for storing frequently accessed real-time data and processed insights for low-latency retrieval.
+    *   **Scalability and Performance:**  Database infrastructure designed for scalability to handle growing data volumes and user traffic.  Database performance optimization techniques (indexing, query optimization, caching) are applied.
+    *   **Data Security and Backup:**  Robust data security measures (encryption, access control) and automated database backup and recovery strategies are implemented.
+    *   **Data Integrity and Consistency:**  Database constraints, transactions, and data validation rules are used to ensure data integrity and consistency.
+    *   **Database Monitoring and Management:**  Database monitoring tools and dashboards are used to monitor database performance, resource utilization, and identify potential issues.  Database management tools are used for administration tasks, schema management, and query optimization.
+    *   **Potential Future Expansion:**  Scalable database architecture that can accommodate future expansion to NoSQL or time-series databases if needed for evolving data requirements.
+
+
+**9. Development Phases**
+
+
+**9.1 Phase 1: Minimum Viable Product (MVP)**
+
+
+*   **Focus:**  Rapidly launch a basic, functional version of the platform to validate core value proposition and gather early user feedback.  Prioritize essential features for initial user engagement.
+*   **Key Features for MVP:**
+    *   **Landing Page:**  Basic landing page with hero section, feature highlights, and sign-up form.
+    *   **Pre-Login Dashboard:**  Limited dashboard with sample market data (for major indices or a few popular stocks) to showcase platform preview.
+    *   **Basic User Authentication (Clerk Integration):**  Sign-up and sign-in functionality using Clerk.
+    *   **Watchlist Management (Core Functionality):**  Ability for authenticated users to create watchlists and add/remove stock tickers.
+    *   **Real-Time Market Data Display (Basic):**  Display of current prices, percentage changes, and trading volume for watchlist items (from Alpha Vantage API initially).
+    *   **Weekly Email Summary (Initial Version):**  Basic weekly email summary with watchlist performance overview (minimal content initially).
+    *   **Initial Data Pipeline (Core Data Sources):**  Data pipeline setup to collect market data (stock prices from Alpha Vantage), SEC filings (from SEC EDGAR and Unusual Whales API for insider trades), and analyst ratings (from a basic Analyst Ratings API).
+    *   **Basic API Server:**  API Server to handle frontend requests, basic authentication, and data retrieval for MVP features.
+    *   **Supabase PostgreSQL Database (Initial Setup):**  Database setup for user data, watchlists, and basic market data storage.
+    *   **Basic Notification System (Price Alerts - Optional for MVP):**  Potentially implement basic price alerts as an optional feature for MVP, if time and resources permit, to showcase early notification capabilities.
+
+
+*   **Goals for MVP:**
+    *   **Validate Core Value Proposition:**  Test if retail investors find value in the platform's AI-powered market insights and watchlist features.
+    *   **Gather Early User Feedback:**  Collect user feedback on usability, features, and areas for improvement.
+    *   **Demonstrate Technical Feasibility:**  Prove the technical feasibility of the core architecture and data pipeline.
+    *   **Rapid Time to Market:**  Launch the MVP quickly to start user validation and feedback cycle.
+    *   **Attract Initial Users:**  Acquire early adopters and beta users for testing and feedback.
+
+
+**9.2 Phase 2: Enhanced Features**
+
+
+*   **Focus:** Expand platform functionality based on MVP feedback and initial user needs.  Implement core intelligence tabs, AI Query feature, and notification system.
+*   **Key Features for Phase 2:**
+    *   **Full Dashboard with Market Intelligence Tabs:**  Implement the complete Market Intelligence Section with tabs for Hedge Fund Activity, Insider Trading, Options Flow Data, Technical Signals, Economic Reports, and Expert Interviews.
+    *   **AI-Powered Search Bar (Initial Integration):**  Integrate the AI Query feature with basic natural language query processing and data retrieval from the platform's knowledge base.
+    *   **Notification System (Comprehensive):**  Implement a comprehensive notification system with customizable alerts for price movements, volume spikes, insider trading, hedge fund activity, and options flow (as detailed in Section 4.5).
+    *   **Enhanced Weekly Email Summary:**  Expand the content of the weekly email summary to include more detailed watchlist insights, key intelligence highlights, economic updates, and expert insights.
+    *   **Expanded Data Pipeline (More Data Sources):**  Extend the data pipeline to incorporate more data sources, including dark pool data (Unusual Whales API), expert interviews (YouTube API/AssemblyAI), political trading data (Political Trading APIs/Web Scraping), FDA calendar events (FRED/UnusualWhales), and economic calendar events (UnusualWhales/FRED).
+    *   **Improved API Server:**  Enhance the API Server to handle increased feature complexity, AI query processing, and notification delivery.
+    *   **Redis Cache Integration:**  Implement Redis cache for real-time market data and frequently accessed insights to improve performance and reduce database load.
+    *   **User Settings Panel (Basic):**  Implement a basic user settings panel to manage notification preferences and email summary opt-in/opt-out.
+
+
+*   **Goals for Phase 2:**
+    *   **Provide Core Platform Functionality:**  Deliver the core features and intelligence capabilities of the AI Hedge Fund Platform as outlined in the PRD.
+    *   **Enhance User Engagement:**  Increase user engagement with the platform through richer features and actionable insights.
+    *   **Expand Data Coverage:**  Broaden the range of data sources and financial intelligence provided by the platform.
+    *   **Improve Performance and Scalability:**  Optimize platform performance and scalability to handle increased user base and data volume.
+    *   **Gather User Feedback on Enhanced Features:**  Collect user feedback on the new features and identify areas for further optimization and refinement in Phase 3.
+
+
+**9.3 Phase 3: Optimization and Advanced Features**
+
+
+*   **Focus:**  Optimize platform performance, scalability, and user experience.  Implement advanced customization options, explore future predictive modeling features, and prepare for wider user adoption.
+*   **Key Features for Phase 3:**
+    *   **Advanced Customization for Notifications:**  Implement granular customization options for notifications, including threshold configuration, delivery channel options (mobile app push notifications - if mobile app is developed), and frequency control.
+    *   **Dashboard Customization Options:**  Provide users with options to customize their dashboard layout, personalize data views, and create custom widgets or intelligence panels.
+    *   **AI Query Interface Enhancements:**  Enhance the AI Query interface with contextual conversation capabilities, query history feature, and more sophisticated natural language understanding.
+    *   **Correlation Analysis Tool (Suggestion from "updated PRD"):**  Implement a dedicated correlation analysis tool within the Market Intelligence Hub, allowing users to compare stock performance and identify relationships between assets.
+    *   **Watchlist Health Score (Suggestion from "updated PRD"):**  Consider adding a dynamic "watchlist health" score to provide users with a quick indicator of watchlist performance and risk.
+    *   **AI-Suggested Screens (Suggestion from "updated PRD"):**  Incorporate AI-powered stock screen suggestions based on user behavior, watchlist composition, and market trends.
+    *   **Market Mood Summary (Suggestion from "updated PRD"):**  Integrate an AI-driven "market mood" summary into the Market Indicators Panel, providing a concise qualitative assessment of the current market outlook.
+    *   **Expert Interviews Component (Section 3.6 - As detailed in previous PRD version):**  Fully implement the Expert Interviews component, potentially with enhanced filtering and search capabilities.
+    *   **Personal Research Organization (Section 3.7 - As detailed in previous PRD version):**  Implement the Personal Research Organization features to allow users to save and manage their research findings within the platform.
+    *   **Scalability and Performance Enhancements (Optimization):**  Conduct comprehensive performance testing and optimization efforts to ensure the platform can scale to handle a large user base and increasing data volume.  Explore data streaming platforms (Kafka), distributed processing frameworks (Spark - if needed), and database optimizations for scalability.
+    *   **Mobile App Development (Optional - Future Consideration):**  Consider starting development of a mobile app version of the AI Hedge Fund Platform to provide users with mobile access to platform features and push notifications.
+    *   **Future Predictive Modeling Features (Exploration):**  Begin exploring and prototyping future predictive modeling features, such as time series forecasting models, regression models for stock price prediction, and classification models for investment opportunity identification.
+
+
+*   **Goals for Phase 3:**
+    *   **Optimize User Experience:**  Refine user experience through advanced customization options and enhanced features.
+    *   **Improve Platform Performance and Scalability:**  Ensure the platform is highly performant and scalable to support a growing user base and data demands.
+    *   **Explore Advanced Features and Innovation:**  Investigate and prototype advanced features, such as predictive modeling and personalized investment recommendations, to maintain platform innovation and competitive advantage.
+    *   **Prepare for Wider User Adoption:**  Prepare the platform for broader user adoption and marketing efforts by ensuring robustness, scalability, and user-friendliness.
+    *   **Establish Platform as a Leading Financial Intelligence Tool:**  Position the AI Hedge Fund Platform as a leading tool for retail investors seeking institutional-grade market insights.
+
+
+**10. Integration Points**
+
+
+*   **Market Data Providers:**
+    *   **Alpha Vantage API:**  Real-time and historical stock prices, volume, technical indicators, intraday data, company fundamentals.
+    *   **Polygon.io API, IEX Cloud API (Potential Alternatives/Supplements):**  Alternative market data APIs for redundancy and broader data coverage.
+
+
+*   **Financial APIs (Specialized Data):**
+    *   **Unusual Whales API:** Options flow data, dark pool data, institutional order flow, SEC filings (processed data).
+    *   **Analyst Ratings APIs (e.g., TipRanks API, Refinitiv):** Analyst ratings, price targets, rating revisions.
+    *   **FRED API (Federal Reserve Economic Data):** Economic indicators, FDA calendar events, economic calendar events.
+    *   **Financial News APIs (e.g., NewsAPI.org, Financial News APIs from Thomson Reuters, Bloomberg - if accessible):** Financial news headlines, articles, news sentiment.
+    *   **Political Trading APIs (e.g., Quiver Quantitative API, Capitol Trades API):** Political trading data (congressional and senate trading activity).
+    *   **Earnings Data APIs (e.g., Financial Modeling Prep API, Alpha Vantage Earnings API):** Corporate earnings data, earnings calendars.
+
+
+*   **Email Service:**
+    *   **SendGrid**, **Mailgun**, **AWS SES:**  For sending weekly email summaries, notifications, and potential future marketing emails.
+
+
+*   **AI Services:**
+    *   **Google Gemini API:**  Natural Language Processing (NLP) for AI Query interface, sentiment analysis, text summarization, topic modeling, and future AI-driven features.
+    *   **AssemblyAI API:**  Transcription and summarization of audio and video content from expert interviews and financial news videos.
+
+
+*   **Authentication and User Management:**
+    *   **Clerk:**  For user authentication (sign-up, sign-in), session management, user profiles, and security.
+
+
+*   **Database:**
+    *   **Supabase PostgreSQL:**  Primary relational database for storing structured data, user data, processed insights, and historical financial data.
+    *   **Redis:**  In-memory cache for real-time data, frequently accessed insights, and session data.
+    *   **Potential Future Integrations (NoSQL, Time-Series Databases):** MongoDB, TimescaleDB, InfluxDB - if needed for future data requirements.
+
+
+**11. Security and Performance Considerations**
+
+
+*   **Authentication and Authorization:**
+    *   **Secure User Authentication:**  Utilize Clerk for robust user authentication (sign-up, sign-in) with secure password hashing, multi-factor authentication (MFA - optional future enhancement), and session management.
+    *   **API Authorization:** Implement JWT (JSON Web Tokens) based authorization for API endpoints to ensure only authenticated and authorized users can access specific API resources and functionalities.
+    *   **Role-Based Access Control (RBAC - Optional Future Enhancement):**  Consider implementing RBAC in future phases if user roles and permissions become more complex (e.g., different subscription levels with varying feature access).
+    *   **Protection Against Common Web Vulnerabilities:**  Implement security best practices to protect against common web vulnerabilities like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), SQL Injection, and other OWASP top 10 vulnerabilities.  Use security headers, input validation, output encoding, and secure coding practices.
+
+
+*   **Data Encryption:**
+    *   **Data Encryption in Transit (HTTPS):**  Enforce HTTPS for all communication between the Web Frontend, API Server, and external services to encrypt data in transit and protect against eavesdropping.
+    *   **Data Encryption at Rest (Database Encryption):**  Utilize database encryption features provided by Supabase PostgreSQL to encrypt sensitive data at rest within the database storage.
+    *   **Encryption of Sensitive Environment Variables:**  Securely manage and encrypt sensitive environment variables (API keys, database credentials, Clerk secret keys) using secure environment variable management practices provided by cloud providers or infrastructure.  Avoid hardcoding sensitive information in code.
+
+
+*   **Performance Optimization:**
+    *   **Database Optimization:**  Optimize database queries, use indexing effectively, and implement database connection pooling to minimize database latency and improve query performance.
+    *   **Caching (Redis):**  Leverage Redis cache extensively to cache frequently accessed data (real-time market data, processed insights) and reduce database load.  Implement appropriate cache invalidation strategies to maintain data freshness.
+    *   **API Performance Optimization:**  Optimize API Server code, use efficient data serialization and deserialization techniques (JSON), and implement API caching mechanisms (e.g., HTTP caching, server-side caching) to improve API response times.
+    *   **Frontend Performance Optimization:**  Optimize frontend code, minimize bundle size, use code splitting, lazy loading, and optimize rendering performance in React or Next.js.  Optimize image and asset loading.
+    *   **Asynchronous Operations and Concurrency:**  Utilize asynchronous operations and concurrency in both the API Server and Data Pipeline to handle concurrent requests and data processing tasks efficiently.  Use asynchronous programming patterns (async/await, promises), thread pools, and process pools where appropriate.
+    *   **Load Testing and Performance Monitoring:**  Conduct load testing to simulate high user traffic and identify performance bottlenecks.  Implement performance monitoring tools (e.g., Prometheus, Grafana, Application Performance Monitoring (APM) services) to continuously monitor platform performance and identify areas for optimization.
+
+
+*   **Scalability:**
+    *   **Scalable Architecture:**  Design the platform with a scalable architecture, using modular components (Web Frontend, API Server, Data Pipeline, Database) that can be scaled independently.
+    *   **Horizontal Scaling:**  Design the API Server and Data Pipeline for horizontal scaling, allowing for easy addition of more server instances to handle increased user traffic and data processing load.  Use load balancers to distribute traffic across multiple API Server instances.
+    *   **Database Scalability:**  Utilize scalable database services like Supabase PostgreSQL, which can be scaled vertically (increasing resources of a single database instance) and horizontally (using read replicas and database sharding - in future phases if needed).  Redis cache is also horizontally scalable.
+    *   **Cloud-Based Infrastructure:**  Deploy the platform on a cloud infrastructure (AWS, Google Cloud, Azure) to leverage cloud scalability, elasticity, and managed services for databases, caching, and compute resources.
+    *   **Stateless API Server:**  Design the API Server to be stateless, making it easier to scale horizontally.  Store session state in a shared cache (Redis) or database.
+    *   **Data Partitioning and Sharding (Future Scalability):**  For very large datasets and high-volume data processing, consider data partitioning and database sharding strategies in future phases to distribute data and processing load across multiple database servers.
+    *   **Message Queues and Asynchronous Task Queues (Future Scalability):**  Utilize message queues (e.g., RabbitMQ, Kafka) and asynchronous task queues (e.g., Celery) for decoupling components and handling asynchronous tasks in a scalable and reliable manner, especially for data pipeline tasks and background processing.
+
+
+*   **Data Integrity and Reliability:**
+    *   **Data Validation and Cleaning:**  Implement robust data validation and cleaning pipelines in the Data Pipeline to ensure data accuracy and reliability.
+    *   **Data Backup and Recovery:**  Implement automated database backups and disaster recovery strategies to protect against data loss and ensure data recoverability in case of failures.
+    *   **Error Handling and Fault Tolerance:**  Implement comprehensive error handling and fault tolerance mechanisms throughout the platform (Web Frontend, API Server, Data Pipeline) to gracefully handle errors, API failures, and unexpected situations.  Use retry mechanisms, circuit breakers, and logging for error tracking and debugging.
+    *   **Data Consistency and Transactions:**  Use database transactions to ensure data consistency and atomicity for database operations.  Implement data consistency checks and data reconciliation processes to detect and resolve data inconsistencies.
+    *   **Monitoring and Alerting:**  Implement comprehensive monitoring and alerting systems to monitor platform health, performance, and error rates.  Set up alerts for critical errors, performance degradation, and system failures to enable proactive issue detection and resolution.
+
+
+In depth UI.add another section with these UI componets included.
+
+
+Make sure you are only adding more information and making it more in depth. <think>
+I'll need to provide an in-depth breakdown of all the UI components in the AI Hedge Fund platform. Since I don't have direct access to the UI components code, I'll analyze what I know about the UI based on the previous information shared. I should cover:
+
+
+1. Main layout components
+2. Dashboard components
+3. Market intelligence components
+4. Navigation components
+5. Form components
+6. Data visualization components
+7. User interaction components
+
+
+For each component, I'll describe:
+- Component purpose and functionality
+- Where it's used in the application
+- What data it displays or collects
+- User interactions it supports
+- How it integrates with other components
+</think>
+
+
+# AI Hedge Fund UI Components: Comprehensive Breakdown
+
+
+## Layout Components
+
+
+### 1. `MainLayout.tsx`
+**Purpose**: Serves as the primary layout wrapper for the entire application
+**Functionality**:
+- Implements the consistent layout structure across all pages
+- Manages responsive behavior for different screen sizes
+- Integrates global notifications and alerts
+- Houses the main navigation components
+- Maintains authentication state context
+- Provides consistent branding elements
+
+
+### 2. `DashboardLayout.tsx`
+**Purpose**: Specialized layout for dashboard-centric pages
+**Functionality**:
+- Provides grid structure for dashboard components
+- Manages dashboard section visibility based on user preferences
+- Handles dashboard component resizing and reordering
+- Maintains dashboard-specific state (collapsed sections, expanded panels)
+- Coordinates data refresh cycles across dashboard components
+
+
+### 3. `Sidebar.tsx`
+**Purpose**: Navigation sidebar for dashboard sections
+**Functionality**:
+- Provides hierarchical navigation for dashboard sections
+- Collapses/expands to optimize screen real estate
+- Highlights current active section
+- Includes quick action shortcuts
+- Integrates notification indicators for section updates
+- Adapts to user role and permissions
+
+
+## Navigation Components
+
+
+### 4. `Header.tsx`
+**Purpose**: Application header with global navigation and user controls
+**Functionality**:
+- Displays application logo and branding
+- Provides primary navigation links
+- Houses user profile dropdown
+- Includes global search functionality
+- Shows notification bell with unread count
+- Provides market hours indicator
+- Implements responsive behavior (hamburger menu on mobile)
+
+
+### 5. `Footer.tsx`
+**Purpose**: Application footer with secondary links and information
+**Functionality**:
+- Provides secondary navigation links (About, Terms, Privacy, etc.)
+- Displays copyright and legal information
+- Includes quick links to key application sections
+- Shows current application version
+- Contains contact information and support links
+- Adapts to screen size with responsive design
+
+
+### 6. `Breadcrumbs.tsx`
+**Purpose**: Navigation breadcrumbs showing current location in application
+**Functionality**:
+- Displays hierarchical path to current page
+- Provides clickable links to parent pages
+- Updates dynamically based on navigation
+- Truncates appropriately on smaller screens
+- Includes icons for visual recognition
+
+
+## Dashboard Components
+
+
+### 7. `WatchlistPanel.tsx`
+**Purpose**: Displays and manages the user's stock watchlist
+**Functionality**:
+- Shows watchlist stocks with current prices and changes
+- Provides add/remove ticker functionality
+- Displays color-coded performance indicators
+- Includes mini sparkline charts for each ticker
+- Supports sorting by various metrics (price, change, alphabetical)
+- Implements grouping and categorization options
+- Enables direct navigation to detailed stock views
+
+
+### 8. `StockCard.tsx`
+**Purpose**: Individual stock card within the watchlist
+**Functionality**:
+- Displays ticker symbol and company name
+- Shows current price with color-coded change
+- Includes percentage and absolute value changes
+- Provides mini sparkline chart of recent performance
+- Offers quick action buttons (add alert, remove, view details)
+- Expands to show additional metrics on hover/click
+- Adapts to different display sizes and contexts
+
+
+### 9. `MarketIntelligenceSection.tsx`
+**Purpose**: Container for market intelligence tabs and content
+**Functionality**:
+- Manages tabbed interface for intelligence categories
+- Handles tab switching with preserved state
+- Coordinates data loading for active tab
+- Provides consistent header with section title and controls
+- Implements filtering and sorting controls
+- Handles empty states and error conditions
+- Supports expandable/collapsible behavior
+
+
+### 10. `MarketIndicatorsSection.tsx`
+**Purpose**: Displays key market indicators and metrics
+**Functionality**:
+- Shows major index performance (S&P 500, NASDAQ, etc.)
+- Displays market breadth indicators (advance/decline)
+- Provides volatility metrics (VIX)
+- Includes sector performance heat map
+- Shows market sentiment indicators
+- Updates with configurable frequency
+- Supports drill-down for additional details
+
+
+### 11. `EconomicReports.tsx`
+**Purpose**: Widget displaying recent economic reports
+**Functionality**:
+- Lists recent economic research reports
+- Includes source, date, and category information
+- Provides AI-generated summary previews
+- Offers filtering by source and category
+- Includes direct links to full report view
+- Shows importance rating for each report
+- Implements "load more" pagination
+
+
+### 12. `Interviews.tsx`
+**Purpose**: Widget displaying recent expert interviews
+**Functionality**:
+- Lists recent financial expert interviews
+- Shows speaker, topic, and date information
+- Includes video thumbnail for visual recognition
+- Provides AI-generated summary previews
+- Offers filtering by speaker and topic
+- Includes direct links to full interview view
+- Implements "load more" pagination
+
+
+### 13. `StockScreenerBar.tsx`
+**Purpose**: Tool for filtering and discovering stocks
+**Functionality**:
+- Provides pre-built screening strategies
+- Supports custom screening parameter creation
+- Displays screening results in sortable table
+- Includes quick-add to watchlist functionality
+- Offers save/load of custom screening configurations
+- Provides compare view for multiple screening results
+- Implements responsive design for different screen sizes
+
+
+## Market Intelligence Tab Components
+
+
+### 14. `HedgeFundContent.tsx`
+**Purpose**: Displays institutional trading activity
+**Functionality**:
+- Shows recent hedge fund transactions
+- Categorizes by transaction type (buy/sell)
+- Displays fund name and manager information
+- Includes position size and change metrics
+- Shows historical context for transactions
+- Provides filtering by fund, sector, and size
+- Implements sorting by recency, size, and relevance
+
+
+### 15. `InsiderTradingContent.tsx`
+**Purpose**: Displays executive and director transactions
+**Functionality**:
+- Shows recent insider trading activity
+- Categorizes by transaction type (purchase/sale)
+- Displays insider name and position
+- Includes transaction size and value
+- Shows historical context and pattern detection
+- Provides filtering by role, company, and size
+- Implements sorting by recency, size, and significance
+
+
+### 16. `OptionsFlowContent.tsx`
+**Purpose**: Displays options market activity and sentiment
+**Functionality**:
+- Shows unusual options activity
+- Visualizes options flow with heatmaps
+- Displays put/call ratio charts
+- Includes contract details (strike, expiration)
+- Shows volume and open interest metrics
+- Provides filtering by expiration, sentiment, and size
+- Implements sorting by premium, volume, and unusual activity
+
+
+### 17. `TechnicalContent.tsx`
+**Purpose**: Displays technical analysis signals
+**Functionality**:
+- Shows technical indicators for watchlist stocks
+- Categorizes by signal type (trend, momentum, volatility)
+- Displays signal strength and confidence metrics
+- Includes historical reliability context
+- Shows interactive technical charts
+- Provides filtering by signal type and timeframe
+- Implements sorting by signal strength and recency
+
+
+### 18. `AlertsContent.tsx`
+**Purpose**: Manages user-configured market alerts
+**Functionality**:
+- Lists active alert configurations
+- Shows alert history with outcomes
+- Provides alert creation interface
+- Displays alert parameters and conditions
+- Includes alert status indicators
+- Offers testing functionality for alert conditions
+- Implements editing and deletion of existing alerts
+
+
+## Detail View Components
+
+
+### 19. `TickerDetails.tsx`
+**Purpose**: Comprehensive view of a single stock
+**Functionality**:
+- Displays full stock information and metrics
+- Shows interactive price chart with adjustable timeframes
+- Includes technical indicators that can be overlaid
+- Provides fundamentals data and ratios
+- Shows recent news related to the ticker
+- Displays institutional ownership information
+- Includes insider trading activity for the company
+- Shows options activity and dark pool data
+- Provides peer comparison metrics
+
+
+### 20. `EconomicReportDetail.tsx`
+**Purpose**: Detailed view of a single economic report
+**Functionality**:
+- Displays full report content or summary
+- Shows metadata (source, date, category)
+- Includes AI-generated key points extraction
+- Provides document viewer for PDF reports
+- Shows related reports and context
+- Includes relevance to user's watchlist stocks
+- Offers note-taking and highlighting functionality
+
+
+### 21. `InterviewDetail.tsx`
+**Purpose**: Detailed view of a single expert interview
+**Functionality**:
+- Displays video player with interview content
+- Shows fully searchable transcript
+- Includes AI-generated summary and key points
+- Provides timestamps for important moments
+- Shows speaker information and credentials
+- Includes related interviews suggestion
+- Offers note-taking and clip-sharing functionality
+
+
+## Form Components
+
+
+### 22. `AddTickerDialog.tsx`
+**Purpose**: Interface for adding stocks to watchlist
+**Functionality**:
+- Provides autocomplete search for ticker symbols
+- Shows company information preview
+- Includes sector and market cap classification
+- Offers category selection for organization
+- Supports batch addition of multiple tickers
+- Displays validation for already-added tickers
+- Includes recently viewed suggestions
+
+
+### 23. `AlertConfigForm.tsx`
+**Purpose**: Form for creating and editing alerts
+**Functionality**:
+- Supports multiple alert condition types
+- Provides parameter inputs appropriate to condition
+- Offers compound condition creation (AND/OR logic)
+- Includes alert frequency and delivery settings
+- Shows preview of alert behavior
+- Provides validation of alert parameters
+- Includes historical testing against past data
+
+
+### 24. `NewsletterPreferencesForm.tsx`
+**Purpose**: Form for configuring email notifications
+**Functionality**:
+- Manages email delivery preferences
+- Controls notification frequency (daily, weekly)
+- Supports content type selection (what to include)
+- Includes delivery time preferences
+- Provides preview of newsletter content
+- Offers test email delivery functionality
+- Supports specialized digests by market sector
+
+
+### 25. `InterestForm.tsx`
+**Purpose**: Collects user interests for personalization
+**Functionality**:
+- Gathers preferred investment sectors
+- Collects specific stocks of interest
+- Assesses user investment style
+- Determines risk tolerance
+- Identifies preferred content types
+- Establishes notification preferences
+- Collects optional demographic information
+
+
+## Data Visualization Components
+
+
+### 26. `PriceChart.tsx`
+**Purpose**: Interactive stock price visualization
+**Functionality**:
+- Renders multiple chart types (line, candlestick, OHLC)
+- Supports multiple timeframes (intraday to multi-year)
+- Allows technical indicator overlay
+- Provides drawing tools for trend lines
+- Includes zooming and panning capabilities
+- Shows volume bars below price chart
+- Supports comparison with indexes or other stocks
+- Implements responsive design for different screen sizes
+
+
+### 27. `HeatMapChart.tsx`
+**Purpose**: Visual representation of data intensity
+**Functionality**:
+- Displays sector performance heat maps
+- Visualizes options activity concentration
+- Shows institutional ownership changes
+- Provides color gradient for value representation
+- Includes tooltips for detailed information
+- Supports drilling down into specific areas
+- Adapts to different dimensions and orientations
+
+
+### 28. `SentimentGauge.tsx`
+**Purpose**: Visual indicator of market sentiment
+**Functionality**:
+- Displays sentiment scales (bullish to bearish)
+- Shows Fear & Greed index visualization
+- Provides historical context comparison
+- Includes trend indicators (improving/deteriorating)
+- Supports multiple visualization styles (gauge, slider)
+- Offers tooltips with detailed explanation
+- Adapts to different sizes for various contexts
+
+
+### 29. `FlowDiagram.tsx`
+**Purpose**: Visualization of relationships and flows
+**Functionality**:
+- Displays institutional money flows
+- Shows sector rotation visualizations
+- Represents options premium flows
+- Provides interactive node selection
+- Includes filtering by magnitude and direction
+- Supports zooming for complex diagrams
+- Offers animation for temporal data
+
+
+### 30. `ComparisonChart.tsx`
+**Purpose**: Side-by-side data comparison visualization
+**Functionality**:
+- Compares multiple stocks performance
+- Visualizes relative strength
+- Shows correlation matrices
+- Provides normalized views for fair comparison
+- Includes statistical comparison metrics
+- Supports sorting and rearranging comparisons
+- Implements responsive design for different screen sizes
+
+
+## User Interaction Components
+
+
+### 31. `AiQueryInterface.tsx`
+**Purpose**: Natural language interaction with financial data
+**Functionality**:
+- Provides text input for natural language questions
+- Displays AI-generated responses with formatting
+- Shows suggested follow-up questions
+- Includes data visualizations in responses
+- Provides query history tracking
+- Offers query refinement suggestions
+- Supports data export from responses
+
+
+### 32. `NotificationCenter.tsx`
+**Purpose**: Central hub for user notifications
+**Functionality**:
+- Displays unread notifications with badges
+- Shows notification history with timestamps
+- Categorizes by notification type
+- Provides quick actions from notifications
+- Includes mark-all-as-read functionality
+- Offers notification preference access
+- Implements responsive popup for different contexts
+
+
+### 33. `ToastNotification.tsx`
+**Purpose**: Temporary notification for user feedback
+**Functionality**:
+- Shows success confirmations
+- Displays error messages
+- Provides action result feedback
+- Includes dismiss functionality
+- Supports different severity levels (info, warning, error)
+- Offers action links when relevant
+- Implements auto-dismiss with configurable timing
+- Manages stacking of multiple notifications
+
+
+### 34. `UserMenu.tsx`
+**Purpose**: User account management dropdown
+**Functionality**:
+- Displays user profile information
+- Provides account settings access
+- Includes theme toggle (light/dark)
+- Shows subscription status information
+- Offers quick links to key user areas
+- Provides sign out functionality
+- Adapts to user role and permissions
+
+
+## Settings Components
+
+
+### 35. `PreferencesPanel.tsx`
+**Purpose**: Comprehensive user preferences management
+**Functionality**:
+- Manages dashboard layout preferences
+- Controls data refresh frequencies
+- Sets default view options
+- Configures chart preferences
+- Manages notification settings
+- Controls data display formats
+- Offers theme and appearance settings
+- Provides language and region preferences
+
+
+### 36. `WatchlistManager.tsx`
+**Purpose**: Advanced watchlist organization tool
+**Functionality**:
+- Supports multiple named watchlists
+- Provides drag-and-drop organization
+- Offers batch operations on watchlists
+- Includes categorization and tagging
+- Supports import/export functionality
+- Provides view customization options
+- Offers default watchlist selection
+
+
+### 37. `DataDisplayPreferences.tsx`
+**Purpose**: Controls how data is displayed
+**Functionality**:
+- Sets chart type preferences
+- Controls time zone display
+- Configures percentage vs. absolute values
+- Sets color scheme for gain/loss
+- Manages decimal place precision
+- Controls currency display format
+- Sets default timeframes for charts
+
+
+## Authentication Components
+
+
+### 38. `LoginForm.tsx`
+**Purpose**: User authentication interface
+**Functionality**:
+- Provides email/password authentication
+- Includes "Remember me" functionality
+- Offers password reset link
+- Shows authentication error handling
+- Provides OAuth provider logins
+- Includes CAPTCHA protection
+- Supports redirect to previous page after login
+
+
+### 39. `SignupForm.tsx`
+**Purpose**: New user registration interface
+**Functionality**:
+- Collects user account information
+- Performs password strength validation
+- Offers terms of service acceptance
+- Includes initial preference collection
+- Provides immediate onboarding guidance
+- Offers conversion from trial/guest accounts
+- Supports referral code entry
+
+
+### 40. `ProfileSettings.tsx`
+**Purpose**: User profile management
+**Functionality**:
+- Displays user profile information
+- Allows personal details updates
+- Provides password change functionality
+- Shows account status information
+- Includes subscription management
+- Offers account deletion options
+- Provides activity log access
+
+
+## Status and Feedback Components
+
+
+### 41. `LoadingState.tsx`
+**Purpose**: Indicates content loading status
+**Functionality**:
+- Provides skeleton screens during data loading
+- Shows spinner for processing operations
+- Includes progress bars for longer operations
+- Displays estimated completion time when available
+- Offers cancel option for user-initiated processes
+- Adapts to context with appropriate styling
+- Implements fallback for extended loading times
+
+
+### 42. `ErrorState.tsx`
+**Purpose**: Handles and displays error conditions
+**Functionality**:
+- Shows user-friendly error messages
+- Provides suggested recovery actions
+- Includes retry functionality
+- Offers technical details in expandable section
+- Displays appropriate imagery for context
+- Provides support contact information
+- Adapts severity based on error impact
+
+
+### 43. `EmptyState.tsx`
+**Purpose**: Displays meaningful content when data is unavailable
+**Functionality**:
+- Shows contextual messaging for empty data sets
+- Provides guidance on how to add content
+- Includes appropriate imagery for context
+- Offers quick action buttons (like "Add first item")
+- Displays sample/demo content options
+- Adapts messaging based on user roles and context
+- Guides user toward next appropriate action
+
+
+## Specialized Components
+
+
+### 44. `SearchBar.tsx`
+**Purpose**: Global search functionality
+**Functionality**:
+- Provides type-ahead suggestions
+- Searches across multiple content types
+- Displays categorized search results
+- Highlights matching text in results
+- Shows recent search history
+- Offers advanced search options
+- Provides keyboard navigation support
+
+
+### 45. `HelpTooltip.tsx`
+**Purpose**: Contextual help information
+**Functionality**:
+- Displays explanatory content for UI elements
+- Shows term definitions for financial concepts
+- Provides links to more detailed documentation
+- Includes visual examples where helpful
+- Offers dismissible "don't show again" option
+- Adapts content to user expertise level
+- Supports rich formatting including images
+
+
+### 46. `TimeframeSelector.tsx`
+**Purpose**: Chart time period selection
+**Functionality**:
+- Provides preset time periods (1D, 1W, 1M, 1Y, etc.)
+- Offers custom date range selection
+- Shows market/extended hours toggle
+- Includes relative time option (last X days)
+- Provides comparison to previous period
+- Supports keyboard shortcuts for quick changes
+- Implements responsive design for different contexts
+
+
+### 47. `PerformanceMetric.tsx`
+**Purpose**: Financial performance visualization
+**Functionality**:
+- Displays key metrics with appropriate formatting
+- Shows trend indicators (up/down arrows)
+- Includes comparison to benchmarks
+- Provides color-coding based on performance
+- Shows sparkline for historical context
+- Offers tooltips with detailed information
+- Adapts to different display sizes and contexts
+
+
+### 48. `DataTable.tsx`
+**Purpose**: Tabular data display
+**Functionality**:
+- Shows structured data with sortable columns
+- Provides filtering and search capabilities
+- Includes pagination for large datasets
+- Offers column visibility toggles
+- Supports row selection for batch operations
+- Provides export functionality (CSV, Excel)
+- Implements responsive strategies for smaller screens
+- Includes sticky headers for scrollable content
+
+
+### 49. `FAQ.tsx`
+**Purpose**: Frequently asked questions display
+**Functionality**:
+- Organizes questions into categories
+- Provides expandable/collapsible answers
+- Includes search functionality for questions
+- Offers content feedback mechanism
+- Shows related questions suggestions
+- Provides links to detailed documentation
+- Adapts content based on user context and history
+
+
+### 50. `PricingSection.tsx`
+**Purpose**: Subscription plan display
+**Functionality**:
+- Shows available subscription tiers
+- Highlights feature differences between plans
+- Displays pricing information with billing options
+- Includes special offer promotions
+- Provides direct subscription buttons
+- Shows current plan with upgrade path
+- Offers comparison table for detailed feature review
+<think>
+Let me search for SQL table definitions in the codebase to identify the Supabase database schema. I'll look specifically at SQL migration files, schema definitions, and any files that might contain table creation statements.
+</think>
+
+
+I'll examine the Supabase database schema files to provide you with a comprehensive list of all the SQL tables in the AI Hedge Fund platform:
+
+
+Read file: apps/data-pipeline/supabase-add-tables.sql
+Let me check the reset_database.sql file as well to ensure I have a complete picture of all tables:
+
+
+Read file: reset_database.sql
+Let's also check the option_flow_table.sql to ensure we have all tables:
+
+
+Read file: apps/data-pipeline/option_flow_table.sql
+Let's also check supabase/migrations for any additional table definitions:
+
+
+Ran tool
+Let's check the FRED tables file to see if it contains any additional tables:
+
+
+Read file: supabase/migrations/20230730-add-fred-tables.sql
+Let's also check the AI queries table:
+
+
+Read file: supabase/migrations/20230731_create_ai_queries_table.sql
+Let's check the newsletter preferences table:
+
+
+Read file: supabase/migrations/newsletter_migrations.sql
+Based on my analysis of the SQL files in the codebase, here is a comprehensive list of all the tables in the AI Hedge Fund Supabase database:
+
+
+# AI Hedge Fund Supabase Database Tables
+
+
+## Market Data Tables
+
+
+1. **stock_info**
+   - Purpose: Stores basic stock information and current price data
+   - Key Fields: ticker, full_name, sector, marketcap, current_price, daily_volume
+
+
+2. **dark_pool_data**
+   - Purpose: Stores off-exchange institutional trading activity
+   - Key Fields: ticker, volume, price, blocks_count, largest_block_size, data_date
+
+
+3. **option_flow_data**
+   - Purpose: Stores options trading activity and sentiment
+   - Key Fields: ticker, date, total_call_premium, total_put_premium, call_put_ratio, sentiment
+
+
+4. **stock_screener_results**
+   - Purpose: Stores results from stock screening operations
+   - Key Fields: ticker, company_name, sector, price, volume, iv_rank, screen_date
+
+
+## Financial Events Tables
+
+
+5. **earnings_data**
+   - Purpose: Stores company earnings reports and results
+   - Key Fields: symbol, company_name, report_date, actual_eps, estimated_eps, eps_surprise_percent
+
+
+6. **economic_calendar_events**
+   - Purpose: Stores economic data releases and events
+   - Key Fields: event_name, forecast, previous_value, event_time, event_type
+
+
+7. **fda_calendar_events**
+   - Purpose: Stores FDA regulatory events for biotech/pharma stocks
+   - Key Fields: ticker, drug, catalyst, start_date, end_date, status
+
+
+8. **whale_alerts**
+   - Purpose: Stores significant market alerts and events
+   - Key Fields: symbol, notification_type, title, description, details, tape_time
+
+
+9. **whale_alert_configurations**
+   - Purpose: Stores alert configuration settings
+   - Key Fields: notification_type, name, description, config_id, settings, status
+
+
+## Institutional Data Tables
+
+
+10. **institutions**
+    - Purpose: Stores information about tracked financial institutions
+    - Key Fields: name, short_name, cik, is_hedge_fund, description, total_value
+
+
+11. **institution_holdings**
+    - Purpose: Stores institutional holdings information
+    - Key Fields: ticker, date, security_type, units, units_change, value, sector
+
+
+12. **institution_activity**
+    - Purpose: Stores institutional trading activity
+    - Key Fields: ticker, filing_date, report_date, units_change, price_on_filing
+
+
+13. **ticker_ownership**
+    - Purpose: Stores ownership data for specific tickers
+    - Key Fields: name, short_name, report_date, units, units_change, value
+
+
+14. **analyst_ratings**
+    - Purpose: Stores analyst opinions and price targets
+    - Key Fields: symbol, company_name, firm, analyst, rating_date, rating_change
+
+
+## Content Tables
+
+
+15. **economic_reports**
+    - Purpose: Stores economic research reports and metadata
+    - Key Fields: source, filename, subject, summary, file_url, category
+
+
+16. **interviews**
+    - Purpose: Stores financial expert interviews
+    - Key Fields: video_id, video_url, title, speaker, summary, highlights, transcript_url
+
+
+## User-Related Tables
+
+
+17. **user_watchlists**
+    - Purpose: Stores user-created watchlists of stocks
+    - Key Fields: user_id, name, tickers, created_at, updated_at
+
+
+18. **portfolios**
+    - Purpose: Stores user portfolio information
+    - Key Fields: user_id, name, description, is_default, created_at, updated_at
+
+
+19. **portfolio_holdings**
+    - Purpose: Stores holdings within user portfolios
+    - Key Fields: portfolio_id, ticker, quantity, cost_basis, purchase_date, current_value
+
+
+20. **newsletter_preferences**
+    - Purpose: Stores user newsletter and email notification preferences
+    - Key Fields: user_id, email, is_subscribed, frequency, preferred_day, stocks, options, crypto
+
+
+21. **ai_queries**
+    - Purpose: Stores user interactions with the AI system
+    - Key Fields: user_id, query, response, data, metadata, created_at
+
+
+## Economic Data Tables
+
+
+22. **fred_observations**
+    - Purpose: Stores economic data observations from FRED API
+    - Key Fields: series_id, date, value, vintage_date, revision_timestamp
+
+
+23. **fred_metadata**
+    - Purpose: Stores metadata about economic data series
+    - Key Fields: series_id, title, frequency, units, seasonal_adjustment, last_updated
+
+
+24. **fred_user_series**
+    - Purpose: Stores user preferences for economic data series
+    - Key Fields: user_id, series_id, description, added_at
+
+
+25. **fred_economic_events**
+    - Purpose: Stores AI-generated summaries of economic data changes
+    - Key Fields: series_id, title, content, event_type, importance_level, created_at
+
+
+## Views
+
+
+1. **portfolio_fda_events**
+   - Purpose: Shows FDA events related to stocks in user portfolios
+   - Source Tables: fda_calendar_events, portfolio_holdings
+
+
+2. **portfolio_institutional_changes**
+   - Purpose: Shows institutional trading activity for stocks in user portfolios
+   - Source Tables: ticker_ownership, portfolio_holdings
+
+
+3. **portfolio_alerts**
+   - Purpose: Shows alerts related to stocks in user portfolios
+   - Source Tables: whale_alerts, portfolio_holdings
+
+
+4. **upcoming_portfolio_earnings**
+   - Purpose: Shows upcoming earnings for stocks in user portfolios
+   - Source Tables: earnings_data, portfolio_holdings
+
+
+5. **large_expected_move_earnings**
+   - Purpose: Shows earnings reports with large expected price movements
+   - Source Tables: earnings_data
+
+
+6. **alert_counts**
+   - Purpose: Summarizes alert counts by type
+   - Source Tables: whale_alerts
+
+
+7. **upcoming_calendar_events**
+   - Purpose: Shows upcoming economic and FDA events
+   - Source Tables: economic_calendar_events, fda_calendar_events
+
+
+This database structure provides a comprehensive foundation for the AI Hedge Fund platform, supporting all the core functionality described in the PRD, including market data tracking, institutional activity monitoring, options flow analysis, user watchlists and portfolios, and AI-powered insights.
+
+
+
+
+
+
+
+
+
+
+

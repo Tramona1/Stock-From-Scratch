@@ -1,0 +1,168 @@
+2025-03-07 23:24:28,037 - dark_pool_test - ERROR - Supabase credentials missing
+2025-03-07 23:25:27,424 - dark_pool_test - INFO - Successfully initialized Supabase client
+2025-03-07 23:25:27,425 - dark_pool_test - INFO - Starting Dark Pool Data Insertion Tests
+2025-03-07 23:25:27,697 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A&limit=5 "HTTP/2 200 OK"
+2025-03-07 23:25:27,701 - dark_pool_test - ERROR - ❌ Error checking existing data in dark_pool_trades: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:25:27,776 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&limit=5 "HTTP/2 200 OK"
+2025-03-07 23:25:27,777 - dark_pool_test - ERROR - ❌ Error checking existing data in dark_pool_data: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:25:27,859 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:25:27,859 - dark_pool_test - ERROR - ❌ Error checking table structure for dark_pool_trades: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:25:27,934 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:25:27,935 - dark_pool_test - ERROR - ❌ Error checking table structure for dark_pool_data: object APIResponse[TypeVar] can't be used in 'await' expression
+2025-03-07 23:25:27,935 - dark_pool_test - INFO - Fetching 5 recent dark pool trades from API...
+2025-03-07 23:25:27,936 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api/darkpool/recent with params {'limit': 5}
+2025-03-07 23:25:28,226 - dark_pool_test - INFO - ✅ Successfully retrieved 5 dark pool trades
+2025-03-07 23:25:28,226 - dark_pool_test - INFO - Sample trade: {
+  "canceled": false,
+  "executed_at": "2025-03-07T23:59:48Z",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "market_center": "L",
+  "nbbo_ask": "67.04",
+  "nbbo_ask_quantity": 50,
+  "nbbo_bid": "67.02",
+  "nbbo_bid_quantity": 151,
+  "premium": "200657.88",
+  "price": "67.02",
+  "sale_cond_codes": null,
+  "size": 2994,
+  "ticker": "TQQQ",
+  "tracking_id": 68388806529210,
+  "trade_code": null,
+  "trade_settlement": null,
+  "volume": 135040226
+}
+2025-03-07 23:25:28,227 - dark_pool_test - INFO - ✅ Successfully formatted 5 trades
+2025-03-07 23:25:28,227 - dark_pool_test - INFO - Sample formatted trade: {
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": 68388806529210,
+  "created_at": "2025-03-07T23:25:28.227177",
+  "updated_at": "2025-03-07T23:25:28.227182"
+}
+2025-03-07 23:25:28,227 - dark_pool_test - INFO - Inserting trade 1/5 for TQQQ...
+2025-03-07 23:25:28,290 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 400 Bad Request"
+2025-03-07 23:25:28,290 - dark_pool_test - ERROR - ❌ Error during insertion test: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'test_marker' column of 'dark_pool_trades' in the schema cache"}
+2025-03-07 23:25:28,290 - dark_pool_test - INFO - Inserting test data into dark_pool_data...
+2025-03-07 23:25:28,357 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data "HTTP/2 400 Bad Request"
+2025-03-07 23:25:28,357 - dark_pool_test - ERROR - ❌ Error testing aggregated data insertion: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'test_marker' column of 'dark_pool_data' in the schema cache"}
+2025-03-07 23:25:28,357 - dark_pool_test - INFO - Completed Dark Pool Data Insertion Tests
+2025-03-07 23:26:37,348 - dark_pool_test - INFO - Successfully initialized Supabase client
+2025-03-07 23:26:37,348 - dark_pool_test - INFO - Starting Dark Pool Data Insertion Tests
+2025-03-07 23:26:37,499 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:26:37,596 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A&limit=5 "HTTP/2 200 OK"
+2025-03-07 23:26:37,598 - dark_pool_test - WARNING - ⚠️ Table dark_pool_trades has no records
+2025-03-07 23:26:37,682 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:26:37,744 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&limit=5 "HTTP/2 200 OK"
+2025-03-07 23:26:37,756 - dark_pool_test - INFO - ✅ Table dark_pool_data has 3 records
+2025-03-07 23:26:37,756 - dark_pool_test - INFO - Sample record: {
+  "id": "AAPL-2025-03-07",
+  "symbol": "AAPL",
+  "volume": 4569,
+  "price": 238.53,
+  "timestamp": "2025-03-07T23:01:17.320073+00:00",
+  "blocks_count": 5,
+  "total_premium": 1089902.21,
+  "largest_block_size": 1869,
+  "largest_block_price": 238.62,
+  "largest_block_premium": 445978.16,
+  "most_recent_executed_at": "2025-03-07T23:26:10+00:00",
+  "data_date": "2025-03-07",
+  "raw_data": "[{\"ticker\": \"AAPL\", \"executed_at\": \"2025-03-07T23:26:10\", \"price\": 238.52, \"size\": 700, \"premium\": 166964.0, \"volume\": 46250995, \"market_center\": \"L\", \"ext_hour_sold_codes\": \"extended_hours_trade\", \"sale_cond_codes\": null, \"trade_code\": null, \"trade_settlement\": null, \"canceled\": false, \"tracking_id\": 66370455487298, \"created_at\": \"2025-03-07T23:01:17.320339\", \"updated_at\": \"2025-03-07T23:01:17.320340\"}, {\"ticker\": \"AAPL\", \"executed_at\": \"2025-03-07T23:19:58\", \"price\": 238.6186, \"size\": 1869, \"premium\": 445978.1634, \"volume\": 46248982, \"market_center\": \"L\", \"ext_hour_sold_codes\": \"extended_hours_trade\", \"sale_cond_codes\": null, \"trade_code\": null, \"trade_settlement\": null, \"canceled\": false, \"tracking_id\": 65998950236959, \"created_at\": \"2025-03-07T23:01:17.320355\", \"updated_at\": \"2025-03-07T23:01:17.320356\"}, {\"ticker\": \"AAPL\", \"executed_at\": \"2025-03-07T23:19:54\", \"price\": 238.55, \"size\": 500, \"premium\": 119275.0, \"volume\": 46247014, \"market_center\": \"L\", \"ext_hour_sold_codes\": \"extended_hours_trade\", \"sale_cond_codes\": null, \"trade_code\": null, \"trade_settlement\": null, \"canceled\": false, \"tracking_id\": 65994078183407, \"created_at\": \"2025-03-07T23:01:17.320365\", \"updated_at\": \"2025-03-07T23:01:17.320366\"}, {\"ticker\": \"AAPL\", \"executed_at\": \"2025-03-07T23:16:03\", \"price\": 238.5101, \"size\": 500, \"premium\": 119255.05, \"volume\": 46246284, \"market_center\": \"L\", \"ext_hour_sold_codes\": \"extended_hours_trade\", \"sale_cond_codes\": null, \"trade_code\": null, \"trade_settlement\": null, \"canceled\": false, \"tracking_id\": 65763658196565, \"created_at\": \"2025-03-07T23:01:17.320374\", \"updated_at\": \"2025-03-07T23:01:17.320375\"}, {\"ticker\": \"AAPL\", \"executed_at\": \"2025-03-07T22:52:01\", \"price\": 238.43, \"size\": 1000, \"premium\": 238430.0, \"volume\": 46244063, \"market_center\": \"L\", \"ext_hour_sold_codes\": \"extended_hours_trade\", \"sale_cond_codes\": null, \"trade_code\": null, \"trade_settlement\": null, \"canceled\": false, \"tracking_id\": 64321039771639, \"created_at\": \"2025-03-07T23:01:17.320381\", \"updated_at\": \"2025-03-07T23:01:17.320382\"}]",
+  "created_at": "2025-03-08T07:01:17.521441+00:00",
+  "updated_at": "2025-03-08T07:01:17.521441+00:00"
+}
+2025-03-07 23:26:37,832 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:26:37,904 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:26:37,905 - dark_pool_test - WARNING - ⚠️ Table dark_pool_trades exists but is empty
+2025-03-07 23:26:37,987 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:26:38,070 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:26:38,070 - dark_pool_test - INFO - ✅ Table dark_pool_data exists with columns:
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - id
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - symbol
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - volume
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - price
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - timestamp
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - blocks_count
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - total_premium
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - largest_block_size
+2025-03-07 23:26:38,070 - dark_pool_test - INFO -   - largest_block_price
+2025-03-07 23:26:38,071 - dark_pool_test - INFO -   - largest_block_premium
+2025-03-07 23:26:38,071 - dark_pool_test - INFO -   - most_recent_executed_at
+2025-03-07 23:26:38,071 - dark_pool_test - INFO -   - data_date
+2025-03-07 23:26:38,071 - dark_pool_test - INFO -   - raw_data
+2025-03-07 23:26:38,071 - dark_pool_test - INFO -   - created_at
+2025-03-07 23:26:38,071 - dark_pool_test - INFO -   - updated_at
+2025-03-07 23:26:38,071 - dark_pool_test - INFO - Fetching 5 recent dark pool trades from API...
+2025-03-07 23:26:38,072 - unusual_whales_api - INFO - Using cached data for darkpool/recent
+2025-03-07 23:26:38,072 - dark_pool_test - INFO - ✅ Successfully retrieved 5 dark pool trades
+2025-03-07 23:26:38,072 - dark_pool_test - INFO - Sample trade: {
+  "canceled": false,
+  "executed_at": "2025-03-07T23:59:48Z",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "market_center": "L",
+  "nbbo_ask": "67.04",
+  "nbbo_ask_quantity": 50,
+  "nbbo_bid": "67.02",
+  "nbbo_bid_quantity": 151,
+  "premium": "200657.88",
+  "price": "67.02",
+  "sale_cond_codes": null,
+  "size": 2994,
+  "ticker": "TQQQ",
+  "tracking_id": 68388806529210,
+  "trade_code": null,
+  "trade_settlement": null,
+  "volume": 135040226
+}
+2025-03-07 23:26:38,072 - dark_pool_test - INFO - ✅ Successfully formatted 5 trades
+2025-03-07 23:26:38,072 - dark_pool_test - INFO - Sample formatted trade: {
+  "ticker": "TQQQ",
+  "executed_at": "2025-03-07T23:59:48",
+  "price": 67.02,
+  "size": 2994,
+  "premium": 200657.88,
+  "volume": 135040226,
+  "market_center": "L",
+  "ext_hour_sold_codes": "extended_hours_trade",
+  "sale_cond_codes": null,
+  "trade_code": null,
+  "trade_settlement": null,
+  "canceled": false,
+  "tracking_id": 68388806529210,
+  "created_at": "2025-03-07T23:26:38.072880",
+  "updated_at": "2025-03-07T23:26:38.072882"
+}
+2025-03-07 23:26:38,072 - dark_pool_test - INFO - Inserting trade 1/5 for TQQQ...
+2025-03-07 23:26:38,150 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:26:38,150 - dark_pool_test - INFO - ✅ Successfully inserted trade 1
+2025-03-07 23:26:38,150 - dark_pool_test - INFO - Inserting trade 2/5 for ACWI...
+2025-03-07 23:26:38,222 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:26:38,223 - dark_pool_test - INFO - ✅ Successfully inserted trade 2
+2025-03-07 23:26:38,223 - dark_pool_test - INFO - Inserting trade 3/5 for SPY...
+2025-03-07 23:26:38,293 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:26:38,294 - dark_pool_test - INFO - ✅ Successfully inserted trade 3
+2025-03-07 23:26:38,294 - dark_pool_test - INFO - Inserting trade 4/5 for ACWI...
+2025-03-07 23:26:38,393 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:26:38,394 - dark_pool_test - INFO - ✅ Successfully inserted trade 4
+2025-03-07 23:26:38,394 - dark_pool_test - INFO - Inserting trade 5/5 for PLTR...
+2025-03-07 23:26:38,477 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_trades "HTTP/2 201 Created"
+2025-03-07 23:26:38,478 - dark_pool_test - INFO - ✅ Successfully inserted trade 5
+2025-03-07 23:26:38,478 - dark_pool_test - INFO - Insertion test completed for 5 trades
+2025-03-07 23:26:38,479 - dark_pool_test - INFO - Inserting test data into dark_pool_data...
+2025-03-07 23:26:38,584 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data "HTTP/2 201 Created"
+2025-03-07 23:26:38,584 - dark_pool_test - INFO - ✅ Successfully inserted test data into dark_pool_data
+2025-03-07 23:26:38,660 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?select=%2A&id=eq.TEST-20250307232638 "HTTP/2 200 OK"
+2025-03-07 23:26:38,661 - dark_pool_test - INFO - ✅ Successfully verified data exists in dark_pool_data
+2025-03-07 23:26:38,760 - httpx - INFO - HTTP Request: DELETE https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/dark_pool_data?id=eq.TEST-20250307232638 "HTTP/2 200 OK"
+2025-03-07 23:26:38,760 - dark_pool_test - INFO - ✅ Test data cleaned up from dark_pool_data
+2025-03-07 23:26:38,760 - dark_pool_test - INFO - Completed Dark Pool Data Insertion Tests

@@ -1,0 +1,120 @@
+
+================================================================================
+                      FINANCIAL DATA PIPELINE DIAGNOSTICS                       
+================================================================================
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                      FINANCIAL DATA PIPELINE DIAGNOSTICS                       
+================================================================================
+Start time: 2025-03-07 21:53:48
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:524] - Start time: 2025-03-07 21:53:48
+Python version: 3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:525] - Python version: 3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]
+Working directory: /Users/blakesingleton/Desktop/Stock From Scratch
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:526] - Working directory: /Users/blakesingleton/Desktop/Stock From Scratch
+Component: insider
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:527] - Component: insider
+Log file: logs/diagnostics_20250307_215348.log
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:528] - Log file: logs/diagnostics_20250307_215348.log
+
+------------------------------------------------------------
+Checking Environment Variables
+------------------------------------------------------------
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking Environment Variables
+------------------------------------------------------------
+✅ NEXT_PUBLIC_SUPABASE_URL: Set (http...e.co)
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ NEXT_PUBLIC_SUPABASE_URL: Set (http...e.co)
+✅ SUPABASE_SERVICE_ROLE_KEY: Set (eyJh...AW0c)
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ SUPABASE_SERVICE_ROLE_KEY: Set (eyJh...AW0c)
+✅ API_KEY_UNUSUAL_WHALES: Set (cf0a...73ff)
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ API_KEY_UNUSUAL_WHALES: Set (cf0a...73ff)
+✅ API_KEY_ALPHA_VANTAGE: Set (QIKV...8GW9)
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ API_KEY_ALPHA_VANTAGE: Set (QIKV...8GW9)
+✅ FRED_API_KEY: Set (b4cb...02b3)
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:544] - ✅ FRED_API_KEY: Set (b4cb...02b3)
+
+================================================================================
+                         UNUSUAL WHALES API MODULE TEST                         
+================================================================================
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                         UNUSUAL WHALES API MODULE TEST                         
+================================================================================
+
+------------------------------------------------------------
+Importing Module
+------------------------------------------------------------
+2025-03-07 21:53:48,559 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Importing Module
+------------------------------------------------------------
+ERROR [Module Error] in Unusual Whales API: Error testing unusual_whales_api module
+2025-03-07 21:53:48,560 - diagnostics - ERROR - [run_diagnostics.py:108] - ERROR [Module Error] in Unusual Whales API: Error testing unusual_whales_api module
+Exception details: unexpected indent (unusual_whales_api.py, line 1)
+2025-03-07 21:53:48,560 - diagnostics - ERROR - [run_diagnostics.py:111] - Exception details: unexpected indent (unusual_whales_api.py, line 1)
+❌ Module test failed
+2025-03-07 21:53:48,560 - diagnostics - ERROR - [run_diagnostics.py:318] - ❌ Module test failed
+
+================================================================================
+                     TESTING INSIDER_TRADES_FETCHER FETCHER                     
+================================================================================
+2025-03-07 21:53:48,560 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                     TESTING INSIDER_TRADES_FETCHER FETCHER                     
+================================================================================
+Importing insider_trades_fetcher...
+2025-03-07 21:53:48,560 - diagnostics - INFO - [run_diagnostics.py:328] - Importing insider_trades_fetcher...
+ERROR [Execution Error] in Fetcher: Error running insider_trades_fetcher
+2025-03-07 21:53:48,685 - diagnostics - ERROR - [run_diagnostics.py:108] - ERROR [Execution Error] in Fetcher: Error running insider_trades_fetcher
+Exception details: unexpected indent (unusual_whales_api.py, line 1)
+2025-03-07 21:53:48,685 - diagnostics - ERROR - [run_diagnostics.py:111] - Exception details: unexpected indent (unusual_whales_api.py, line 1)
+❌ insider_trades_fetcher: Execution failed
+2025-03-07 21:53:48,686 - diagnostics - ERROR - [run_diagnostics.py:378] - ❌ insider_trades_fetcher: Execution failed
+
+================================================================================
+                           DATA STORAGE VERIFICATION                            
+================================================================================
+2025-03-07 21:53:48,686 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                           DATA STORAGE VERIFICATION                            
+================================================================================
+
+------------------------------------------------------------
+Checking insider_trades
+------------------------------------------------------------
+2025-03-07 21:53:48,767 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking insider_trades
+------------------------------------------------------------
+2025-03-07 21:53:49,082 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A "HTTP/2 200 OK"
+ERROR [Insufficient Data] in Data Storage: Table insider_trades has only 0 rows, expected at least 10
+2025-03-07 21:53:49,085 - diagnostics - ERROR - [run_diagnostics.py:108] - ERROR [Insufficient Data] in Data Storage: Table insider_trades has only 0 rows, expected at least 10
+⚠️ insider_trades: Only 0 rows found (expected 10+)
+2025-03-07 21:53:49,085 - diagnostics - WARNING - [run_diagnostics.py:476] - ⚠️ insider_trades: Only 0 rows found (expected 10+)
+2025-03-07 21:53:49,182 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=%2A&order=created_at.desc&limit=1 "HTTP/2 200 OK"
+⚠️ insider_trades: No records found in query
+2025-03-07 21:53:49,182 - diagnostics - WARNING - [run_diagnostics.py:493] - ⚠️ insider_trades: No records found in query
+
+================================================================================
+                           DIAGNOSTIC RESULTS SUMMARY                           
+================================================================================
+2025-03-07 21:53:49,182 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                           DIAGNOSTIC RESULTS SUMMARY                           
+================================================================================
+❌ unusual_whales_api: FAILED
+2025-03-07 21:53:49,183 - diagnostics - ERROR - [run_diagnostics.py:586] - ❌ unusual_whales_api: FAILED
+❌ insider_fetcher: FAILED
+2025-03-07 21:53:49,183 - diagnostics - ERROR - [run_diagnostics.py:586] - ❌ insider_fetcher: FAILED
+✅ data_storage: PASSED
+2025-03-07 21:53:49,183 - diagnostics - INFO - [run_diagnostics.py:584] - ✅ data_storage: PASSED
+
+❌❌❌ SOME DIAGNOSTICS FAILED ❌❌❌
+2025-03-07 21:53:49,183 - diagnostics - ERROR - [run_diagnostics.py:592] - 
+❌❌❌ SOME DIAGNOSTICS FAILED ❌❌❌
+End time: 2025-03-07 21:53:49
+2025-03-07 21:53:49,183 - diagnostics - INFO - [run_diagnostics.py:594] - End time: 2025-03-07 21:53:49
+Complete log available at: logs/diagnostics_20250307_215348.log
+2025-03-07 21:53:49,183 - diagnostics - INFO - [run_diagnostics.py:595] - Complete log available at: logs/diagnostics_20250307_215348.log

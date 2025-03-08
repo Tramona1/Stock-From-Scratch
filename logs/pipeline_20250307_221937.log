@@ -1,0 +1,46 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:311] - Pipeline configuration:
+- Components: economic
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:312] - - Components: economic
+- Watchlist only: False
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:313] - - Watchlist only: False
+- Days to fetch: 5
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:314] - - Days to fetch: 5
+- Limit per request: 10
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:315] - - Limit per request: 10
+
+================================================================================
+            RUNNING ECONOMIC FETCHER: Economic indicators and events            
+================================================================================
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+            RUNNING ECONOMIC FETCHER: Economic indicators and events            
+================================================================================
+Importing economic_indicators_fetcher...
+2025-03-07 22:19:37,196 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing economic_indicators_fetcher...
+2025-03-07 22:19:37,690 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:58] - Successfully initialized Supabase client
+✅ Module economic_indicators_fetcher imported successfully
+2025-03-07 22:19:37,690 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module economic_indicators_fetcher imported successfully
+✅ Class EconomicIndicatorFetcher found in module
+2025-03-07 22:19:37,690 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class EconomicIndicatorFetcher found in module
+Creating instance of EconomicIndicatorFetcher...
+2025-03-07 22:19:37,690 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of EconomicIndicatorFetcher...
+✅ Created instance of EconomicIndicatorFetcher
+2025-03-07 22:19:37,690 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of EconomicIndicatorFetcher
+Running EconomicIndicatorFetcher.run()...
+2025-03-07 22:19:37,690 - pipeline_runner - INFO - [run_pipeline.py:269] - Running EconomicIndicatorFetcher.run()...
+2025-03-07 22:19:37,690 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:111] - Running economic indicator fetcher
+2025-03-07 22:19:37,690 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:119] - Fetching economic indicators from Alpha Vantage
+2025-03-07 22:19:37,690 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:674] - Fetching GDP data
+2025-03-07 22:19:50,077 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:699] - Fetching inflation data
+2025-03-07 22:20:02,436 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:724] - Fetching unemployment data
+2025-03-07 22:20:15,274 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:747] - Fetching interest rate data
+2025-03-07 22:20:27,567 - economic_indicators_fetcher - INFO - [economic_indicators_fetcher.py:772] - Fetching retail sales data

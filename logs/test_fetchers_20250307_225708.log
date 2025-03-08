@@ -1,0 +1,144 @@
+2025-03-07 22:57:08,881 - dark_pool_fetcher - INFO - Successfully initialized Supabase client
+2025-03-07 22:57:08,888 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-07 22:57:08,895 - fda_calendar_fetcher - INFO - Successfully initialized Supabase client
+2025-03-07 22:57:08,903 - political_trades_fetcher - INFO - Successfully initialized Supabase client
+2025-03-07 22:57:09,125 - economic_reports_fetcher - INFO - Successfully initialized Supabase client
+2025-03-07 22:57:09,125 - economic_reports_fetcher - INFO - Successfully initialized Google Gemini API
+2025-03-07 22:57:09,132 - stock_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-07 22:57:09,132 - test_fetchers - INFO - Successfully imported all fetcher modules
+2025-03-07 22:57:09,132 - test_fetchers - INFO - Starting to test all new fetchers
+2025-03-07 22:57:09,132 - test_fetchers - INFO - Running test for dark_pool
+2025-03-07 22:57:09,132 - test_fetchers - INFO - === Testing Dark Pool Data Fetcher ===
+2025-03-07 22:57:09,132 - test_fetchers - INFO - Testing Dark Pool fetcher with tickers: ['AAPL', 'MSFT', 'TSLA']
+2025-03-07 22:57:09,132 - test_fetchers - ERROR - Error testing Dark Pool fetcher: DarkPoolDataFetcher.run() got an unexpected keyword argument 'tickers'
+2025-03-07 22:57:12,133 - test_fetchers - INFO - Running test for options_flow
+2025-03-07 22:57:12,134 - test_fetchers - INFO - === Testing Options Flow Fetcher ===
+2025-03-07 22:57:12,134 - test_fetchers - INFO - Testing Options Flow fetcher with tickers: ['AAPL', 'MSFT', 'TSLA']
+2025-03-07 22:57:12,134 - test_fetchers - ERROR - Error testing Options Flow fetcher: OptionsFlowFetcher.run() got an unexpected keyword argument 'tickers'
+2025-03-07 22:57:15,136 - test_fetchers - INFO - Running test for fda_calendar
+2025-03-07 22:57:15,136 - test_fetchers - INFO - === Testing FDA Calendar Fetcher ===
+2025-03-07 22:57:15,136 - test_fetchers - INFO - Testing FDA Calendar fetcher for next 30 days
+2025-03-07 22:57:15,137 - fda_calendar_fetcher - INFO - Running FDA calendar fetcher for the next 30 days
+2025-03-07 22:57:15,137 - fda_calendar_fetcher - INFO - Fetching FDA calendar for the next 30 days
+2025-03-07 22:57:15,137 - fda_calendar_fetcher - ERROR - Error fetching FDA calendar: get_fda_calendar() got an unexpected keyword argument 'start_date'
+2025-03-07 22:57:15,140 - fda_calendar_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_fda_calendar.py", line 84, in fetch_fda_calendar
+    fda_events = get_fda_calendar(
+        start_date=today,
+        end_date=end_date
+    )
+TypeError: get_fda_calendar() got an unexpected keyword argument 'start_date'
+
+2025-03-07 22:57:15,140 - fda_calendar_fetcher - WARNING - No FDA events to store
+2025-03-07 22:57:15,140 - fda_calendar_fetcher - INFO - FDA calendar fetcher completed - Stored 0 events
+2025-03-07 22:57:15,140 - test_fetchers - INFO - FDA Calendar Fetcher Result: {
+  "status": "success",
+  "events_stored": 0
+}
+2025-03-07 22:57:18,141 - test_fetchers - INFO - Running test for political_trades
+2025-03-07 22:57:18,142 - test_fetchers - INFO - === Testing Political Trades Fetcher ===
+2025-03-07 22:57:18,142 - test_fetchers - INFO - Testing Political Trades fetcher for past 10 days with limit 10
+2025-03-07 22:57:18,142 - political_trades_fetcher - INFO - Running political trades fetcher (watchlist_only=False, days=10, limit=10)
+2025-03-07 22:57:18,142 - political_trades_fetcher - INFO - Fetching political trades for the past 10 days (limit: 10)
+2025-03-07 22:57:18,142 - political_trades_fetcher - ERROR - Error fetching political trades: get_political_trades() got an unexpected keyword argument 'start_date'
+2025-03-07 22:57:18,143 - political_trades_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_political_trades.py", line 89, in fetch_political_trades
+    political_trades = get_political_trades(
+        start_date=start_date_str,
+        end_date=end_date_str,
+        limit=limit
+    )
+TypeError: get_political_trades() got an unexpected keyword argument 'start_date'
+
+2025-03-07 22:57:18,143 - political_trades_fetcher - WARNING - No political trades to store
+2025-03-07 22:57:18,143 - political_trades_fetcher - INFO - Political trades fetcher completed - Stored 0 trades
+2025-03-07 22:57:18,143 - test_fetchers - INFO - Political Trades Fetcher Result: {
+  "status": "success",
+  "trades_stored": 0
+}
+2025-03-07 22:57:21,144 - test_fetchers - INFO - Running test for economic_reports
+2025-03-07 22:57:21,144 - test_fetchers - INFO - === Testing Economic Reports Fetcher ===
+2025-03-07 22:57:21,144 - test_fetchers - INFO - Testing Economic Reports fetcher
+2025-03-07 22:57:21,144 - economic_reports_fetcher - INFO - Running economic reports fetcher
+2025-03-07 22:57:21,144 - economic_reports_fetcher - INFO - Fetching economic calendar from Unusual Whales API
+2025-03-07 22:57:21,590 - unusual_whales_api - ERROR - Failed to fetch economic calendar: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/market/economic-calendar
+2025-03-07 22:57:21,591 - economic_reports_fetcher - WARNING - No economic events found in the calendar
+2025-03-07 22:57:21,591 - economic_reports_fetcher - WARNING - No economic events to store
+2025-03-07 22:57:21,591 - economic_reports_fetcher - INFO - Fetching latest economic research reports
+2025-03-07 22:57:21,591 - economic_reports_fetcher - INFO - Prepared 2 economic research reports for storage
+2025-03-07 22:57:22,210 - economic_reports_fetcher - ERROR - Error generating report insights: 404 models/gemini-2.0 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-03-07 22:57:22,211 - economic_reports_fetcher - INFO - Storing 2 research reports
+2025-03-07 22:57:22,802 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/economic_reports?select=id&id=eq.federal_reserve_20250307 "HTTP/2 404 Not Found"
+2025-03-07 22:57:22,803 - economic_reports_fetcher - ERROR - Error storing research reports: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.economic_reports" does not exist'}
+2025-03-07 22:57:22,806 - economic_reports_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_economic_reports.py", line 221, in store_research_reports
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.economic_reports" does not exist'}
+
+2025-03-07 22:57:22,806 - economic_reports_fetcher - INFO - Economic reports fetcher completed - Stored 0 events and 0 reports
+2025-03-07 22:57:22,806 - test_fetchers - INFO - Economic Reports Fetcher Result: {
+  "status": "success",
+  "events_stored": 0,
+  "reports_stored": 0
+}
+2025-03-07 22:57:25,807 - test_fetchers - INFO - Running test for stock_info
+2025-03-07 22:57:25,808 - test_fetchers - INFO - === Testing Stock Info Fetcher ===
+2025-03-07 22:57:25,808 - test_fetchers - INFO - Testing Stock Info fetcher with tickers: ['AAPL', 'MSFT', 'TSLA']
+2025-03-07 22:57:25,808 - stock_info_fetcher - INFO - Starting stock info fetcher
+2025-03-07 22:57:25,808 - stock_info_fetcher - INFO - Processing 3 tickers
+2025-03-07 22:57:26,067 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A&ticker=eq.AAPL&fetched_at=gte.2025-03-07T06%3A57%3A25.808357 "HTTP/2 200 OK"
+2025-03-07 22:57:26,070 - stock_info_fetcher - INFO - Fetching stock info for AAPL
+2025-03-07 22:57:26,071 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/AAPL/info with params None
+2025-03-07 22:57:26,302 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/AAPL/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/AAPL/info
+2025-03-07 22:57:26,304 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:28,310 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/AAPL/info with params None
+2025-03-07 22:57:28,423 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/AAPL/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/AAPL/info
+2025-03-07 22:57:28,424 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:30,430 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/AAPL/info with params None
+2025-03-07 22:57:30,615 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/AAPL/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/AAPL/info
+2025-03-07 22:57:30,615 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:30,615 - unusual_whales_api - ERROR - Error fetching stock info for AAPL: API request failed: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/AAPL/info
+2025-03-07 22:57:30,615 - stock_info_fetcher - WARNING - No info found for ticker AAPL
+2025-03-07 22:57:31,306 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A&ticker=eq.TSLA&fetched_at=gte.2025-03-07T06%3A57%3A31.116819 "HTTP/2 200 OK"
+2025-03-07 22:57:31,306 - stock_info_fetcher - INFO - Fetching stock info for TSLA
+2025-03-07 22:57:31,306 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/TSLA/info with params None
+2025-03-07 22:57:31,418 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/TSLA/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/TSLA/info
+2025-03-07 22:57:31,419 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:33,422 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/TSLA/info with params None
+2025-03-07 22:57:33,524 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/TSLA/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/TSLA/info
+2025-03-07 22:57:33,524 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:35,530 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/TSLA/info with params None
+2025-03-07 22:57:35,629 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/TSLA/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/TSLA/info
+2025-03-07 22:57:35,629 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:35,629 - unusual_whales_api - ERROR - Error fetching stock info for TSLA: API request failed: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/TSLA/info
+2025-03-07 22:57:35,629 - stock_info_fetcher - WARNING - No info found for ticker TSLA
+2025-03-07 22:57:35,817 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=%2A&ticker=eq.MSFT&fetched_at=gte.2025-03-07T06%3A57%3A35.629985 "HTTP/2 200 OK"
+2025-03-07 22:57:35,818 - stock_info_fetcher - INFO - Fetching stock info for MSFT
+2025-03-07 22:57:35,818 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/MSFT/info with params None
+2025-03-07 22:57:35,925 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/MSFT/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/MSFT/info
+2025-03-07 22:57:35,925 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:37,929 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/MSFT/info with params None
+2025-03-07 22:57:38,047 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/MSFT/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/MSFT/info
+2025-03-07 22:57:38,048 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:40,051 - unusual_whales_api - INFO - Making request to https://api.unusualwhales.com/api//api/stock/MSFT/info with params None
+2025-03-07 22:57:40,182 - unusual_whales_api - ERROR - Error making request to https://api.unusualwhales.com/api//api/stock/MSFT/info: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/MSFT/info
+2025-03-07 22:57:40,182 - unusual_whales_api - ERROR - Response content: Something went wrong
+2025-03-07 22:57:40,182 - unusual_whales_api - ERROR - Error fetching stock info for MSFT: API request failed: 404 Client Error: Not Found for url: https://api.unusualwhales.com/api//api/stock/MSFT/info
+2025-03-07 22:57:40,182 - stock_info_fetcher - WARNING - No info found for ticker MSFT
+2025-03-07 22:57:40,183 - stock_info_fetcher - INFO - Stock info fetcher completed - Processed 0 tickers successfully, 3 failures
+2025-03-07 22:57:40,183 - test_fetchers - INFO - Stock Info Fetcher Result: {
+  "status": "success",
+  "tickers_processed": 0,
+  "tickers_failed": 3
+}
+2025-03-07 22:57:43,184 - test_fetchers - INFO - ===== TEST RESULTS SUMMARY =====
+2025-03-07 22:57:43,185 - test_fetchers - INFO - dark_pool: FAILED
+2025-03-07 22:57:43,185 - test_fetchers - INFO - options_flow: FAILED
+2025-03-07 22:57:43,185 - test_fetchers - INFO - fda_calendar: PASSED
+2025-03-07 22:57:43,185 - test_fetchers - INFO - political_trades: PASSED
+2025-03-07 22:57:43,185 - test_fetchers - INFO - economic_reports: PASSED
+2025-03-07 22:57:43,185 - test_fetchers - INFO - stock_info: PASSED
+2025-03-07 22:57:43,185 - test_fetchers - INFO - Total execution time: 34.05 seconds

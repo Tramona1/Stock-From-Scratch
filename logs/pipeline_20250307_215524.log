@@ -1,0 +1,66 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:311] - Pipeline configuration:
+- Components: insider
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:312] - - Components: insider
+- Watchlist only: False
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:313] - - Watchlist only: False
+- Days to fetch: 10
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:314] - - Days to fetch: 10
+- Limit per request: 20
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:315] - - Limit per request: 20
+
+================================================================================
+               RUNNING INSIDER FETCHER: Insider trading activity                
+================================================================================
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+               RUNNING INSIDER FETCHER: Insider trading activity                
+================================================================================
+Importing insider_trades_fetcher...
+2025-03-07 21:55:24,613 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing insider_trades_fetcher...
+2025-03-07 21:55:24,843 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:52] - Successfully initialized Supabase client
+✅ Module insider_trades_fetcher imported successfully
+2025-03-07 21:55:24,843 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module insider_trades_fetcher imported successfully
+✅ Class InsiderTradesFetcher found in module
+2025-03-07 21:55:24,843 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class InsiderTradesFetcher found in module
+Creating instance of InsiderTradesFetcher...
+2025-03-07 21:55:24,844 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of InsiderTradesFetcher...
+✅ Created instance of InsiderTradesFetcher
+2025-03-07 21:55:24,844 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of InsiderTradesFetcher
+Running InsiderTradesFetcher.run()...
+2025-03-07 21:55:24,844 - pipeline_runner - INFO - [run_pipeline.py:269] - Running InsiderTradesFetcher.run()...
+2025-03-07 21:55:24,844 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:73] - Starting insider trades fetching process
+2025-03-07 21:55:24,844 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:89] - Fetching insider trades from UnusualWhales API
+2025-03-07 21:55:24,844 - unusual_whales_api - INFO - [unusual_whales_api.py:87] - Using cached data for insider/transactions
+2025-03-07 21:55:24,844 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:100] - Retrieved 50 insider transactions from UnusualWhales API
+2025-03-07 21:55:25,109 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?columns=%22shares_owned_after%22%2C%22transaction_type%22%2C%22is_ten_percent_owner%22%2C%22created_at%22%2C%22is_director%22%2C%22is_officer%22%2C%22filing_date%22%2C%22value%22%2C%22transaction_date%22%2C%22form_type%22%2C%22price%22%2C%22officer_title%22%2C%22source%22%2C%22updated_at%22%2C%22is_sale%22%2C%22owner_name%22%2C%22transaction_id%22%2C%22ticker%22%2C%22amount%22%2C%22security_title%22%2C%22is_purchase%22%2C%22shares_owned_before%22 "HTTP/2 400 Bad Request"
+2025-03-07 21:55:25,111 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:142] - Error fetching insider trades from UnusualWhales API: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'amount' column of 'insider_trades' in the schema cache"}
+2025-03-07 21:55:25,111 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:79] - Completed insider trades fetching process
+✅ insider: Completed successfully in 0.50s
+2025-03-07 21:55:25,111 - pipeline_runner - INFO - [run_pipeline.py:285] - ✅ insider: Completed successfully in 0.50s
+
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+2025-03-07 21:55:25,111 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+insider        : ✅ SUCCESS
+2025-03-07 21:55:25,111 - pipeline_runner - INFO - [run_pipeline.py:346] - insider        : ✅ SUCCESS
+
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+2025-03-07 21:55:25,111 - pipeline_runner - INFO - [run_pipeline.py:351] - 
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+Total pipeline execution time: 0.50 seconds
+2025-03-07 21:55:25,111 - pipeline_runner - INFO - [run_pipeline.py:355] - Total pipeline execution time: 0.50 seconds
+Complete log available at: logs/pipeline_20250307_215524.log
+2025-03-07 21:55:25,112 - pipeline_runner - INFO - [run_pipeline.py:356] - Complete log available at: logs/pipeline_20250307_215524.log

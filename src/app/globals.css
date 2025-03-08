@@ -1,0 +1,157 @@
+/* @tailwind base; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Royal blue theme colors */
+    --royal-blue: 225 64% 28%;
+    --royal-blue-light: 225 64% 95%;
+    --royal-blue-dark: 225 64% 20%;
+    --off-white: 210 20% 98%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    /* @apply border-border; */
+    @apply border-border;
+  }
+  body {
+    /* @apply bg-background text-foreground; */
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 4s ease infinite;
+}
+
+/* For dot animation delay */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Hide unwanted sidebar elements on the main page */
+body:has(div[data-home-page]) div:has(> div:first-child:contains("Dashboard")):has(> div:nth-child(2):contains("Analysis")):has(> div:nth-child(3):contains("Portfolio")) {
+  display: none !important;
+}
+
+/* Hide elements that look like sidebars on the home page */
+body:has(div[data-home-page]) > div > div:first-child:not(:has(img)):not(:has(button)) {
+  display: none !important;
+}
+
+/* Ultra-aggressive sidebar removal rules */
+body > div > div:first-child:not(:has(header)):not(:has(nav > a)):not(:has(.container)) {
+  display: none !important;
+}
+
+/* Target any element exactly containing Dashboard, Analysis, Portfolio in that order */
+*:has(> *:nth-child(1):contains("Dashboard")):has(> *:nth-child(2):contains("Analysis")):has(> *:nth-child(3):contains("Portfolio")) {
+  display: none !important;
+}
+
+/* Target elements with that specific height and width pattern */
+@media (min-width: 768px) {
+  body > div > div:first-child:not([class*="container"]):not([class*="header"]) {
+    display: none !important;
+  }
+
+  /* Hide elements positioned at the left edge that are tall and narrow */
+  div:first-child:not([data-home-page]) {
+    position: relative !important;
+  }
+}
+
+/* Just hide anything with the text Portfolio that's part of a menu */
+div:has(a, span, p):not(article, section, main):not(:has(button, input, img)) > *:contains("Portfolio") {
+  display: none !important;
+} 

@@ -1,0 +1,726 @@
+2025-03-08 09:19:36,495 - stock_details_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:19:36,495 - stock_details_fetcher - INFO - Starting stock details fetcher
+2025-03-08 09:19:36,495 - stock_details_fetcher - INFO - Using provided tickers: ['AAPL']
+2025-03-08 09:19:36,495 - stock_details_fetcher - INFO - Found 1 unique tickers to process
+2025-03-08 09:19:36,495 - stock_details_fetcher - INFO - Processing 1 tickers
+2025-03-08 09:19:36,892 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.AAPL "HTTP/1.1 200 OK"
+2025-03-08 09:19:36,893 - stock_details_fetcher - INFO - Processing ticker AAPL
+2025-03-08 09:19:36,893 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/AAPL/info
+2025-03-08 09:19:37,252 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/AAPL/info "HTTP/1.1 200 OK"
+2025-03-08 09:19:37,253 - stock_details_fetcher - INFO - API Response for AAPL: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "38187329.52380952381",
+    "full_name": "APPLE",
+    "has_dividend": true,
+    "has_earnings_history": true,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+    "marketcap": "3688670025150",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-05-01",
+    "sector": "Technology",
+    "short_description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+    "short_name": "APPLE",
+    "symbol": "AAPL",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:19:37,253 - stock_details_fetcher - INFO - Formatting stock info for AAPL: {
+  "announce_time": "unknown",
+  "avg30_volume": "38187329.52380952381",
+  "full_name": "APPLE",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "marketcap": "3688670025150",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-05-01",
+  "sector": "Technology",
+  "short_description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "short_name": "APPLE",
+  "symbol": "AAPL",
+  "uw_tags": []
+}
+2025-03-08 09:19:37,253 - stock_details_fetcher - INFO - Formatted data for AAPL: {
+  "ticker": "AAPL",
+  "company_name": "APPLE",
+  "short_name": "APPLE",
+  "sector": "Technology",
+  "market_cap": 3688670025150.0,
+  "market_cap_size": "big",
+  "avg_volume": 38187329.52380952,
+  "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. Apple is the worlds largest technology company by ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AAPL.png",
+  "issue_type": "Common Stock",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": "2025-05-01",
+  "earnings_announce_time": "unknown",
+  "tags": [],
+  "fetched_at": "2025-03-08T17:19:37.253791+00:00"
+}
+2025-03-08 09:19:37,396 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:19:37,396 - stock_details_fetcher - INFO - Successfully updated stock details for AAPL
+2025-03-08 09:19:37,397 - stock_details_fetcher - INFO - Stock details fetcher completed - Processed 1 tickers
+2025-03-08 09:19:37,397 - stock_details_fetcher - INFO - Results: 1 successful, 0 failed
+2025-03-08 09:21:04,166 - stock_details_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:21:04,167 - stock_details_fetcher - INFO - Starting stock details fetcher
+2025-03-08 09:21:04,167 - stock_details_fetcher - INFO - Using provided tickers: ['AAPL', 'MSFT', 'NVDA', 'TSLA', 'GOOG', 'META']
+2025-03-08 09:21:04,167 - stock_details_fetcher - INFO - Found 6 unique tickers to process
+2025-03-08 09:21:04,167 - stock_details_fetcher - INFO - Processing 6 tickers
+2025-03-08 09:21:04,485 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.AAPL "HTTP/1.1 200 OK"
+2025-03-08 09:21:04,486 - stock_details_fetcher - INFO - Ticker AAPL already up to date, skipping
+2025-03-08 09:21:05,137 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.MSFT "HTTP/1.1 200 OK"
+2025-03-08 09:21:05,137 - stock_details_fetcher - INFO - Processing ticker MSFT
+2025-03-08 09:21:05,137 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/MSFT/info
+2025-03-08 09:21:05,386 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/MSFT/info "HTTP/1.1 200 OK"
+2025-03-08 09:21:05,388 - stock_details_fetcher - INFO - API Response for MSFT: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "17047132.238095238095",
+    "full_name": "MICROSOFT",
+    "has_dividend": true,
+    "has_earnings_history": true,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/MSFT.png",
+    "marketcap": "3034625888149",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-04-24",
+    "sector": "Technology",
+    "short_description": "Microsoft Corporation is an American multinational technology corporation headquartered in Redmond, Washington. Microsofts best-known software ...",
+    "short_name": "MICROSOFT",
+    "symbol": "MSFT",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:21:05,388 - stock_details_fetcher - INFO - Formatting stock info for MSFT: {
+  "announce_time": "unknown",
+  "avg30_volume": "17047132.238095238095",
+  "full_name": "MICROSOFT",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/MSFT.png",
+  "marketcap": "3034625888149",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-04-24",
+  "sector": "Technology",
+  "short_description": "Microsoft Corporation is an American multinational technology corporation headquartered in Redmond, Washington. Microsofts best-known software ...",
+  "short_name": "MICROSOFT",
+  "symbol": "MSFT",
+  "uw_tags": []
+}
+2025-03-08 09:21:05,388 - stock_details_fetcher - INFO - Formatted data for MSFT: {
+  "ticker": "MSFT",
+  "company_name": "MICROSOFT",
+  "short_name": "MICROSOFT",
+  "sector": "Technology",
+  "market_cap": 3034625888149.0,
+  "market_cap_size": "big",
+  "avg_volume": 17047132.23809524,
+  "description": "Microsoft Corporation is an American multinational technology corporation headquartered in Redmond, Washington. Microsofts best-known software ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/MSFT.png",
+  "issue_type": "Common Stock",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": "2025-04-24",
+  "earnings_announce_time": "unknown",
+  "tags": [],
+  "fetched_at": "2025-03-08T17:21:05.388783+00:00"
+}
+2025-03-08 09:21:05,565 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:21:05,566 - stock_details_fetcher - INFO - Successfully updated stock details for MSFT
+2025-03-08 09:21:06,262 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.NVDA "HTTP/1.1 200 OK"
+2025-03-08 09:21:06,263 - stock_details_fetcher - INFO - Processing ticker NVDA
+2025-03-08 09:21:06,263 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/NVDA/info
+2025-03-08 09:21:06,475 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/NVDA/info "HTTP/1.1 200 OK"
+2025-03-08 09:21:06,477 - stock_details_fetcher - INFO - API Response for NVDA: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "243433306.23809524",
+    "full_name": "NVIDIA",
+    "has_dividend": true,
+    "has_earnings_history": true,
+    "has_investment_arm": true,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/NVDA.png",
+    "marketcap": "3292190700000",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-05-28",
+    "sector": "Technology",
+    "short_description": "Nvidia Corporation is an American multinational technology company incorporated in Delaware and based in Santa Clara, California.",
+    "short_name": "NVIDIA",
+    "symbol": "NVDA",
+    "uw_tags": [
+      "semi",
+      "gaming"
+    ]
+  }
+}
+2025-03-08 09:21:06,477 - stock_details_fetcher - INFO - Formatting stock info for NVDA: {
+  "announce_time": "unknown",
+  "avg30_volume": "243433306.23809524",
+  "full_name": "NVIDIA",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": true,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/NVDA.png",
+  "marketcap": "3292190700000",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-05-28",
+  "sector": "Technology",
+  "short_description": "Nvidia Corporation is an American multinational technology company incorporated in Delaware and based in Santa Clara, California.",
+  "short_name": "NVIDIA",
+  "symbol": "NVDA",
+  "uw_tags": [
+    "semi",
+    "gaming"
+  ]
+}
+2025-03-08 09:21:06,477 - stock_details_fetcher - INFO - Formatted data for NVDA: {
+  "ticker": "NVDA",
+  "company_name": "NVIDIA",
+  "short_name": "NVIDIA",
+  "sector": "Technology",
+  "market_cap": 3292190700000.0,
+  "market_cap_size": "big",
+  "avg_volume": 243433306.23809525,
+  "description": "Nvidia Corporation is an American multinational technology company incorporated in Delaware and based in Santa Clara, California.",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/NVDA.png",
+  "issue_type": "Common Stock",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": true,
+  "has_options": true,
+  "next_earnings_date": "2025-05-28",
+  "earnings_announce_time": "unknown",
+  "tags": [
+    "semi",
+    "gaming"
+  ],
+  "fetched_at": "2025-03-08T17:21:06.477883+00:00"
+}
+2025-03-08 09:21:06,616 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:21:06,618 - stock_details_fetcher - INFO - Successfully updated stock details for NVDA
+2025-03-08 09:21:07,276 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.TSLA "HTTP/1.1 200 OK"
+2025-03-08 09:21:07,277 - stock_details_fetcher - INFO - Processing ticker TSLA
+2025-03-08 09:21:07,278 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/TSLA/info
+2025-03-08 09:21:07,486 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/TSLA/info "HTTP/1.1 200 OK"
+2025-03-08 09:21:07,488 - stock_details_fetcher - INFO - API Response for TSLA: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "63631769.809523809524",
+    "full_name": "TESLA",
+    "has_dividend": false,
+    "has_earnings_history": true,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/TSLA.png",
+    "marketcap": "1086539455099",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-04-22",
+    "sector": "Consumer Cyclical",
+    "short_description": "Tesla, Inc. is an American multinational automotive and energy company headquartered in Austin, Texas. Tesla designs and manufactures electric ...",
+    "short_name": "TESLA",
+    "symbol": "TSLA",
+    "uw_tags": [
+      "biden"
+    ]
+  }
+}
+2025-03-08 09:21:07,488 - stock_details_fetcher - INFO - Formatting stock info for TSLA: {
+  "announce_time": "unknown",
+  "avg30_volume": "63631769.809523809524",
+  "full_name": "TESLA",
+  "has_dividend": false,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/TSLA.png",
+  "marketcap": "1086539455099",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-04-22",
+  "sector": "Consumer Cyclical",
+  "short_description": "Tesla, Inc. is an American multinational automotive and energy company headquartered in Austin, Texas. Tesla designs and manufactures electric ...",
+  "short_name": "TESLA",
+  "symbol": "TSLA",
+  "uw_tags": [
+    "biden"
+  ]
+}
+2025-03-08 09:21:07,488 - stock_details_fetcher - INFO - Formatted data for TSLA: {
+  "ticker": "TSLA",
+  "company_name": "TESLA",
+  "short_name": "TESLA",
+  "sector": "Consumer Cyclical",
+  "market_cap": 1086539455099.0,
+  "market_cap_size": "big",
+  "avg_volume": 63631769.809523806,
+  "description": "Tesla, Inc. is an American multinational automotive and energy company headquartered in Austin, Texas. Tesla designs and manufactures electric ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/TSLA.png",
+  "issue_type": "Common Stock",
+  "has_dividend": false,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": "2025-04-22",
+  "earnings_announce_time": "unknown",
+  "tags": [
+    "biden"
+  ],
+  "fetched_at": "2025-03-08T17:21:07.488565+00:00"
+}
+2025-03-08 09:21:07,689 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:21:07,691 - stock_details_fetcher - INFO - Successfully updated stock details for TSLA
+2025-03-08 09:21:08,330 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.GOOG "HTTP/1.1 200 OK"
+2025-03-08 09:21:08,332 - stock_details_fetcher - INFO - Processing ticker GOOG
+2025-03-08 09:21:08,332 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/GOOG/info
+2025-03-08 09:21:08,546 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/GOOG/info "HTTP/1.1 200 OK"
+2025-03-08 09:21:08,548 - stock_details_fetcher - INFO - API Response for GOOG: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "14530209.904761904762",
+    "full_name": "ALPHABET",
+    "has_dividend": true,
+    "has_earnings_history": true,
+    "has_investment_arm": true,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/GOOG.png",
+    "marketcap": "1879382770000",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-04-24",
+    "sector": "Communication Services",
+    "short_description": "Alphabet Inc. is an American multinational technology conglomerate holding company headquartered in Mountain View, California. It was created through ...",
+    "short_name": "ALPHABET",
+    "symbol": "GOOG",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:21:08,549 - stock_details_fetcher - INFO - Formatting stock info for GOOG: {
+  "announce_time": "unknown",
+  "avg30_volume": "14530209.904761904762",
+  "full_name": "ALPHABET",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": true,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/GOOG.png",
+  "marketcap": "1879382770000",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-04-24",
+  "sector": "Communication Services",
+  "short_description": "Alphabet Inc. is an American multinational technology conglomerate holding company headquartered in Mountain View, California. It was created through ...",
+  "short_name": "ALPHABET",
+  "symbol": "GOOG",
+  "uw_tags": []
+}
+2025-03-08 09:21:08,549 - stock_details_fetcher - INFO - Formatted data for GOOG: {
+  "ticker": "GOOG",
+  "company_name": "ALPHABET",
+  "short_name": "ALPHABET",
+  "sector": "Communication Services",
+  "market_cap": 1879382770000.0,
+  "market_cap_size": "big",
+  "avg_volume": 14530209.904761905,
+  "description": "Alphabet Inc. is an American multinational technology conglomerate holding company headquartered in Mountain View, California. It was created through ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/GOOG.png",
+  "issue_type": "Common Stock",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": true,
+  "has_options": true,
+  "next_earnings_date": "2025-04-24",
+  "earnings_announce_time": "unknown",
+  "tags": [],
+  "fetched_at": "2025-03-08T17:21:08.549343+00:00"
+}
+2025-03-08 09:21:08,682 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:21:08,684 - stock_details_fetcher - INFO - Successfully updated stock details for GOOG
+2025-03-08 09:21:09,338 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.META "HTTP/1.1 200 OK"
+2025-03-08 09:21:09,339 - stock_details_fetcher - INFO - Processing ticker META
+2025-03-08 09:21:09,340 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/META/info
+2025-03-08 09:21:09,502 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/META/info "HTTP/1.1 200 OK"
+2025-03-08 09:21:09,503 - stock_details_fetcher - INFO - API Response for META: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "14740111.761904761905",
+    "full_name": "META",
+    "has_dividend": true,
+    "has_earnings_history": true,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/META.png",
+    "marketcap": "1496904879065",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-04-23",
+    "sector": "Communication Services",
+    "short_description": "Meta Platforms, Inc., formerly named Facebook, Inc., and TheFacebook, Inc., is an American multinational technology conglomerate based in Menlo Park, ...",
+    "short_name": "META",
+    "symbol": "META",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:21:09,503 - stock_details_fetcher - INFO - Formatting stock info for META: {
+  "announce_time": "unknown",
+  "avg30_volume": "14740111.761904761905",
+  "full_name": "META",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/META.png",
+  "marketcap": "1496904879065",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-04-23",
+  "sector": "Communication Services",
+  "short_description": "Meta Platforms, Inc., formerly named Facebook, Inc., and TheFacebook, Inc., is an American multinational technology conglomerate based in Menlo Park, ...",
+  "short_name": "META",
+  "symbol": "META",
+  "uw_tags": []
+}
+2025-03-08 09:21:09,504 - stock_details_fetcher - INFO - Formatted data for META: {
+  "ticker": "META",
+  "company_name": "META",
+  "short_name": "META",
+  "sector": "Communication Services",
+  "market_cap": 1496904879065.0,
+  "market_cap_size": "big",
+  "avg_volume": 14740111.761904761,
+  "description": "Meta Platforms, Inc., formerly named Facebook, Inc., and TheFacebook, Inc., is an American multinational technology conglomerate based in Menlo Park, ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/META.png",
+  "issue_type": "Common Stock",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": "2025-04-23",
+  "earnings_announce_time": "unknown",
+  "tags": [],
+  "fetched_at": "2025-03-08T17:21:09.503986+00:00"
+}
+2025-03-08 09:21:09,656 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:21:09,656 - stock_details_fetcher - INFO - Successfully updated stock details for META
+2025-03-08 09:21:09,656 - stock_details_fetcher - INFO - Stock details fetcher completed - Processed 6 tickers
+2025-03-08 09:21:09,656 - stock_details_fetcher - INFO - Results: 6 successful, 0 failed
+2025-03-08 09:58:24,423 - stock_details_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:58:24,424 - stock_details_fetcher - INFO - Starting stock details fetcher
+2025-03-08 09:58:24,668 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=ticker "HTTP/1.1 200 OK"
+2025-03-08 09:58:24,760 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/portfolios?select=ticker "HTTP/1.1 404 Not Found"
+2025-03-08 09:58:24,761 - stock_details_fetcher - WARNING - Error fetching portfolio tickers: Client error '404 Not Found' for url 'https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/portfolios?select=ticker'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-03-08 09:58:24,761 - stock_details_fetcher - WARNING - No tickers found in database, using default tickers
+2025-03-08 09:58:24,761 - stock_details_fetcher - INFO - Found 10 unique tickers to process
+2025-03-08 09:58:24,761 - stock_details_fetcher - INFO - Processing 10 tickers
+2025-03-08 09:58:24,895 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.AAPL "HTTP/1.1 200 OK"
+2025-03-08 09:58:24,896 - stock_details_fetcher - INFO - Ticker AAPL already up to date, skipping
+2025-03-08 09:58:25,523 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.AMZN "HTTP/1.1 200 OK"
+2025-03-08 09:58:25,524 - stock_details_fetcher - INFO - Processing ticker AMZN
+2025-03-08 09:58:25,524 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/AMZN/info
+2025-03-08 09:58:25,731 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/AMZN/info "HTTP/1.1 200 OK"
+2025-03-08 09:58:25,734 - stock_details_fetcher - INFO - API Response for AMZN: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "29219282.857142857143",
+    "full_name": "AMAZON ",
+    "has_dividend": false,
+    "has_earnings_history": true,
+    "has_investment_arm": true,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AMZN.png",
+    "marketcap": "2295256223056",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-04-29",
+    "sector": "Consumer Cyclical",
+    "short_description": "Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming, and ...",
+    "short_name": "AMAZON ",
+    "symbol": "AMZN",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:58:25,734 - stock_details_fetcher - INFO - Formatting stock info for AMZN: {
+  "announce_time": "unknown",
+  "avg30_volume": "29219282.857142857143",
+  "full_name": "AMAZON ",
+  "has_dividend": false,
+  "has_earnings_history": true,
+  "has_investment_arm": true,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AMZN.png",
+  "marketcap": "2295256223056",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-04-29",
+  "sector": "Consumer Cyclical",
+  "short_description": "Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming, and ...",
+  "short_name": "AMAZON ",
+  "symbol": "AMZN",
+  "uw_tags": []
+}
+2025-03-08 09:58:25,734 - stock_details_fetcher - INFO - Formatted data for AMZN: {
+  "ticker": "AMZN",
+  "company_name": "AMAZON ",
+  "short_name": "AMAZON ",
+  "sector": "Consumer Cyclical",
+  "market_cap": 2295256223056.0,
+  "market_cap_size": "big",
+  "avg_volume": 29219282.85714286,
+  "description": "Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming, and ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AMZN.png",
+  "issue_type": "Common Stock",
+  "has_dividend": false,
+  "has_earnings_history": true,
+  "has_investment_arm": true,
+  "has_options": true,
+  "next_earnings_date": "2025-04-29",
+  "earnings_announce_time": "unknown",
+  "tags": [],
+  "fetched_at": "2025-03-08T17:58:25.734467+00:00"
+}
+2025-03-08 09:58:25,876 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:58:25,877 - stock_details_fetcher - INFO - Successfully updated stock details for AMZN
+2025-03-08 09:58:26,574 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.MSFT "HTTP/1.1 200 OK"
+2025-03-08 09:58:26,575 - stock_details_fetcher - INFO - Ticker MSFT already up to date, skipping
+2025-03-08 09:58:27,238 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.GOOG "HTTP/1.1 200 OK"
+2025-03-08 09:58:27,239 - stock_details_fetcher - INFO - Ticker GOOG already up to date, skipping
+2025-03-08 09:58:27,919 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.TSLA "HTTP/1.1 200 OK"
+2025-03-08 09:58:27,921 - stock_details_fetcher - INFO - Ticker TSLA already up to date, skipping
+2025-03-08 09:58:28,614 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.SPY "HTTP/1.1 200 OK"
+2025-03-08 09:58:28,616 - stock_details_fetcher - INFO - Processing ticker SPY
+2025-03-08 09:58:28,616 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/info
+2025-03-08 09:58:28,816 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/SPY/info "HTTP/1.1 200 OK"
+2025-03-08 09:58:28,816 - stock_details_fetcher - INFO - API Response for SPY: {
+  "data": {
+    "announce_time": null,
+    "avg30_volume": "34265580.142857142857",
+    "full_name": "SPDR S&P 500 ETF",
+    "has_dividend": true,
+    "has_earnings_history": false,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "ETF",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/SPY.png",
+    "marketcap": "610.262489",
+    "marketcap_size": "micro",
+    "next_earnings_date": null,
+    "sector": null,
+    "short_description": "",
+    "short_name": "SPDR S&P 500 ETF",
+    "symbol": "SPY",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:58:28,816 - stock_details_fetcher - INFO - Formatting stock info for SPY: {
+  "announce_time": null,
+  "avg30_volume": "34265580.142857142857",
+  "full_name": "SPDR S&P 500 ETF",
+  "has_dividend": true,
+  "has_earnings_history": false,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "ETF",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/SPY.png",
+  "marketcap": "610.262489",
+  "marketcap_size": "micro",
+  "next_earnings_date": null,
+  "sector": null,
+  "short_description": "",
+  "short_name": "SPDR S&P 500 ETF",
+  "symbol": "SPY",
+  "uw_tags": []
+}
+2025-03-08 09:58:28,816 - stock_details_fetcher - INFO - Formatted data for SPY: {
+  "ticker": "SPY",
+  "company_name": "SPDR S&P 500 ETF",
+  "short_name": "SPDR S&P 500 ETF",
+  "sector": null,
+  "market_cap": 610.262489,
+  "market_cap_size": "micro",
+  "avg_volume": 34265580.14285714,
+  "description": "",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/SPY.png",
+  "issue_type": "ETF",
+  "has_dividend": true,
+  "has_earnings_history": false,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": null,
+  "earnings_announce_time": null,
+  "tags": [],
+  "fetched_at": "2025-03-08T17:58:28.816681+00:00"
+}
+2025-03-08 09:58:29,047 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:58:29,048 - stock_details_fetcher - INFO - Successfully updated stock details for SPY
+2025-03-08 09:58:29,715 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.AMD "HTTP/1.1 200 OK"
+2025-03-08 09:58:29,716 - stock_details_fetcher - INFO - Processing ticker AMD
+2025-03-08 09:58:29,716 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/AMD/info
+2025-03-08 09:58:29,939 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/AMD/info "HTTP/1.1 200 OK"
+2025-03-08 09:58:29,941 - stock_details_fetcher - INFO - API Response for AMD: {
+  "data": {
+    "announce_time": "unknown",
+    "avg30_volume": "35692667.380952380952",
+    "full_name": "ADVANCED MICRO DEVICES",
+    "has_dividend": true,
+    "has_earnings_history": true,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "Common Stock",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AMD.png",
+    "marketcap": "179613777308",
+    "marketcap_size": "big",
+    "next_earnings_date": "2025-04-29",
+    "sector": "Technology",
+    "short_description": "Advanced Micro Devices, Inc., commonly abbreviated as AMD, is an American multinational semiconductor company based in Santa Clara, California, that ...",
+    "short_name": "ADVANCED MICRO DEVICES",
+    "symbol": "AMD",
+    "uw_tags": [
+      "semi",
+      "gaming",
+      "female_power"
+    ]
+  }
+}
+2025-03-08 09:58:29,941 - stock_details_fetcher - INFO - Formatting stock info for AMD: {
+  "announce_time": "unknown",
+  "avg30_volume": "35692667.380952380952",
+  "full_name": "ADVANCED MICRO DEVICES",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "Common Stock",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AMD.png",
+  "marketcap": "179613777308",
+  "marketcap_size": "big",
+  "next_earnings_date": "2025-04-29",
+  "sector": "Technology",
+  "short_description": "Advanced Micro Devices, Inc., commonly abbreviated as AMD, is an American multinational semiconductor company based in Santa Clara, California, that ...",
+  "short_name": "ADVANCED MICRO DEVICES",
+  "symbol": "AMD",
+  "uw_tags": [
+    "semi",
+    "gaming",
+    "female_power"
+  ]
+}
+2025-03-08 09:58:29,941 - stock_details_fetcher - INFO - Formatted data for AMD: {
+  "ticker": "AMD",
+  "company_name": "ADVANCED MICRO DEVICES",
+  "short_name": "ADVANCED MICRO DEVICES",
+  "sector": "Technology",
+  "market_cap": 179613777308.0,
+  "market_cap_size": "big",
+  "avg_volume": 35692667.38095238,
+  "description": "Advanced Micro Devices, Inc., commonly abbreviated as AMD, is an American multinational semiconductor company based in Santa Clara, California, that ...",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/AMD.png",
+  "issue_type": "Common Stock",
+  "has_dividend": true,
+  "has_earnings_history": true,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": "2025-04-29",
+  "earnings_announce_time": "unknown",
+  "tags": [
+    "semi",
+    "gaming",
+    "female_power"
+  ],
+  "fetched_at": "2025-03-08T17:58:29.941581+00:00"
+}
+2025-03-08 09:58:30,121 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:58:30,123 - stock_details_fetcher - INFO - Successfully updated stock details for AMD
+2025-03-08 09:58:30,770 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.META "HTTP/1.1 200 OK"
+2025-03-08 09:58:30,771 - stock_details_fetcher - INFO - Ticker META already up to date, skipping
+2025-03-08 09:58:31,433 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.NVDA "HTTP/1.1 200 OK"
+2025-03-08 09:58:31,454 - stock_details_fetcher - INFO - Ticker NVDA already up to date, skipping
+2025-03-08 09:58:32,074 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?select=fetched_at&ticker=eq.QQQ "HTTP/1.1 200 OK"
+2025-03-08 09:58:32,076 - stock_details_fetcher - INFO - Processing ticker QQQ
+2025-03-08 09:58:32,076 - stock_details_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/info
+2025-03-08 09:58:32,239 - httpx - INFO - HTTP Request: GET https://api.unusualwhales.com/api/stock/QQQ/info "HTTP/1.1 200 OK"
+2025-03-08 09:58:32,240 - stock_details_fetcher - INFO - API Response for QQQ: {
+  "data": {
+    "announce_time": null,
+    "avg30_volume": "24113584.238095238095",
+    "full_name": "INVESCO QQQ ",
+    "has_dividend": true,
+    "has_earnings_history": false,
+    "has_investment_arm": false,
+    "has_options": true,
+    "issue_type": "ETF",
+    "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/QQQ.png",
+    "marketcap": "341624557000",
+    "marketcap_size": "big",
+    "next_earnings_date": null,
+    "sector": null,
+    "short_description": "",
+    "short_name": "INVESCO QQQ ",
+    "symbol": "QQQ",
+    "uw_tags": []
+  }
+}
+2025-03-08 09:58:32,240 - stock_details_fetcher - INFO - Formatting stock info for QQQ: {
+  "announce_time": null,
+  "avg30_volume": "24113584.238095238095",
+  "full_name": "INVESCO QQQ ",
+  "has_dividend": true,
+  "has_earnings_history": false,
+  "has_investment_arm": false,
+  "has_options": true,
+  "issue_type": "ETF",
+  "logo": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/QQQ.png",
+  "marketcap": "341624557000",
+  "marketcap_size": "big",
+  "next_earnings_date": null,
+  "sector": null,
+  "short_description": "",
+  "short_name": "INVESCO QQQ ",
+  "symbol": "QQQ",
+  "uw_tags": []
+}
+2025-03-08 09:58:32,240 - stock_details_fetcher - INFO - Formatted data for QQQ: {
+  "ticker": "QQQ",
+  "company_name": "INVESCO QQQ ",
+  "short_name": "INVESCO QQQ ",
+  "sector": null,
+  "market_cap": 341624557000.0,
+  "market_cap_size": "big",
+  "avg_volume": 24113584.23809524,
+  "description": "",
+  "logo_url": "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/QQQ.png",
+  "issue_type": "ETF",
+  "has_dividend": true,
+  "has_earnings_history": false,
+  "has_investment_arm": false,
+  "has_options": true,
+  "next_earnings_date": null,
+  "earnings_announce_time": null,
+  "tags": [],
+  "fetched_at": "2025-03-08T17:58:32.240233+00:00"
+}
+2025-03-08 09:58:32,388 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_details?on_conflict=ticker "HTTP/1.1 201 Created"
+2025-03-08 09:58:32,389 - stock_details_fetcher - INFO - Successfully updated stock details for QQQ
+2025-03-08 09:58:32,389 - stock_details_fetcher - INFO - Stock details fetcher completed - Processed 10 tickers
+2025-03-08 09:58:32,389 - stock_details_fetcher - INFO - Results: 10 successful, 0 failed

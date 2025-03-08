@@ -1,0 +1,125 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:311] - Pipeline configuration:
+- Components: insider
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:312] - - Components: insider
+- Watchlist only: False
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:313] - - Watchlist only: False
+- Days to fetch: 5
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:314] - - Days to fetch: 5
+- Limit per request: 10
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:315] - - Limit per request: 10
+
+================================================================================
+               RUNNING INSIDER FETCHER: Insider trading activity                
+================================================================================
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+               RUNNING INSIDER FETCHER: Insider trading activity                
+================================================================================
+Importing insider_trades_fetcher...
+2025-03-07 22:04:24,375 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing insider_trades_fetcher...
+2025-03-07 22:04:24,643 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:52] - Successfully initialized Supabase client
+✅ Module insider_trades_fetcher imported successfully
+2025-03-07 22:04:24,643 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module insider_trades_fetcher imported successfully
+✅ Class InsiderTradesFetcher found in module
+2025-03-07 22:04:24,644 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class InsiderTradesFetcher found in module
+Creating instance of InsiderTradesFetcher...
+2025-03-07 22:04:24,644 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of InsiderTradesFetcher...
+✅ Created instance of InsiderTradesFetcher
+2025-03-07 22:04:24,644 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of InsiderTradesFetcher
+Running InsiderTradesFetcher.run()...
+2025-03-07 22:04:24,644 - pipeline_runner - INFO - [run_pipeline.py:269] - Running InsiderTradesFetcher.run()...
+2025-03-07 22:04:24,644 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:73] - Starting insider trades fetching process
+2025-03-07 22:04:24,644 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:89] - Fetching insider trades from UnusualWhales API
+2025-03-07 22:04:24,644 - unusual_whales_api - INFO - [unusual_whales_api.py:87] - Using cached data for insider/transactions
+2025-03-07 22:04:24,644 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:100] - Retrieved 50 insider transactions from UnusualWhales API
+2025-03-07 22:04:25,006 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.64a035a8-230c-42e8-925e-1b414f0e17e5 "HTTP/2 200 OK"
+2025-03-07 22:04:25,145 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.20a1ca17-5b47-4405-b493-a31c16dc0972 "HTTP/2 200 OK"
+2025-03-07 22:04:25,253 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.fa27c4a1-257b-4433-b3bd-442acc3a1128 "HTTP/2 200 OK"
+2025-03-07 22:04:25,436 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.cc0f9b96-2c4d-4421-b0e7-f0bd354eb38e "HTTP/2 200 OK"
+2025-03-07 22:04:25,558 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.42684cd5-7449-49d1-86b8-270709a00bbb "HTTP/2 200 OK"
+2025-03-07 22:04:25,653 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2d7b0d2d-896b-422b-9a29-de81214927c7 "HTTP/2 200 OK"
+2025-03-07 22:04:25,744 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.c6db54cd-0751-4f10-ac1e-22311f786655 "HTTP/2 200 OK"
+2025-03-07 22:04:25,842 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.0ac12d04-f325-4b3d-8fd4-770417ee941b "HTTP/2 200 OK"
+2025-03-07 22:04:25,946 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.acbcabce-30ea-4f82-b602-a8a49225874f "HTTP/2 200 OK"
+2025-03-07 22:04:26,116 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.17274813-1c11-436e-a940-55921034725c "HTTP/2 200 OK"
+2025-03-07 22:04:26,202 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.52b65a36-25a7-4394-82e3-aee25a1124be "HTTP/2 200 OK"
+2025-03-07 22:04:26,295 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.559ed51a-fd14-4b0f-9c2c-dac23d122d2b "HTTP/2 200 OK"
+2025-03-07 22:04:26,448 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.11fd1aba-93d5-4c2d-9d11-418490c13827 "HTTP/2 200 OK"
+2025-03-07 22:04:26,545 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.cab31e17-9ec6-47aa-8e14-811cf4b92802 "HTTP/2 200 OK"
+2025-03-07 22:04:26,642 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.d77b7854-5886-49bd-ad5e-16885a05b8a6 "HTTP/2 200 OK"
+2025-03-07 22:04:26,878 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.8801e91a-d886-4437-95ca-175946c27d8d "HTTP/2 200 OK"
+2025-03-07 22:04:27,005 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2fd18deb-b280-4760-9969-6c70c967e201 "HTTP/2 200 OK"
+2025-03-07 22:04:27,090 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.6f2cfac1-3b50-4f21-ad2b-bf227ed71ba2 "HTTP/2 200 OK"
+2025-03-07 22:04:27,422 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.75a22f9d-d674-4f6e-952c-6de8d47d7d17 "HTTP/2 200 OK"
+2025-03-07 22:04:27,564 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.f5bd3e6d-5c54-45dc-bc5d-990a2d31e758 "HTTP/2 200 OK"
+2025-03-07 22:04:27,698 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.6afd4bdf-8da0-4bbc-bcac-2201f3971775 "HTTP/2 200 OK"
+2025-03-07 22:04:27,808 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.07089c7c-28ae-4dca-a653-571792836493 "HTTP/2 200 OK"
+2025-03-07 22:04:27,955 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2d2e5c72-1111-490d-9cba-e5e5f39a30c9 "HTTP/2 200 OK"
+2025-03-07 22:04:28,041 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.4e9d5944-67c5-4e5c-aa39-28f404314aae "HTTP/2 200 OK"
+2025-03-07 22:04:28,167 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.3fe61bdd-5b6d-48a1-89d2-0a12440f870f "HTTP/2 200 OK"
+2025-03-07 22:04:28,261 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.15fa41e7-2310-40e1-b0bd-a7ef50f170d3 "HTTP/2 200 OK"
+2025-03-07 22:04:28,338 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.81640298-7084-4990-8902-45b0b3d8f95c "HTTP/2 200 OK"
+2025-03-07 22:04:28,440 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.90847280-fe25-4ff1-bbb4-148e49f2887d "HTTP/2 200 OK"
+2025-03-07 22:04:28,534 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2e8087c3-a263-4762-b7df-38ba3f162832 "HTTP/2 200 OK"
+2025-03-07 22:04:28,632 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.a2629a4e-06a3-43e3-85b4-7203cd5f980f "HTTP/2 200 OK"
+2025-03-07 22:04:28,753 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.aa67cdd1-ddaa-4a38-af53-dc11bea455f8 "HTTP/2 200 OK"
+2025-03-07 22:04:28,877 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.a41a0c95-b5a3-474f-a76f-2b62a6b9c8a3 "HTTP/2 200 OK"
+2025-03-07 22:04:29,024 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.5341f23e-047e-4423-8629-117ca1beee8b "HTTP/2 200 OK"
+2025-03-07 22:04:29,143 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.14a9c610-39c2-467c-a10d-e2c341ce5ed9 "HTTP/2 200 OK"
+2025-03-07 22:04:29,224 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.8693f6ad-e61e-4abe-a498-7d784e516aa1 "HTTP/2 200 OK"
+2025-03-07 22:04:29,325 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.946b6b14-840a-4368-9ecb-dfce65eb60bd "HTTP/2 200 OK"
+2025-03-07 22:04:29,388 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.96b5bb72-a0ef-4f40-8a5e-f1bd53c9abfa "HTTP/2 200 OK"
+2025-03-07 22:04:29,523 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.dfdd72b6-fc24-45b8-87df-ca3c2af94d14 "HTTP/2 200 OK"
+2025-03-07 22:04:29,628 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.f824d316-7007-417a-9419-7344fc3342ff "HTTP/2 200 OK"
+2025-03-07 22:04:29,727 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.34371777-a4f7-4095-9e42-8543df3a1dfd "HTTP/2 200 OK"
+2025-03-07 22:04:29,796 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.fbcd8308-827b-48d2-a3b0-c6ed32f2693d "HTTP/2 200 OK"
+2025-03-07 22:04:29,900 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2b2b012c-40f8-4a4c-994d-80b7a644a7ba "HTTP/2 200 OK"
+2025-03-07 22:04:29,987 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.b4ca4f49-c6c6-4c70-88d5-582951b7d6f6 "HTTP/2 200 OK"
+2025-03-07 22:04:30,108 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.28b48512-a48d-4cd3-ab56-036a66665b31 "HTTP/2 200 OK"
+2025-03-07 22:04:30,195 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.80ad8346-43fc-4273-9cde-44d327927e2f "HTTP/2 200 OK"
+2025-03-07 22:04:30,269 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.e6841290-a70d-4819-9d4e-9f570734b8e9 "HTTP/2 200 OK"
+2025-03-07 22:04:30,343 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.7e8d2679-9d7c-4fc4-ac17-7cf7f77e9a03 "HTTP/2 200 OK"
+2025-03-07 22:04:30,417 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2b733b95-45b2-49fc-ac25-681f717058e3 "HTTP/2 200 OK"
+2025-03-07 22:04:30,487 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.c68194c5-3c40-42c3-9505-451cd96db926 "HTTP/2 200 OK"
+2025-03-07 22:04:30,560 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.9524cf14-775d-4cb6-aa88-f7a422d77ca5 "HTTP/2 200 OK"
+2025-03-07 22:04:30,819 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?columns=%22shares_owned_after%22%2C%22filing_date%22%2C%22updated_at%22%2C%22transaction_date%22%2C%22created_at%22%2C%22shares%22%2C%22source%22%2C%22transaction_type%22%2C%22symbol%22%2C%22price%22%2C%22filing_id%22%2C%22insider_name%22 "HTTP/2 201 Created"
+2025-03-07 22:04:30,821 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:156] - Successfully inserted 50 insider trades
+2025-03-07 22:04:30,822 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:163] - Inserted 50 new insider trades from UnusualWhales API
+2025-03-07 22:04:30,927 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=ticker "HTTP/2 200 OK"
+2025-03-07 22:04:30,928 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:199] - Fetching insider flow for 8 tickers
+2025-03-07 22:04:30,929 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/AAPL/ticker-flow with params None
+2025-03-07 22:04:31,232 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 64 insider flow records for AAPL
+2025-03-07 22:04:31,233 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/AAPL with params None
+2025-03-07 22:04:31,325 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:240] - Retrieved 47 insiders for AAPL
+2025-03-07 22:04:31,826 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/MSFT/ticker-flow with params None
+2025-03-07 22:04:32,019 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 68 insider flow records for MSFT
+2025-03-07 22:04:32,020 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/MSFT with params None
+2025-03-07 22:04:32,192 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:240] - Retrieved 75 insiders for MSFT
+2025-03-07 22:04:32,695 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/AMZN/ticker-flow with params None
+2025-03-07 22:04:32,815 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 228 insider flow records for AMZN
+2025-03-07 22:04:32,818 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/AMZN with params None
+2025-03-07 22:04:32,917 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:240] - Retrieved 61 insiders for AMZN
+2025-03-07 22:04:33,419 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/GOOGL/ticker-flow with params None
+2025-03-07 22:04:33,531 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 103 insider flow records for GOOGL
+2025-03-07 22:04:33,532 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/GOOGL with params None
+2025-03-07 22:04:33,625 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:240] - Retrieved 60 insiders for GOOGL
+2025-03-07 22:04:34,128 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/META/ticker-flow with params None
+2025-03-07 22:04:34,226 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 349 insider flow records for META
+2025-03-07 22:04:34,229 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/META with params None
+2025-03-07 22:04:34,309 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:240] - Retrieved 59 insiders for META
+2025-03-07 22:04:34,812 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/TSLA/ticker-flow with params None
+2025-03-07 22:04:34,920 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 208 insider flow records for TSLA
+2025-03-07 22:04:34,922 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/TSLA with params None
+2025-03-07 22:04:35,017 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:240] - Retrieved 42 insiders for TSLA
+2025-03-07 22:04:35,519 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/NVDA/ticker-flow with params None
+2025-03-07 22:04:35,617 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:212] - Retrieved 186 insider flow records for NVDA
+2025-03-07 22:04:35,619 - unusual_whales_api - INFO - [unusual_whales_api.py:91] - Making request to https://api.unusualwhales.com/api/insider/NVDA with params None

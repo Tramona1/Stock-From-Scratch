@@ -1,0 +1,1201 @@
+2025-03-08 02:30:10,740 - __main__ - INFO - Starting technical indicators fetcher
+2025-03-08 02:30:10,740 - __main__ - INFO - Initializing TechnicalIndicatorsFetcher
+2025-03-08 02:30:10,822 - __main__ - INFO - TechnicalIndicatorsFetcher initialized
+2025-03-08 02:30:10,822 - __main__ - INFO - Starting technical indicators fetcher run
+2025-03-08 02:30:10,822 - __main__ - INFO - Processing technical indicators for 1 symbols: ['AAPL']
+2025-03-08 02:30:10,822 - __main__ - INFO - Processing technical indicators for AAPL (daily)
+2025-03-08 02:30:10,822 - __main__ - INFO - Checking if indicators for AAPL (daily) need updating
+2025-03-08 02:30:11,115 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators?select=%2A&symbol=eq.AAPL&interval=eq.daily&order=fetched_at.desc&limit=1 "HTTP/2 200 OK"
+2025-03-08 02:30:11,120 - __main__ - INFO - No existing indicators found for AAPL, will fetch new data
+2025-03-08 02:30:11,120 - alpha_vantage_api - INFO - Fetching technical indicators for AAPL (daily)
+2025-03-08 02:30:11,120 - alpha_vantage_api - INFO - Fetching MACD for AAPL (daily, close)
+2025-03-08 02:30:11,122 - alpha_vantage_api - INFO - Making request to Alpha Vantage: MACD with params {'symbol': 'AAPL', 'interval': 'daily', 'series_type': 'close', 'fastperiod': 12, 'slowperiod': 26, 'signalperiod': 9, 'function': 'MACD', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:30:12,131 - alpha_vantage_api - WARNING - No MACD data found for AAPL
+2025-03-08 02:30:12,131 - alpha_vantage_api - INFO - Fetching RSI for AAPL (daily, close)
+2025-03-08 02:30:12,131 - alpha_vantage_api - INFO - Making request to Alpha Vantage: RSI with params {'symbol': 'AAPL', 'interval': 'daily', 'series_type': 'close', 'time_period': 14, 'function': 'RSI', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:30:13,000 - alpha_vantage_api - WARNING - No RSI data found for AAPL
+2025-03-08 02:30:13,000 - alpha_vantage_api - INFO - Compiled technical indicators for AAPL
+2025-03-08 02:30:13,000 - alpha_vantage_api - INFO - Formatting technical indicators for AAPL
+2025-03-08 02:30:13,001 - alpha_vantage_api - INFO - Formatted data for AAPL
+2025-03-08 02:30:13,001 - __main__ - INFO - Storing technical indicators for AAPL in Supabase
+2025-03-08 02:30:13,088 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators "HTTP/2 201 Created"
+2025-03-08 02:30:13,090 - __main__ - INFO - Successfully stored technical indicators for AAPL
+2025-03-08 02:30:13,090 - __main__ - INFO - Technical indicators fetcher run completed. Processed 1 symbols
+2025-03-08 02:30:13,090 - __main__ - INFO - Technical indicators fetcher completed successfully
+2025-03-08 02:31:51,812 - __main__ - INFO - Starting technical indicators fetcher
+2025-03-08 02:31:51,812 - __main__ - INFO - Initializing TechnicalIndicatorsFetcher
+2025-03-08 02:31:51,884 - __main__ - INFO - TechnicalIndicatorsFetcher initialized
+2025-03-08 02:31:51,885 - __main__ - INFO - Starting technical indicators fetcher run
+2025-03-08 02:31:51,885 - __main__ - INFO - Processing technical indicators for 1 symbols: ['MSFT']
+2025-03-08 02:31:51,885 - __main__ - INFO - Processing technical indicators for MSFT (daily)
+2025-03-08 02:31:51,885 - __main__ - INFO - Checking if indicators for MSFT (daily) need updating
+2025-03-08 02:31:52,194 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators?select=%2A&symbol=eq.MSFT&interval=eq.daily&order=fetched_at.desc&limit=1 "HTTP/2 200 OK"
+2025-03-08 02:31:52,196 - __main__ - INFO - No existing indicators found for MSFT, will fetch new data
+2025-03-08 02:31:52,196 - alpha_vantage_api - INFO - Fetching technical indicators for MSFT (daily)
+2025-03-08 02:31:52,196 - alpha_vantage_api - INFO - Fetching MACD for MSFT (daily, close)
+2025-03-08 02:31:52,197 - alpha_vantage_api - INFO - Making request to Alpha Vantage: MACD with params {'symbol': 'MSFT', 'interval': 'daily', 'series_type': 'close', 'fastperiod': 12, 'slowperiod': 26, 'signalperiod': 9, 'function': 'MACD', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:31:53,127 - alpha_vantage_api - INFO - Fetching RSI for MSFT (daily, close)
+2025-03-08 02:31:53,128 - alpha_vantage_api - INFO - Making request to Alpha Vantage: RSI with params {'symbol': 'MSFT', 'interval': 'daily', 'series_type': 'close', 'time_period': 14, 'function': 'RSI', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:31:53,913 - alpha_vantage_api - INFO - Compiled technical indicators for MSFT
+2025-03-08 02:31:53,914 - alpha_vantage_api - INFO - Formatting technical indicators for MSFT
+2025-03-08 02:31:53,914 - alpha_vantage_api - INFO - Formatted data for MSFT
+2025-03-08 02:31:53,914 - __main__ - INFO - Storing technical indicators for MSFT in Supabase
+2025-03-08 02:31:53,997 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators "HTTP/2 201 Created"
+2025-03-08 02:31:54,000 - __main__ - INFO - Successfully stored technical indicators for MSFT
+2025-03-08 02:31:54,000 - __main__ - INFO - Technical indicators fetcher run completed. Processed 1 symbols
+2025-03-08 02:31:54,001 - __main__ - INFO - Technical indicators fetcher completed successfully
+2025-03-08 02:35:48,504 - __main__ - INFO - Starting technical indicators fetcher
+2025-03-08 02:35:48,504 - __main__ - INFO - Initializing TechnicalIndicatorsFetcher
+2025-03-08 02:35:48,583 - __main__ - INFO - TechnicalIndicatorsFetcher initialized
+2025-03-08 02:35:48,583 - __main__ - INFO - Starting technical indicators fetcher run
+2025-03-08 02:35:48,583 - __main__ - INFO - Processing technical indicators for 1 symbols: ['MSFT']
+2025-03-08 02:35:48,583 - __main__ - INFO - Processing technical indicators for MSFT (daily)
+2025-03-08 02:35:48,583 - __main__ - INFO - Checking if indicators for MSFT (daily) need updating
+2025-03-08 02:35:48,876 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators?select=%2A&symbol=eq.MSFT&interval=eq.daily&order=fetched_at.desc&limit=1 "HTTP/2 200 OK"
+2025-03-08 02:35:48,883 - __main__ - ERROR - Error checking update status for MSFT: can't subtract offset-naive and offset-aware datetimes
+2025-03-08 02:35:48,883 - alpha_vantage_api - INFO - Fetching technical indicators for MSFT (daily)
+2025-03-08 02:35:48,883 - alpha_vantage_api - INFO - Fetching MACD for MSFT (daily, close)
+2025-03-08 02:35:48,892 - alpha_vantage_api - INFO - Using cached data for MACD
+2025-03-08 02:35:48,902 - alpha_vantage_api - INFO - Fetching RSI for MSFT (daily, close)
+2025-03-08 02:35:48,909 - alpha_vantage_api - INFO - Using cached data for RSI
+2025-03-08 02:35:48,915 - alpha_vantage_api - INFO - MACD data keys received: ['2025-03-07', '2025-03-06', '2025-03-05', '2025-03-04', '2025-03-03']
+2025-03-08 02:35:48,915 - alpha_vantage_api - INFO - RSI data keys received: ['2025-03-07', '2025-03-06', '2025-03-05', '2025-03-04', '2025-03-03']
+2025-03-08 02:35:48,916 - alpha_vantage_api - INFO - Latest MACD data for MSFT (2025-03-07): {'MACD': '-7.1428', 'MACD_Signal': '-6.9133', 'MACD_Hist': '-0.2295'}
+2025-03-08 02:35:48,916 - alpha_vantage_api - INFO - Latest RSI data for MSFT (2025-03-07): {'RSI': '39.7801'}
+2025-03-08 02:35:48,916 - alpha_vantage_api - INFO - Compiled technical indicators for MSFT: {'symbol': 'MSFT', 'interval': 'daily', 'date': '2025-03-07', 'macd': -7.1428, 'macd_signal': -6.9133, 'macd_hist': -0.2295, 'rsi': 39.7801, 'fetched_at': '2025-03-08T10:35:48.916483'}
+2025-03-08 02:35:48,917 - alpha_vantage_api - INFO - Formatting technical indicators for MSFT
+2025-03-08 02:35:48,917 - alpha_vantage_api - INFO - Formatted data for MSFT
+2025-03-08 02:35:48,917 - __main__ - INFO - Storing technical indicators for MSFT in Supabase
+2025-03-08 02:35:49,004 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators "HTTP/2 409 Conflict"
+2025-03-08 02:35:49,004 - __main__ - ERROR - Error processing technical indicators for MSFT: {'code': '23505', 'details': 'Key (symbol, "interval", date)=(MSFT, daily, 2025-03-07) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "technical_indicators_symbol_interval_date_key"'}
+2025-03-08 02:35:49,004 - __main__ - INFO - Technical indicators fetcher run completed. Processed 0 symbols
+2025-03-08 02:35:49,004 - __main__ - INFO - Technical indicators fetcher completed successfully
+2025-03-08 02:36:58,440 - __main__ - INFO - Starting technical indicators fetcher
+2025-03-08 02:36:58,441 - __main__ - INFO - Initializing TechnicalIndicatorsFetcher
+2025-03-08 02:36:58,544 - __main__ - INFO - TechnicalIndicatorsFetcher initialized
+2025-03-08 02:36:58,544 - __main__ - INFO - Starting technical indicators fetcher run
+2025-03-08 02:36:58,544 - __main__ - INFO - Processing technical indicators for 1 symbols: ['AAPL']
+2025-03-08 02:36:58,544 - __main__ - INFO - Processing technical indicators for AAPL (daily)
+2025-03-08 02:36:58,544 - __main__ - INFO - Checking if indicators for AAPL (daily) need updating
+2025-03-08 02:36:58,718 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/technical_indicators?select=%2A&symbol=eq.AAPL&interval=eq.daily&order=fetched_at.desc&limit=1 "HTTP/2 200 OK"
+2025-03-08 02:36:58,733 - __main__ - INFO - Indicators for AAPL were updated recently (0.11 hours ago), skipping
+2025-03-08 02:36:58,733 - __main__ - INFO - Technical indicators fetcher run completed. Processed 0 symbols
+2025-03-08 02:36:58,733 - __main__ - INFO - Technical indicators fetcher completed successfully
+2025-03-08 02:38:16,528 - forex_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:38:16,529 - forex_info_fetcher - INFO - Starting forex info fetcher
+2025-03-08 02:38:16,529 - forex_info_fetcher - INFO - Processing 5 forex pairs
+2025-03-08 02:38:16,971 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.EUR&to_currency=eq.USD "HTTP/2 200 OK"
+2025-03-08 02:38:16,977 - forex_info_fetcher - INFO - Processing forex pair EUR/USD
+2025-03-08 02:38:16,977 - alpha_vantage_api - INFO - Getting comprehensive forex info for EUR/USD
+2025-03-08 02:38:16,977 - alpha_vantage_api - INFO - Fetching forex exchange rate for EUR to USD
+2025-03-08 02:38:16,978 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'EUR', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:17,284 - alpha_vantage_api - INFO - Fetching daily time series for EUR to USD
+2025-03-08 02:38:17,284 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_DAILY with params {'from_symbol': 'EUR', 'to_symbol': 'USD', 'outputsize': 'compact', 'function': 'FX_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:17,742 - alpha_vantage_api - INFO - Fetching weekly time series for EUR to USD
+2025-03-08 02:38:17,743 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_WEEKLY with params {'from_symbol': 'EUR', 'to_symbol': 'USD', 'function': 'FX_WEEKLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:18,350 - alpha_vantage_api - INFO - Compiled forex info for EUR/USD
+2025-03-08 02:38:18,351 - alpha_vantage_api - INFO - Formatting forex info for EUR/USD
+2025-03-08 02:38:18,351 - alpha_vantage_api - INFO - Formatted data for EUR/USD
+2025-03-08 02:38:18,351 - forex_info_fetcher - INFO - Formatted data for EUR/USD: {
+  "from_currency": "EUR",
+  "to_currency": "USD",
+  "currency_pair": "EUR/USD",
+  "exchange_rate": 1.0834,
+  "bid_price": 1.08335,
+  "ask_price": 1.08345,
+  "open_price": 1.0782,
+  "daily_high": 1.08888,
+  "daily_low": 1.07768,
+  "daily_close": 1.083,
+  "weekly_open": 1.04027,
+  "weekly_high": 1.08888,
+  "weekly_low": 1.03883,
+  "weekly_close": 1.083,
+  "last_refreshed": "2025-03-08 10:38:01",
+  "price_updated_at": "2025-03-08 10:38:01",
+  "fetched_at": "2025-03-08T10:38:18.351429"
+}
+2025-03-08 02:38:18,436 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency&on_conflict=to_currency "HTTP/2 400 Bad Request"
+2025-03-08 02:38:18,436 - forex_info_fetcher - ERROR - Error processing forex pair EUR/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 02:38:18,438 - forex_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_forex_info.py", line 164, in process_forex_pair
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 02:38:18,625 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.USD&to_currency=eq.JPY "HTTP/2 200 OK"
+2025-03-08 02:38:18,625 - forex_info_fetcher - INFO - Processing forex pair USD/JPY
+2025-03-08 02:38:18,625 - forex_info_fetcher - INFO - Rate limiting: Sleeping for 11.83 seconds
+2025-03-08 02:38:30,457 - alpha_vantage_api - INFO - Getting comprehensive forex info for USD/JPY
+2025-03-08 02:38:30,459 - alpha_vantage_api - INFO - Fetching forex exchange rate for USD to JPY
+2025-03-08 02:38:30,461 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'USD', 'to_currency': 'JPY', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:30,775 - alpha_vantage_api - INFO - Fetching daily time series for USD to JPY
+2025-03-08 02:38:30,775 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_DAILY with params {'from_symbol': 'USD', 'to_symbol': 'JPY', 'outputsize': 'compact', 'function': 'FX_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:31,156 - alpha_vantage_api - INFO - Fetching weekly time series for USD to JPY
+2025-03-08 02:38:31,156 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_WEEKLY with params {'from_symbol': 'USD', 'to_symbol': 'JPY', 'function': 'FX_WEEKLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:31,781 - alpha_vantage_api - INFO - Compiled forex info for USD/JPY
+2025-03-08 02:38:31,781 - alpha_vantage_api - INFO - Formatting forex info for USD/JPY
+2025-03-08 02:38:31,782 - alpha_vantage_api - INFO - Formatted data for USD/JPY
+2025-03-08 02:38:31,782 - forex_info_fetcher - INFO - Formatted data for USD/JPY: {
+  "from_currency": "USD",
+  "to_currency": "JPY",
+  "currency_pair": "USD/JPY",
+  "exchange_rate": 148.004,
+  "bid_price": 148.0008,
+  "ask_price": 148.01,
+  "open_price": 147.948,
+  "daily_high": 148.2,
+  "daily_low": 146.943,
+  "daily_close": 148.018,
+  "weekly_open": 150.689,
+  "weekly_high": 151.303,
+  "weekly_low": 146.943,
+  "weekly_close": 148.018,
+  "last_refreshed": "2025-03-08 10:38:01",
+  "price_updated_at": "2025-03-08 10:38:01",
+  "fetched_at": "2025-03-08T10:38:31.782097"
+}
+2025-03-08 02:38:31,932 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency&on_conflict=to_currency "HTTP/2 400 Bad Request"
+2025-03-08 02:38:31,933 - forex_info_fetcher - ERROR - Error processing forex pair USD/JPY: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 02:38:31,935 - forex_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_forex_info.py", line 164, in process_forex_pair
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 02:38:32,120 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.GBP&to_currency=eq.USD "HTTP/2 200 OK"
+2025-03-08 02:38:32,122 - forex_info_fetcher - INFO - Processing forex pair GBP/USD
+2025-03-08 02:38:32,122 - forex_info_fetcher - INFO - Rate limiting: Sleeping for 11.76 seconds
+2025-03-08 02:38:43,883 - alpha_vantage_api - INFO - Getting comprehensive forex info for GBP/USD
+2025-03-08 02:38:43,884 - alpha_vantage_api - INFO - Fetching forex exchange rate for GBP to USD
+2025-03-08 02:38:43,884 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'GBP', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:44,223 - alpha_vantage_api - INFO - Fetching daily time series for GBP to USD
+2025-03-08 02:38:44,223 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_DAILY with params {'from_symbol': 'GBP', 'to_symbol': 'USD', 'outputsize': 'compact', 'function': 'FX_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:44,464 - alpha_vantage_api - INFO - Fetching weekly time series for GBP to USD
+2025-03-08 02:38:44,465 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_WEEKLY with params {'from_symbol': 'GBP', 'to_symbol': 'USD', 'function': 'FX_WEEKLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:45,040 - alpha_vantage_api - INFO - Compiled forex info for GBP/USD
+2025-03-08 02:38:45,040 - alpha_vantage_api - INFO - Formatting forex info for GBP/USD
+2025-03-08 02:38:45,040 - alpha_vantage_api - INFO - Formatted data for GBP/USD
+2025-03-08 02:38:45,040 - forex_info_fetcher - INFO - Formatted data for GBP/USD: {
+  "from_currency": "GBP",
+  "to_currency": "USD",
+  "currency_pair": "GBP/USD",
+  "exchange_rate": 1.2924,
+  "bid_price": 1.29239,
+  "ask_price": 1.29245,
+  "open_price": 1.28784,
+  "daily_high": 1.29444,
+  "daily_low": 1.2873,
+  "daily_close": 1.2919,
+  "weekly_open": 1.258,
+  "weekly_high": 1.29444,
+  "weekly_low": 1.25768,
+  "weekly_close": 1.2919,
+  "last_refreshed": "2025-03-08 10:38:31",
+  "price_updated_at": "2025-03-08 10:38:31",
+  "fetched_at": "2025-03-08T10:38:45.040679"
+}
+2025-03-08 02:38:45,178 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency&on_conflict=to_currency "HTTP/2 400 Bad Request"
+2025-03-08 02:38:45,179 - forex_info_fetcher - ERROR - Error processing forex pair GBP/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 02:38:45,179 - forex_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_forex_info.py", line 164, in process_forex_pair
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 02:38:45,365 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.USD&to_currency=eq.CAD "HTTP/2 200 OK"
+2025-03-08 02:38:45,366 - forex_info_fetcher - INFO - Processing forex pair USD/CAD
+2025-03-08 02:38:45,367 - forex_info_fetcher - INFO - Rate limiting: Sleeping for 11.77 seconds
+2025-03-08 02:38:57,145 - alpha_vantage_api - INFO - Getting comprehensive forex info for USD/CAD
+2025-03-08 02:38:57,146 - alpha_vantage_api - INFO - Fetching forex exchange rate for USD to CAD
+2025-03-08 02:38:57,147 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'USD', 'to_currency': 'CAD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:57,470 - alpha_vantage_api - INFO - Fetching daily time series for USD to CAD
+2025-03-08 02:38:57,471 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_DAILY with params {'from_symbol': 'USD', 'to_symbol': 'CAD', 'outputsize': 'compact', 'function': 'FX_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:57,857 - alpha_vantage_api - INFO - Fetching weekly time series for USD to CAD
+2025-03-08 02:38:57,857 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_WEEKLY with params {'from_symbol': 'USD', 'to_symbol': 'CAD', 'function': 'FX_WEEKLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:38:58,307 - alpha_vantage_api - INFO - Compiled forex info for USD/CAD
+2025-03-08 02:38:58,307 - alpha_vantage_api - INFO - Formatting forex info for USD/CAD
+2025-03-08 02:38:58,307 - alpha_vantage_api - INFO - Formatted data for USD/CAD
+2025-03-08 02:38:58,307 - forex_info_fetcher - INFO - Formatted data for USD/CAD: {
+  "from_currency": "USD",
+  "to_currency": "CAD",
+  "currency_pair": "USD/CAD",
+  "exchange_rate": 1.4377,
+  "bid_price": 1.43764,
+  "ask_price": 1.43772,
+  "open_price": 1.42948,
+  "daily_high": 1.44265,
+  "daily_low": 1.4276,
+  "daily_close": 1.4367,
+  "weekly_open": 1.4448,
+  "weekly_high": 1.4543,
+  "weekly_low": 1.4238,
+  "weekly_close": 1.4367,
+  "last_refreshed": "2025-03-08 10:38:44",
+  "price_updated_at": "2025-03-08 10:38:44",
+  "fetched_at": "2025-03-08T10:38:58.307796"
+}
+2025-03-08 02:38:58,431 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency&on_conflict=to_currency "HTTP/2 400 Bad Request"
+2025-03-08 02:38:58,432 - forex_info_fetcher - ERROR - Error processing forex pair USD/CAD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 02:38:58,433 - forex_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_forex_info.py", line 164, in process_forex_pair
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 02:38:58,603 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.AUD&to_currency=eq.USD "HTTP/2 200 OK"
+2025-03-08 02:38:58,604 - forex_info_fetcher - INFO - Processing forex pair AUD/USD
+2025-03-08 02:38:58,604 - forex_info_fetcher - INFO - Rate limiting: Sleeping for 11.80 seconds
+2025-03-08 02:39:10,412 - alpha_vantage_api - INFO - Getting comprehensive forex info for AUD/USD
+2025-03-08 02:39:10,413 - alpha_vantage_api - INFO - Fetching forex exchange rate for AUD to USD
+2025-03-08 02:39:10,414 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'AUD', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:10,772 - alpha_vantage_api - INFO - Fetching daily time series for AUD to USD
+2025-03-08 02:39:10,772 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_DAILY with params {'from_symbol': 'AUD', 'to_symbol': 'USD', 'outputsize': 'compact', 'function': 'FX_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:11,162 - alpha_vantage_api - INFO - Fetching weekly time series for AUD to USD
+2025-03-08 02:39:11,162 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_WEEKLY with params {'from_symbol': 'AUD', 'to_symbol': 'USD', 'function': 'FX_WEEKLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:11,757 - alpha_vantage_api - INFO - Compiled forex info for AUD/USD
+2025-03-08 02:39:11,757 - alpha_vantage_api - INFO - Formatting forex info for AUD/USD
+2025-03-08 02:39:11,757 - alpha_vantage_api - INFO - Formatted data for AUD/USD
+2025-03-08 02:39:11,757 - forex_info_fetcher - INFO - Formatted data for AUD/USD: {
+  "from_currency": "AUD",
+  "to_currency": "USD",
+  "currency_pair": "AUD/USD",
+  "exchange_rate": 0.6308,
+  "bid_price": 0.63079,
+  "ask_price": 0.63082,
+  "open_price": 0.63313,
+  "daily_high": 0.63376,
+  "daily_low": 0.62815,
+  "daily_close": 0.6303,
+  "weekly_open": 0.62131,
+  "weekly_high": 0.63638,
+  "weekly_low": 0.61865,
+  "weekly_close": 0.6303,
+  "last_refreshed": "2025-03-08 10:39:02",
+  "price_updated_at": "2025-03-08 10:39:02",
+  "fetched_at": "2025-03-08T10:39:11.757614"
+}
+2025-03-08 02:39:11,874 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency&on_conflict=to_currency "HTTP/2 400 Bad Request"
+2025-03-08 02:39:11,875 - forex_info_fetcher - ERROR - Error processing forex pair AUD/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 02:39:11,877 - forex_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_forex_info.py", line 164, in process_forex_pair
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 02:39:11,980 - forex_info_fetcher - INFO - Forex info fetcher completed - Processed 5 forex pairs
+2025-03-08 02:39:11,980 - forex_info_fetcher - INFO - Results: 0 successful, 5 failed
+2025-03-08 02:39:36,265 - commodity_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:39:36,265 - commodity_info_fetcher - INFO - Starting commodity info fetcher
+2025-03-08 02:39:36,265 - commodity_info_fetcher - INFO - Processing 5 commodities: WTI, BRENT, NATURAL_GAS, COPPER, ALUMINUM
+2025-03-08 02:39:36,538 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.WTI "HTTP/2 200 OK"
+2025-03-08 02:39:36,539 - commodity_info_fetcher - INFO - Processing commodity WTI
+2025-03-08 02:39:36,539 - alpha_vantage_api - INFO - Getting comprehensive commodity info for WTI
+2025-03-08 02:39:36,539 - alpha_vantage_api - INFO - Fetching daily time series for WTI
+2025-03-08 02:39:36,540 - alpha_vantage_api - INFO - Making request to Alpha Vantage: WTI with params {'interval': 'daily', 'function': 'WTI', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:37,427 - alpha_vantage_api - INFO - Fetching weekly time series for WTI
+2025-03-08 02:39:37,427 - alpha_vantage_api - INFO - Making request to Alpha Vantage: WTI with params {'interval': 'weekly', 'function': 'WTI', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:38,150 - alpha_vantage_api - INFO - Fetching monthly time series for WTI
+2025-03-08 02:39:38,151 - alpha_vantage_api - INFO - Making request to Alpha Vantage: WTI with params {'interval': 'monthly', 'function': 'WTI', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:38,890 - alpha_vantage_api - INFO - Compiled commodity info for WTI
+2025-03-08 02:39:38,891 - alpha_vantage_api - INFO - Formatting commodity info for WTI
+2025-03-08 02:39:38,891 - alpha_vantage_api - INFO - Formatted data for WTI
+2025-03-08 02:39:38,891 - commodity_info_fetcher - INFO - Formatted data for WTI: {
+  "function": "WTI",
+  "name": "Crude Oil WTI",
+  "daily_value": 68.63,
+  "daily_date": "2025-03-03",
+  "weekly_value": 69.93,
+  "weekly_date": "2025-02-28",
+  "monthly_value": 71.53,
+  "monthly_date": "2025-02-01",
+  "unit": "USD per barrel",
+  "fetched_at": "2025-03-08T10:39:38.891242"
+}
+2025-03-08 02:39:38,985 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 201 Created"
+2025-03-08 02:39:38,987 - commodity_info_fetcher - INFO - Successfully updated commodity info for WTI
+2025-03-08 02:39:39,199 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.BRENT "HTTP/2 200 OK"
+2025-03-08 02:39:39,199 - commodity_info_fetcher - INFO - Processing commodity BRENT
+2025-03-08 02:39:39,199 - commodity_info_fetcher - INFO - Rate limiting: Sleeping for 11.79 seconds
+2025-03-08 02:39:50,996 - alpha_vantage_api - INFO - Getting comprehensive commodity info for BRENT
+2025-03-08 02:39:50,997 - alpha_vantage_api - INFO - Fetching daily time series for BRENT
+2025-03-08 02:39:50,998 - alpha_vantage_api - INFO - Making request to Alpha Vantage: BRENT with params {'interval': 'daily', 'function': 'BRENT', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:51,753 - alpha_vantage_api - INFO - Fetching weekly time series for BRENT
+2025-03-08 02:39:51,754 - alpha_vantage_api - INFO - Making request to Alpha Vantage: BRENT with params {'interval': 'weekly', 'function': 'BRENT', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:52,488 - alpha_vantage_api - INFO - Fetching monthly time series for BRENT
+2025-03-08 02:39:52,488 - alpha_vantage_api - INFO - Making request to Alpha Vantage: BRENT with params {'interval': 'monthly', 'function': 'BRENT', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:39:53,085 - alpha_vantage_api - INFO - Compiled commodity info for BRENT
+2025-03-08 02:39:53,086 - alpha_vantage_api - INFO - Formatting commodity info for BRENT
+2025-03-08 02:39:53,086 - alpha_vantage_api - INFO - Formatted data for BRENT
+2025-03-08 02:39:53,086 - commodity_info_fetcher - INFO - Formatted data for BRENT: {
+  "function": "BRENT",
+  "name": "Crude Oil Brent",
+  "daily_value": 72.85,
+  "daily_date": "2025-03-03",
+  "weekly_value": 74.25,
+  "weekly_date": "2025-02-28",
+  "monthly_value": 75.44,
+  "monthly_date": "2025-02-01",
+  "unit": "USD per barrel",
+  "fetched_at": "2025-03-08T10:39:53.086432"
+}
+2025-03-08 02:39:53,280 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 201 Created"
+2025-03-08 02:39:53,282 - commodity_info_fetcher - INFO - Successfully updated commodity info for BRENT
+2025-03-08 02:39:53,503 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.NATURAL_GAS "HTTP/2 200 OK"
+2025-03-08 02:39:53,504 - commodity_info_fetcher - INFO - Processing commodity NATURAL_GAS
+2025-03-08 02:39:53,504 - commodity_info_fetcher - INFO - Rate limiting: Sleeping for 11.68 seconds
+2025-03-08 02:40:05,186 - alpha_vantage_api - INFO - Getting comprehensive commodity info for NATURAL_GAS
+2025-03-08 02:40:05,188 - alpha_vantage_api - INFO - Fetching daily time series for NATURAL_GAS
+2025-03-08 02:40:05,189 - alpha_vantage_api - INFO - Making request to Alpha Vantage: NATURAL_GAS with params {'interval': 'daily', 'function': 'NATURAL_GAS', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:40:05,981 - alpha_vantage_api - INFO - Fetching weekly time series for NATURAL_GAS
+2025-03-08 02:40:05,982 - alpha_vantage_api - INFO - Making request to Alpha Vantage: NATURAL_GAS with params {'interval': 'weekly', 'function': 'NATURAL_GAS', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:40:07,540 - alpha_vantage_api - INFO - Fetching monthly time series for NATURAL_GAS
+2025-03-08 02:40:07,540 - alpha_vantage_api - INFO - Making request to Alpha Vantage: NATURAL_GAS with params {'interval': 'monthly', 'function': 'NATURAL_GAS', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:40:08,341 - alpha_vantage_api - INFO - Compiled commodity info for NATURAL_GAS
+2025-03-08 02:40:08,342 - alpha_vantage_api - INFO - Formatting commodity info for NATURAL_GAS
+2025-03-08 02:40:08,342 - alpha_vantage_api - INFO - Formatted data for NATURAL_GAS
+2025-03-08 02:40:08,342 - commodity_info_fetcher - INFO - Formatted data for NATURAL_GAS: {
+  "function": "NATURAL_GAS",
+  "name": "Natural Gas",
+  "daily_value": 3.8,
+  "daily_date": "2025-03-03",
+  "weekly_value": 3.89,
+  "weekly_date": "2025-02-28",
+  "monthly_value": 4.19,
+  "monthly_date": "2025-02-01",
+  "unit": "USD per million BTU",
+  "fetched_at": "2025-03-08T10:40:08.342287"
+}
+2025-03-08 02:40:08,486 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 201 Created"
+2025-03-08 02:40:08,490 - commodity_info_fetcher - INFO - Successfully updated commodity info for NATURAL_GAS
+2025-03-08 02:40:08,672 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.COPPER "HTTP/2 200 OK"
+2025-03-08 02:40:08,672 - commodity_info_fetcher - INFO - Processing commodity COPPER
+2025-03-08 02:40:08,672 - commodity_info_fetcher - INFO - Rate limiting: Sleeping for 11.77 seconds
+2025-03-08 02:40:18,641 - commodity_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:40:24,047 - commodity_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:40:29,875 - commodity_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:40:29,876 - commodity_info_fetcher - INFO - Starting commodity info fetcher
+2025-03-08 02:40:29,876 - commodity_info_fetcher - INFO - Processing 1 commodities: WTI
+2025-03-08 02:40:30,022 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.WTI "HTTP/2 200 OK"
+2025-03-08 02:40:30,023 - commodity_info_fetcher - ERROR - Error checking update status for WTI: can't compare offset-naive and offset-aware datetimes
+2025-03-08 02:40:30,024 - commodity_info_fetcher - INFO - Processing commodity WTI
+2025-03-08 02:40:30,024 - alpha_vantage_api - INFO - Getting comprehensive commodity info for WTI
+2025-03-08 02:40:30,024 - alpha_vantage_api - INFO - Fetching daily time series for WTI
+2025-03-08 02:40:30,027 - alpha_vantage_api - INFO - Using cached data for WTI
+2025-03-08 02:40:30,030 - alpha_vantage_api - INFO - Fetching weekly time series for WTI
+2025-03-08 02:40:30,031 - alpha_vantage_api - INFO - Using cached data for WTI
+2025-03-08 02:40:30,031 - alpha_vantage_api - INFO - Fetching monthly time series for WTI
+2025-03-08 02:40:30,031 - alpha_vantage_api - INFO - Using cached data for WTI
+2025-03-08 02:40:30,032 - alpha_vantage_api - INFO - Compiled commodity info for WTI
+2025-03-08 02:40:30,032 - alpha_vantage_api - INFO - Formatting commodity info for WTI
+2025-03-08 02:40:30,032 - alpha_vantage_api - INFO - Formatted data for WTI
+2025-03-08 02:40:30,032 - commodity_info_fetcher - INFO - Formatted data for WTI: {
+  "function": "WTI",
+  "name": "Crude Oil WTI",
+  "daily_value": 68.63,
+  "daily_date": "2025-03-03",
+  "weekly_value": 69.93,
+  "weekly_date": "2025-02-28",
+  "monthly_value": 71.53,
+  "monthly_date": "2025-02-01",
+  "unit": "USD per barrel",
+  "fetched_at": "2025-03-08T10:40:30.032562"
+}
+2025-03-08 02:40:30,092 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 200 OK"
+2025-03-08 02:40:30,093 - commodity_info_fetcher - INFO - Successfully updated commodity info for WTI
+2025-03-08 02:40:30,198 - commodity_info_fetcher - INFO - Commodity info fetcher completed - Processed 1 commodities
+2025-03-08 02:40:30,198 - commodity_info_fetcher - INFO - Results: 1 successful, 0 failed
+2025-03-08 02:40:38,445 - commodity_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:40:38,446 - commodity_info_fetcher - INFO - Starting commodity info fetcher
+2025-03-08 02:40:38,446 - commodity_info_fetcher - INFO - Processing 3 commodities: BRENT, COPPER, NATURAL_GAS
+2025-03-08 02:40:38,607 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.BRENT "HTTP/2 200 OK"
+2025-03-08 02:40:38,609 - commodity_info_fetcher - ERROR - Error checking update status for BRENT: can't compare offset-naive and offset-aware datetimes
+2025-03-08 02:40:38,609 - commodity_info_fetcher - INFO - Processing commodity BRENT
+2025-03-08 02:40:38,609 - alpha_vantage_api - INFO - Getting comprehensive commodity info for BRENT
+2025-03-08 02:40:38,609 - alpha_vantage_api - INFO - Fetching daily time series for BRENT
+2025-03-08 02:40:38,611 - alpha_vantage_api - INFO - Using cached data for BRENT
+2025-03-08 02:40:38,614 - alpha_vantage_api - INFO - Fetching weekly time series for BRENT
+2025-03-08 02:40:38,614 - alpha_vantage_api - INFO - Using cached data for BRENT
+2025-03-08 02:40:38,615 - alpha_vantage_api - INFO - Fetching monthly time series for BRENT
+2025-03-08 02:40:38,615 - alpha_vantage_api - INFO - Using cached data for BRENT
+2025-03-08 02:40:38,615 - alpha_vantage_api - INFO - Compiled commodity info for BRENT
+2025-03-08 02:40:38,615 - alpha_vantage_api - INFO - Formatting commodity info for BRENT
+2025-03-08 02:40:38,615 - alpha_vantage_api - INFO - Formatted data for BRENT
+2025-03-08 02:40:38,615 - commodity_info_fetcher - INFO - Formatted data for BRENT: {
+  "function": "BRENT",
+  "name": "Crude Oil Brent",
+  "daily_value": 72.85,
+  "daily_date": "2025-03-03",
+  "weekly_value": 74.25,
+  "weekly_date": "2025-02-28",
+  "monthly_value": 75.44,
+  "monthly_date": "2025-02-01",
+  "unit": "USD per barrel",
+  "fetched_at": "2025-03-08T10:40:38.615774"
+}
+2025-03-08 02:40:38,694 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 200 OK"
+2025-03-08 02:40:38,694 - commodity_info_fetcher - INFO - Successfully updated commodity info for BRENT
+2025-03-08 02:40:38,858 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.COPPER "HTTP/2 200 OK"
+2025-03-08 02:40:38,858 - commodity_info_fetcher - INFO - Processing commodity COPPER
+2025-03-08 02:40:38,858 - commodity_info_fetcher - INFO - Rate limiting: Sleeping for 11.86 seconds
+2025-03-08 02:40:50,720 - alpha_vantage_api - INFO - Getting comprehensive commodity info for COPPER
+2025-03-08 02:40:50,721 - alpha_vantage_api - INFO - Fetching monthly time series for COPPER
+2025-03-08 02:40:50,721 - alpha_vantage_api - INFO - Making request to Alpha Vantage: COPPER with params {'interval': 'monthly', 'function': 'COPPER', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:40:51,185 - alpha_vantage_api - INFO - Compiled commodity info for COPPER
+2025-03-08 02:40:51,185 - alpha_vantage_api - INFO - Formatting commodity info for COPPER
+2025-03-08 02:40:51,185 - alpha_vantage_api - INFO - Formatted data for COPPER
+2025-03-08 02:40:51,186 - commodity_info_fetcher - INFO - Formatted data for COPPER: {
+  "function": "COPPER",
+  "name": "Copper",
+  "daily_value": 0,
+  "daily_date": "",
+  "weekly_value": 0,
+  "weekly_date": "",
+  "monthly_value": 8976.68043478261,
+  "monthly_date": "2025-01-01",
+  "unit": "USD per metric ton",
+  "fetched_at": "2025-03-08T10:40:51.185960"
+}
+2025-03-08 02:40:51,327 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 201 Created"
+2025-03-08 02:40:51,327 - commodity_info_fetcher - INFO - Successfully updated commodity info for COPPER
+2025-03-08 02:40:51,530 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.NATURAL_GAS "HTTP/2 200 OK"
+2025-03-08 02:40:51,531 - commodity_info_fetcher - ERROR - Error checking update status for NATURAL_GAS: can't compare offset-naive and offset-aware datetimes
+2025-03-08 02:40:51,531 - commodity_info_fetcher - INFO - Processing commodity NATURAL_GAS
+2025-03-08 02:40:51,531 - commodity_info_fetcher - INFO - Rate limiting: Sleeping for 11.75 seconds
+2025-03-08 02:41:05,252 - commodity_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:41:05,252 - commodity_info_fetcher - INFO - Starting commodity info fetcher
+2025-03-08 02:41:05,252 - commodity_info_fetcher - INFO - Processing 1 commodities: BRENT
+2025-03-08 02:41:05,454 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?select=fetched_at&function=eq.BRENT "HTTP/2 200 OK"
+2025-03-08 02:41:05,457 - commodity_info_fetcher - ERROR - Error checking update status for BRENT: can't compare offset-naive and offset-aware datetimes
+2025-03-08 02:41:05,457 - commodity_info_fetcher - INFO - Processing commodity BRENT
+2025-03-08 02:41:05,457 - alpha_vantage_api - INFO - Getting comprehensive commodity info for BRENT
+2025-03-08 02:41:05,457 - alpha_vantage_api - INFO - Fetching daily time series for BRENT
+2025-03-08 02:41:05,461 - alpha_vantage_api - INFO - Using cached data for BRENT
+2025-03-08 02:41:05,465 - alpha_vantage_api - INFO - Fetching weekly time series for BRENT
+2025-03-08 02:41:05,465 - alpha_vantage_api - INFO - Using cached data for BRENT
+2025-03-08 02:41:05,466 - alpha_vantage_api - INFO - Fetching monthly time series for BRENT
+2025-03-08 02:41:05,466 - alpha_vantage_api - INFO - Using cached data for BRENT
+2025-03-08 02:41:05,467 - alpha_vantage_api - INFO - Compiled commodity info for BRENT
+2025-03-08 02:41:05,467 - alpha_vantage_api - INFO - Formatting commodity info for BRENT
+2025-03-08 02:41:05,467 - alpha_vantage_api - INFO - Formatted data for BRENT
+2025-03-08 02:41:05,467 - commodity_info_fetcher - INFO - Formatted data for BRENT: {
+  "function": "BRENT",
+  "name": "Crude Oil Brent",
+  "daily_value": 72.85,
+  "daily_date": "2025-03-03",
+  "weekly_value": 74.25,
+  "weekly_date": "2025-02-28",
+  "monthly_value": 75.44,
+  "monthly_date": "2025-02-01",
+  "unit": "USD per barrel",
+  "fetched_at": "2025-03-08T10:41:05.467619"
+}
+2025-03-08 02:41:05,551 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/commodity_info?on_conflict=function "HTTP/2 200 OK"
+2025-03-08 02:41:05,551 - commodity_info_fetcher - INFO - Successfully updated commodity info for BRENT
+2025-03-08 02:41:05,656 - commodity_info_fetcher - INFO - Commodity info fetcher completed - Processed 1 commodities
+2025-03-08 02:41:05,657 - commodity_info_fetcher - INFO - Results: 1 successful, 0 failed
+2025-03-08 02:42:58,342 - forex_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:42:58,343 - forex_info_fetcher - INFO - Starting forex info fetcher
+2025-03-08 02:42:58,343 - forex_info_fetcher - INFO - Processing 5 forex pairs
+2025-03-08 02:42:58,652 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.EUR&to_currency=eq.USD "HTTP/2 200 OK"
+2025-03-08 02:42:58,659 - forex_info_fetcher - INFO - Processing forex pair EUR/USD
+2025-03-08 02:42:58,660 - alpha_vantage_api - INFO - Getting comprehensive forex info for EUR/USD
+2025-03-08 02:42:58,660 - alpha_vantage_api - INFO - Fetching forex exchange rate for EUR to USD
+2025-03-08 02:42:58,662 - alpha_vantage_api - INFO - Using cached data for CURRENCY_EXCHANGE_RATE
+2025-03-08 02:42:58,662 - alpha_vantage_api - INFO - Fetching daily time series for EUR to USD
+2025-03-08 02:42:58,663 - alpha_vantage_api - INFO - Using cached data for FX_DAILY
+2025-03-08 02:42:58,663 - alpha_vantage_api - INFO - Fetching weekly time series for EUR to USD
+2025-03-08 02:42:58,665 - alpha_vantage_api - INFO - Using cached data for FX_WEEKLY
+2025-03-08 02:42:58,667 - alpha_vantage_api - INFO - Compiled forex info for EUR/USD
+2025-03-08 02:42:58,667 - alpha_vantage_api - INFO - Formatting forex info for EUR/USD
+2025-03-08 02:42:58,667 - alpha_vantage_api - INFO - Formatted data for EUR/USD
+2025-03-08 02:42:58,667 - forex_info_fetcher - INFO - Formatted data for EUR/USD: {
+  "from_currency": "EUR",
+  "to_currency": "USD",
+  "currency_pair": "EUR/USD",
+  "exchange_rate": 1.0834,
+  "bid_price": 1.08335,
+  "ask_price": 1.08345,
+  "open_price": 1.0782,
+  "daily_high": 1.08888,
+  "daily_low": 1.07768,
+  "daily_close": 1.083,
+  "weekly_open": 1.04027,
+  "weekly_high": 1.08888,
+  "weekly_low": 1.03883,
+  "weekly_close": 1.083,
+  "last_refreshed": "2025-03-08 10:38:01",
+  "price_updated_at": "2025-03-08 10:38:01",
+  "fetched_at": "2025-03-08T10:42:58.667687"
+}
+2025-03-08 02:42:58,837 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency%2Cto_currency "HTTP/2 201 Created"
+2025-03-08 02:42:58,838 - forex_info_fetcher - INFO - Successfully updated forex info for EUR/USD
+2025-03-08 02:42:59,006 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.USD&to_currency=eq.JPY "HTTP/2 200 OK"
+2025-03-08 02:42:59,006 - forex_info_fetcher - INFO - Processing forex pair USD/JPY
+2025-03-08 02:42:59,006 - forex_info_fetcher - INFO - Rate limiting: Sleeping for 11.76 seconds
+2025-03-08 02:43:12,551 - forex_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:43:12,552 - forex_info_fetcher - ERROR - Error parsing forex pairs: not enough values to unpack (expected 2, got 1)
+2025-03-08 02:43:12,552 - forex_info_fetcher - ERROR - Format should be FROM:TO,FROM:TO (e.g., EUR:USD,GBP:USD)
+2025-03-08 02:43:18,278 - forex_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:43:25,248 - forex_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:43:25,249 - forex_info_fetcher - INFO - Starting forex info fetcher
+2025-03-08 02:43:25,249 - forex_info_fetcher - INFO - Processing 1 forex pairs
+2025-03-08 02:43:25,394 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.EUR&to_currency=eq.USD "HTTP/2 200 OK"
+2025-03-08 02:43:25,396 - forex_info_fetcher - INFO - Forex info for EUR/USD is recent, skipping update
+2025-03-08 02:43:25,501 - forex_info_fetcher - INFO - Forex info fetcher completed - Processed 1 forex pairs
+2025-03-08 02:43:25,501 - forex_info_fetcher - INFO - Results: 1 successful, 0 failed
+2025-03-08 02:43:31,443 - forex_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 02:43:31,444 - forex_info_fetcher - INFO - Starting forex info fetcher
+2025-03-08 02:43:31,444 - forex_info_fetcher - INFO - Processing 1 forex pairs
+2025-03-08 02:43:31,602 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?select=fetched_at&from_currency=eq.NZD&to_currency=eq.USD "HTTP/2 200 OK"
+2025-03-08 02:43:31,604 - forex_info_fetcher - INFO - Processing forex pair NZD/USD
+2025-03-08 02:43:31,604 - alpha_vantage_api - INFO - Getting comprehensive forex info for NZD/USD
+2025-03-08 02:43:31,604 - alpha_vantage_api - INFO - Fetching forex exchange rate for NZD to USD
+2025-03-08 02:43:31,604 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'NZD', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:43:31,783 - alpha_vantage_api - INFO - Fetching daily time series for NZD to USD
+2025-03-08 02:43:31,783 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_DAILY with params {'from_symbol': 'NZD', 'to_symbol': 'USD', 'outputsize': 'compact', 'function': 'FX_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:43:32,028 - alpha_vantage_api - INFO - Fetching weekly time series for NZD to USD
+2025-03-08 02:43:32,028 - alpha_vantage_api - INFO - Making request to Alpha Vantage: FX_WEEKLY with params {'from_symbol': 'NZD', 'to_symbol': 'USD', 'function': 'FX_WEEKLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 02:43:32,607 - alpha_vantage_api - INFO - Compiled forex info for NZD/USD
+2025-03-08 02:43:32,607 - alpha_vantage_api - INFO - Formatting forex info for NZD/USD
+2025-03-08 02:43:32,607 - alpha_vantage_api - INFO - Formatted data for NZD/USD
+2025-03-08 02:43:32,607 - forex_info_fetcher - INFO - Formatted data for NZD/USD: {
+  "from_currency": "NZD",
+  "to_currency": "USD",
+  "currency_pair": "NZD/USD",
+  "exchange_rate": 0.571,
+  "bid_price": 0.5709,
+  "ask_price": 0.571,
+  "open_price": 0.573,
+  "daily_high": 0.5741,
+  "daily_low": 0.56918,
+  "daily_close": 0.5707,
+  "weekly_open": 0.5599,
+  "weekly_high": 0.57596,
+  "weekly_low": 0.5593,
+  "weekly_close": 0.5707,
+  "last_refreshed": "2025-03-08 10:43:18",
+  "price_updated_at": "2025-03-08 10:43:18",
+  "fetched_at": "2025-03-08T10:43:32.607611"
+}
+2025-03-08 02:43:32,674 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/forex_info?on_conflict=from_currency%2Cto_currency "HTTP/2 201 Created"
+2025-03-08 02:43:32,674 - forex_info_fetcher - INFO - Successfully updated forex info for NZD/USD
+2025-03-08 02:43:32,779 - forex_info_fetcher - INFO - Forex info fetcher completed - Processed 1 forex pairs
+2025-03-08 02:43:32,779 - forex_info_fetcher - INFO - Results: 1 successful, 0 failed
+2025-03-08 09:13:03,026 - stock_info_alpha_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:13:03,026 - stock_info_alpha_fetcher - INFO - Starting stock info fetcher
+2025-03-08 09:13:03,026 - stock_info_alpha_fetcher - INFO - Fetching user watchlist tickers
+2025-03-08 09:13:03,167 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=ticker "HTTP/2 200 OK"
+2025-03-08 09:13:03,231 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/portfolios?select=ticker "HTTP/2 404 Not Found"
+2025-03-08 09:13:03,232 - stock_info_alpha_fetcher - WARNING - Error fetching portfolio tickers: {'code': '42P01', 'details': None, 'hint': None, 'message': 'relation "public.portfolios" does not exist'}
+2025-03-08 09:13:03,232 - stock_info_alpha_fetcher - WARNING - No tickers found in database, using default tickers
+2025-03-08 09:13:03,232 - stock_info_alpha_fetcher - INFO - Found 10 unique tickers to process
+2025-03-08 09:13:03,232 - stock_info_alpha_fetcher - INFO - Processing 5 tickers: META, SPY, MSFT, AAPL, NVDA
+2025-03-08 09:13:03,296 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=fetched_at&ticker=eq.META "HTTP/2 200 OK"
+2025-03-08 09:13:03,297 - stock_info_alpha_fetcher - ERROR - Error checking update status for META: can't compare offset-naive and offset-aware datetimes
+2025-03-08 09:13:03,297 - stock_info_alpha_fetcher - INFO - Processing ticker META
+2025-03-08 09:13:03,297 - alpha_vantage_api - INFO - Getting comprehensive stock info for META
+2025-03-08 09:13:03,297 - alpha_vantage_api - INFO - Fetching stock quote for META
+2025-03-08 09:13:03,298 - alpha_vantage_api - INFO - Making request to Alpha Vantage: GLOBAL_QUOTE with params {'symbol': 'META', 'function': 'GLOBAL_QUOTE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:03,651 - alpha_vantage_api - INFO - API Response for META: {
+  "Global Quote": {
+    "01. symbol": "META",
+    "02. open": "625.3700",
+    "03. high": "634.7900",
+    "04. low": "600.6100",
+    "05. price": "625.6600",
+    "06. volume": "21375671",
+    "07. latest trading day": "2025-03-07",
+    "08. previous close": "627.9300",
+    "09. change": "-2.2700",
+    "10. change percent": "-0.3615%"
+  }
+}
+2025-03-08 09:13:03,651 - alpha_vantage_api - INFO - Fetching daily time series for META
+2025-03-08 09:13:03,651 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_DAILY with params {'symbol': 'META', 'outputsize': 'compact', 'function': 'TIME_SERIES_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:03,986 - alpha_vantage_api - INFO - Fetching monthly time series for META
+2025-03-08 09:13:03,986 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_MONTHLY with params {'symbol': 'META', 'function': 'TIME_SERIES_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:04,417 - alpha_vantage_api - INFO - Searching for ticker with keywords: META
+2025-03-08 09:13:04,417 - alpha_vantage_api - INFO - Making request to Alpha Vantage: SYMBOL_SEARCH with params {'keywords': 'META', 'function': 'SYMBOL_SEARCH', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:04,735 - alpha_vantage_api - INFO - Compiled stock info for META
+2025-03-08 09:13:04,735 - alpha_vantage_api - INFO - Formatting stock info for META
+2025-03-08 09:13:04,735 - alpha_vantage_api - INFO - Formatted data for META
+2025-03-08 09:13:04,735 - stock_info_alpha_fetcher - INFO - Formatted data for META: {
+  "ticker": "META",
+  "company_name": "Meta Platforms Inc - Class A",
+  "sector": "Equity",
+  "market_cap": 0,
+  "avg_volume": 21375671,
+  "description": "",
+  "logo_url": "",
+  "current_price": 625.66,
+  "open_price": 625.37,
+  "daily_high": 634.79,
+  "daily_low": 600.61,
+  "daily_volume": 21375671,
+  "fifty_two_week_high": 740.91,
+  "fifty_two_week_low": 600.61,
+  "pe_ratio": 0,
+  "eps": 0,
+  "price_updated_at": "2025-03-08T17:13:04.735463",
+  "fetched_at": "2025-03-08T17:13:04.735451"
+}
+2025-03-08 09:13:04,808 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?on_conflict=ticker "HTTP/2 200 OK"
+2025-03-08 09:13:04,810 - stock_info_alpha_fetcher - INFO - Successfully updated stock info for META
+2025-03-08 09:13:04,980 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=fetched_at&ticker=eq.SPY "HTTP/2 200 OK"
+2025-03-08 09:13:04,982 - stock_info_alpha_fetcher - ERROR - Error checking update status for SPY: can't compare offset-naive and offset-aware datetimes
+2025-03-08 09:13:04,982 - stock_info_alpha_fetcher - INFO - Processing ticker SPY
+2025-03-08 09:13:04,982 - stock_info_alpha_fetcher - INFO - Rate limiting: Sleeping for 11.85 seconds
+2025-03-08 09:13:16,839 - alpha_vantage_api - INFO - Getting comprehensive stock info for SPY
+2025-03-08 09:13:16,839 - alpha_vantage_api - INFO - Fetching stock quote for SPY
+2025-03-08 09:13:16,840 - alpha_vantage_api - INFO - Making request to Alpha Vantage: GLOBAL_QUOTE with params {'symbol': 'SPY', 'function': 'GLOBAL_QUOTE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:17,012 - alpha_vantage_api - INFO - API Response for SPY: {
+  "Global Quote": {
+    "01. symbol": "SPY",
+    "02. open": "570.9000",
+    "03. high": "577.3900",
+    "04. low": "565.6300",
+    "05. price": "575.9200",
+    "06. volume": "81158816",
+    "07. latest trading day": "2025-03-07",
+    "08. previous close": "572.7100",
+    "09. change": "3.2100",
+    "10. change percent": "0.5605%"
+  }
+}
+2025-03-08 09:13:17,012 - alpha_vantage_api - INFO - Fetching daily time series for SPY
+2025-03-08 09:13:17,012 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_DAILY with params {'symbol': 'SPY', 'outputsize': 'compact', 'function': 'TIME_SERIES_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:17,501 - alpha_vantage_api - INFO - Fetching monthly time series for SPY
+2025-03-08 09:13:17,501 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_MONTHLY with params {'symbol': 'SPY', 'function': 'TIME_SERIES_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:17,837 - alpha_vantage_api - INFO - Searching for ticker with keywords: SPY
+2025-03-08 09:13:17,838 - alpha_vantage_api - INFO - Making request to Alpha Vantage: SYMBOL_SEARCH with params {'keywords': 'SPY', 'function': 'SYMBOL_SEARCH', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:18,204 - alpha_vantage_api - INFO - Compiled stock info for SPY
+2025-03-08 09:13:18,204 - alpha_vantage_api - INFO - Formatting stock info for SPY
+2025-03-08 09:13:18,204 - alpha_vantage_api - INFO - Formatted data for SPY
+2025-03-08 09:13:18,204 - stock_info_alpha_fetcher - INFO - Formatted data for SPY: {
+  "ticker": "SPY",
+  "company_name": "SPDR S&P 500 ETF Trust",
+  "sector": "ETF",
+  "market_cap": 0,
+  "avg_volume": 81158816,
+  "description": "",
+  "logo_url": "",
+  "current_price": 575.92,
+  "open_price": 570.9,
+  "daily_high": 577.39,
+  "daily_low": 565.63,
+  "daily_volume": 81158816,
+  "fifty_two_week_high": 613.23,
+  "fifty_two_week_low": 565.63,
+  "pe_ratio": 0,
+  "eps": 0,
+  "price_updated_at": "2025-03-08T17:13:18.204526",
+  "fetched_at": "2025-03-08T17:13:18.204512"
+}
+2025-03-08 09:13:18,351 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?on_conflict=ticker "HTTP/2 200 OK"
+2025-03-08 09:13:18,353 - stock_info_alpha_fetcher - INFO - Successfully updated stock info for SPY
+2025-03-08 09:13:18,523 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=fetched_at&ticker=eq.MSFT "HTTP/2 200 OK"
+2025-03-08 09:13:18,525 - stock_info_alpha_fetcher - ERROR - Error checking update status for MSFT: can't compare offset-naive and offset-aware datetimes
+2025-03-08 09:13:18,526 - stock_info_alpha_fetcher - INFO - Processing ticker MSFT
+2025-03-08 09:13:18,526 - stock_info_alpha_fetcher - INFO - Rate limiting: Sleeping for 11.78 seconds
+2025-03-08 09:13:30,307 - alpha_vantage_api - INFO - Getting comprehensive stock info for MSFT
+2025-03-08 09:13:30,307 - alpha_vantage_api - INFO - Fetching stock quote for MSFT
+2025-03-08 09:13:30,308 - alpha_vantage_api - INFO - Making request to Alpha Vantage: GLOBAL_QUOTE with params {'symbol': 'MSFT', 'function': 'GLOBAL_QUOTE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:30,658 - alpha_vantage_api - INFO - API Response for MSFT: {
+  "Global Quote": {
+    "01. symbol": "MSFT",
+    "02. open": "392.3200",
+    "03. high": "394.8000",
+    "04. low": "385.5400",
+    "05. price": "393.3100",
+    "06. volume": "22034087",
+    "07. latest trading day": "2025-03-07",
+    "08. previous close": "396.8900",
+    "09. change": "-3.5800",
+    "10. change percent": "-0.9020%"
+  }
+}
+2025-03-08 09:13:30,659 - alpha_vantage_api - INFO - Fetching daily time series for MSFT
+2025-03-08 09:13:30,659 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_DAILY with params {'symbol': 'MSFT', 'outputsize': 'compact', 'function': 'TIME_SERIES_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:30,944 - alpha_vantage_api - INFO - Fetching monthly time series for MSFT
+2025-03-08 09:13:30,945 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_MONTHLY with params {'symbol': 'MSFT', 'function': 'TIME_SERIES_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:31,292 - alpha_vantage_api - INFO - Searching for ticker with keywords: MSFT
+2025-03-08 09:13:31,293 - alpha_vantage_api - INFO - Making request to Alpha Vantage: SYMBOL_SEARCH with params {'keywords': 'MSFT', 'function': 'SYMBOL_SEARCH', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:31,490 - alpha_vantage_api - INFO - Compiled stock info for MSFT
+2025-03-08 09:13:31,490 - alpha_vantage_api - INFO - Formatting stock info for MSFT
+2025-03-08 09:13:31,490 - alpha_vantage_api - INFO - Formatted data for MSFT
+2025-03-08 09:13:31,490 - stock_info_alpha_fetcher - INFO - Formatted data for MSFT: {
+  "ticker": "MSFT",
+  "company_name": "Microsoft Corporation",
+  "sector": "Equity",
+  "market_cap": 0,
+  "avg_volume": 22034087,
+  "description": "",
+  "logo_url": "",
+  "current_price": 393.31,
+  "open_price": 392.32,
+  "daily_high": 394.8,
+  "daily_low": 385.54,
+  "daily_volume": 22034087,
+  "fifty_two_week_high": 419.31,
+  "fifty_two_week_low": 381.0,
+  "pe_ratio": 0,
+  "eps": 0,
+  "price_updated_at": "2025-03-08T17:13:31.490629",
+  "fetched_at": "2025-03-08T17:13:31.490617"
+}
+2025-03-08 09:13:31,622 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?on_conflict=ticker "HTTP/2 200 OK"
+2025-03-08 09:13:31,624 - stock_info_alpha_fetcher - INFO - Successfully updated stock info for MSFT
+2025-03-08 09:13:31,783 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=fetched_at&ticker=eq.AAPL "HTTP/2 200 OK"
+2025-03-08 09:13:31,785 - stock_info_alpha_fetcher - ERROR - Error checking update status for AAPL: can't compare offset-naive and offset-aware datetimes
+2025-03-08 09:13:31,785 - stock_info_alpha_fetcher - INFO - Processing ticker AAPL
+2025-03-08 09:13:31,785 - stock_info_alpha_fetcher - INFO - Rate limiting: Sleeping for 11.80 seconds
+2025-03-08 09:13:43,595 - alpha_vantage_api - INFO - Getting comprehensive stock info for AAPL
+2025-03-08 09:13:43,597 - alpha_vantage_api - INFO - Fetching stock quote for AAPL
+2025-03-08 09:13:43,598 - alpha_vantage_api - INFO - Making request to Alpha Vantage: GLOBAL_QUOTE with params {'symbol': 'AAPL', 'function': 'GLOBAL_QUOTE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:43,969 - alpha_vantage_api - INFO - API Response for AAPL: {
+  "Global Quote": {
+    "01. symbol": "AAPL",
+    "02. open": "235.1050",
+    "03. high": "241.3700",
+    "04. low": "234.7600",
+    "05. price": "239.0700",
+    "06. volume": "46273565",
+    "07. latest trading day": "2025-03-07",
+    "08. previous close": "235.3300",
+    "09. change": "3.7400",
+    "10. change percent": "1.5893%"
+  }
+}
+2025-03-08 09:13:43,969 - alpha_vantage_api - INFO - Fetching daily time series for AAPL
+2025-03-08 09:13:43,969 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_DAILY with params {'symbol': 'AAPL', 'outputsize': 'compact', 'function': 'TIME_SERIES_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:44,246 - alpha_vantage_api - INFO - Fetching monthly time series for AAPL
+2025-03-08 09:13:44,246 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_MONTHLY with params {'symbol': 'AAPL', 'function': 'TIME_SERIES_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:44,755 - alpha_vantage_api - INFO - Searching for ticker with keywords: AAPL
+2025-03-08 09:13:44,756 - alpha_vantage_api - INFO - Making request to Alpha Vantage: SYMBOL_SEARCH with params {'keywords': 'AAPL', 'function': 'SYMBOL_SEARCH', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:45,151 - alpha_vantage_api - INFO - Compiled stock info for AAPL
+2025-03-08 09:13:45,152 - alpha_vantage_api - INFO - Formatting stock info for AAPL
+2025-03-08 09:13:45,152 - alpha_vantage_api - INFO - Formatted data for AAPL
+2025-03-08 09:13:45,152 - stock_info_alpha_fetcher - INFO - Formatted data for AAPL: {
+  "ticker": "AAPL",
+  "company_name": "Apple Inc",
+  "sector": "Equity",
+  "market_cap": 0,
+  "avg_volume": 46273565,
+  "description": "",
+  "logo_url": "",
+  "current_price": 239.07,
+  "open_price": 235.105,
+  "daily_high": 241.37,
+  "daily_low": 234.76,
+  "daily_volume": 46273565,
+  "fifty_two_week_high": 250.0,
+  "fifty_two_week_low": 225.7,
+  "pe_ratio": 0,
+  "eps": 0,
+  "price_updated_at": "2025-03-08T17:13:45.152270",
+  "fetched_at": "2025-03-08T17:13:45.152241"
+}
+2025-03-08 09:13:45,302 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?on_conflict=ticker "HTTP/2 200 OK"
+2025-03-08 09:13:45,305 - stock_info_alpha_fetcher - INFO - Successfully updated stock info for AAPL
+2025-03-08 09:13:45,508 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?select=fetched_at&ticker=eq.NVDA "HTTP/2 200 OK"
+2025-03-08 09:13:45,509 - stock_info_alpha_fetcher - ERROR - Error checking update status for NVDA: can't compare offset-naive and offset-aware datetimes
+2025-03-08 09:13:45,509 - stock_info_alpha_fetcher - INFO - Processing ticker NVDA
+2025-03-08 09:13:45,509 - stock_info_alpha_fetcher - INFO - Rate limiting: Sleeping for 11.74 seconds
+2025-03-08 09:13:57,257 - alpha_vantage_api - INFO - Getting comprehensive stock info for NVDA
+2025-03-08 09:13:57,257 - alpha_vantage_api - INFO - Fetching stock quote for NVDA
+2025-03-08 09:13:57,257 - alpha_vantage_api - INFO - Making request to Alpha Vantage: GLOBAL_QUOTE with params {'symbol': 'NVDA', 'function': 'GLOBAL_QUOTE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:57,580 - alpha_vantage_api - INFO - API Response for NVDA: {
+  "Global Quote": {
+    "01. symbol": "NVDA",
+    "02. open": "111.2500",
+    "03. high": "113.4800",
+    "04. low": "107.5600",
+    "05. price": "112.6900",
+    "06. volume": "341755468",
+    "07. latest trading day": "2025-03-07",
+    "08. previous close": "110.5700",
+    "09. change": "2.1200",
+    "10. change percent": "1.9173%"
+  }
+}
+2025-03-08 09:13:57,580 - alpha_vantage_api - INFO - Fetching daily time series for NVDA
+2025-03-08 09:13:57,580 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_DAILY with params {'symbol': 'NVDA', 'outputsize': 'compact', 'function': 'TIME_SERIES_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:57,984 - alpha_vantage_api - INFO - Fetching monthly time series for NVDA
+2025-03-08 09:13:57,984 - alpha_vantage_api - INFO - Making request to Alpha Vantage: TIME_SERIES_MONTHLY with params {'symbol': 'NVDA', 'function': 'TIME_SERIES_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:58,404 - alpha_vantage_api - INFO - Searching for ticker with keywords: NVDA
+2025-03-08 09:13:58,404 - alpha_vantage_api - INFO - Making request to Alpha Vantage: SYMBOL_SEARCH with params {'keywords': 'NVDA', 'function': 'SYMBOL_SEARCH', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:13:58,799 - alpha_vantage_api - INFO - Compiled stock info for NVDA
+2025-03-08 09:13:58,799 - alpha_vantage_api - INFO - Formatting stock info for NVDA
+2025-03-08 09:13:58,800 - alpha_vantage_api - INFO - Formatted data for NVDA
+2025-03-08 09:13:58,800 - stock_info_alpha_fetcher - INFO - Formatted data for NVDA: {
+  "ticker": "NVDA",
+  "company_name": "NVIDIA Corp",
+  "sector": "Equity",
+  "market_cap": 0,
+  "avg_volume": 341755468,
+  "description": "",
+  "logo_url": "",
+  "current_price": 112.69,
+  "open_price": 111.25,
+  "daily_high": 113.48,
+  "daily_low": 107.56,
+  "daily_volume": 341755468,
+  "fifty_two_week_high": 143.44,
+  "fifty_two_week_low": 107.56,
+  "pe_ratio": 0,
+  "eps": 0,
+  "price_updated_at": "2025-03-08T17:13:58.800108",
+  "fetched_at": "2025-03-08T17:13:58.800087"
+}
+2025-03-08 09:13:58,924 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/stock_info?on_conflict=ticker "HTTP/2 200 OK"
+2025-03-08 09:13:58,927 - stock_info_alpha_fetcher - INFO - Successfully updated stock info for NVDA
+2025-03-08 09:13:59,032 - stock_info_alpha_fetcher - INFO - Stock info fetcher completed - Processed 5 tickers
+2025-03-08 09:13:59,032 - stock_info_alpha_fetcher - INFO - Results: 5 successful, 0 failed
+2025-03-08 09:58:40,515 - crypto_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:58:40,516 - crypto_info_fetcher - INFO - Starting crypto info fetcher
+2025-03-08 09:58:40,516 - crypto_info_fetcher - INFO - Processing 5 cryptocurrencies: BTC, ETH, XRP, LTC, SOL
+2025-03-08 09:58:40,647 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.BTC&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 09:58:40,650 - crypto_info_fetcher - INFO - Processing cryptocurrency BTC/USD
+2025-03-08 09:58:40,650 - alpha_vantage_api - INFO - Getting comprehensive crypto info for BTC in USD
+2025-03-08 09:58:40,650 - alpha_vantage_api - INFO - Fetching crypto exchange rate for BTC to USD
+2025-03-08 09:58:40,651 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'BTC', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:58:40,982 - alpha_vantage_api - INFO - Fetching daily time series for BTC in USD
+2025-03-08 09:58:40,983 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_DAILY with params {'symbol': 'BTC', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:58:41,493 - alpha_vantage_api - INFO - Fetching monthly time series for BTC in USD
+2025-03-08 09:58:41,494 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_MONTHLY with params {'symbol': 'BTC', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:58:41,832 - alpha_vantage_api - INFO - Compiled crypto info for BTC
+2025-03-08 09:58:41,832 - alpha_vantage_api - INFO - Formatting crypto info for BTC
+2025-03-08 09:58:41,832 - alpha_vantage_api - INFO - Formatted data for BTC
+2025-03-08 09:58:41,833 - crypto_info_fetcher - INFO - Formatted data for BTC/USD: {
+  "symbol": "BTC",
+  "market": "USD",
+  "name": "BTC",
+  "current_price": 86001.6,
+  "bid_price": 85998.51,
+  "ask_price": 86005.11,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 326.881033,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 17:58:03",
+  "fetched_at": "2025-03-08T17:58:41.832871"
+}
+2025-03-08 09:58:41,894 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 09:58:41,896 - crypto_info_fetcher - ERROR - Error processing cryptocurrency BTC/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 09:58:41,899 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 09:58:42,065 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.ETH&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 09:58:42,066 - crypto_info_fetcher - INFO - Processing cryptocurrency ETH/USD
+2025-03-08 09:58:42,067 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.87 seconds
+2025-03-08 09:58:53,939 - alpha_vantage_api - INFO - Getting comprehensive crypto info for ETH in USD
+2025-03-08 09:58:53,941 - alpha_vantage_api - INFO - Fetching crypto exchange rate for ETH to USD
+2025-03-08 09:58:53,942 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'ETH', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:58:54,285 - alpha_vantage_api - INFO - Fetching daily time series for ETH in USD
+2025-03-08 09:58:54,285 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_DAILY with params {'symbol': 'ETH', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:58:54,627 - alpha_vantage_api - INFO - Fetching monthly time series for ETH in USD
+2025-03-08 09:58:54,627 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_MONTHLY with params {'symbol': 'ETH', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:58:54,814 - alpha_vantage_api - INFO - Compiled crypto info for ETH
+2025-03-08 09:58:54,815 - alpha_vantage_api - INFO - Formatting crypto info for ETH
+2025-03-08 09:58:54,815 - alpha_vantage_api - INFO - Formatted data for ETH
+2025-03-08 09:58:54,815 - crypto_info_fetcher - INFO - Formatted data for ETH/USD: {
+  "symbol": "ETH",
+  "market": "USD",
+  "name": "ETH",
+  "current_price": 2199.59,
+  "bid_price": 2199.51,
+  "ask_price": 2199.592,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 6689.01112348,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 17:58:01",
+  "fetched_at": "2025-03-08T17:58:54.815504"
+}
+2025-03-08 09:58:54,984 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 09:58:54,986 - crypto_info_fetcher - ERROR - Error processing cryptocurrency ETH/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 09:58:54,987 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 09:58:55,184 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.XRP&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 09:58:55,186 - crypto_info_fetcher - INFO - Processing cryptocurrency XRP/USD
+2025-03-08 09:58:55,186 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.73 seconds
+2025-03-08 09:59:06,917 - alpha_vantage_api - INFO - Getting comprehensive crypto info for XRP in USD
+2025-03-08 09:59:06,917 - alpha_vantage_api - INFO - Fetching crypto exchange rate for XRP to USD
+2025-03-08 09:59:06,917 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'XRP', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:59:07,100 - alpha_vantage_api - INFO - Fetching daily time series for XRP in USD
+2025-03-08 09:59:07,100 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_DAILY with params {'symbol': 'XRP', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:59:07,427 - alpha_vantage_api - INFO - Fetching monthly time series for XRP in USD
+2025-03-08 09:59:07,427 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_MONTHLY with params {'symbol': 'XRP', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 09:59:07,749 - alpha_vantage_api - INFO - Compiled crypto info for XRP
+2025-03-08 09:59:07,749 - alpha_vantage_api - INFO - Formatting crypto info for XRP
+2025-03-08 09:59:07,749 - alpha_vantage_api - INFO - Formatted data for XRP
+2025-03-08 09:59:07,750 - crypto_info_fetcher - INFO - Formatted data for XRP/USD: {
+  "symbol": "XRP",
+  "market": "USD",
+  "name": "XRP",
+  "current_price": 2.3471,
+  "bid_price": 2.34708,
+  "ask_price": 2.34715,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 11861947.041255,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 17:59:06",
+  "fetched_at": "2025-03-08T17:59:07.749952"
+}
+2025-03-08 09:59:07,884 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 09:59:07,885 - crypto_info_fetcher - ERROR - Error processing cryptocurrency XRP/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 09:59:07,886 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 09:59:08,055 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.LTC&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 09:59:08,055 - crypto_info_fetcher - INFO - Processing cryptocurrency LTC/USD
+2025-03-08 09:59:08,055 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.79 seconds
+2025-03-08 10:00:34,602 - crypto_info_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 10:00:34,603 - crypto_info_fetcher - INFO - Starting crypto info fetcher
+2025-03-08 10:00:34,603 - crypto_info_fetcher - INFO - Processing 5 cryptocurrencies: BTC, ETH, XRP, LTC, SOL
+2025-03-08 10:00:34,749 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.BTC&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 10:00:34,752 - crypto_info_fetcher - INFO - Processing cryptocurrency BTC/USD
+2025-03-08 10:00:34,752 - alpha_vantage_api - INFO - Getting comprehensive crypto info for BTC in USD
+2025-03-08 10:00:34,752 - alpha_vantage_api - INFO - Fetching crypto exchange rate for BTC to USD
+2025-03-08 10:00:34,752 - alpha_vantage_api - INFO - Using cached data for CURRENCY_EXCHANGE_RATE
+2025-03-08 10:00:34,752 - alpha_vantage_api - INFO - Fetching daily time series for BTC in USD
+2025-03-08 10:00:34,754 - alpha_vantage_api - INFO - Using cached data for DIGITAL_CURRENCY_DAILY
+2025-03-08 10:00:34,754 - alpha_vantage_api - INFO - Fetching monthly time series for BTC in USD
+2025-03-08 10:00:34,754 - alpha_vantage_api - INFO - Using cached data for DIGITAL_CURRENCY_MONTHLY
+2025-03-08 10:00:34,755 - alpha_vantage_api - INFO - Compiled crypto info for BTC
+2025-03-08 10:00:34,755 - alpha_vantage_api - INFO - Formatting crypto info for BTC
+2025-03-08 10:00:34,755 - alpha_vantage_api - INFO - Formatted data for BTC
+2025-03-08 10:00:34,755 - crypto_info_fetcher - INFO - Formatted data for BTC/USD: {
+  "symbol": "BTC",
+  "market": "USD",
+  "name": "BTC",
+  "current_price": 86001.6,
+  "bid_price": 85998.51,
+  "ask_price": 86005.11,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 326.881033,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 17:58:03",
+  "fetched_at": "2025-03-08T18:00:34.755129"
+}
+2025-03-08 10:00:34,824 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 10:00:34,825 - crypto_info_fetcher - ERROR - Error processing cryptocurrency BTC/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 10:00:34,826 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 10:00:35,014 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.ETH&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 10:00:35,015 - crypto_info_fetcher - INFO - Processing cryptocurrency ETH/USD
+2025-03-08 10:00:35,015 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.84 seconds
+2025-03-08 10:00:46,860 - alpha_vantage_api - INFO - Getting comprehensive crypto info for ETH in USD
+2025-03-08 10:00:46,860 - alpha_vantage_api - INFO - Fetching crypto exchange rate for ETH to USD
+2025-03-08 10:00:46,861 - alpha_vantage_api - INFO - Using cached data for CURRENCY_EXCHANGE_RATE
+2025-03-08 10:00:46,861 - alpha_vantage_api - INFO - Fetching daily time series for ETH in USD
+2025-03-08 10:00:46,861 - alpha_vantage_api - INFO - Using cached data for DIGITAL_CURRENCY_DAILY
+2025-03-08 10:00:46,862 - alpha_vantage_api - INFO - Fetching monthly time series for ETH in USD
+2025-03-08 10:00:46,862 - alpha_vantage_api - INFO - Using cached data for DIGITAL_CURRENCY_MONTHLY
+2025-03-08 10:00:46,862 - alpha_vantage_api - INFO - Compiled crypto info for ETH
+2025-03-08 10:00:46,862 - alpha_vantage_api - INFO - Formatting crypto info for ETH
+2025-03-08 10:00:46,862 - alpha_vantage_api - INFO - Formatted data for ETH
+2025-03-08 10:00:46,862 - crypto_info_fetcher - INFO - Formatted data for ETH/USD: {
+  "symbol": "ETH",
+  "market": "USD",
+  "name": "ETH",
+  "current_price": 2199.59,
+  "bid_price": 2199.51,
+  "ask_price": 2199.592,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 6689.01112348,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 17:58:01",
+  "fetched_at": "2025-03-08T18:00:46.862331"
+}
+2025-03-08 10:00:46,982 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 10:00:46,982 - crypto_info_fetcher - ERROR - Error processing cryptocurrency ETH/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 10:00:46,982 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 10:00:47,176 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.XRP&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 10:00:47,176 - crypto_info_fetcher - INFO - Processing cryptocurrency XRP/USD
+2025-03-08 10:00:47,176 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.79 seconds
+2025-03-08 10:00:58,967 - alpha_vantage_api - INFO - Getting comprehensive crypto info for XRP in USD
+2025-03-08 10:00:58,967 - alpha_vantage_api - INFO - Fetching crypto exchange rate for XRP to USD
+2025-03-08 10:00:58,968 - alpha_vantage_api - INFO - Using cached data for CURRENCY_EXCHANGE_RATE
+2025-03-08 10:00:58,968 - alpha_vantage_api - INFO - Fetching daily time series for XRP in USD
+2025-03-08 10:00:58,970 - alpha_vantage_api - INFO - Using cached data for DIGITAL_CURRENCY_DAILY
+2025-03-08 10:00:58,970 - alpha_vantage_api - INFO - Fetching monthly time series for XRP in USD
+2025-03-08 10:00:58,970 - alpha_vantage_api - INFO - Using cached data for DIGITAL_CURRENCY_MONTHLY
+2025-03-08 10:00:58,970 - alpha_vantage_api - INFO - Compiled crypto info for XRP
+2025-03-08 10:00:58,970 - alpha_vantage_api - INFO - Formatting crypto info for XRP
+2025-03-08 10:00:58,970 - alpha_vantage_api - INFO - Formatted data for XRP
+2025-03-08 10:00:58,970 - crypto_info_fetcher - INFO - Formatted data for XRP/USD: {
+  "symbol": "XRP",
+  "market": "USD",
+  "name": "XRP",
+  "current_price": 2.3471,
+  "bid_price": 2.34708,
+  "ask_price": 2.34715,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 11861947.041255,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 17:59:06",
+  "fetched_at": "2025-03-08T18:00:58.970671"
+}
+2025-03-08 10:00:59,115 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 10:00:59,115 - crypto_info_fetcher - ERROR - Error processing cryptocurrency XRP/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 10:00:59,116 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 10:00:59,293 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.LTC&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 10:00:59,294 - crypto_info_fetcher - INFO - Processing cryptocurrency LTC/USD
+2025-03-08 10:00:59,294 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.78 seconds
+2025-03-08 10:01:11,075 - alpha_vantage_api - INFO - Getting comprehensive crypto info for LTC in USD
+2025-03-08 10:01:11,076 - alpha_vantage_api - INFO - Fetching crypto exchange rate for LTC to USD
+2025-03-08 10:01:11,076 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'LTC', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 10:01:11,258 - alpha_vantage_api - INFO - Fetching daily time series for LTC in USD
+2025-03-08 10:01:11,258 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_DAILY with params {'symbol': 'LTC', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 10:01:11,604 - alpha_vantage_api - INFO - Fetching monthly time series for LTC in USD
+2025-03-08 10:01:11,605 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_MONTHLY with params {'symbol': 'LTC', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 10:01:11,931 - alpha_vantage_api - INFO - Compiled crypto info for LTC
+2025-03-08 10:01:11,931 - alpha_vantage_api - INFO - Formatting crypto info for LTC
+2025-03-08 10:01:11,931 - alpha_vantage_api - INFO - Formatted data for LTC
+2025-03-08 10:01:11,931 - crypto_info_fetcher - INFO - Formatted data for LTC/USD: {
+  "symbol": "LTC",
+  "market": "USD",
+  "name": "LTC",
+  "current_price": 103.72,
+  "bid_price": 103.717,
+  "ask_price": 103.723,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 38852.28975958,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 18:01:06",
+  "fetched_at": "2025-03-08T18:01:11.931378"
+}
+2025-03-08 10:01:12,085 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 10:01:12,086 - crypto_info_fetcher - ERROR - Error processing cryptocurrency LTC/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 10:01:12,087 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 10:01:12,253 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?select=fetched_at&symbol=eq.SOL&market=eq.USD "HTTP/2 200 OK"
+2025-03-08 10:01:12,253 - crypto_info_fetcher - INFO - Processing cryptocurrency SOL/USD
+2025-03-08 10:01:12,254 - crypto_info_fetcher - INFO - Rate limiting: Sleeping for 11.78 seconds
+2025-03-08 10:01:24,035 - alpha_vantage_api - INFO - Getting comprehensive crypto info for SOL in USD
+2025-03-08 10:01:24,037 - alpha_vantage_api - INFO - Fetching crypto exchange rate for SOL to USD
+2025-03-08 10:01:24,038 - alpha_vantage_api - INFO - Making request to Alpha Vantage: CURRENCY_EXCHANGE_RATE with params {'from_currency': 'SOL', 'to_currency': 'USD', 'function': 'CURRENCY_EXCHANGE_RATE', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 10:01:24,343 - alpha_vantage_api - INFO - Fetching daily time series for SOL in USD
+2025-03-08 10:01:24,344 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_DAILY with params {'symbol': 'SOL', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_DAILY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 10:01:24,673 - alpha_vantage_api - INFO - Fetching monthly time series for SOL in USD
+2025-03-08 10:01:24,673 - alpha_vantage_api - INFO - Making request to Alpha Vantage: DIGITAL_CURRENCY_MONTHLY with params {'symbol': 'SOL', 'market': 'USD', 'function': 'DIGITAL_CURRENCY_MONTHLY', 'apikey': 'XKBMUFULHEZTRQKY'}
+2025-03-08 10:01:24,996 - alpha_vantage_api - INFO - Compiled crypto info for SOL
+2025-03-08 10:01:24,996 - alpha_vantage_api - INFO - Formatting crypto info for SOL
+2025-03-08 10:01:24,996 - alpha_vantage_api - INFO - Formatted data for SOL
+2025-03-08 10:01:24,997 - crypto_info_fetcher - INFO - Formatted data for SOL/USD: {
+  "symbol": "SOL",
+  "market": "USD",
+  "name": "SOL",
+  "current_price": 136.97,
+  "bid_price": 136.969,
+  "ask_price": 136.971,
+  "open_price": 0.0,
+  "daily_high": 0.0,
+  "daily_low": 0.0,
+  "daily_volume": 70636.54600655,
+  "market_cap": 0.0,
+  "price_change_24h": 0,
+  "price_change_percentage_24h": 0,
+  "market_cap_rank": 0,
+  "price_updated_at": "2025-03-08 18:01:07",
+  "fetched_at": "2025-03-08T18:01:24.996775"
+}
+2025-03-08 10:01:25,156 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/crypto_info?on_conflict=symbol&on_conflict=market "HTTP/2 400 Bad Request"
+2025-03-08 10:01:25,157 - crypto_info_fetcher - ERROR - Error processing cryptocurrency SOL/USD: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+2025-03-08 10:01:25,158 - crypto_info_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_crypto_info.py", line 156, in process_crypto
+    .execute()
+     ~~~~~~~^^
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '42P10', 'details': None, 'hint': None, 'message': 'there is no unique or exclusion constraint matching the ON CONFLICT specification'}
+
+2025-03-08 10:01:25,262 - crypto_info_fetcher - INFO - Crypto info fetcher completed - Processed 5 cryptocurrencies
+2025-03-08 10:01:25,262 - crypto_info_fetcher - INFO - Results: 0 successful, 5 failed

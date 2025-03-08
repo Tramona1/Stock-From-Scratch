@@ -1,0 +1,288 @@
+2025-03-08 01:37:05,709 - options_flow_alpha - INFO - Successfully imported Alpha Vantage API functions
+2025-03-08 01:37:05,790 - options_flow_alpha - INFO - Successfully initialized Supabase client
+2025-03-08 01:37:05,790 - options_flow_alpha - INFO - Running options flow fetcher (watchlist_only=False)
+2025-03-08 01:37:05,790 - options_flow_alpha - INFO - Processing 5 provided tickers
+2025-03-08 01:37:05,790 - options_flow_alpha - INFO - Fetching option flow data for SPY
+2025-03-08 01:37:05,790 - alpha_vantage_api - INFO - Fetching options flow for SPY (min volume: 50, min premium: 10000)
+2025-03-08 01:37:05,790 - alpha_vantage_api - INFO - Fetching option contracts for SPY
+2025-03-08 01:37:05,790 - alpha_vantage_api - INFO - Found Alpha Vantage API key in API_KEY_ALPHA_VANTAGE
+2025-03-08 01:37:05,790 - alpha_vantage_api - INFO - Making request to https://www.alphavantage.co/query with endpoint 
+2025-03-08 01:37:06,204 - alpha_vantage_api - WARNING - Free API key detected - Premium subscription required for options data
+2025-03-08 01:37:06,204 - alpha_vantage_api - WARNING - Falling back to mock data for demonstration
+2025-03-08 01:37:06,205 - alpha_vantage_api - INFO - Generating mock option contracts for SPY
+2025-03-08 01:37:06,206 - alpha_vantage_api - INFO - Generated 56 mock option contracts for SPY
+2025-03-08 01:37:06,206 - alpha_vantage_api - INFO - Identified 55 high-volume flow items for SPY
+2025-03-08 01:37:06,206 - options_flow_alpha - INFO - Found 55 option flow data points for SPY
+2025-03-08 01:37:06,207 - options_flow_alpha - INFO - Formatted 55 flow data items for SPY
+2025-03-08 01:37:06,207 - alpha_vantage_api - INFO - Analyzing 55 flow data items for SPY
+2025-03-08 01:37:06,207 - alpha_vantage_api - INFO - Analysis complete: 21 bullish, 21 bearish
+2025-03-08 01:37:06,581 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:37:06,582 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+2025-03-08 01:37:06,583 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+
+2025-03-08 01:37:06,700 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&tickers=cs.%7BSPY%7D "HTTP/2 400 Bad Request"
+2025-03-08 01:37:06,700 - options_flow_alpha - ERROR - Error checking if SPY is in watchlist: {'code': '42703', 'details': None, 'hint': 'Perhaps you meant to reference the column "watchlists.ticker".', 'message': 'column watchlists.tickers does not exist'}
+2025-03-08 01:37:08,701 - options_flow_alpha - INFO - Fetching option flow data for AAPL
+2025-03-08 01:37:18,207 - alpha_vantage_api - INFO - Fetching options flow for AAPL (min volume: 50, min premium: 10000)
+2025-03-08 01:37:18,208 - alpha_vantage_api - INFO - Fetching option contracts for AAPL
+2025-03-08 01:37:18,208 - alpha_vantage_api - INFO - Generating mock option contracts for AAPL
+2025-03-08 01:37:18,209 - alpha_vantage_api - INFO - Generated 56 mock option contracts for AAPL
+2025-03-08 01:37:18,209 - alpha_vantage_api - INFO - Identified 56 high-volume flow items for AAPL
+2025-03-08 01:37:18,210 - options_flow_alpha - INFO - Found 56 option flow data points for AAPL
+2025-03-08 01:37:18,211 - options_flow_alpha - INFO - Formatted 56 flow data items for AAPL
+2025-03-08 01:37:18,454 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22id%22%2C%22strike_price%22%2C%22date%22%2C%22updated_at%22%2C%22ticker%22%2C%22created_at%22%2C%22expiration_date%22%2C%22implied_volatility%22%2C%22volume%22%2C%22raw_data%22%2C%22option_type%22%2C%22sentiment%22 "HTTP/2 201 Created"
+2025-03-08 01:37:18,464 - options_flow_alpha - INFO - Successfully stored 100 option flow items
+2025-03-08 01:37:18,465 - alpha_vantage_api - INFO - Analyzing 56 flow data items for AAPL
+2025-03-08 01:37:18,465 - alpha_vantage_api - INFO - Analysis complete: 20 bullish, 21 bearish
+2025-03-08 01:37:18,549 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:37:18,550 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+2025-03-08 01:37:18,551 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+
+2025-03-08 01:37:18,646 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&tickers=cs.%7BAAPL%7D "HTTP/2 400 Bad Request"
+2025-03-08 01:37:18,646 - options_flow_alpha - ERROR - Error checking if AAPL is in watchlist: {'code': '42703', 'details': None, 'hint': 'Perhaps you meant to reference the column "watchlists.ticker".', 'message': 'column watchlists.tickers does not exist'}
+2025-03-08 01:37:20,648 - options_flow_alpha - INFO - Fetching option flow data for MSFT
+2025-03-08 01:37:30,211 - alpha_vantage_api - INFO - Fetching options flow for MSFT (min volume: 50, min premium: 10000)
+2025-03-08 01:37:30,212 - alpha_vantage_api - INFO - Fetching option contracts for MSFT
+2025-03-08 01:37:30,212 - alpha_vantage_api - INFO - Generating mock option contracts for MSFT
+2025-03-08 01:37:30,213 - alpha_vantage_api - INFO - Generated 56 mock option contracts for MSFT
+2025-03-08 01:37:30,213 - alpha_vantage_api - INFO - Identified 56 high-volume flow items for MSFT
+2025-03-08 01:37:30,213 - options_flow_alpha - INFO - Found 56 option flow data points for MSFT
+2025-03-08 01:37:30,215 - options_flow_alpha - INFO - Formatted 56 flow data items for MSFT
+2025-03-08 01:37:30,215 - alpha_vantage_api - INFO - Analyzing 56 flow data items for MSFT
+2025-03-08 01:37:30,215 - alpha_vantage_api - INFO - Analysis complete: 19 bullish, 22 bearish
+2025-03-08 01:37:30,372 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:37:30,373 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+2025-03-08 01:37:30,374 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+
+2025-03-08 01:37:30,472 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&tickers=cs.%7BMSFT%7D "HTTP/2 400 Bad Request"
+2025-03-08 01:37:30,473 - options_flow_alpha - ERROR - Error checking if MSFT is in watchlist: {'code': '42703', 'details': None, 'hint': 'Perhaps you meant to reference the column "watchlists.ticker".', 'message': 'column watchlists.tickers does not exist'}
+2025-03-08 01:37:32,475 - options_flow_alpha - INFO - Fetching option flow data for TSLA
+2025-03-08 01:37:42,214 - alpha_vantage_api - INFO - Fetching options flow for TSLA (min volume: 50, min premium: 10000)
+2025-03-08 01:37:42,215 - alpha_vantage_api - INFO - Fetching option contracts for TSLA
+2025-03-08 01:37:42,216 - alpha_vantage_api - INFO - Generating mock option contracts for TSLA
+2025-03-08 01:37:42,216 - alpha_vantage_api - INFO - Generated 56 mock option contracts for TSLA
+2025-03-08 01:37:42,217 - alpha_vantage_api - INFO - Identified 56 high-volume flow items for TSLA
+2025-03-08 01:37:42,217 - options_flow_alpha - INFO - Found 56 option flow data points for TSLA
+2025-03-08 01:37:42,218 - options_flow_alpha - INFO - Formatted 56 flow data items for TSLA
+2025-03-08 01:37:42,494 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22id%22%2C%22strike_price%22%2C%22date%22%2C%22updated_at%22%2C%22ticker%22%2C%22created_at%22%2C%22expiration_date%22%2C%22implied_volatility%22%2C%22volume%22%2C%22raw_data%22%2C%22option_type%22%2C%22sentiment%22 "HTTP/2 201 Created"
+2025-03-08 01:37:42,497 - options_flow_alpha - INFO - Successfully stored 100 option flow items
+2025-03-08 01:37:42,497 - alpha_vantage_api - INFO - Analyzing 56 flow data items for TSLA
+2025-03-08 01:37:42,497 - alpha_vantage_api - INFO - Analysis complete: 21 bullish, 20 bearish
+2025-03-08 01:37:42,580 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:37:42,581 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+2025-03-08 01:37:42,582 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+
+2025-03-08 01:37:42,661 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&tickers=cs.%7BTSLA%7D "HTTP/2 400 Bad Request"
+2025-03-08 01:37:42,662 - options_flow_alpha - ERROR - Error checking if TSLA is in watchlist: {'code': '42703', 'details': None, 'hint': 'Perhaps you meant to reference the column "watchlists.ticker".', 'message': 'column watchlists.tickers does not exist'}
+2025-03-08 01:37:44,663 - options_flow_alpha - INFO - Fetching option flow data for NVDA
+2025-03-08 01:37:54,217 - alpha_vantage_api - INFO - Fetching options flow for NVDA (min volume: 50, min premium: 10000)
+2025-03-08 01:37:54,218 - alpha_vantage_api - INFO - Fetching option contracts for NVDA
+2025-03-08 01:37:54,218 - alpha_vantage_api - INFO - Generating mock option contracts for NVDA
+2025-03-08 01:37:54,218 - alpha_vantage_api - INFO - Generated 56 mock option contracts for NVDA
+2025-03-08 01:37:54,218 - alpha_vantage_api - INFO - Identified 56 high-volume flow items for NVDA
+2025-03-08 01:37:54,218 - options_flow_alpha - INFO - Found 56 option flow data points for NVDA
+2025-03-08 01:37:54,219 - options_flow_alpha - INFO - Formatted 56 flow data items for NVDA
+2025-03-08 01:37:54,219 - alpha_vantage_api - INFO - Analyzing 56 flow data items for NVDA
+2025-03-08 01:37:54,219 - alpha_vantage_api - INFO - Analysis complete: 18 bullish, 21 bearish
+2025-03-08 01:37:54,355 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:37:54,356 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+2025-03-08 01:37:54,356 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'call_count' column of 'option_flow_data' in the schema cache"}
+
+2025-03-08 01:37:54,465 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&tickers=cs.%7BNVDA%7D "HTTP/2 400 Bad Request"
+2025-03-08 01:37:54,466 - options_flow_alpha - ERROR - Error checking if NVDA is in watchlist: {'code': '42703', 'details': None, 'hint': 'Perhaps you meant to reference the column "watchlists.ticker".', 'message': 'column watchlists.tickers does not exist'}
+2025-03-08 01:37:56,653 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22id%22%2C%22strike_price%22%2C%22date%22%2C%22updated_at%22%2C%22ticker%22%2C%22created_at%22%2C%22expiration_date%22%2C%22implied_volatility%22%2C%22volume%22%2C%22raw_data%22%2C%22option_type%22%2C%22sentiment%22 "HTTP/2 201 Created"
+2025-03-08 01:37:56,654 - options_flow_alpha - INFO - Successfully stored 79 option flow items
+2025-03-08 01:37:56,654 - options_flow_alpha - INFO - Completed option flow processing for 5 tickers
+2025-03-08 01:43:07,550 - options_flow_alpha - INFO - Successfully imported Alpha Vantage API functions
+2025-03-08 01:43:07,644 - options_flow_alpha - INFO - Successfully initialized Supabase client
+2025-03-08 01:43:07,644 - options_flow_alpha - INFO - Running options flow fetcher (watchlist_only=False)
+2025-03-08 01:43:07,644 - options_flow_alpha - INFO - Processing 5 provided tickers
+2025-03-08 01:43:07,644 - options_flow_alpha - INFO - Fetching option flow data for SPY
+2025-03-08 01:43:07,644 - alpha_vantage_api - INFO - Fetching options flow for SPY (min volume: 50, min premium: 10000)
+2025-03-08 01:43:07,644 - alpha_vantage_api - INFO - Fetching option contracts for SPY
+2025-03-08 01:43:07,644 - alpha_vantage_api - INFO - Found Alpha Vantage API key in API_KEY_ALPHA_VANTAGE
+2025-03-08 01:43:07,644 - alpha_vantage_api - INFO - Making request to https://www.alphavantage.co/query with endpoint 
+2025-03-08 01:43:07,943 - alpha_vantage_api - WARNING - Free API key detected - Premium subscription required for options data
+2025-03-08 01:43:07,943 - alpha_vantage_api - WARNING - Falling back to mock data for demonstration
+2025-03-08 01:43:07,944 - alpha_vantage_api - INFO - Generating mock option contracts for SPY
+2025-03-08 01:43:07,944 - alpha_vantage_api - INFO - Generated 56 mock option contracts for SPY
+2025-03-08 01:43:07,944 - alpha_vantage_api - INFO - Identified 52 high-volume flow items for SPY
+2025-03-08 01:43:07,944 - options_flow_alpha - INFO - Found 52 option flow data points for SPY
+2025-03-08 01:43:07,944 - options_flow_alpha - INFO - Formatted 52 flow data items for SPY
+2025-03-08 01:43:07,944 - alpha_vantage_api - INFO - Analyzing 52 flow data items for SPY
+2025-03-08 01:43:07,945 - alpha_vantage_api - INFO - Analysis complete: 18 bullish, 17 bearish
+2025-03-08 01:43:08,505 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:43:08,505 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "-4683099828548339427"'}
+2025-03-08 01:43:08,507 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "-4683099828548339427"'}
+
+2025-03-08 01:43:08,689 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-08 01:43:08,694 - options_flow_alpha - INFO - No watchlists found, treating SPY as if it's in a watchlist
+2025-03-08 01:43:08,800 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/alerts "HTTP/2 400 Bad Request"
+2025-03-08 01:43:08,801 - options_flow_alpha - ERROR - Error creating flow alerts for SPY: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'importance' column of 'alerts' in the schema cache"}
+2025-03-08 01:43:08,802 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 302, in create_flow_alerts
+    result = supabase.table("alerts").insert(alert).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'importance' column of 'alerts' in the schema cache"}
+
+2025-03-08 01:43:10,803 - options_flow_alpha - INFO - Fetching option flow data for AAPL
+2025-03-08 01:43:19,945 - alpha_vantage_api - INFO - Fetching options flow for AAPL (min volume: 50, min premium: 10000)
+2025-03-08 01:43:19,946 - alpha_vantage_api - INFO - Fetching option contracts for AAPL
+2025-03-08 01:43:19,946 - alpha_vantage_api - INFO - Generating mock option contracts for AAPL
+2025-03-08 01:43:19,946 - alpha_vantage_api - INFO - Generated 56 mock option contracts for AAPL
+2025-03-08 01:43:19,946 - alpha_vantage_api - INFO - Identified 53 high-volume flow items for AAPL
+2025-03-08 01:43:19,946 - options_flow_alpha - INFO - Found 53 option flow data points for AAPL
+2025-03-08 01:43:19,947 - options_flow_alpha - INFO - Formatted 53 flow data items for AAPL
+2025-03-08 01:43:20,177 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22sentiment%22%2C%22strike_price%22%2C%22volume%22%2C%22open_interest%22%2C%22ticker%22%2C%22raw_data%22%2C%22updated_at%22%2C%22option_type%22%2C%22date%22%2C%22created_at%22%2C%22premium%22%2C%22expiration_date%22%2C%22id%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 01:43:20,180 - options_flow_alpha - INFO - Successfully stored 100 option flow items
+2025-03-08 01:43:20,180 - alpha_vantage_api - INFO - Analyzing 53 flow data items for AAPL
+2025-03-08 01:43:20,180 - alpha_vantage_api - INFO - Analysis complete: 18 bullish, 18 bearish
+2025-03-08 01:43:20,256 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:43:20,256 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "4139684816822046404"'}
+2025-03-08 01:43:20,256 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "4139684816822046404"'}
+
+2025-03-08 01:43:20,335 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-08 01:43:20,335 - options_flow_alpha - INFO - No watchlists found, treating AAPL as if it's in a watchlist
+2025-03-08 01:43:22,336 - options_flow_alpha - INFO - Fetching option flow data for MSFT
+2025-03-08 01:43:31,947 - alpha_vantage_api - INFO - Fetching options flow for MSFT (min volume: 50, min premium: 10000)
+2025-03-08 01:43:31,948 - alpha_vantage_api - INFO - Fetching option contracts for MSFT
+2025-03-08 01:43:31,948 - alpha_vantage_api - INFO - Generating mock option contracts for MSFT
+2025-03-08 01:43:31,949 - alpha_vantage_api - INFO - Generated 56 mock option contracts for MSFT
+2025-03-08 01:43:31,949 - alpha_vantage_api - INFO - Identified 54 high-volume flow items for MSFT
+2025-03-08 01:43:31,949 - options_flow_alpha - INFO - Found 54 option flow data points for MSFT
+2025-03-08 01:43:31,951 - options_flow_alpha - INFO - Formatted 54 flow data items for MSFT
+2025-03-08 01:43:31,951 - alpha_vantage_api - INFO - Analyzing 54 flow data items for MSFT
+2025-03-08 01:43:31,951 - alpha_vantage_api - INFO - Analysis complete: 16 bullish, 20 bearish
+2025-03-08 01:43:32,106 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:43:32,107 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "150921089768865738"'}
+2025-03-08 01:43:32,108 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "150921089768865738"'}
+
+2025-03-08 01:43:32,173 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-08 01:43:32,176 - options_flow_alpha - INFO - No watchlists found, treating MSFT as if it's in a watchlist
+2025-03-08 01:43:32,254 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/alerts "HTTP/2 400 Bad Request"
+2025-03-08 01:43:32,255 - options_flow_alpha - ERROR - Error creating flow alerts for MSFT: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'importance' column of 'alerts' in the schema cache"}
+2025-03-08 01:43:32,256 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 302, in create_flow_alerts
+    result = supabase.table("alerts").insert(alert).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'importance' column of 'alerts' in the schema cache"}
+
+2025-03-08 01:43:34,257 - options_flow_alpha - INFO - Fetching option flow data for TSLA
+2025-03-08 01:43:43,951 - alpha_vantage_api - INFO - Fetching options flow for TSLA (min volume: 50, min premium: 10000)
+2025-03-08 01:43:43,952 - alpha_vantage_api - INFO - Fetching option contracts for TSLA
+2025-03-08 01:43:43,952 - alpha_vantage_api - INFO - Generating mock option contracts for TSLA
+2025-03-08 01:43:43,953 - alpha_vantage_api - INFO - Generated 56 mock option contracts for TSLA
+2025-03-08 01:43:43,953 - alpha_vantage_api - INFO - Identified 55 high-volume flow items for TSLA
+2025-03-08 01:43:43,953 - options_flow_alpha - INFO - Found 55 option flow data points for TSLA
+2025-03-08 01:43:43,954 - options_flow_alpha - INFO - Formatted 55 flow data items for TSLA
+2025-03-08 01:43:44,153 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22sentiment%22%2C%22strike_price%22%2C%22volume%22%2C%22open_interest%22%2C%22ticker%22%2C%22raw_data%22%2C%22updated_at%22%2C%22option_type%22%2C%22date%22%2C%22created_at%22%2C%22premium%22%2C%22expiration_date%22%2C%22id%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 01:43:44,156 - options_flow_alpha - INFO - Successfully stored 100 option flow items
+2025-03-08 01:43:44,157 - alpha_vantage_api - INFO - Analyzing 55 flow data items for TSLA
+2025-03-08 01:43:44,157 - alpha_vantage_api - INFO - Analysis complete: 20 bullish, 18 bearish
+2025-03-08 01:43:44,235 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:43:44,236 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "-37435515718085700"'}
+2025-03-08 01:43:44,238 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "-37435515718085700"'}
+
+2025-03-08 01:43:44,297 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-08 01:43:44,298 - options_flow_alpha - INFO - No watchlists found, treating TSLA as if it's in a watchlist
+2025-03-08 01:43:44,369 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/alerts "HTTP/2 400 Bad Request"
+2025-03-08 01:43:44,369 - options_flow_alpha - ERROR - Error creating flow alerts for TSLA: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'importance' column of 'alerts' in the schema cache"}
+2025-03-08 01:43:44,370 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 302, in create_flow_alerts
+    result = supabase.table("alerts").insert(alert).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'importance' column of 'alerts' in the schema cache"}
+
+2025-03-08 01:43:46,371 - options_flow_alpha - INFO - Fetching option flow data for NVDA
+2025-03-08 01:43:55,954 - alpha_vantage_api - INFO - Fetching options flow for NVDA (min volume: 50, min premium: 10000)
+2025-03-08 01:43:55,955 - alpha_vantage_api - INFO - Fetching option contracts for NVDA
+2025-03-08 01:43:55,955 - alpha_vantage_api - INFO - Generating mock option contracts for NVDA
+2025-03-08 01:43:55,956 - alpha_vantage_api - INFO - Generated 56 mock option contracts for NVDA
+2025-03-08 01:43:55,957 - alpha_vantage_api - INFO - Identified 54 high-volume flow items for NVDA
+2025-03-08 01:43:55,957 - options_flow_alpha - INFO - Found 54 option flow data points for NVDA
+2025-03-08 01:43:55,958 - options_flow_alpha - INFO - Formatted 54 flow data items for NVDA
+2025-03-08 01:43:55,958 - alpha_vantage_api - INFO - Analyzing 54 flow data items for NVDA
+2025-03-08 01:43:55,958 - alpha_vantage_api - INFO - Analysis complete: 19 bullish, 19 bearish
+2025-03-08 01:43:56,099 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 400 Bad Request"
+2025-03-08 01:43:56,100 - options_flow_alpha - ERROR - Error storing option flow analysis: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "-7469392407777552818"'}
+2025-03-08 01:43:56,101 - options_flow_alpha - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow_alpha.py", line 226, in store_option_flow_analysis
+    result = supabase.table(OPTION_FLOW_DATA_TABLE).insert(analysis).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '22P02', 'details': None, 'hint': None, 'message': 'invalid input syntax for type uuid: "-7469392407777552818"'}
+
+2025-03-08 01:43:56,178 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-03-08 01:43:56,179 - options_flow_alpha - INFO - No watchlists found, treating NVDA as if it's in a watchlist
+2025-03-08 01:43:58,309 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22sentiment%22%2C%22strike_price%22%2C%22volume%22%2C%22open_interest%22%2C%22ticker%22%2C%22raw_data%22%2C%22updated_at%22%2C%22option_type%22%2C%22date%22%2C%22created_at%22%2C%22premium%22%2C%22expiration_date%22%2C%22id%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 01:43:58,316 - options_flow_alpha - INFO - Successfully stored 68 option flow items
+2025-03-08 01:43:58,316 - options_flow_alpha - INFO - Completed option flow processing for 5 tickers
+2025-03-08 08:47:10,513 - options_flow_alpha - WARNING - Could not import Alpha Vantage API functions, using fallbacks
+2025-03-08 08:47:10,513 - options_flow_alpha - INFO - Using fallback options flow API functions
+2025-03-08 08:47:10,565 - options_flow_alpha - INFO - Successfully initialized Supabase client
+2025-03-08 08:47:10,565 - options_flow_alpha - INFO - Running options flow fetcher (watchlist_only=False)
+2025-03-08 08:47:10,565 - options_flow_alpha - INFO - Processing 5 provided tickers
+2025-03-08 08:47:10,565 - options_flow_alpha - INFO - Fetching option flow data for SPY
+2025-03-08 08:47:10,565 - options_flow_alpha - ERROR - Using fallback for get_options_flow, but API key may be missing
+2025-03-08 08:47:10,565 - options_flow_alpha - WARNING - No option flow data found for SPY
+2025-03-08 08:47:12,567 - options_flow_alpha - INFO - Fetching option flow data for AAPL
+2025-03-08 08:47:22,566 - options_flow_alpha - ERROR - Using fallback for get_options_flow, but API key may be missing
+2025-03-08 08:47:22,566 - options_flow_alpha - WARNING - No option flow data found for AAPL
+2025-03-08 08:47:24,568 - options_flow_alpha - INFO - Fetching option flow data for MSFT
+2025-03-08 08:47:34,568 - options_flow_alpha - ERROR - Using fallback for get_options_flow, but API key may be missing
+2025-03-08 08:47:34,569 - options_flow_alpha - WARNING - No option flow data found for MSFT
+2025-03-08 08:47:36,571 - options_flow_alpha - INFO - Fetching option flow data for TSLA
+2025-03-08 08:47:46,570 - options_flow_alpha - ERROR - Using fallback for get_options_flow, but API key may be missing
+2025-03-08 08:47:46,571 - options_flow_alpha - WARNING - No option flow data found for TSLA
+2025-03-08 08:47:48,573 - options_flow_alpha - INFO - Fetching option flow data for NVDA
+2025-03-08 08:47:58,572 - options_flow_alpha - ERROR - Using fallback for get_options_flow, but API key may be missing
+2025-03-08 08:47:58,572 - options_flow_alpha - WARNING - No option flow data found for NVDA
+2025-03-08 08:48:00,574 - options_flow_alpha - INFO - Completed option flow processing for 0 tickers

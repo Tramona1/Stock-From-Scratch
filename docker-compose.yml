@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  # NextJS Frontend Application
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.nextjs
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL}
+    restart: always
+    depends_on:
+      - data-fetcher
+    volumes:
+      - next-cache:/app/.next/cache
+    networks:
+      - stock-analytics-network
+
+  # Python Data Fetcher Service
+  data-fetcher:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    environment:
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+      API_KEY_UNUSUAL_WHALES: ${API_KEY_UNUSUAL_WHALES}
+      API_KEY_ALPHA_VANTAGE: ${API_KEY_ALPHA_VANTAGE}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+    volumes:
+      - data-fetcher-logs:/app/logs
+    restart: always
+    networks:
+      - stock-analytics-network
+
+  # Health Check API for Monitoring
+  health-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.health
+    ports:
+      - "5000:5000"
+    depends_on:
+      - data-fetcher
+    environment:
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+    restart: always
+    networks:
+      - stock-analytics-network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - nextjs-app
+      - health-api
+    restart: always
+    networks:
+      - stock-analytics-network
+
+volumes:
+  next-cache:
+  data-fetcher-logs:
+
+networks:
+  stock-analytics-network:
+    driver: bridge 

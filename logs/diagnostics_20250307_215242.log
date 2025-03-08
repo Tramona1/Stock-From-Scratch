@@ -1,0 +1,102 @@
+
+================================================================================
+                      FINANCIAL DATA PIPELINE DIAGNOSTICS                       
+================================================================================
+2025-03-07 21:52:42,928 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                      FINANCIAL DATA PIPELINE DIAGNOSTICS                       
+================================================================================
+Start time: 2025-03-07 21:52:42
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:517] - Start time: 2025-03-07 21:52:42
+Python version: 3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:518] - Python version: 3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]
+Working directory: /Users/blakesingleton/Desktop/Stock From Scratch
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:519] - Working directory: /Users/blakesingleton/Desktop/Stock From Scratch
+Component: api
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:520] - Component: api
+Log file: logs/diagnostics_20250307_215242.log
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:521] - Log file: logs/diagnostics_20250307_215242.log
+
+------------------------------------------------------------
+Checking Environment Variables
+------------------------------------------------------------
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking Environment Variables
+------------------------------------------------------------
+✅ NEXT_PUBLIC_SUPABASE_URL: Set (http...e.co)
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:537] - ✅ NEXT_PUBLIC_SUPABASE_URL: Set (http...e.co)
+✅ SUPABASE_SERVICE_ROLE_KEY: Set (eyJh...AW0c)
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:537] - ✅ SUPABASE_SERVICE_ROLE_KEY: Set (eyJh...AW0c)
+✅ API_KEY_UNUSUAL_WHALES: Set (cf0a...73ff)
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:537] - ✅ API_KEY_UNUSUAL_WHALES: Set (cf0a...73ff)
+✅ API_KEY_ALPHA_VANTAGE: Set (QIKV...8GW9)
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:537] - ✅ API_KEY_ALPHA_VANTAGE: Set (QIKV...8GW9)
+✅ FRED_API_KEY: Set (b4cb...02b3)
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:537] - ✅ FRED_API_KEY: Set (b4cb...02b3)
+
+================================================================================
+                            API CONNECTIVITY CHECKS                             
+================================================================================
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                            API CONNECTIVITY CHECKS                             
+================================================================================
+
+------------------------------------------------------------
+Checking Unusual Whales API
+------------------------------------------------------------
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking Unusual Whales API
+------------------------------------------------------------
+Testing connection to Unusual Whales API...
+2025-03-07 21:52:42,929 - diagnostics - INFO - [run_diagnostics.py:156] - Testing connection to Unusual Whales API...
+ERROR [API Error] in API Connectivity: Failed to connect to Unusual Whales API. Status code: 404
+2025-03-07 21:52:43,119 - diagnostics - ERROR - [run_diagnostics.py:108] - ERROR [API Error] in API Connectivity: Failed to connect to Unusual Whales API. Status code: 404
+Exception details: Something went wrong
+2025-03-07 21:52:43,119 - diagnostics - ERROR - [run_diagnostics.py:111] - Exception details: Something went wrong
+❌ Unusual Whales API: Failed with status code 404
+2025-03-07 21:52:43,119 - diagnostics - ERROR - [run_diagnostics.py:170] - ❌ Unusual Whales API: Failed with status code 404
+
+------------------------------------------------------------
+Checking Alpha Vantage API
+------------------------------------------------------------
+2025-03-07 21:52:43,119 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking Alpha Vantage API
+------------------------------------------------------------
+Testing connection to Alpha Vantage API...
+2025-03-07 21:52:43,120 - diagnostics - INFO - [run_diagnostics.py:156] - Testing connection to Alpha Vantage API...
+✅ Alpha Vantage API: Connected successfully (took 0.43s)
+2025-03-07 21:52:43,549 - diagnostics - INFO - [run_diagnostics.py:164] - ✅ Alpha Vantage API: Connected successfully (took 0.43s)
+
+------------------------------------------------------------
+Checking FRED API
+------------------------------------------------------------
+2025-03-07 21:52:43,549 - diagnostics - INFO - [run_diagnostics.py:93] - 
+------------------------------------------------------------
+Checking FRED API
+------------------------------------------------------------
+Testing connection to FRED API...
+2025-03-07 21:52:43,550 - diagnostics - INFO - [run_diagnostics.py:156] - Testing connection to FRED API...
+✅ FRED API: Connected successfully (took 0.20s)
+2025-03-07 21:52:43,752 - diagnostics - INFO - [run_diagnostics.py:164] - ✅ FRED API: Connected successfully (took 0.20s)
+
+================================================================================
+                           DIAGNOSTIC RESULTS SUMMARY                           
+================================================================================
+2025-03-07 21:52:43,753 - diagnostics - INFO - [run_diagnostics.py:88] - 
+================================================================================
+                           DIAGNOSTIC RESULTS SUMMARY                           
+================================================================================
+❌ api_connectivity: FAILED
+2025-03-07 21:52:43,753 - diagnostics - ERROR - [run_diagnostics.py:579] - ❌ api_connectivity: FAILED
+
+❌❌❌ SOME DIAGNOSTICS FAILED ❌❌❌
+2025-03-07 21:52:43,753 - diagnostics - ERROR - [run_diagnostics.py:585] - 
+❌❌❌ SOME DIAGNOSTICS FAILED ❌❌❌
+End time: 2025-03-07 21:52:43
+2025-03-07 21:52:43,754 - diagnostics - INFO - [run_diagnostics.py:587] - End time: 2025-03-07 21:52:43
+Complete log available at: logs/diagnostics_20250307_215242.log
+2025-03-07 21:52:43,754 - diagnostics - INFO - [run_diagnostics.py:588] - Complete log available at: logs/diagnostics_20250307_215242.log

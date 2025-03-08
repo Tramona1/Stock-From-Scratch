@@ -1,0 +1,5 @@
+2025-03-08 09:20:35,058 - setup_stock_details_db - INFO - Starting database initialization
+2025-03-08 09:20:35,058 - setup_stock_details_db - INFO - Executing SQL statement...
+2025-03-08 09:20:35,272 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/execute_sql "HTTP/1.1 404 Not Found"
+2025-03-08 09:20:35,273 - setup_stock_details_db - ERROR - HTTP error: 404 - {"code":"PGRST202","details":"Searched for the function public.execute_sql with parameter sql or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.","hint":null,"message":"Could not find the function public.execute_sql(sql) in the schema cache"}
+2025-03-08 09:20:35,273 - setup_stock_details_db - ERROR - Database initialization failed

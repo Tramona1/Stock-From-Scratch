@@ -1,0 +1,63 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 22:25:39,466 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 22:25:39,466 - pipeline_runner - INFO - [run_pipeline.py:315] - Pipeline configuration:
+- Components: institution
+2025-03-07 22:25:39,467 - pipeline_runner - INFO - [run_pipeline.py:316] - - Components: institution
+- Watchlist only: False
+2025-03-07 22:25:39,467 - pipeline_runner - INFO - [run_pipeline.py:317] - - Watchlist only: False
+- Days to fetch: 5
+2025-03-07 22:25:39,467 - pipeline_runner - INFO - [run_pipeline.py:318] - - Days to fetch: 5
+- Limit per request: 10
+2025-03-07 22:25:39,467 - pipeline_runner - INFO - [run_pipeline.py:319] - - Limit per request: 10
+
+================================================================================
+        RUNNING INSTITUTION FETCHER: Institutional holdings and activity        
+================================================================================
+2025-03-07 22:25:39,467 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+        RUNNING INSTITUTION FETCHER: Institutional holdings and activity        
+================================================================================
+Importing hedge_fund_fetcher...
+2025-03-07 22:25:39,467 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing hedge_fund_fetcher...
+2025-03-07 22:25:39,731 - hedge_fund_fetcher - INFO - [hedge_fund_fetcher.py:55] - Successfully initialized Supabase client
+✅ Module hedge_fund_fetcher imported successfully
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module hedge_fund_fetcher imported successfully
+✅ Class HedgeFundTradesFetcher found in module
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class HedgeFundTradesFetcher found in module
+Creating instance of HedgeFundTradesFetcher...
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of HedgeFundTradesFetcher...
+✅ Created instance of HedgeFundTradesFetcher
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of HedgeFundTradesFetcher
+Running HedgeFundTradesFetcher.run()...
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:269] - Running HedgeFundTradesFetcher.run()...
+2025-03-07 22:25:39,731 - hedge_fund_fetcher - INFO - [hedge_fund_fetcher.py:77] - Starting hedge fund trades fetching process
+2025-03-07 22:25:39,731 - hedge_fund_fetcher - INFO - [hedge_fund_fetcher.py:95] - Fetching hedge fund trades from UnusualWhales API
+2025-03-07 22:25:39,731 - hedge_fund_fetcher - ERROR - [hedge_fund_fetcher.py:134] - Error fetching from UnusualWhales API: get_institutions() got an unexpected keyword argument 'is_hedge_fund'
+2025-03-07 22:25:39,731 - hedge_fund_fetcher - INFO - [hedge_fund_fetcher.py:83] - Completed hedge fund trades fetching process
+✅ institution: Completed successfully in 0.26s
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:289] - ✅ institution: Completed successfully in 0.26s
+
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+institution    : ✅ SUCCESS
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:350] - institution    : ✅ SUCCESS
+
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:355] - 
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+Total pipeline execution time: 0.26 seconds
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:359] - Total pipeline execution time: 0.26 seconds
+Complete log available at: logs/pipeline_20250307_222539.log
+2025-03-07 22:25:39,731 - pipeline_runner - INFO - [run_pipeline.py:360] - Complete log available at: logs/pipeline_20250307_222539.log

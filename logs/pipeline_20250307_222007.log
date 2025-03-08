@@ -1,0 +1,74 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:311] - Pipeline configuration:
+- Components: analyst
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:312] - - Components: analyst
+- Watchlist only: False
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:313] - - Watchlist only: False
+- Days to fetch: 5
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:314] - - Days to fetch: 5
+- Limit per request: 10
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:315] - - Limit per request: 10
+
+================================================================================
+           RUNNING ANALYST FETCHER: Analyst ratings and price targets           
+================================================================================
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+           RUNNING ANALYST FETCHER: Analyst ratings and price targets           
+================================================================================
+Importing fetch_analyst_ratings...
+2025-03-07 22:20:07,871 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing fetch_analyst_ratings...
+2025-03-07 22:20:08,155 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:46] - Successfully initialized Supabase client
+✅ Module fetch_analyst_ratings imported successfully
+2025-03-07 22:20:08,155 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module fetch_analyst_ratings imported successfully
+✅ Class AnalystRatingsFetcher found in module
+2025-03-07 22:20:08,155 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class AnalystRatingsFetcher found in module
+Creating instance of AnalystRatingsFetcher...
+2025-03-07 22:20:08,155 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of AnalystRatingsFetcher...
+✅ Created instance of AnalystRatingsFetcher
+2025-03-07 22:20:08,155 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of AnalystRatingsFetcher
+Running AnalystRatingsFetcher.run()...
+2025-03-07 22:20:08,155 - pipeline_runner - INFO - [run_pipeline.py:269] - Running AnalystRatingsFetcher.run()...
+2025-03-07 22:20:08,155 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:173] - Starting Analyst Ratings Fetcher...
+2025-03-07 22:20:08,156 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:58] - Fetching analyst ratings for the past 14 days (limit: 500)...
+2025-03-07 22:20:08,156 - unusual_whales_api - INFO - [unusual_whales_api.py:87] - Using cached data for screener/analysts
+2025-03-07 22:20:08,158 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:62] - Successfully fetched 500 analyst ratings
+2025-03-07 22:20:08,158 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:71] - Processing analyst ratings data...
+2025-03-07 22:20:08,159 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:83] - Processed 500 analyst ratings
+2025-03-07 22:20:08,159 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:92] - Storing 500 analyst ratings in Supabase...
+2025-03-07 22:20:08,470 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/analyst_ratings?select=symbol%2Cfirm%2Crating_date%2Crating_change&rating_date=gte.2025-02-21 "HTTP/2 200 OK"
+2025-03-07 22:20:08,477 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:144] - Found 500 duplicate ratings
+2025-03-07 22:20:08,477 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:147] - No new ratings to insert
+2025-03-07 22:20:08,477 - analyst_ratings_fetcher - INFO - [fetch_analyst_ratings.py:179] - Analyst Ratings Fetcher completed successfully
+ERROR [Execution Error] in analyst: Error running fetcher
+2025-03-07 22:20:08,479 - pipeline_runner - ERROR - [run_pipeline.py:139] - ERROR [Execution Error] in analyst: Error running fetcher
+Exception details: object bool can't be used in 'await' expression
+2025-03-07 22:20:08,479 - pipeline_runner - ERROR - [run_pipeline.py:142] - Exception details: object bool can't be used in 'await' expression
+❌ analyst: Execution failed
+2025-03-07 22:20:08,479 - pipeline_runner - ERROR - [run_pipeline.py:294] - ❌ analyst: Execution failed
+
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+2025-03-07 22:20:08,479 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+analyst        : ❌ FAILED
+2025-03-07 22:20:08,479 - pipeline_runner - INFO - [run_pipeline.py:346] - analyst        : ❌ FAILED
+
+⚠️⚠️⚠️ SOME COMPONENTS FAILED: 0/1 successful
+2025-03-07 22:20:08,479 - pipeline_runner - WARNING - [run_pipeline.py:353] - 
+⚠️⚠️⚠️ SOME COMPONENTS FAILED: 0/1 successful
+Total pipeline execution time: 0.61 seconds
+2025-03-07 22:20:08,479 - pipeline_runner - INFO - [run_pipeline.py:355] - Total pipeline execution time: 0.61 seconds
+Complete log available at: logs/pipeline_20250307_222007.log
+2025-03-07 22:20:08,480 - pipeline_runner - INFO - [run_pipeline.py:356] - Complete log available at: logs/pipeline_20250307_222007.log

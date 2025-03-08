@@ -1,0 +1,166 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 22:00:50,191 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:311] - Pipeline configuration:
+- Components: insider
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:312] - - Components: insider
+- Watchlist only: False
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:313] - - Watchlist only: False
+- Days to fetch: 5
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:314] - - Days to fetch: 5
+- Limit per request: 10
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:315] - - Limit per request: 10
+
+================================================================================
+               RUNNING INSIDER FETCHER: Insider trading activity                
+================================================================================
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+               RUNNING INSIDER FETCHER: Insider trading activity                
+================================================================================
+Importing insider_trades_fetcher...
+2025-03-07 22:00:50,192 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing insider_trades_fetcher...
+2025-03-07 22:00:50,483 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:52] - Successfully initialized Supabase client
+✅ Module insider_trades_fetcher imported successfully
+2025-03-07 22:00:50,484 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module insider_trades_fetcher imported successfully
+✅ Class InsiderTradesFetcher found in module
+2025-03-07 22:00:50,484 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class InsiderTradesFetcher found in module
+Creating instance of InsiderTradesFetcher...
+2025-03-07 22:00:50,484 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of InsiderTradesFetcher...
+✅ Created instance of InsiderTradesFetcher
+2025-03-07 22:00:50,484 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of InsiderTradesFetcher
+Running InsiderTradesFetcher.run()...
+2025-03-07 22:00:50,484 - pipeline_runner - INFO - [run_pipeline.py:269] - Running InsiderTradesFetcher.run()...
+2025-03-07 22:00:50,484 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:73] - Starting insider trades fetching process
+2025-03-07 22:00:50,484 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:89] - Fetching insider trades from UnusualWhales API
+2025-03-07 22:00:50,484 - unusual_whales_api - INFO - [unusual_whales_api.py:87] - Using cached data for insider/transactions
+2025-03-07 22:00:50,484 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:100] - Retrieved 50 insider transactions from UnusualWhales API
+2025-03-07 22:00:50,608 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.64a035a8-230c-42e8-925e-1b414f0e17e5 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:50,608 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:50,670 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.20a1ca17-5b47-4405-b493-a31c16dc0972 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:50,671 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:50,752 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.fa27c4a1-257b-4433-b3bd-442acc3a1128 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:50,753 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:50,827 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.cc0f9b96-2c4d-4421-b0e7-f0bd354eb38e "HTTP/2 400 Bad Request"
+2025-03-07 22:00:50,828 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:50,906 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.42684cd5-7449-49d1-86b8-270709a00bbb "HTTP/2 400 Bad Request"
+2025-03-07 22:00:50,907 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:50,962 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2d7b0d2d-896b-422b-9a29-de81214927c7 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:50,963 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,019 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.c6db54cd-0751-4f10-ac1e-22311f786655 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,020 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,085 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.0ac12d04-f325-4b3d-8fd4-770417ee941b "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,086 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,148 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.acbcabce-30ea-4f82-b602-a8a49225874f "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,148 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,214 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.17274813-1c11-436e-a940-55921034725c "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,215 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,283 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.52b65a36-25a7-4394-82e3-aee25a1124be "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,283 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,357 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.559ed51a-fd14-4b0f-9c2c-dac23d122d2b "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,358 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,464 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.11fd1aba-93d5-4c2d-9d11-418490c13827 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,465 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,552 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.cab31e17-9ec6-47aa-8e14-811cf4b92802 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,553 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,621 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.d77b7854-5886-49bd-ad5e-16885a05b8a6 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,623 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,697 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.8801e91a-d886-4437-95ca-175946c27d8d "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,698 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,774 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2fd18deb-b280-4760-9969-6c70c967e201 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,775 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,839 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.6f2cfac1-3b50-4f21-ad2b-bf227ed71ba2 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,841 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,917 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.75a22f9d-d674-4f6e-952c-6de8d47d7d17 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,918 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:51,995 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.f5bd3e6d-5c54-45dc-bc5d-990a2d31e758 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:51,997 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,072 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.6afd4bdf-8da0-4bbc-bcac-2201f3971775 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,073 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,173 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.07089c7c-28ae-4dca-a653-571792836493 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,174 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,262 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2d2e5c72-1111-490d-9cba-e5e5f39a30c9 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,263 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,346 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.4e9d5944-67c5-4e5c-aa39-28f404314aae "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,347 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,459 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.3fe61bdd-5b6d-48a1-89d2-0a12440f870f "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,461 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,521 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.15fa41e7-2310-40e1-b0bd-a7ef50f170d3 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,522 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,588 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.81640298-7084-4990-8902-45b0b3d8f95c "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,589 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,668 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.90847280-fe25-4ff1-bbb4-148e49f2887d "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,669 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,737 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2e8087c3-a263-4762-b7df-38ba3f162832 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,738 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,820 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.a2629a4e-06a3-43e3-85b4-7203cd5f980f "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,821 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,901 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.aa67cdd1-ddaa-4a38-af53-dc11bea455f8 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,901 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:52,969 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.a41a0c95-b5a3-474f-a76f-2b62a6b9c8a3 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:52,970 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,035 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.5341f23e-047e-4423-8629-117ca1beee8b "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,037 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,095 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.14a9c610-39c2-467c-a10d-e2c341ce5ed9 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,095 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,178 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.8693f6ad-e61e-4abe-a498-7d784e516aa1 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,179 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,258 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.946b6b14-840a-4368-9ecb-dfce65eb60bd "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,259 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,338 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.96b5bb72-a0ef-4f40-8a5e-f1bd53c9abfa "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,340 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,414 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.dfdd72b6-fc24-45b8-87df-ca3c2af94d14 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,415 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,496 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.f824d316-7007-417a-9419-7344fc3342ff "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,498 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,562 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.34371777-a4f7-4095-9e42-8543df3a1dfd "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,563 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,624 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.fbcd8308-827b-48d2-a3b0-c6ed32f2693d "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,625 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,691 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2b2b012c-40f8-4a4c-994d-80b7a644a7ba "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,692 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,760 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.b4ca4f49-c6c6-4c70-88d5-582951b7d6f6 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,761 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,817 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.28b48512-a48d-4cd3-ab56-036a66665b31 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,818 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,882 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.80ad8346-43fc-4273-9cde-44d327927e2f "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,883 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:53,954 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.e6841290-a70d-4819-9d4e-9f570734b8e9 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:53,955 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:54,027 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.7e8d2679-9d7c-4fc4-ac17-7cf7f77e9a03 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:54,028 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:54,087 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.2b733b95-45b2-49fc-ac25-681f717058e3 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:54,089 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:54,153 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.c68194c5-3c40-42c3-9505-451cd96db926 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:54,154 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:54,229 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?select=id&filing_id=eq.9524cf14-775d-4cb6-aa88-f7a422d77ca5 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:54,230 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:327] - Error checking if trade exists: {'code': '42703', 'details': None, 'hint': None, 'message': 'column insider_trades.filing_id does not exist'}
+2025-03-07 22:00:54,340 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/insider_trades?columns=%22symbol%22%2C%22insider_name%22%2C%22transaction_date%22%2C%22source%22%2C%22shares_owned_after%22%2C%22transaction_type%22%2C%22shares%22%2C%22updated_at%22%2C%22filing_date%22%2C%22filing_id%22%2C%22price%22%2C%22created_at%22 "HTTP/2 400 Bad Request"
+2025-03-07 22:00:54,346 - insider_trades_fetcher - ERROR - [insider_trades_fetcher.py:170] - Error fetching insider trades from UnusualWhales API: {'code': 'PGRST204', 'details': None, 'hint': None, 'message': "Could not find the 'filing_id' column of 'insider_trades' in the schema cache"}
+2025-03-07 22:00:54,346 - insider_trades_fetcher - INFO - [insider_trades_fetcher.py:79] - Completed insider trades fetching process
+✅ insider: Completed successfully in 4.15s
+2025-03-07 22:00:54,347 - pipeline_runner - INFO - [run_pipeline.py:285] - ✅ insider: Completed successfully in 4.15s
+
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+2025-03-07 22:00:54,347 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+insider        : ✅ SUCCESS
+2025-03-07 22:00:54,348 - pipeline_runner - INFO - [run_pipeline.py:346] - insider        : ✅ SUCCESS
+
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+2025-03-07 22:00:54,348 - pipeline_runner - INFO - [run_pipeline.py:351] - 
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+Total pipeline execution time: 4.16 seconds
+2025-03-07 22:00:54,348 - pipeline_runner - INFO - [run_pipeline.py:355] - Total pipeline execution time: 4.16 seconds
+Complete log available at: logs/pipeline_20250307_220050.log
+2025-03-07 22:00:54,348 - pipeline_runner - INFO - [run_pipeline.py:356] - Complete log available at: logs/pipeline_20250307_220050.log

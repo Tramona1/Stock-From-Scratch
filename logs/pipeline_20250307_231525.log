@@ -1,0 +1,74 @@
+
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                        STARTING FINANCIAL DATA PIPELINE                        
+================================================================================
+Pipeline configuration:
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:315] - Pipeline configuration:
+- Components: fda
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:316] - - Components: fda
+- Watchlist only: False
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:317] - - Watchlist only: False
+- Days to fetch: 3
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:318] - - Days to fetch: 3
+- Limit per request: 5
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:319] - - Limit per request: 5
+
+================================================================================
+                 RUNNING FDA FETCHER: FDA drug approval events                  
+================================================================================
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                 RUNNING FDA FETCHER: FDA drug approval events                  
+================================================================================
+Importing fetch_fda_calendar...
+2025-03-07 23:15:25,992 - pipeline_runner - INFO - [run_pipeline.py:208] - Importing fetch_fda_calendar...
+2025-03-07 23:15:26,292 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:47] - Successfully initialized Supabase client
+✅ Module fetch_fda_calendar imported successfully
+2025-03-07 23:15:26,292 - pipeline_runner - INFO - [run_pipeline.py:212] - ✅ Module fetch_fda_calendar imported successfully
+✅ Class FDACalendarFetcher found in module
+2025-03-07 23:15:26,293 - pipeline_runner - INFO - [run_pipeline.py:221] - ✅ Class FDACalendarFetcher found in module
+Creating instance of FDACalendarFetcher...
+2025-03-07 23:15:26,293 - pipeline_runner - INFO - [run_pipeline.py:228] - Creating instance of FDACalendarFetcher...
+✅ Created instance of FDACalendarFetcher
+2025-03-07 23:15:26,293 - pipeline_runner - INFO - [run_pipeline.py:238] - ✅ Created instance of FDACalendarFetcher
+Running FDACalendarFetcher.run()...
+2025-03-07 23:15:26,293 - pipeline_runner - INFO - [run_pipeline.py:269] - Running FDACalendarFetcher.run()...
+2025-03-07 23:15:26,293 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:280] - Running FDA calendar fetcher for the next 180 days
+2025-03-07 23:15:26,293 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:78] - Fetching FDA calendar for the next 180 days
+2025-03-07 23:15:26,294 - unusual_whales_api - INFO - [unusual_whales_api.py:87] - Using cached data for market/fda-calendar
+2025-03-07 23:15:26,294 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:98] - Successfully fetched 100 FDA events
+2025-03-07 23:15:26,294 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:124] - Storing 100 FDA calendar events
+2025-03-07 23:15:26,497 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar?on_conflict=id&columns=%22outcome_brief%22%2C%22has_options%22%2C%22description%22%2C%22indication%22%2C%22outcome%22%2C%22start_date%22%2C%22marketcap%22%2C%22source_link%22%2C%22notes%22%2C%22status%22%2C%22fetched_at%22%2C%22ticker%22%2C%22id%22%2C%22catalyst%22%2C%22drug%22%2C%22end_date%22 "HTTP/2 201 Created"
+2025-03-07 23:15:26,501 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:154] - Stored batch of 50 FDA events (total: 50)
+2025-03-07 23:15:26,587 - httpx - INFO - [_client.py:1025] - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/fda_calendar?on_conflict=id&columns=%22outcome_brief%22%2C%22has_options%22%2C%22description%22%2C%22indication%22%2C%22outcome%22%2C%22start_date%22%2C%22marketcap%22%2C%22source_link%22%2C%22notes%22%2C%22status%22%2C%22fetched_at%22%2C%22ticker%22%2C%22id%22%2C%22catalyst%22%2C%22drug%22%2C%22end_date%22 "HTTP/2 201 Created"
+2025-03-07 23:15:26,588 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:154] - Stored batch of 50 FDA events (total: 100)
+2025-03-07 23:15:26,643 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&limit=1 "HTTP/2 200 OK"
+2025-03-07 23:15:26,643 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:238] - Watchlists table exists
+2025-03-07 23:15:26,718 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=tickers "HTTP/2 400 Bad Request"
+2025-03-07 23:15:26,719 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:255] - Trying 'ticker' column instead of 'tickers'
+2025-03-07 23:15:26,780 - httpx - INFO - [_client.py:1025] - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=ticker "HTTP/2 200 OK"
+2025-03-07 23:15:26,780 - fda_calendar_fetcher - INFO - [fetch_fda_calendar.py:293] - FDA calendar fetcher completed - Stored 100 events
+✅ fda: Completed successfully in 0.79s
+2025-03-07 23:15:26,780 - pipeline_runner - INFO - [run_pipeline.py:289] - ✅ fda: Completed successfully in 0.79s
+
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+2025-03-07 23:15:26,780 - pipeline_runner - INFO - [run_pipeline.py:119] - 
+================================================================================
+                           PIPELINE EXECUTION SUMMARY                           
+================================================================================
+fda            : ✅ SUCCESS
+2025-03-07 23:15:26,780 - pipeline_runner - INFO - [run_pipeline.py:350] - fda            : ✅ SUCCESS
+
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+2025-03-07 23:15:26,780 - pipeline_runner - INFO - [run_pipeline.py:355] - 
+✅✅✅ ALL COMPONENTS COMPLETED SUCCESSFULLY: 1/1
+Total pipeline execution time: 0.79 seconds
+2025-03-07 23:15:26,780 - pipeline_runner - INFO - [run_pipeline.py:359] - Total pipeline execution time: 0.79 seconds
+Complete log available at: logs/pipeline_20250307_231525.log
+2025-03-07 23:15:26,780 - pipeline_runner - INFO - [run_pipeline.py:360] - Complete log available at: logs/pipeline_20250307_231525.log

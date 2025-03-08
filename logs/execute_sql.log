@@ -1,0 +1,23 @@
+2025-03-08 02:26:50,053 - __main__ - INFO - Executing SQL from file: sql/create_technical_indicators_table.sql
+2025-03-08 02:26:50,053 - __main__ - ERROR - Supabase URL or key not found in environment variables
+2025-03-08 02:26:50,053 - __main__ - ERROR - Error in main function: Supabase URL or key not found
+2025-03-08 02:27:25,067 - __main__ - INFO - Executing SQL from file: sql/create_technical_indicators_table.sql
+2025-03-08 02:27:25,152 - __main__ - INFO - Executing SQL statement: -- Create technical indicators table
+CREATE TABLE IF NOT EXISTS technical_indicators (
+    id SERIAL...
+2025-03-08 02:27:25,444 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/exec_sql "HTTP/2 404 Not Found"
+2025-03-08 02:27:25,446 - __main__ - ERROR - Error executing SQL statement: {'code': 'PGRST202', 'details': 'Searched for the function public.exec_sql with parameter query or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.exec_sql(query) in the schema cache'}
+2025-03-08 02:27:25,446 - __main__ - INFO - Executing SQL statement: -- Create index on symbol for faster lookups
+CREATE INDEX IF NOT EXISTS technical_indicators_symbol_...
+2025-03-08 02:27:25,528 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/exec_sql "HTTP/2 404 Not Found"
+2025-03-08 02:27:25,529 - __main__ - ERROR - Error executing SQL statement: {'code': 'PGRST202', 'details': 'Searched for the function public.exec_sql with parameter query or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.exec_sql(query) in the schema cache'}
+2025-03-08 02:27:25,529 - __main__ - INFO - Executing SQL statement: -- Create index on date for faster lookups
+CREATE INDEX IF NOT EXISTS technical_indicators_date_idx ...
+2025-03-08 02:27:25,612 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/exec_sql "HTTP/2 404 Not Found"
+2025-03-08 02:27:25,613 - __main__ - ERROR - Error executing SQL statement: {'code': 'PGRST202', 'details': 'Searched for the function public.exec_sql with parameter query or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.exec_sql(query) in the schema cache'}
+2025-03-08 02:27:25,613 - __main__ - INFO - Executing SQL statement: -- Create index on interval for faster lookups
+CREATE INDEX IF NOT EXISTS technical_indicators_inter...
+2025-03-08 02:27:25,666 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/rpc/exec_sql "HTTP/2 404 Not Found"
+2025-03-08 02:27:25,667 - __main__ - ERROR - Error executing SQL statement: {'code': 'PGRST202', 'details': 'Searched for the function public.exec_sql with parameter query or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.', 'hint': None, 'message': 'Could not find the function public.exec_sql(query) in the schema cache'}
+2025-03-08 02:27:25,667 - __main__ - INFO - SQL execution from file sql/create_technical_indicators_table.sql completed
+2025-03-08 02:27:25,667 - __main__ - INFO - SQL execution completed successfully

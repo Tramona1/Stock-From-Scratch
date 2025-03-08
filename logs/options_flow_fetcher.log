@@ -1,0 +1,565 @@
+2025-03-08 01:09:44,496 - options_flow_fetcher - INFO - Successfully imported minimal options flow functions
+2025-03-08 01:09:44,570 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 01:09:44,570 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 01:09:44,570 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 01:09:44,570 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 01:09:44,570 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 01:09:44,570 - fix_options_flow_minimal - INFO - Fetching option contracts for SPY
+2025-03-08 01:09:44,570 - fix_options_flow_minimal - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 01:09:44,835 - fix_options_flow_minimal - INFO - Retrieved 20 option contracts for SPY
+2025-03-08 01:09:44,835 - options_flow_fetcher - INFO - Found 20 active option contracts for SPY
+2025-03-08 01:09:45,335 - fix_options_flow_minimal - INFO - Fetching flow data for option contract SPY250307C00575000
+2025-03-08 01:09:45,336 - fix_options_flow_minimal - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow
+2025-03-08 01:09:49,517 - fix_options_flow_minimal - WARNING - Request failed with 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow?limit=20&min_premium=10000, retrying in 1 seconds...
+2025-03-08 01:09:54,727 - fix_options_flow_minimal - WARNING - Request failed with 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow?limit=20&min_premium=10000, retrying in 2 seconds...
+2025-03-08 01:10:00,924 - fix_options_flow_minimal - ERROR - Error making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow?limit=20&min_premium=10000
+2025-03-08 01:10:00,930 - fix_options_flow_minimal - ERROR - Response content: Something went wrong
+2025-03-08 01:10:00,931 - fix_options_flow_minimal - ERROR - Failed to fetch flow data for SPY250307C00575000: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow?limit=20&min_premium=10000
+2025-03-08 01:10:01,433 - fix_options_flow_minimal - INFO - Fetching flow data for option contract SPY250307P00570000
+2025-03-08 01:10:01,433 - fix_options_flow_minimal - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow
+2025-03-08 01:10:05,630 - fix_options_flow_minimal - WARNING - Request failed with 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow?limit=20&min_premium=10000, retrying in 1 seconds...
+2025-03-08 01:10:10,833 - fix_options_flow_minimal - WARNING - Request failed with 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow?limit=20&min_premium=10000, retrying in 2 seconds...
+2025-03-08 08:47:00,014 - options_flow_fetcher - WARNING - Could not import minimal options flow functions, falling back to local implementations
+2025-03-08 08:47:00,014 - options_flow_fetcher - INFO - Using fallback options flow API functions
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Using fallback function to get option contracts for SPY
+2025-03-08 08:47:00,098 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 08:47:00,380 - options_flow_fetcher - ERROR - Error fetching option contracts for SPY: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/SPY/option-contracts?exclude_zero_vol_chains=True&limit=20&vol_greater_oi=True
+2025-03-08 08:47:00,380 - options_flow_fetcher - WARNING - No option contracts found for SPY
+2025-03-08 08:47:02,382 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 08:47:02,383 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 08:47:02,383 - options_flow_fetcher - INFO - Using fallback function to get option contracts for QQQ
+2025-03-08 08:47:02,383 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 08:47:02,585 - options_flow_fetcher - ERROR - Error fetching option contracts for QQQ: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/QQQ/option-contracts?exclude_zero_vol_chains=True&limit=20&vol_greater_oi=True
+2025-03-08 08:47:02,586 - options_flow_fetcher - WARNING - No option contracts found for QQQ
+2025-03-08 08:47:04,587 - options_flow_fetcher - INFO - Completed option flow processing for 0 tickers
+2025-03-08 08:49:46,558 - options_flow_fetcher - WARNING - Could not import minimal options flow functions, falling back to local implementations
+2025-03-08 08:49:46,558 - options_flow_fetcher - INFO - Using fallback options flow API functions
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Using fallback function to get option contracts for SPY
+2025-03-08 08:49:46,610 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 08:49:46,810 - options_flow_fetcher - ERROR - Error fetching option contracts for SPY: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/SPY/option-contracts?exclude_zero_vol_chains=True&limit=20&vol_greater_oi=True
+2025-03-08 08:49:46,810 - options_flow_fetcher - WARNING - No option contracts found for SPY
+2025-03-08 08:49:48,812 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 08:49:48,812 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 08:49:48,813 - options_flow_fetcher - INFO - Using fallback function to get option contracts for QQQ
+2025-03-08 08:49:48,813 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 08:49:49,011 - options_flow_fetcher - ERROR - Error fetching option contracts for QQQ: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/QQQ/option-contracts?exclude_zero_vol_chains=True&limit=20&vol_greater_oi=True
+2025-03-08 08:49:49,012 - options_flow_fetcher - WARNING - No option contracts found for QQQ
+2025-03-08 08:49:51,014 - options_flow_fetcher - INFO - Completed option flow processing for 0 tickers
+2025-03-08 09:01:05,178 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:01:05,179 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 09:01:05,179 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 09:01:05,179 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 09:01:05,179 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 09:01:05,179 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 09:01:05,532 - options_flow_fetcher - ERROR - Error fetching option contracts for SPY: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/SPY/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:01:07,534 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 09:01:07,736 - options_flow_fetcher - ERROR - Error fetching option contracts for SPY on retry: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/SPY/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:01:07,737 - options_flow_fetcher - WARNING - No option contracts found for SPY
+2025-03-08 09:01:08,239 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 09:01:08,738 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 09:01:08,738 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 09:01:08,934 - options_flow_fetcher - ERROR - Error fetching option contracts for QQQ: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/QQQ/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:01:10,937 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 09:01:11,161 - options_flow_fetcher - ERROR - Error fetching option contracts for QQQ on retry: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/QQQ/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:01:11,162 - options_flow_fetcher - WARNING - No option contracts found for QQQ
+2025-03-08 09:01:11,663 - options_flow_fetcher - INFO - Completed option flow processing for 0 tickers
+2025-03-08 09:03:09,069 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:03:09,070 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 09:03:09,070 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 09:03:09,070 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 09:03:09,070 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 09:03:09,070 - options_flow_fetcher - ERROR - Error processing ticker SPY: name 'UW_API_BASE_URL' is not defined
+2025-03-08 09:03:09,070 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 488, in process_ticker
+    contracts = get_option_contracts(
+        ticker,
+    ...<2 lines>...
+        limit=limit
+    )
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 96, in get_option_contracts
+    url = f"{UW_API_BASE_URL}/stock/{ticker}/option-contracts"
+             ^^^^^^^^^^^^^^^
+NameError: name 'UW_API_BASE_URL' is not defined
+
+2025-03-08 09:03:09,572 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 09:03:09,572 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 09:03:09,572 - options_flow_fetcher - ERROR - Error processing ticker QQQ: name 'UW_API_BASE_URL' is not defined
+2025-03-08 09:03:09,573 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 488, in process_ticker
+    contracts = get_option_contracts(
+        ticker,
+    ...<2 lines>...
+        limit=limit
+    )
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 96, in get_option_contracts
+    url = f"{UW_API_BASE_URL}/stock/{ticker}/option-contracts"
+             ^^^^^^^^^^^^^^^
+NameError: name 'UW_API_BASE_URL' is not defined
+
+2025-03-08 09:03:10,075 - options_flow_fetcher - INFO - Completed option flow processing for 0 tickers
+2025-03-08 09:03:29,159 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:03:29,159 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 09:03:29,159 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 09:03:29,159 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 09:03:29,160 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 09:03:29,160 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 09:03:29,417 - options_flow_fetcher - ERROR - Error fetching option contracts for SPY: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/SPY/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:03:31,422 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 09:03:31,621 - options_flow_fetcher - ERROR - Error fetching option contracts for SPY on retry: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/SPY/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:03:31,622 - options_flow_fetcher - WARNING - No option contracts found for SPY
+2025-03-08 09:03:32,123 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 09:03:32,623 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 09:03:32,624 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 09:03:32,827 - options_flow_fetcher - ERROR - Error fetching option contracts for QQQ: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/QQQ/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:03:34,833 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 09:03:35,013 - options_flow_fetcher - ERROR - Error fetching option contracts for QQQ on retry: 401 Client Error: Unauthorized for url: https://api.unusualwhales.com/api/stock/QQQ/option-contracts?exclude_zero_vol_chains=True&vol_greater_oi=True&limit=20
+2025-03-08 09:03:35,013 - options_flow_fetcher - WARNING - No option contracts found for QQQ
+2025-03-08 09:03:35,514 - options_flow_fetcher - INFO - Completed option flow processing for 0 tickers
+2025-03-08 09:05:10,406 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:05:10,406 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 09:05:10,406 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 09:05:10,406 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 09:05:10,406 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 09:05:10,406 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 09:05:10,668 - options_flow_fetcher - INFO - Retrieved 20 option contracts for SPY
+2025-03-08 09:05:10,669 - options_flow_fetcher - INFO - Found 20 option contracts for SPY
+2025-03-08 09:05:11,670 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00575000
+2025-03-08 09:05:11,671 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow
+2025-03-08 09:05:15,888 - options_flow_fetcher - ERROR - Error fetching flow for option contract SPY250307C00575000: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow?limit=50&min_premium=1000&side=ALL
+2025-03-08 09:05:17,890 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow
+2025-03-08 09:05:22,104 - options_flow_fetcher - ERROR - Error fetching flow for option contract SPY250307C00575000 on retry: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow?limit=50&min_premium=1000&side=ALL
+2025-03-08 09:05:23,107 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00570000
+2025-03-08 09:05:23,108 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow
+2025-03-08 09:05:27,344 - options_flow_fetcher - ERROR - Error fetching flow for option contract SPY250307P00570000: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow?limit=50&min_premium=1000&side=ALL
+2025-03-08 09:05:29,348 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow
+2025-03-08 09:05:33,592 - options_flow_fetcher - ERROR - Error fetching flow for option contract SPY250307P00570000 on retry: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow?limit=50&min_premium=1000&side=ALL
+2025-03-08 09:05:34,593 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00565000
+2025-03-08 09:05:34,594 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00565000/flow
+2025-03-08 09:05:37,980 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00565000
+2025-03-08 09:05:38,982 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00576000
+2025-03-08 09:05:38,982 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00576000/flow
+2025-03-08 09:05:42,079 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00576000
+2025-03-08 09:05:43,081 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00580000
+2025-03-08 09:05:43,082 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00580000/flow
+2025-03-08 09:05:44,805 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00580000
+2025-03-08 09:05:45,807 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00575000
+2025-03-08 09:05:45,807 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00575000/flow
+2025-03-08 09:05:48,556 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00575000
+2025-03-08 09:05:49,558 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00574000
+2025-03-08 09:05:49,559 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00574000/flow
+2025-03-08 09:05:52,357 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00574000
+2025-03-08 09:05:52,358 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,361 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:52,361 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,362 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:52,363 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,364 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:52,365 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,365 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:52,365 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,366 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:52,366 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,366 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:52,367 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:52,367 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:53,359 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00577000
+2025-03-08 09:05:53,359 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00577000/flow
+2025-03-08 09:05:55,426 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00577000
+2025-03-08 09:05:56,428 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00573000
+2025-03-08 09:05:56,428 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00573000/flow
+2025-03-08 09:05:59,109 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00573000
+2025-03-08 09:05:59,111 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:59,112 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:59,113 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:59,114 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:59,114 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:59,114 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:59,115 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:59,115 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:05:59,115 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:05:59,116 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:00,110 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00572000
+2025-03-08 09:06:00,111 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00572000/flow
+2025-03-08 09:06:02,695 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00572000
+2025-03-08 09:06:03,698 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00572000
+2025-03-08 09:06:03,699 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00572000/flow
+2025-03-08 09:06:06,384 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00572000
+2025-03-08 09:06:06,386 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:06,387 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:06,387 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:06,387 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:06,388 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:06,388 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:06,389 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:06,389 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:06,390 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:06,390 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:06,390 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:06,391 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:07,386 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00578000
+2025-03-08 09:06:07,386 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00578000/flow
+2025-03-08 09:06:09,137 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00578000
+2025-03-08 09:06:09,556 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:09,563 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:09,727 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:09,730 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:09,880 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:09,884 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,018 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,021 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,152 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,155 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,309 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,311 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,446 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,448 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,604 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,605 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,739 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,748 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:10,842 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:10,844 - options_flow_fetcher - INFO - Inserted batch of 32 flow items
+2025-03-08 09:06:10,844 - options_flow_fetcher - INFO - Analyzing 482 option flow data points for SPY
+2025-03-08 09:06:10,845 - options_flow_fetcher - INFO - Analysis complete: 0 bullish, 0 bearish
+2025-03-08 09:06:10,896 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data?select=id&ticker=eq.SPY&analysis_date=eq.2025-03-08 "HTTP/2 200 OK"
+2025-03-08 09:06:10,960 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 201 Created"
+2025-03-08 09:06:10,960 - options_flow_fetcher - INFO - Inserted new analysis for SPY
+2025-03-08 09:06:11,016 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&ticker=eq.SPY "HTTP/2 200 OK"
+2025-03-08 09:06:11,017 - options_flow_fetcher - INFO - Skipping alerts for SPY as it's not in any watchlist
+2025-03-08 09:06:11,017 - options_flow_fetcher - INFO - Successfully processed 482 flow items for SPY
+2025-03-08 09:06:11,519 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 09:06:11,520 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 09:06:11,520 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 09:06:11,785 - options_flow_fetcher - INFO - Retrieved 20 option contracts for QQQ
+2025-03-08 09:06:11,786 - options_flow_fetcher - INFO - Found 20 option contracts for QQQ
+2025-03-08 09:06:12,787 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00490000
+2025-03-08 09:06:12,788 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00490000/flow
+2025-03-08 09:06:16,946 - options_flow_fetcher - ERROR - Error fetching flow for option contract QQQ250307C00490000: 500 Server Error: Internal Server Error for url: https://api.unusualwhales.com/api/option-contract/QQQ250307C00490000/flow?limit=50&min_premium=1000&side=ALL
+2025-03-08 09:06:18,949 - options_flow_fetcher - INFO - Retrying request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00490000/flow
+2025-03-08 09:06:22,971 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00490000 on retry
+2025-03-08 09:06:23,973 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00492000
+2025-03-08 09:06:23,974 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00492000/flow
+2025-03-08 09:06:25,294 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00492000
+2025-03-08 09:06:26,296 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00480000
+2025-03-08 09:06:26,296 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00480000/flow
+2025-03-08 09:06:27,475 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00480000
+2025-03-08 09:06:28,477 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00488000
+2025-03-08 09:06:28,477 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00488000/flow
+2025-03-08 09:06:29,728 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00488000
+2025-03-08 09:06:29,730 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:29,730 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:29,730 - options_flow_fetcher - ERROR - Error formatting option flow data: float() argument must be a string or a real number, not 'NoneType'
+2025-03-08 09:06:29,731 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 286, in format_option_flow_for_db
+    "implied_volatility": float(flow_item.get("implied_volatility", 0)),
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+2025-03-08 09:06:30,730 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00485000
+2025-03-08 09:06:30,731 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00485000/flow
+2025-03-08 09:06:31,970 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00485000
+2025-03-08 09:06:32,972 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00493000
+2025-03-08 09:06:32,972 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00493000/flow
+2025-03-08 09:06:33,837 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00493000
+2025-03-08 09:06:34,839 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00491000
+2025-03-08 09:06:34,839 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00491000/flow
+2025-03-08 09:06:35,870 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00491000
+2025-03-08 09:06:36,872 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00495000
+2025-03-08 09:06:36,872 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00495000/flow
+2025-03-08 09:06:37,726 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00495000
+2025-03-08 09:06:38,728 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00490000
+2025-03-08 09:06:38,728 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00490000/flow
+2025-03-08 09:06:39,867 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00490000
+2025-03-08 09:06:40,869 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00486000
+2025-03-08 09:06:40,869 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00486000/flow
+2025-03-08 09:06:42,005 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00486000
+2025-03-08 09:06:42,283 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:42,286 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:42,472 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:42,477 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:42,611 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:42,614 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:42,774 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:42,777 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:42,907 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:42,911 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:43,053 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:43,055 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:43,237 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:43,240 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:43,389 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:43,392 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:43,547 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:43,549 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:06:43,698 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22created_at%22%2C%22updated_at%22%2C%22sentiment%22%2C%22volume%22%2C%22option_type%22%2C%22open_interest%22%2C%22expiration_date%22%2C%22premium%22%2C%22raw_data%22%2C%22id%22%2C%22contract_id%22%2C%22date%22%2C%22strike_price%22%2C%22ticker%22%2C%22implied_volatility%22 "HTTP/2 201 Created"
+2025-03-08 09:06:43,701 - options_flow_fetcher - INFO - Inserted batch of 48 flow items
+2025-03-08 09:06:43,701 - options_flow_fetcher - INFO - Analyzing 498 option flow data points for QQQ
+2025-03-08 09:06:43,702 - options_flow_fetcher - INFO - Analysis complete: 0 bullish, 0 bearish
+2025-03-08 09:06:43,764 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data?select=id&ticker=eq.QQQ&analysis_date=eq.2025-03-08 "HTTP/2 200 OK"
+2025-03-08 09:06:43,842 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data "HTTP/2 201 Created"
+2025-03-08 09:06:43,844 - options_flow_fetcher - INFO - Inserted new analysis for QQQ
+2025-03-08 09:06:43,909 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&ticker=eq.QQQ "HTTP/2 200 OK"
+2025-03-08 09:06:43,910 - options_flow_fetcher - INFO - Skipping alerts for QQQ as it's not in any watchlist
+2025-03-08 09:06:43,910 - options_flow_fetcher - INFO - Successfully processed 498 flow items for QQQ
+2025-03-08 09:06:44,413 - options_flow_fetcher - INFO - Completed option flow processing for 2 tickers
+2025-03-08 09:09:54,044 - options_flow_fetcher - INFO - Successfully initialized Supabase client
+2025-03-08 09:09:54,044 - options_flow_fetcher - INFO - Running options flow fetcher (watchlist_only=False, days=5, limit=20)
+2025-03-08 09:09:54,044 - options_flow_fetcher - INFO - Processing 2 provided tickers
+2025-03-08 09:09:54,044 - options_flow_fetcher - INFO - Fetching option flow data for SPY
+2025-03-08 09:09:54,044 - options_flow_fetcher - INFO - Fetching option contracts for SPY
+2025-03-08 09:09:54,044 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/SPY/option-contracts
+2025-03-08 09:09:54,342 - options_flow_fetcher - INFO - Retrieved 20 option contracts for SPY
+2025-03-08 09:09:54,343 - options_flow_fetcher - INFO - Found 20 option contracts for SPY
+2025-03-08 09:09:55,344 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00575000
+2025-03-08 09:09:55,344 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00575000
+2025-03-08 09:09:55,345 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00575000/flow
+2025-03-08 09:09:57,017 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00575000
+2025-03-08 09:09:57,018 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307C00575000
+2025-03-08 09:09:58,018 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00570000
+2025-03-08 09:09:58,018 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00570000
+2025-03-08 09:09:58,018 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00570000/flow
+2025-03-08 09:09:59,329 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00570000
+2025-03-08 09:09:59,331 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307P00570000
+2025-03-08 09:10:00,331 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00565000
+2025-03-08 09:10:00,331 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00565000
+2025-03-08 09:10:00,331 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00565000/flow
+2025-03-08 09:10:01,187 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00565000
+2025-03-08 09:10:01,190 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307P00565000
+2025-03-08 09:10:02,189 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00576000
+2025-03-08 09:10:02,189 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00576000
+2025-03-08 09:10:02,189 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00576000/flow
+2025-03-08 09:10:03,072 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00576000
+2025-03-08 09:10:03,075 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307C00576000
+2025-03-08 09:10:04,074 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00580000
+2025-03-08 09:10:04,074 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00580000
+2025-03-08 09:10:04,074 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00580000/flow
+2025-03-08 09:10:04,853 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00580000
+2025-03-08 09:10:04,854 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307C00580000
+2025-03-08 09:10:05,854 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00575000
+2025-03-08 09:10:05,855 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00575000
+2025-03-08 09:10:05,855 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00575000/flow
+2025-03-08 09:10:06,673 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00575000
+2025-03-08 09:10:06,675 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307P00575000
+2025-03-08 09:10:07,675 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00574000
+2025-03-08 09:10:07,675 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00574000
+2025-03-08 09:10:07,675 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00574000/flow
+2025-03-08 09:10:08,867 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00574000
+2025-03-08 09:10:08,870 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307C00574000
+2025-03-08 09:10:09,869 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00577000
+2025-03-08 09:10:09,869 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00577000
+2025-03-08 09:10:09,869 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00577000/flow
+2025-03-08 09:10:10,676 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00577000
+2025-03-08 09:10:10,676 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307C00577000
+2025-03-08 09:10:11,677 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00573000
+2025-03-08 09:10:11,677 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307C00573000
+2025-03-08 09:10:11,677 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307C00573000/flow
+2025-03-08 09:10:12,597 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307C00573000
+2025-03-08 09:10:12,598 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307C00573000
+2025-03-08 09:10:13,598 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00572000
+2025-03-08 09:10:13,600 - options_flow_fetcher - INFO - Fetching flow data for option contract SPY250307P00572000
+2025-03-08 09:10:13,600 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/SPY250307P00572000/flow
+2025-03-08 09:10:14,498 - options_flow_fetcher - INFO - Retrieved 50 flow data points for SPY250307P00572000
+2025-03-08 09:10:14,501 - options_flow_fetcher - INFO - Processed 50 flow items for contract SPY250307P00572000
+2025-03-08 09:10:15,002 - options_flow_fetcher - INFO - Reached maximum contract limit (10) for SPY, stopping
+2025-03-08 09:10:15,371 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22strike_price%22%2C%22volume%22%2C%22expiration_date%22%2C%22id%22%2C%22contract_id%22%2C%22ticker%22%2C%22updated_at%22%2C%22implied_volatility%22%2C%22date%22%2C%22created_at%22%2C%22raw_data%22%2C%22sentiment%22%2C%22option_type%22 "HTTP/2 201 Created"
+2025-03-08 09:10:15,375 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:10:15,555 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22strike_price%22%2C%22volume%22%2C%22expiration_date%22%2C%22id%22%2C%22contract_id%22%2C%22ticker%22%2C%22updated_at%22%2C%22implied_volatility%22%2C%22date%22%2C%22created_at%22%2C%22raw_data%22%2C%22sentiment%22%2C%22option_type%22 "HTTP/2 201 Created"
+2025-03-08 09:10:15,557 - options_flow_fetcher - INFO - Inserted batch of 50 flow items
+2025-03-08 09:10:15,713 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22strike_price%22%2C%22volume%22%2C%22expiration_date%22%2C%22id%22%2C%22contract_id%22%2C%22ticker%22%2C%22updated_at%22%2C%22implied_volatility%22%2C%22date%22%2C%22created_at%22%2C%22raw_data%22%2C%22sentiment%22%2C%22option_type%22 "HTTP/2 409 Conflict"
+2025-03-08 09:10:15,713 - options_flow_fetcher - ERROR - Error storing option flow: {'code': '23505', 'details': 'Key (id)=(ad47d025-a794-49aa-b911-d8626f5718b7) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "options_flow_pkey"'}
+2025-03-08 09:10:15,715 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 664, in store_option_flow
+    result = supabase.table(OPTION_FLOW_TABLE).insert(batch).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '23505', 'details': 'Key (id)=(ad47d025-a794-49aa-b911-d8626f5718b7) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "options_flow_pkey"'}
+
+2025-03-08 09:10:15,715 - options_flow_fetcher - ERROR - Failed to store flow items for SPY
+2025-03-08 09:10:15,715 - options_flow_fetcher - INFO - Analyzing 500 option flow data points for SPY
+2025-03-08 09:10:15,715 - options_flow_fetcher - INFO - Analysis complete: 0 bullish, 0 bearish
+2025-03-08 09:10:15,779 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data?select=id&ticker=eq.SPY&analysis_date=eq.2025-03-08 "HTTP/2 200 OK"
+2025-03-08 09:10:15,859 - httpx - INFO - HTTP Request: PATCH https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data?ticker=eq.SPY&analysis_date=eq.2025-03-08 "HTTP/2 200 OK"
+2025-03-08 09:10:15,859 - options_flow_fetcher - INFO - Updated existing analysis for SPY
+2025-03-08 09:10:15,924 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&ticker=eq.SPY "HTTP/2 200 OK"
+2025-03-08 09:10:15,924 - options_flow_fetcher - INFO - Skipping alerts for SPY as it's not in any watchlist
+2025-03-08 09:10:15,924 - options_flow_fetcher - INFO - Successfully processed 500 flow items for SPY from 10 contracts with 0 errors
+2025-03-08 09:10:16,426 - options_flow_fetcher - INFO - Fetching option flow data for QQQ
+2025-03-08 09:10:16,426 - options_flow_fetcher - INFO - Fetching option contracts for QQQ
+2025-03-08 09:10:16,426 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/stock/QQQ/option-contracts
+2025-03-08 09:10:16,739 - options_flow_fetcher - INFO - Retrieved 20 option contracts for QQQ
+2025-03-08 09:10:16,739 - options_flow_fetcher - INFO - Found 20 option contracts for QQQ
+2025-03-08 09:10:17,741 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00490000
+2025-03-08 09:10:17,741 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00490000
+2025-03-08 09:10:17,741 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00490000/flow
+2025-03-08 09:10:18,343 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00490000
+2025-03-08 09:10:18,345 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307C00490000
+2025-03-08 09:10:19,344 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00492000
+2025-03-08 09:10:19,345 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00492000
+2025-03-08 09:10:19,345 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00492000/flow
+2025-03-08 09:10:19,924 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00492000
+2025-03-08 09:10:19,926 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307C00492000
+2025-03-08 09:10:20,926 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00480000
+2025-03-08 09:10:20,926 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00480000
+2025-03-08 09:10:20,926 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00480000/flow
+2025-03-08 09:10:21,464 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00480000
+2025-03-08 09:10:21,466 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307P00480000
+2025-03-08 09:10:22,465 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00488000
+2025-03-08 09:10:22,465 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00488000
+2025-03-08 09:10:22,465 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00488000/flow
+2025-03-08 09:10:22,998 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00488000
+2025-03-08 09:10:23,001 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307C00488000
+2025-03-08 09:10:24,000 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00485000
+2025-03-08 09:10:24,000 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00485000
+2025-03-08 09:10:24,000 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00485000/flow
+2025-03-08 09:10:24,533 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00485000
+2025-03-08 09:10:24,533 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307P00485000
+2025-03-08 09:10:25,534 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00493000
+2025-03-08 09:10:25,534 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00493000
+2025-03-08 09:10:25,534 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00493000/flow
+2025-03-08 09:10:26,009 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00493000
+2025-03-08 09:10:26,009 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307C00493000
+2025-03-08 09:10:27,010 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00491000
+2025-03-08 09:10:27,011 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00491000
+2025-03-08 09:10:27,011 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00491000/flow
+2025-03-08 09:10:27,520 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00491000
+2025-03-08 09:10:27,523 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307C00491000
+2025-03-08 09:10:28,522 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00495000
+2025-03-08 09:10:28,522 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307C00495000
+2025-03-08 09:10:28,522 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307C00495000/flow
+2025-03-08 09:10:29,037 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307C00495000
+2025-03-08 09:10:29,039 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307C00495000
+2025-03-08 09:10:30,039 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00490000
+2025-03-08 09:10:30,039 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00490000
+2025-03-08 09:10:30,039 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00490000/flow
+2025-03-08 09:10:30,577 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00490000
+2025-03-08 09:10:30,579 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307P00490000
+2025-03-08 09:10:31,578 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00486000
+2025-03-08 09:10:31,578 - options_flow_fetcher - INFO - Fetching flow data for option contract QQQ250307P00486000
+2025-03-08 09:10:31,579 - options_flow_fetcher - INFO - Making request to https://api.unusualwhales.com/api/option-contract/QQQ250307P00486000/flow
+2025-03-08 09:10:32,071 - options_flow_fetcher - INFO - Retrieved 50 flow data points for QQQ250307P00486000
+2025-03-08 09:10:32,072 - options_flow_fetcher - INFO - Processed 50 flow items for contract QQQ250307P00486000
+2025-03-08 09:10:32,574 - options_flow_fetcher - INFO - Reached maximum contract limit (10) for QQQ, stopping
+2025-03-08 09:10:32,778 - httpx - INFO - HTTP Request: POST https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/options_flow?columns=%22open_interest%22%2C%22premium%22%2C%22strike_price%22%2C%22volume%22%2C%22expiration_date%22%2C%22id%22%2C%22contract_id%22%2C%22ticker%22%2C%22updated_at%22%2C%22implied_volatility%22%2C%22date%22%2C%22created_at%22%2C%22raw_data%22%2C%22sentiment%22%2C%22option_type%22 "HTTP/2 409 Conflict"
+2025-03-08 09:10:32,779 - options_flow_fetcher - ERROR - Error storing option flow: {'code': '23505', 'details': 'Key (id)=(76e162a0-a1af-458f-aaf7-fd9d7d9144fc) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "options_flow_pkey"'}
+2025-03-08 09:10:32,779 - options_flow_fetcher - ERROR - Traceback (most recent call last):
+  File "/Users/blakesingleton/Desktop/Stock From Scratch/python/fetch_options_flow.py", line 664, in store_option_flow
+    result = supabase.table(OPTION_FLOW_TABLE).insert(batch).execute()
+  File "/opt/homebrew/lib/python3.13/site-packages/postgrest/_sync/request_builder.py", line 78, in execute
+    raise APIError(r.json())
+postgrest.exceptions.APIError: {'code': '23505', 'details': 'Key (id)=(76e162a0-a1af-458f-aaf7-fd9d7d9144fc) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "options_flow_pkey"'}
+
+2025-03-08 09:10:32,780 - options_flow_fetcher - ERROR - Failed to store flow items for QQQ
+2025-03-08 09:10:32,780 - options_flow_fetcher - INFO - Analyzing 500 option flow data points for QQQ
+2025-03-08 09:10:32,780 - options_flow_fetcher - INFO - Analysis complete: 0 bullish, 0 bearish
+2025-03-08 09:10:32,846 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data?select=id&ticker=eq.QQQ&analysis_date=eq.2025-03-08 "HTTP/2 200 OK"
+2025-03-08 09:10:32,932 - httpx - INFO - HTTP Request: PATCH https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/option_flow_data?ticker=eq.QQQ&analysis_date=eq.2025-03-08 "HTTP/2 200 OK"
+2025-03-08 09:10:32,933 - options_flow_fetcher - INFO - Updated existing analysis for QQQ
+2025-03-08 09:10:32,993 - httpx - INFO - HTTP Request: GET https://xtvfaileukqrdnnfghui.supabase.co/rest/v1/watchlists?select=id&ticker=eq.QQQ "HTTP/2 200 OK"
+2025-03-08 09:10:32,993 - options_flow_fetcher - INFO - Skipping alerts for QQQ as it's not in any watchlist
+2025-03-08 09:10:32,993 - options_flow_fetcher - INFO - Successfully processed 500 flow items for QQQ from 10 contracts with 0 errors
+2025-03-08 09:10:33,494 - options_flow_fetcher - INFO - Completed option flow processing for 2 tickers

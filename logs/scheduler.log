@@ -1,0 +1,130 @@
+2025-03-08 09:53:10,941 - scheduler - INFO - Starting scheduler with 1 minute interval
+2025-03-08 09:53:10,941 - scheduler - INFO - Scheduling run for 17 scripts: fetch_stock_info_alpha.py, fetch_technical_indicators.py, fetch_crypto_info.py, fetch_options_flow.py, fetch_options_flow_alpha.py, fetch_forex_info.py, fetch_commodity_info.py, fetch_dark_pool_data.py, fetch_market_news.py, fetch_analyst_ratings.py, fetch_insider_trades.py, insider_trades_fetcher.py, economic_indicators_fetcher.py, fetch_economic_reports.py, fetch_fda_calendar.py, fetch_political_trades.py, hedge_fund_fetcher.py
+2025-03-08 09:53:10,941 - scheduler - INFO - DRY RUN - Not actually running scripts
+2025-03-08 09:55:02,031 - scheduler - INFO - Starting scheduler with 1 minute interval
+2025-03-08 09:55:02,031 - scheduler - INFO - Scheduling run for 17 scripts: fetch_stock_info_alpha.py, fetch_technical_indicators.py, fetch_crypto_info.py, fetch_options_flow.py, fetch_options_flow_alpha.py, fetch_forex_info.py, fetch_commodity_info.py, fetch_dark_pool_data.py, fetch_market_news.py, fetch_analyst_ratings.py, fetch_insider_trades.py, insider_trades_fetcher.py, economic_indicators_fetcher.py, fetch_economic_reports.py, fetch_fda_calendar.py, fetch_political_trades.py, hedge_fund_fetcher.py
+2025-03-08 09:55:02,031 - scheduler - INFO - DRY RUN - Not actually running scripts
+2025-03-08 09:55:25,364 - scheduler - INFO - Scheduler stopped by user
+2025-03-08 09:58:02,592 - scheduler - INFO - 🚀 Starting scheduler with 1 minute interval
+2025-03-08 09:58:02,592 - scheduler - INFO - 📌 Alpha Vantage rate limit: 75 requests/minute
+2025-03-08 09:58:02,592 - scheduler - INFO - 📌 Unusual Whales rate limit: 120 requests/minute
+2025-03-08 09:58:02,592 - scheduler - INFO - ⏰ Starting scheduling cycle at 2025-03-08T09:58:02.592702
+2025-03-08 09:58:02,592 - scheduler - INFO - 🔄 Adding 3 scripts for 5-minute interval
+2025-03-08 09:58:02,592 - scheduler - INFO - 🔄 Adding 4 scripts for 15-minute interval
+2025-03-08 09:58:02,592 - scheduler - INFO - 🔄 Adding 2 scripts for 60-minute interval
+2025-03-08 09:58:02,592 - scheduler - INFO - 🔄 Adding 7 scripts for 1440-minute interval
+2025-03-08 09:58:02,592 - scheduler - INFO - 🔄 Adding 1 scripts for 10080-minute interval
+2025-03-08 09:58:02,592 - scheduler - INFO - 📋 Scheduling run for 17 scripts: fetch_stock_info_alpha.py, fetch_technical_indicators.py, fetch_crypto_info.py, fetch_options_flow.py, fetch_options_flow_alpha.py, fetch_forex_info.py, fetch_commodity_info.py, fetch_dark_pool_data.py, fetch_market_news.py, fetch_analyst_ratings.py, fetch_insider_trades.py, insider_trades_fetcher.py, economic_indicators_fetcher.py, fetch_economic_reports.py, fetch_fda_calendar.py, fetch_political_trades.py, hedge_fund_fetcher.py
+2025-03-08 09:58:02,592 - scheduler - INFO - 🔍 DRY RUN - Not actually running scripts
+2025-03-08 09:58:02,603 - scheduler - INFO - ⏱️ Cycle completed in 0.01 seconds
+2025-03-08 09:58:02,603 - scheduler - INFO - 💤 Sleeping for 59.99 seconds until next cycle
+2025-03-08 09:58:22,733 - scheduler - INFO - 👋 Scheduler stopped by user
+2025-03-08 09:58:24,324 - scheduler - INFO - Running fetch_stock_details.py immediately
+2025-03-08 09:58:24,325 - scheduler - INFO - 🔍 Preparing to run fetch_stock_details.py
+2025-03-08 09:58:24,334 - scheduler - INFO - SCRIPT DETAILS: {
+  "script": "fetch_stock_details.py",
+  "api": "unusual_whales",
+  "priority": 5,
+  "estimated_api_calls": 10,
+  "arguments": [],
+  "timestamp": "2025-03-08T09:58:24.325101",
+  "market_hours": false
+}
+2025-03-08 09:58:24,334 - scheduler - INFO - ▶️ Running fetch_stock_details.py at 2025-03-08T09:58:24.334628
+2025-03-08 09:58:32,415 - scheduler - INFO - ✅ Successfully ran fetch_stock_details.py in 8.08 seconds
+2025-03-08 09:58:32,415 - scheduler - INFO - 📄 fetch_stock_details.py stdout: {
+  "status": "success",
+  "tickers_processed": 10,
+  "successful": 10,
+  "failed": 0
+}
+...
+2025-03-08 09:58:32,415 - scheduler - INFO - Unusual Whales API usage: 10/120 requests this minute
+2025-03-08 09:58:32,415 - scheduler - INFO - 📊 Unusual Whales API usage after fetch_stock_details.py: 10/120
+2025-03-08 09:58:39,171 - scheduler - INFO - 🚀 Starting scheduler with 3 minute interval
+2025-03-08 09:58:39,171 - scheduler - INFO - 📌 Alpha Vantage rate limit: 75 requests/minute
+2025-03-08 09:58:39,171 - scheduler - INFO - 📌 Unusual Whales rate limit: 120 requests/minute
+2025-03-08 09:58:39,171 - scheduler - INFO - ⏰ Starting scheduling cycle at 2025-03-08T09:58:39.171370
+2025-03-08 09:58:39,171 - scheduler - INFO - 🔄 Adding 3 scripts for 5-minute interval
+2025-03-08 09:58:39,171 - scheduler - INFO - 🔄 Adding 4 scripts for 15-minute interval
+2025-03-08 09:58:39,171 - scheduler - INFO - 🔄 Adding 2 scripts for 60-minute interval
+2025-03-08 09:58:39,171 - scheduler - INFO - 🔄 Adding 7 scripts for 1440-minute interval
+2025-03-08 09:58:39,171 - scheduler - INFO - 🔄 Adding 1 scripts for 10080-minute interval
+2025-03-08 09:58:39,171 - scheduler - INFO - 📋 Scheduling run for 17 scripts: fetch_stock_info_alpha.py, fetch_technical_indicators.py, fetch_crypto_info.py, fetch_options_flow.py, fetch_options_flow_alpha.py, fetch_forex_info.py, fetch_commodity_info.py, fetch_dark_pool_data.py, fetch_market_news.py, fetch_analyst_ratings.py, fetch_insider_trades.py, insider_trades_fetcher.py, economic_indicators_fetcher.py, fetch_economic_reports.py, fetch_fda_calendar.py, fetch_political_trades.py, hedge_fund_fetcher.py
+2025-03-08 09:58:39,171 - scheduler - INFO - 📋 Execution plan: 17 scripts in priority order
+2025-03-08 09:58:39,171 - scheduler - INFO -   1. fetch_stock_info_alpha.py (Priority: 1, API: alpha_vantage)
+2025-03-08 09:58:39,171 - scheduler - INFO -   2. fetch_crypto_info.py (Priority: 1, API: alpha_vantage)
+2025-03-08 09:58:39,171 - scheduler - INFO -   3. fetch_options_flow.py (Priority: 1, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO -   4. fetch_options_flow_alpha.py (Priority: 1, API: alpha_vantage)
+2025-03-08 09:58:39,171 - scheduler - INFO -   5. fetch_technical_indicators.py (Priority: 2, API: alpha_vantage)
+2025-03-08 09:58:39,171 - scheduler - INFO -   6. fetch_forex_info.py (Priority: 2, API: alpha_vantage)
+2025-03-08 09:58:39,171 - scheduler - INFO -   7. fetch_commodity_info.py (Priority: 2, API: alpha_vantage)
+2025-03-08 09:58:39,171 - scheduler - INFO -   8. fetch_dark_pool_data.py (Priority: 2, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO -   9. fetch_market_news.py (Priority: 3, API: other)
+2025-03-08 09:58:39,171 - scheduler - INFO -   10. fetch_analyst_ratings.py (Priority: 3, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO -   11. fetch_insider_trades.py (Priority: 3, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO -   12. insider_trades_fetcher.py (Priority: 3, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO -   13. economic_indicators_fetcher.py (Priority: 4, API: other)
+2025-03-08 09:58:39,171 - scheduler - INFO -   14. fetch_economic_reports.py (Priority: 4, API: other)
+2025-03-08 09:58:39,171 - scheduler - INFO -   15. fetch_fda_calendar.py (Priority: 4, API: other)
+2025-03-08 09:58:39,171 - scheduler - INFO -   16. fetch_political_trades.py (Priority: 4, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO -   17. hedge_fund_fetcher.py (Priority: 5, API: unusual_whales)
+2025-03-08 09:58:39,171 - scheduler - INFO - 🔍 Preparing to run fetch_stock_info_alpha.py
+2025-03-08 09:58:39,180 - scheduler - INFO - ⏱️ Skipping fetch_stock_info_alpha.py - outside market hours
+2025-03-08 09:58:39,180 - scheduler - WARNING - ⚠️ Failed to run fetch_stock_info_alpha.py, will retry in next scheduling cycle
+2025-03-08 09:58:40,185 - scheduler - INFO - 🔍 Preparing to run fetch_crypto_info.py
+2025-03-08 09:58:40,186 - scheduler - INFO - 🪙 Running crypto script regardless of market hours
+2025-03-08 09:58:40,186 - scheduler - INFO - SCRIPT DETAILS: {
+  "script": "fetch_crypto_info.py",
+  "api": "alpha_vantage",
+  "priority": 1,
+  "estimated_api_calls": 10,
+  "arguments": [],
+  "timestamp": "2025-03-08T09:58:40.186152",
+  "market_hours": false
+}
+2025-03-08 09:58:40,186 - scheduler - INFO - ▶️ Running fetch_crypto_info.py at 2025-03-08T09:58:40.186369
+2025-03-08 09:59:15,010 - scheduler - INFO - 👋 Scheduler stopped by user
+2025-03-08 10:00:33,278 - scheduler - INFO - 🚀 Starting scheduler with 5 minute interval
+2025-03-08 10:00:33,278 - scheduler - INFO - 📌 Alpha Vantage rate limit: 75 requests/minute
+2025-03-08 10:00:33,278 - scheduler - INFO - 📌 Unusual Whales rate limit: 120 requests/minute
+2025-03-08 10:00:33,278 - scheduler - INFO - ⏰ Starting scheduling cycle at 2025-03-08T10:00:33.278443
+2025-03-08 10:00:33,278 - scheduler - INFO - 🔄 Adding 3 scripts for 5-minute interval
+2025-03-08 10:00:33,278 - scheduler - INFO - 🔄 Adding 4 scripts for 15-minute interval
+2025-03-08 10:00:33,278 - scheduler - INFO - 🔄 Adding 2 scripts for 60-minute interval
+2025-03-08 10:00:33,278 - scheduler - INFO - 🔄 Adding 7 scripts for 1440-minute interval
+2025-03-08 10:00:33,278 - scheduler - INFO - 🔄 Adding 1 scripts for 10080-minute interval
+2025-03-08 10:00:33,278 - scheduler - INFO - 📋 Scheduling run for 17 scripts: fetch_stock_info_alpha.py, fetch_technical_indicators.py, fetch_crypto_info.py, fetch_options_flow.py, fetch_options_flow_alpha.py, fetch_forex_info.py, fetch_commodity_info.py, fetch_dark_pool_data.py, fetch_market_news.py, fetch_analyst_ratings.py, fetch_insider_trades.py, insider_trades_fetcher.py, economic_indicators_fetcher.py, fetch_economic_reports.py, fetch_fda_calendar.py, fetch_political_trades.py, hedge_fund_fetcher.py
+2025-03-08 10:00:33,278 - scheduler - INFO - 📋 Execution plan: 17 scripts in priority order
+2025-03-08 10:00:33,278 - scheduler - INFO -   1. fetch_stock_info_alpha.py (Priority: 1, API: alpha_vantage)
+2025-03-08 10:00:33,278 - scheduler - INFO -   2. fetch_crypto_info.py (Priority: 1, API: alpha_vantage)
+2025-03-08 10:00:33,278 - scheduler - INFO -   3. fetch_options_flow.py (Priority: 1, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO -   4. fetch_options_flow_alpha.py (Priority: 1, API: alpha_vantage)
+2025-03-08 10:00:33,278 - scheduler - INFO -   5. fetch_technical_indicators.py (Priority: 2, API: alpha_vantage)
+2025-03-08 10:00:33,278 - scheduler - INFO -   6. fetch_forex_info.py (Priority: 2, API: alpha_vantage)
+2025-03-08 10:00:33,278 - scheduler - INFO -   7. fetch_commodity_info.py (Priority: 2, API: alpha_vantage)
+2025-03-08 10:00:33,278 - scheduler - INFO -   8. fetch_dark_pool_data.py (Priority: 2, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO -   9. fetch_market_news.py (Priority: 3, API: other)
+2025-03-08 10:00:33,278 - scheduler - INFO -   10. fetch_analyst_ratings.py (Priority: 3, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO -   11. fetch_insider_trades.py (Priority: 3, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO -   12. insider_trades_fetcher.py (Priority: 3, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO -   13. economic_indicators_fetcher.py (Priority: 4, API: other)
+2025-03-08 10:00:33,278 - scheduler - INFO -   14. fetch_economic_reports.py (Priority: 4, API: other)
+2025-03-08 10:00:33,278 - scheduler - INFO -   15. fetch_fda_calendar.py (Priority: 4, API: other)
+2025-03-08 10:00:33,278 - scheduler - INFO -   16. fetch_political_trades.py (Priority: 4, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO -   17. hedge_fund_fetcher.py (Priority: 5, API: unusual_whales)
+2025-03-08 10:00:33,278 - scheduler - INFO - 🔍 Preparing to run fetch_stock_info_alpha.py
+2025-03-08 10:00:33,287 - scheduler - INFO - ⏱️ Skipping fetch_stock_info_alpha.py - outside market hours
+2025-03-08 10:00:33,287 - scheduler - WARNING - ⚠️ Failed to run fetch_stock_info_alpha.py, will retry in next scheduling cycle
+2025-03-08 10:00:34,293 - scheduler - INFO - 🔍 Preparing to run fetch_crypto_info.py
+2025-03-08 10:00:34,294 - scheduler - INFO - 🪙 Running crypto script regardless of market hours
+2025-03-08 10:00:34,294 - scheduler - INFO - SCRIPT DETAILS: {
+  "script": "fetch_crypto_info.py",
+  "api": "alpha_vantage",
+  "priority": 1,
+  "estimated_api_calls": 10,
+  "arguments": [],
+  "timestamp": "2025-03-08T10:00:34.294207",
+  "market_hours": false
+}
+2025-03-08 10:00:34,294 - scheduler - INFO - ▶️ Running fetch_crypto_info.py at 2025-03-08T10:00:34.294583
